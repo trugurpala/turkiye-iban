@@ -72,6 +72,18 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertNotIn("generate:data", package["scripts"]["test"])
         self.assertIn("data:update", package["scripts"])
 
+    def test_typescript_package_declares_dual_module_exports(self) -> None:
+        package = json.loads(
+            (ROOT / "packages" / "typescript" / "package.json").read_text(encoding="utf-8")
+        )
+        root_export = package["exports"]["."]
+
+        self.assertEqual(package["engines"]["node"], ">=22")
+        self.assertEqual(root_export["import"], "./dist/esm/index.js")
+        self.assertEqual(root_export["require"], "./dist/cjs/index.js")
+        self.assertEqual(root_export["types"], "./dist/types/index.d.ts")
+        self.assertEqual(package["repository"]["url"], "git+https://github.com/trugurpala/turkiye-iban.git")
+
     def test_privacy_guard_accepts_only_known_synthetic_ibans(self) -> None:
         result = self.run_python("scripts/check-privacy.py")
 

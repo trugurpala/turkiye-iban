@@ -4,29 +4,51 @@
   "description": "Turkish IBAN parser, validator, formatter, masker, and provider-code lookup.",
   "type": "module",
   "license": "MIT",
+  "author": "Uğur Pala",
   "sideEffects": false,
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/src/index.d.ts",
-      "import": "./dist/src/index.js"
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
     },
-    "./data/tr-banks.json": "./data/tr-banks.json"
+    "./data/tr-banks.json": "./data/tr-banks.json",
+    "./package.json": "./package.json"
   },
   "files": [
-    "dist/src",
+    "dist",
     "data",
     "README.md",
     "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trugurpala/turkiye-iban.git",
+    "directory": "packages/typescript"
+  },
+  "homepage": "https://github.com/trugurpala/turkiye-iban#readme",
+  "bugs": {
+    "url": "https://github.com/trugurpala/turkiye-iban/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "prepack": "npm run build",
-    "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node --test dist/test/*.test.js"
+    "clean": "node -e \"const fs=require('node:fs');fs.rmSync('dist',{recursive:true,force:true});fs.rmSync('dist-test',{recursive:true,force:true})\"",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/write-cjs-package.mjs",
+    "build:types": "tsc -p tsconfig.types.json",
+    "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/test/*.test.js"
   },
   "keywords": [
     "iban",

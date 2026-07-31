@@ -40,7 +40,7 @@ describe("Turkish IBAN API", () => {
   });
 
   it("separates unknown provider code from checksum validation", () => {
-    const result = identifyBankFromIban("TR749999909999000000000000");
+    const result = identifyBankFromIban("TR16999990ABC123DEF456GHIJ");
     const providerResult = result as unknown as {
       providerCode: string | null;
       provider: unknown;
