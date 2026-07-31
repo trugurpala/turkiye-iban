@@ -39,12 +39,15 @@ jobs:
           npm ci --ignore-scripts
       - name: Verify package
         run: npm test
-      - name: Verify matching GitHub Release
+      - name: Verify matching GitHub Release and tag commit
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           VERSION="$(node -p "require('./packages/typescript/package.json').version")"
-          gh release view "v${VERSION}" --repo "$GITHUB_REPOSITORY"
+          TAG="v${VERSION}"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY"
+          git fetch --force origin "refs/tags/${TAG}:refs/tags/${TAG}"
+          test "$(git rev-parse HEAD)" = "$(git rev-list -n 1 "$TAG")"
       - name: Publish with trusted publishing
         run: npm publish --workspace packages/typescript --tag "${{ inputs.dist-tag }}"
