@@ -5,6 +5,21 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-31
+
+### Added
+
+- Figma kaynaklı GitHub sosyal önizleme, yatay lansman ve kare topluluk görselleri.
+- X, LinkedIn, TurkDev/Reddit ve topluluk e-postası için lansman metinleri.
+- Telemetri eklemeden GitHub ve NPM benimsenmesini izleyen ölçüm planı.
+- GitHub Discussions ve başlangıç katkı issue'ları için topluluk girişleri.
+
+### Changed
+
+- GitHub ve NPM README anlatımı kullanıcı dostu doğrulama, veri kaynağı ve `unknown` kuruluş açıklamalarında eşitlendi.
+- Proje hedefi ve yol haritası lansman ile topluluk fazını gösterecek biçimde güncellendi.
+- Runtime API, doğrulama davranışı ve 70 kayıtlı kuruluş veri kümesi değişmedi.
+
 ## [0.1.0] - 2026-07-31
 
 ### Added
@@ -26,5 +41,6 @@ numaraları Semantic Versioning yaklaşımını izler.
   olmadan IBAN sağlayıcı kodu olarak yayımlanmaz.
 - Gerçek IBAN ve kişisel finansal veri katkı yüzeylerinde yasaktır.
 
-[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/trugurpala/turkiye-iban/releases/tag/v0.1.0
