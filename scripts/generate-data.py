@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import os
 import sqlite3
@@ -333,18 +334,36 @@ def write_outputs(output_root: Path) -> None:
 
 
 def check_generated_files() -> int:
+    drift_details: dict[str, str] = {}
     with tempfile.TemporaryDirectory() as temporary_directory:
         temporary_root = Path(temporary_directory)
         write_outputs(temporary_root)
-        drift = [
-            str(relative_path)
-            for relative_path in GENERATED_PATHS
-            if not (ROOT / relative_path).is_file()
-            or (ROOT / relative_path).read_bytes() != (temporary_root / relative_path).read_bytes()
-        ]
+        drift = []
+        for relative_path in GENERATED_PATHS:
+            committed_path = ROOT / relative_path
+            generated_path = temporary_root / relative_path
+            if not committed_path.is_file():
+                drift.append(str(relative_path))
+                drift_details[str(relative_path)] = "committed artifact is missing"
+                continue
+            committed = committed_path.read_bytes()
+            generated = generated_path.read_bytes()
+            if committed == generated:
+                continue
+            drift.append(str(relative_path))
+            offsets = [
+                index
+                for index, (left, right) in enumerate(zip(committed, generated, strict=False))
+                if left != right
+            ][:20]
+            drift_details[str(relative_path)] = (
+                f"committed_sha256={hashlib.sha256(committed).hexdigest()} "
+                f"generated_sha256={hashlib.sha256(generated).hexdigest()} "
+                f"sizes={len(committed)}/{len(generated)} first_offsets={offsets}"
+            )
     if drift:
         print("Generated file drift detected:")
-        print("\n".join(f"- {path}" for path in drift))
+        print("\n".join(f"- {path}: {drift_details[path]}" for path in drift))
         print("Run `npm run generate:data` and commit the generated outputs.")
         return 1
     print(f"Generated files are up to date: {len(GENERATED_PATHS)} artifacts")
