@@ -51,6 +51,9 @@ export interface ParsedTurkishIban {
 
 export interface IdentifiedTurkishIban {
   parsed: ParsedTurkishIban;
+  providerCode: string | null;
+  provider: TurkishIbanProvider | null;
+  providerStatus: "known" | "unknown";
   bankCode: string | null;
   bank: TurkishIbanProvider | null;
   isKnownProvider: boolean;
@@ -61,7 +64,7 @@ export const turkishBanks: readonly TurkishIbanProvider[] = providers;
 const providersByCode = new Map(turkishBanks.map((provider) => [provider.code, provider]));
 
 function normalizeIban(input: string): string {
-  return input.replace(/[\s-]/g, "").toUpperCase();
+  return input.replace(/\s/g, "").toUpperCase();
 }
 
 function normalizeProviderCode(code: string): string | null {
@@ -168,7 +171,7 @@ export function parseIban(input: string): ParsedTurkishIban {
     errors.push("INVALID_RESERVE_DIGIT");
   }
 
-  if (!/^\d{16}$/.test(accountNumber)) {
+  if (!/^[A-Z0-9]{16}$/.test(accountNumber)) {
     errors.push("INVALID_ACCOUNT_NUMBER");
   }
 
@@ -205,6 +208,9 @@ export function identifyBankFromIban(input: string): IdentifiedTurkishIban {
 
   return {
     parsed,
+    providerCode: bankCode,
+    provider: bank,
+    providerStatus: bank === null ? "unknown" : "known",
     bankCode,
     bank,
     isKnownProvider: bank !== null,

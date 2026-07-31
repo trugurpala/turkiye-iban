@@ -41,11 +41,35 @@ describe("Turkish IBAN API", () => {
 
   it("separates unknown provider code from checksum validation", () => {
     const result = identifyBankFromIban("TR749999909999000000000000");
+    const providerResult = result as unknown as {
+      providerCode: string | null;
+      provider: unknown;
+      providerStatus: "known" | "unknown";
+    };
 
     assert.equal(result.parsed.isValid, true);
     assert.equal(result.bankCode, "99999");
     assert.equal(result.isKnownProvider, false);
     assert.equal(result.bank, null);
+    assert.equal(providerResult.providerCode, "99999");
+    assert.equal(providerResult.provider, null);
+    assert.equal(providerResult.providerStatus, "unknown");
+  });
+
+  it("accepts the alphanumeric account field allowed by the Turkish IBAN format", () => {
+    const iban = "TR56000460ABC123DEF456GHIJ";
+    const parsed = parseIban(iban);
+
+    assert.equal(parsed.isValid, true);
+    assert.equal(parsed.accountNumber, "ABC123DEF456GHIJ");
+    assert.deepEqual(parsed.errors, []);
+  });
+
+  it("rejects hyphens instead of silently normalizing them", () => {
+    const parsed = parseIban("TR51-0004-6099-9900-0000-0000-11");
+
+    assert.equal(parsed.isValid, false);
+    assert.ok(parsed.errors.includes("INVALID_CHARACTERS"));
   });
 
   it("reports invalid reserve digit", () => {
