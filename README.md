@@ -1,5 +1,7 @@
 # turkiye-iban
 
+![turkiye-iban: Türkiye IBAN doğrulama ve kuruluş kodu verisi](docs/assets/github/hero.png)
+
 [![CI](https://github.com/trugurpala/turkiye-iban/actions/workflows/ci.yml/badge.svg)](https://github.com/trugurpala/turkiye-iban/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/tr-iban)](https://www.npmjs.com/package/tr-iban)
 [![GitHub Release](https://img.shields.io/github/v/release/trugurpala/turkiye-iban)](https://github.com/trugurpala/turkiye-iban/releases/latest)
@@ -9,6 +11,8 @@ Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBA
 
 > [!IMPORTANT]
 > Paket bir hesabın gerçekten var olduğunu, kime ait olduğunu veya para transferine açık olduğunu doğrulamaz. Yalnızca IBAN'ın kurallara uygun yazıldığını ve içindeki kuruluş kodunun doğrulanmış veri kümesinde bulunup bulunmadığını kontrol eder.
+
+[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Katkı](#projeye-katkı)
 
 ## Ne işe yarar?
 
@@ -142,19 +146,50 @@ Proje aynı kuruluş listesini farklı kullanım biçimleriyle yayımlar:
 
 JSON, CSV ve SQL dosyaları aynı kaynaktan üretilir. Bu nedenle farklı dillerdeki uygulamalar aynı kuruluş kodlarını kullanır.
 
-## Kuruluş kodları nereden geliyor?
+## Verinin kaynağı
 
-Otomatik eşleştirmeye yalnızca TCMB Ödeme Sistemleri Katılımcıları listesinde koduyla birlikte yayımlanan kuruluşlar girer. Bir şirketin aktif ödeme veya elektronik para kuruluşu listesinde bulunması, tek başına IBAN kuruluş kodu kanıtı sayılmaz.
+Proje kuruluş kodlarını yalnızca resmî TCMB kaynaklarından hazırlar. Her kaynak farklı bir amaç için kullanılır:
 
-Her veri kaydı kaynak adresini, kaynağa erişilen tarihi ve kodun hangi kanıta dayandığını içerir. Ayrıntılar için [veri kaynaklarını](DATA_SOURCES.md) ve [veri güncelleme politikasını](DATA_UPDATE_POLICY.md) okuyun.
+| Resmî kaynak | Projedeki görevi | Tek başına neyi kanıtlamaz? |
+| --- | --- | --- |
+| [TCMB Ödeme Sistemleri Katılımcıları](https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES) | Otomatik kuruluş eşleştirmesinin birincil kod kanıtıdır | Hesabın varlığını veya transfer yapılabilirliğini |
+| [TCMB aktif ödeme kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari) | Katılımcı listesinde zaten bulunan kaydın tür ve statü bilgisini zenginleştirir | Yeni bir IBAN kuruluş kodunu |
+| [TCMB aktif elektronik para kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari) | Katılımcı listesinde zaten bulunan kaydın tür ve statü bilgisini zenginleştirir | Yeni bir IBAN kuruluş kodunu |
+| [TCMB IBAN Hakkında Tebliğ](https://www.tcmb.gov.tr/wps/wcm/connect/c8357e06-1ab6-4c49-8352-7b9c19fcb77e/Teblig%2B2021_5.pdf?MOD=AJPERES) | Türkiye IBAN yapısı ve doğrulama kurallarını belirler | Kuruluş listesini |
 
-Schwifty projesi yalnızca karşılaştırma ve test amacıyla kullanılabilir. Ana veri kaynağı TCMB'dir.
+Katılımcı PDF'indeki dört haneli kod, IBAN içindeki beş haneli alana soldan `0` eklenerek yazılır. Örneğin `0046` kaynak kodu, IBAN alanında `00046` olur. Bu dönüşüm yalnızca ödeme sistemleri katılımcı kodlarına uygulanır; lisans sayfalarındaki başka kodlar otomatik olarak IBAN koduna çevrilmez.
+
+![TCMB kaynaklarından açık veri çıktılarına uzanan doğrulanabilir üretim akışı](docs/assets/github/data-provenance.png)
+
+## Veri nasıl hazırlanıyor?
+
+Veri güncellemesi kaynak indirmeden GitHub Release'e kadar izlenebilir bir akış kullanır:
+
+1. `scripts/generate-data.py` üç kuruluş kaynağını TCMB adreslerinden indirir
+2. Her indirilen dosyanın SHA-256 dijital parmak izi `data/source-manifest.json` dosyasına yazılır
+3. Ödeme sistemleri katılımcı kodları ayıklanır ve beş haneye tamamlanır
+4. Aktif ödeme ve elektronik para listeleri yalnız mevcut katılımcı kayıtlarını zenginleştirir
+5. Aynı veri çalışmasından JSON, CSV, SQL, TypeScript verisi ve sentetik test IBAN'ları üretilir
+6. Şema, tekrarsız kod, JSON/CSV/SQL eşitliği, SQLite, gizlilik ve paket testleri çalıştırılır
+7. Kaynak farkı bir maintainer tarafından PR üzerinde incelendikten sonra yeni sürüm yayımlanır
+
+GitHub Actions resmî kaynakların dijital parmak izlerini ayda bir karşılaştırır. Yayın kontrol listesi aynı denetimi her sürüm öncesinde tekrar çalıştırır. Kaynak değiştiğinde veri otomatik olarak güvenilir kabul edilmez; kontrol başarısız olur ve insan incelemesi gerekir.
+
+Her kuruluş kaydı kaynak adresini, erişim tarihini ve `codeEvidence` alanında kodun hangi kanıta dayandığını taşır. Ayrıntılı kurallar [veri kaynakları](DATA_SOURCES.md) ve [veri güncelleme politikası](DATA_UPDATE_POLICY.md) belgelerindedir.
+
+Schwifty yalnızca MIT lisanslı karşılaştırma ve test referansı olarak kullanılabilir. Ana veri kaynağı değildir.
 
 ## Güvenlik ve gizlilik
 
 GitHub issue, pull request, test veya örneklere gerçek IBAN, müşteri adı, hesap sahibi, telefon numarası, bordro kaydı ya da banka dekontu eklemeyin. Bu proje yalnızca sentetik test verisi kabul eder.
 
 Bir güvenlik açığı bulursanız public issue açmayın. [Güvenlik politikasındaki](SECURITY.md) özel bildirim kanalını kullanın.
+
+## Topluluk için ücretsiz
+
+Bu proje, Türkiye'deki geliştiricilerin aynı resmî veriyi ayrı ayrı derlemek zorunda kalmaması için topluluk adına ücretsiz üretilmiştir. Ücretli API, kullanım kotası veya telemetri içermez; veri dosyaları repodan indirilebilir ve NPM paketi ağ isteği yapmadan çalışır.
+
+Kod ve belgeler MIT lisansıyla açıktır. Katkı yalnız kod yazmak değildir: resmî kaynak değişikliklerini bildirmek, veri farkını incelemek, belgeyi sadeleştirmek ve yeni dil paketleri hazırlamak da projeyi büyütür.
 
 ## Projeye katkı
 
@@ -183,6 +218,8 @@ Katkı kuralları [CONTRIBUTING.md](CONTRIBUTING.md), proje yönetimi [GOVERNANC
 ## Divan ile üretildi
 
 Bu proje Divan ile tasarlandı ve üretildi. Divan araştırma, tasarım, planlama ve geliştirme sürecinde kullanıldı; paketi kullanmak için Divan gerekmez.
+
+Görsel sistemin tasarım ilkeleri [Sayısal Müşterek](docs/design/VISUAL_PHILOSOPHY.md) belgesinde açıklanır.
 
 ## Lisans
 
