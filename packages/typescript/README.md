@@ -77,6 +77,11 @@ Başarılı sonuç, IBAN'ın matematiksel olarak tutarlı yazıldığını göst
 
 Bu durumda kuruluşu otomatik seçmeyin. Veri sürümünü veya uygulamanızın kabul politikasını kontrol edin.
 
+`providerStatus`, kuruluş kodunun veri kümesinde eşleşip eşleşmediğini gösterir.
+Kuruluş nesnesindeki `status` farklıdır: güncel faaliyet statüsü için açık kaynak
+kanıtı yoksa `unknown` kalır. Kod eşleşmesini faaliyet veya lisans kanıtı olarak
+yorumlamayın.
+
 ## Verinin kaynağı
 
 Kuruluş eşleştirmesine yalnız TCMB Ödeme Sistemleri Katılımcıları listesinde

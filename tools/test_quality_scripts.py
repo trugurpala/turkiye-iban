@@ -8,6 +8,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import unquote
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -82,6 +83,25 @@ class QualityScriptsTest(unittest.TestCase):
             for source in provider["sources"]:
                 self.assertEqual(source["classification"], "official")
                 self.assertGreater(len(source["evidenceScope"]), 0)
+
+    def test_institution_status_requires_explicit_source_evidence(self) -> None:
+        canonical = json.loads(
+            (ROOT / "data" / "source" / "institutions.json").read_text(encoding="utf-8")
+        )
+        sources = {source["id"]: source for source in canonical["sources"]}
+
+        for institution in canonical["institutions"]:
+            if institution["status"] == "unknown":
+                continue
+
+            status_is_evidenced = any(
+                "institution_status" in sources[source_id]["evidenceScope"]
+                for source_id in institution["sourceIds"]
+            )
+            self.assertTrue(
+                status_is_evidenced,
+                f"{institution['code']} publishes status={institution['status']} without status evidence",
+            )
 
     def test_licence_registry_codes_are_not_promoted_to_iban_provider_codes(self) -> None:
         payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
@@ -210,6 +230,27 @@ class QualityScriptsTest(unittest.TestCase):
 
         self.assertIn("at least five", agents.lower())
 
+    def test_issue_forms_collect_actionable_and_privacy_safe_reports(self) -> None:
+        template_dir = ROOT / ".github" / "ISSUE_TEMPLATE"
+        bug = yaml.safe_load((template_dir / "bug-report.yml").read_text(encoding="utf-8"))
+        feature = yaml.safe_load((template_dir / "feature-request.yml").read_text(encoding="utf-8"))
+        config = yaml.safe_load((template_dir / "config.yml").read_text(encoding="utf-8"))
+
+        bug_ids = {item.get("id") for item in bug["body"]}
+        feature_ids = {item.get("id") for item in feature["body"]}
+        contact_urls = {item["url"] for item in config["contact_links"]}
+
+        self.assertTrue({"actual", "expected", "environment", "privacy"}.issubset(bug_ids))
+        self.assertIn("privacy", feature_ids)
+        self.assertIn("https://github.com/trugurpala/turkiye-iban/discussions", contact_urls)
+
+    def test_dependabot_does_not_silence_major_updates(self) -> None:
+        dependabot = yaml.safe_load((ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8"))
+
+        for update in dependabot["updates"]:
+            for ignored in update.get("ignore", []):
+                self.assertNotIn("version-update:semver-major", ignored.get("update-types", []))
+
     def test_required_quality_workflows_exist(self) -> None:
         workflow_dir = ROOT / ".github" / "workflows"
         for filename in [
@@ -239,12 +280,38 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertIn('test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"', release)
         self.assertIn("github.ref == 'refs/heads/main'", publish_npm)
 
+    def test_release_workflow_attests_published_assets(self) -> None:
+        release = (ROOT / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+
+        self.assertIn("attestations: write", release)
+        self.assertIn("id-token: write", release)
+        self.assertRegex(
+            release,
+            r"actions/attest-build-provenance@[0-9a-f]{40}",
+        )
+        self.assertIn("subject-path: release-artifacts/v*/*", release)
+
     def test_github_yaml_files_parse(self) -> None:
         for yaml_path in (ROOT / ".github").rglob("*.yml"):
             with self.subTest(path=yaml_path.relative_to(ROOT)):
                 self.assertIsNotNone(yaml.compose(yaml_path.read_text(encoding="utf-8")))
 
         shutil.rmtree(ROOT / "release-artifacts", ignore_errors=True)
+
+    def test_relative_markdown_links_resolve(self) -> None:
+        link_pattern = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+
+        for markdown_path in ROOT.rglob("*.md"):
+            if any(part in {"node_modules", "dist", "dist-test", "work"} for part in markdown_path.parts):
+                continue
+            text = markdown_path.read_text(encoding="utf-8")
+            for raw_target in link_pattern.findall(text):
+                target = raw_target.strip().strip("<>").split("#", 1)[0]
+                if not target or target.startswith(("http://", "https://", "mailto:")):
+                    continue
+                resolved = (markdown_path.parent / unquote(target)).resolve()
+                with self.subTest(path=markdown_path.relative_to(ROOT), target=target):
+                    self.assertTrue(resolved.exists(), f"Broken relative link: {target}")
 
 
 if __name__ == "__main__":

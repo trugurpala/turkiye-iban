@@ -3,6 +3,10 @@ description: Suggest an in-scope Turkish IBAN, data, API, or documentation impro
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep proposals within Türkiye IBAN validation, provider lookup, reference data, or project documentation. Do not include real IBANs or personal financial data.
   - type: textarea
     id: problem
     attributes:
@@ -10,6 +14,13 @@ body:
       description: What Turkish IBAN developer problem should this solve?
     validations:
       required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I confirm this proposal contains no real IBAN or personal financial data.
+          required: true
   - type: textarea
     id: proposal
     attributes:

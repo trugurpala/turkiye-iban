@@ -3,6 +3,10 @@
 This project welcomes contributors who work respectfully, assume good intent,
 and keep discussion focused on improving the software and data quality.
 
+This code applies to issues, pull requests, Discussions, commits, release work,
+and other public or private project interactions. It also applies when someone
+represents the project in another community.
+
 ## Expected Behavior
 
 - Be kind, direct, and constructive.
@@ -21,10 +25,13 @@ and keep discussion focused on improving the software and data quality.
 
 ## Enforcement
 
-Maintainers may edit, hide, lock, or delete comments and issues that violate this
-code. Repeated or severe violations may result in temporary or permanent loss of
-participation privileges.
+Maintainers may correct, edit, hide, lock, or delete material that violates this
+code. Enforcement may progress from a private warning to a temporary restriction
+or permanent exclusion. Severity, impact, context, and repeated behavior inform
+the response.
 
-Davranış ihlallerini public tartışmayı büyütmeden maintainer'a GitHub profili
-üzerinden bildirin. Güvenlik veya kişisel finansal veri olayı için doğrudan
-`SECURITY.md` içindeki özel bildirim kanalını kullanın.
+Report conduct concerns privately to
+[mail@ugurpala.com](mailto:mail@ugurpala.com). Maintainers will share the report
+only with people needed to review and resolve it. Use the private channel in
+`SECURITY.md` instead when the report concerns a vulnerability or personal
+financial data exposure.

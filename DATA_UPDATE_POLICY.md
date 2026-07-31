@@ -25,6 +25,8 @@ değiştiremez.
 - Kodlar beş haneli ve benzersiz, kayıtlar kod sırasındadır.
 - Her kayıt en az bir geçerli `sourceIds` referansı taşır.
 - `monitor_only` kaynak tek başına yeni provider kodu üretemez.
+- `active` veya `inactive` statüsü, kayda bağlı açık `institution_status`
+  kanıtı olmadan yayımlanamaz; bu durumda değer `unknown` kalır.
 - Silinen kayıt sessizce kaybolmaz; gerekçe CHANGELOG ve PR'da açıklanır.
 - Şüpheli veya çelişkili kanıt `unknown` veya ertelenmiş inceleme olarak kalır.
 

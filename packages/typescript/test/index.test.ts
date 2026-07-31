@@ -82,6 +82,7 @@ describe("Turkish IBAN API", () => {
   it("loads the generated provider dataset", () => {
     assert.ok(turkishBanks.length >= 50);
     assert.equal(findBankByCode("46")?.code, "00046");
+    assert.equal(findBankByCode("46")?.status, "unknown");
     assert.equal(findBankByCode("913"), null);
   });
 });

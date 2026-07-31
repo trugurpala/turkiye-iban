@@ -45,6 +45,10 @@ Parse ve lookup işlemini birleştirir:
 
 `bankCode`, `bank` ve `isKnownProvider` alanları v0.x geriye uyumluluk alias'larıdır.
 
+`providerStatus`, yalnız kod eşleşmesinin `known` veya `unknown` sonucudur.
+`provider.status` ise kuruluşun güncel faaliyet statüsüne ilişkin ayrı veri
+alanıdır. Açık statü kanıtı yoksa bu alan `unknown` kalır.
+
 > Önce `parsed.isValid` alanını kontrol edin. Geçersiz bir IBAN içinde biçimsel
 > olarak çıkarılabilen beş haneli kod veri kümesinde bulunabilir; bu durumda
 > kuruluş eşleşmesi IBAN'ı geçerli hâle getirmez ve otomatik seçim yapılmamalıdır.

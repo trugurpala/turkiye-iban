@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   release:
@@ -55,6 +57,10 @@ jobs:
             --extra "staging/tr-iban-${VERSION}.cdx.json"
           cd "release-artifacts/v${VERSION}"
           sha256sum --check SHA256SUMS
+      - name: Attest release artifacts
+        uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373 # v4.1.1
+        with:
+          subject-path: release-artifacts/v*/*
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}

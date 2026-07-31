@@ -18,11 +18,17 @@ Aktif lisans sicilinde bulunmak, tek başına belirli bir IBAN kuruluş koduna
 sahip olunduğunu kanıtlamaz. Bu nedenle monitor-only kaynaklardaki kodlar
 katılımcı kanıtı olmadan lookup veri kümesine eklenmez.
 
+Tersi de geçerlidir: katılımcı belgesinde bir kuruluş kodunun bulunması,
+kuruluşun güncel lisans veya faaliyet statüsünü tek başına kanıtlamaz. Bu
+snapshot, statü kaynağı kayıtla doğrudan ilişkilendirilmedikçe `status` alanını
+`unknown` olarak yayımlar.
+
 ## Çıkarma ve Doğrulama
 
 Katılımcı PDF'i metin tablosu olarak ayrıştırılır. Dört haneli `rawCode`, Türkiye
 IBAN alanındaki beş haneye yalnız soldan `0` eklenerek dönüştürülür. HTML lisans
-sayfaları hash düzeyinde izlenir. Parser çıktısı canonical dosyaya otomatik
+sayfaları yalnız içerik hash'i düzeyinde izlenir ve mevcut snapshotta kayıt
+zenginleştirmez. Parser çıktısı canonical dosyaya otomatik
 yazılmaz; eklenen, silinen ve değişen kayıt raporu maintainer incelemesi ister.
 
 PDF veya HTML biçiminin değişmesi parser'ı bozabilir. Böyle bir hata veri

@@ -70,6 +70,11 @@ IBAN doğrulaması ile kuruluş eşleştirmesi iki ayrı sonuçtur:
 
 `unknown`, hesabın var olduğu anlamına gelmez. Yalnızca beş haneli kodun kullanılan veri sürümünde eşleşmediğini belirtir.
 
+`providerStatus`, kod eşleşmesini anlatır. Kuruluş kaydındaki `status` ise farklı
+bir alandır ve ancak güncel statüyü açıkça kanıtlayan bir kaynak varsa `active`
+veya `inactive` olabilir. Bu snapshot, katılımcı kodundan faaliyet statüsü
+çıkarmadığı için kayıt statüsünü `unknown` yayımlar.
+
 ## Hangi çıktıyı kullanmalısınız?
 
 JavaScript kullanmayan uygulamalar da aynı kuruluş listesinden yararlanabilir:
@@ -96,7 +101,7 @@ npm install tr-iban
 Belirli bir sürümün GitHub Release paketini doğrudan kurmak için:
 
 ```bash
-npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.2.0/tr-iban-0.2.0.tgz
+npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.2.1/tr-iban-0.2.1.tgz
 ```
 
 Paketin çalışırken yüklediği başka bir NPM bağımlılığı yoktur.

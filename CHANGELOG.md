@@ -5,6 +5,29 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-07-31
+
+### Fixed
+
+- Kuruluş kodu kanıtından güncel faaliyet statüsü çıkaran 70 kaydın `status`
+  alanı `unknown` olarak düzeltildi. `active` veya `inactive` artık yalnız açık
+  `institution_status` kaynak kanıtıyla yayımlanabilir.
+- `monitor_only` TCMB sayfalarının mevcut snapshotta yalnız içerik hash'iyle
+  izlendiği ve kayıt zenginleştirmediği kaynak metadata'sında netleştirildi.
+
+### Changed
+
+- Hata formuna beklenen/gerçek davranış ve ortam alanları, özellik formuna
+  zorunlu kişisel veri onayı, issue seçicisine Discussions yönlendirmesi eklendi.
+- Dependabot'ın major NPM ve GitHub Actions güncellemelerini sessizce yok sayan
+  kurallar kaldırıldı.
+- Davranış kurallarının kapsamı, özel bildirim adresi ve orantılı yaptırım süreci
+  açıklandı; katkı, güvenlik ve topluluk belgeleri sıkılaştırıldı.
+- NPM keşfedilebilirliği için JSON, CSV, SQLite ve açık veri anahtar kelimeleri
+  eklendi.
+- GitHub Release assetleri için doğrulanabilir build provenance kaydı ve
+  `gh attestation verify` kullanım notu eklendi.
+
 ## [0.2.0] - 2026-07-31
 
 ### Added
@@ -88,7 +111,8 @@ numaraları Semantic Versioning yaklaşımını izler.
   olmadan IBAN sağlayıcı kodu olarak yayımlanmaz.
 - Gerçek IBAN ve kişisel finansal veri katkı yüzeylerinde yasaktır.
 
-[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.0...v0.1.1

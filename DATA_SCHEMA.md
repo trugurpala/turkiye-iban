@@ -28,7 +28,7 @@ human-facing meaning.
 | `nameOfficial` | string | yes | `AKBANK T.A.Ş.` | Whitespace normalized; source spelling retained |
 | `nameShort` | string | yes | `AKBANK` | Non-empty display name; not a legal identity claim |
 | `type` | enum string | yes | `bank` | One documented institution category |
-| `status` | enum string | yes | `active` | `active`, `inactive`, or `unknown` |
+| `status` | enum string | yes | `unknown` | `active` or `inactive` requires explicit `institution_status` source evidence; otherwise `unknown` |
 | `systems` | string array | yes | `TCMB_PAYMENT_SYSTEMS` | Unique values, sorted by generator |
 | `codeEvidence` | string array | yes | `payment_system_participant` | Must contain reviewed code evidence |
 | `aliases` | string array | yes | `[]` | Unique alternate names, sorted |
@@ -61,3 +61,8 @@ same records, not independent datasets.
 The legacy names `tr-banks.*`, `providers`, `rawCode`, and public NPM data path
 remain for v0.x compatibility. A breaking rename requires a major release and a
 migration guide.
+
+`providerStatus` in the JavaScript API is separate from an institution record's
+`status`. The API field reports whether a provider code matched this dataset.
+The record field reports an institution status only when a cited source supports
+that claim.

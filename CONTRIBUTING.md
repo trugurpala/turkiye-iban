@@ -22,6 +22,10 @@ npm test
 
 Normal generation, tests and builds are offline.
 
+Create a focused branch, keep commits limited to one concern, and open a pull
+request against `main`. Explain the behavior or data impact, list at least five
+reviewed public surfaces, and include the commands you actually ran.
+
 ## Data Changes
 
 Start with a remote review:

@@ -15,10 +15,37 @@ body:
     validations:
       required: true
   - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What did the package, data file, or workflow return?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What result did you expect, and why?
+    validations:
+      required: true
+  - type: textarea
     id: reproduction
     attributes:
-      label: Reproduction
-      description: Provide a minimal reproduction with synthetic data only.
+      label: Minimal reproduction
+      description: Provide the smallest reproduction using synthetic data only.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the OS, Node.js and package-manager versions, module mode, or data format involved.
+      value: |
+        OS:
+        Node.js:
+        Package manager:
+        Module mode or data format:
       render: text
     validations:
       required: true

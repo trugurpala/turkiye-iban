@@ -5,6 +5,10 @@
 Yalnız en güncel minor sürüm güvenlik güncellemesi alır. Eski sürümde bulunan
 bir açık mümkünse en güncel sürümde yeniden doğrulanmalıdır.
 
+Desteklenen sürümü `npm view tr-iban dist-tags.latest` komutuyla veya GitHub'daki
+son release sayfasından doğrulayın. Eski sürümler için güvenlik düzeltmesi
+geriye taşınmaz; düzeltme yeni bir sürüm olarak yayımlanır.
+
 ## Özel Bildirim
 
 Güvenlik açığı veya gerçek finansal veri sızıntısı için public issue açmayın.
