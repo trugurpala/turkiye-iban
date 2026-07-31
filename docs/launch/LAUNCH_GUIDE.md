@@ -1,4 +1,4 @@
-# v0.2.0 Lansman Rehberi
+# v0.2.x Lansman Rehberi
 
 ## Tek cümlelik konumlandırma
 
@@ -40,7 +40,7 @@ Düzenlenebilir kaynak [Figma dosyasındadır](https://www.figma.com/design/1pFu
 
 ## Yayın kontrol listesi
 
-- GitHub ve NPM sürümü `0.2.0` gösteriyor
+- GitHub ve NPM `latest` etiketi yayımlanan patch sürümünü gösteriyor
 - NPM README yeni kullanıcı dostu metni gösteriyor
 - Release artifact'ları ve SHA256 dosyası indirilebiliyor
 - GitHub sosyal önizlemesi özel görseli gösteriyor

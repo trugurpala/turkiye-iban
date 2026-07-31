@@ -15,6 +15,10 @@ catalog, and sorted institution records. Records reference the source catalog
 through `sourceIds`; source URLs and metadata are not copied into every source
 record.
 
+Evidence scope is field-specific. Provider-code evidence does not establish an
+institution's current licence or operating status. Records use `status:
+"unknown"` unless a linked source explicitly supports `institution_status`.
+
 The canonical file is validated by
 `data/schema/institutions-source.schema.json`. Its model contains no JavaScript
 functions, module paths, runtime values, or language-specific date objects.

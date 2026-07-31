@@ -19,11 +19,11 @@ published automatically.
 ## Required Checklist
 
 - [ ] Code or data change completed
-- [ ] Tests updated
+- [ ] Tests updated when needed, or confirmed unnecessary
 - [ ] README reviewed
 - [ ] CHANGELOG updated
 - [ ] Relevant public documentation reviewed
-- [ ] Generated JSON, CSV, SQL, SQLite, fixtures, and TypeScript data rebuilt
+- [ ] Generated JSON, CSV, SQL, SQLite, fixtures, and TypeScript data rebuilt when inputs changed, or confirmed unchanged
 - [ ] Schema validation passed
 - [ ] Security impact reviewed
 - [ ] Backward compatibility reviewed

@@ -234,6 +234,7 @@ def main() -> int:
     require(source_ids == sorted(source_ids), "Canonical sources must be sorted by id")
     require(len(source_ids) == len(set(source_ids)), "Canonical source ids must be unique")
     source_id_set = set(source_ids)
+    source_map = {source["id"]: source for source in canonical["sources"]}
 
     institutions = canonical["institutions"]
     codes = [institution["code"] for institution in institutions]
@@ -245,6 +246,14 @@ def main() -> int:
         require(institution["rawCode"].zfill(5) == institution["code"], f"rawCode/code mismatch for {institution['code']}")
         require(institution["sourceIds"], f"Institution {institution['code']} has no source")
         require(set(institution["sourceIds"]).issubset(source_id_set), f"Unknown source id for {institution['code']}")
+        if institution["status"] != "unknown":
+            require(
+                any(
+                    "institution_status" in source_map[source_id]["evidenceScope"]
+                    for source_id in institution["sourceIds"]
+                ),
+                f"Institution {institution['code']} status lacks explicit source evidence",
+            )
         used_source_ids.update(institution["sourceIds"])
     for source in canonical["sources"]:
         if source["usage"] != "monitor_only":

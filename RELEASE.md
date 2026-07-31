@@ -60,6 +60,17 @@ sha256sum --check SHA256SUMS
 On PowerShell, compare `Get-FileHash -Algorithm SHA256 <file>` with the matching
 line in `SHA256SUMS`.
 
+Each release asset also receives GitHub build provenance. After downloading an
+asset, verify its attestation with:
+
+```bash
+gh attestation verify tr-banks.json --repo trugurpala/turkiye-iban
+```
+
+Checksum verification detects transfer or storage corruption. Attestation
+verification also confirms that the repository's release workflow produced the
+file.
+
 ## Retention and Rollback
 
 Published assets are immutable. Old GitHub Releases, schemas and data snapshots

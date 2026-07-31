@@ -7,7 +7,7 @@ export const providers = [
     "nameOfficial": "T.C. MERKEZ BANKASI",
     "nameShort": "T.C. MERKEZ BANKASI",
     "type": "central_bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -35,7 +35,7 @@ export const providers = [
     "nameOfficial": "İLLER BANKASI A.Ş.",
     "nameShort": "İLLER BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -63,7 +63,7 @@ export const providers = [
     "nameOfficial": "T.C. ZİRAAT BANKASI A.Ş.",
     "nameShort": "T.C. ZİRAAT BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -91,7 +91,7 @@ export const providers = [
     "nameOfficial": "T. HALK BANKASI A.Ş.",
     "nameShort": "T. HALK BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -119,7 +119,7 @@ export const providers = [
     "nameOfficial": "T. SINAİ KALKINMA BANKASI A.Ş.",
     "nameShort": "T. SINAİ KALKINMA BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -147,7 +147,7 @@ export const providers = [
     "nameOfficial": "T. VAKIFLAR BANKASI T.A.O.",
     "nameShort": "T. VAKIFLAR BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -175,7 +175,7 @@ export const providers = [
     "nameOfficial": "T. EXİMBANK",
     "nameShort": "T. EXİMBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -203,7 +203,7 @@ export const providers = [
     "nameOfficial": "T. KALKINMA BANKASI A.Ş.",
     "nameShort": "T. KALKINMA BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -231,7 +231,7 @@ export const providers = [
     "nameOfficial": "BİRLEŞİK FON BANKASI A.Ş.",
     "nameShort": "BİRLEŞİK FON BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -259,7 +259,7 @@ export const providers = [
     "nameOfficial": "T. EKONOMİ BANKASI A.Ş.",
     "nameShort": "T. EKONOMİ BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -287,7 +287,7 @@ export const providers = [
     "nameOfficial": "AKBANK T.A.Ş.",
     "nameShort": "AKBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -315,7 +315,7 @@ export const providers = [
     "nameOfficial": "ŞEKERBANK T.A.Ş.",
     "nameShort": "ŞEKERBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -343,7 +343,7 @@ export const providers = [
     "nameOfficial": "TÜRK TİCARET BANKASI A.Ş.",
     "nameShort": "TÜRK TİCARET BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -371,7 +371,7 @@ export const providers = [
     "nameOfficial": "T. GARANTİ BANKASI A.Ş.",
     "nameShort": "T. GARANTİ BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -399,7 +399,7 @@ export const providers = [
     "nameOfficial": "T. İŞ BANKASI A.Ş.",
     "nameShort": "T. İŞ BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -427,7 +427,7 @@ export const providers = [
     "nameOfficial": "YAPI VE KREDİ BANKASI A.Ş.",
     "nameShort": "YAPI VE KREDİ BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -455,7 +455,7 @@ export const providers = [
     "nameOfficial": "ARAP TÜRK BANKASI",
     "nameShort": "ARAP TÜRK BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -483,7 +483,7 @@ export const providers = [
     "nameOfficial": "CITIBANK A.Ş.",
     "nameShort": "CITIBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -511,7 +511,7 @@ export const providers = [
     "nameOfficial": "TURKISH BANK A.Ş.",
     "nameShort": "TURKISH BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -539,7 +539,7 @@ export const providers = [
     "nameOfficial": "JPMORGAN CHASE BANK N.A.",
     "nameShort": "JPMORGAN CHASE BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -567,7 +567,7 @@ export const providers = [
     "nameOfficial": "ING BANK A.Ş.",
     "nameShort": "ING BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -595,7 +595,7 @@ export const providers = [
     "nameOfficial": "FİBABANKA A.Ş.",
     "nameShort": "FİBABANKA",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -623,7 +623,7 @@ export const providers = [
     "nameOfficial": "TURKLAND BANK A.S.",
     "nameShort": "TURKLAND BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -651,7 +651,7 @@ export const providers = [
     "nameOfficial": "ICBC TURKEY BANK A.Ş.",
     "nameShort": "ICBC TURKEY BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -679,7 +679,7 @@ export const providers = [
     "nameOfficial": "QNB FİNANSBANK A.Ş.",
     "nameShort": "QNB FİNANSBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -707,7 +707,7 @@ export const providers = [
     "nameOfficial": "DEUTSCHE BANK A.Ş.",
     "nameShort": "DEUTSCHE BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -735,7 +735,7 @@ export const providers = [
     "nameOfficial": "PASHA YATIRIM BANK A.Ş.",
     "nameShort": "PASHA YATIRIM BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -763,7 +763,7 @@ export const providers = [
     "nameOfficial": "STANDARD CHARTERED YATIRIM BANKASI TÜRK A.Ş.",
     "nameShort": "STANDARD CHARTERED YATIRIM BANKASI TÜRK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -791,7 +791,7 @@ export const providers = [
     "nameOfficial": "SOCIETE GENERALE (SA)",
     "nameShort": "SOCIETE GENERALE (SA)",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -819,7 +819,7 @@ export const providers = [
     "nameOfficial": "HSBC BANK A.Ş.",
     "nameShort": "HSBC BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -847,7 +847,7 @@ export const providers = [
     "nameOfficial": "ALTERNATİFBANK A.Ş.",
     "nameShort": "ALTERNATİFBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -875,7 +875,7 @@ export const providers = [
     "nameOfficial": "BURGAN BANK A.Ş.",
     "nameShort": "BURGAN BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -903,7 +903,7 @@ export const providers = [
     "nameOfficial": "BANK OF AMERICA YATIRIM BANK A.Ş.",
     "nameShort": "BANK OF AMERICA YATIRIM BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -931,7 +931,7 @@ export const providers = [
     "nameOfficial": "İSTANBUL TAKAS VE SAKLAMA BANK. A.Ş.",
     "nameShort": "İSTANBUL TAKAS VE SAKLAMA BANK.",
     "type": "financial_market_infrastructure",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -959,7 +959,7 @@ export const providers = [
     "nameOfficial": "DENİZBANK A.Ş.",
     "nameShort": "DENİZBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -987,7 +987,7 @@ export const providers = [
     "nameOfficial": "ANADOLUBANK A.Ş.",
     "nameShort": "ANADOLUBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1015,7 +1015,7 @@ export const providers = [
     "nameOfficial": "RABOBANK A.Ş.",
     "nameShort": "RABOBANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1043,7 +1043,7 @@ export const providers = [
     "nameOfficial": "DİLER YATIRIM BANKASI A.Ş.",
     "nameShort": "DİLER YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1071,7 +1071,7 @@ export const providers = [
     "nameOfficial": "GSD YATIRIM BANKASI A.Ş.",
     "nameShort": "GSD YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1099,7 +1099,7 @@ export const providers = [
     "nameOfficial": "NUROL YATIRIM BANKASI A.Ş.",
     "nameShort": "NUROL YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1127,7 +1127,7 @@ export const providers = [
     "nameOfficial": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
     "nameShort": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1155,7 +1155,7 @@ export const providers = [
     "nameOfficial": "AKTİF YATIRIM BANKASI A.Ş.",
     "nameShort": "AKTİF YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1183,7 +1183,7 @@ export const providers = [
     "nameOfficial": "ODEA BANK A.Ş.",
     "nameShort": "ODEA BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1211,7 +1211,7 @@ export const providers = [
     "nameOfficial": "MUFG BANK TURKEY A.Ş.",
     "nameShort": "MUFG BANK TURKEY",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1239,7 +1239,7 @@ export const providers = [
     "nameOfficial": "INTESA SANPAOLO S.P.A.",
     "nameShort": "INTESA SANPAOLO S.P.A.",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1267,7 +1267,7 @@ export const providers = [
     "nameOfficial": "BANK OF CHINA TURKEY A.Ş.",
     "nameShort": "BANK OF CHINA TURKEY",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1295,7 +1295,7 @@ export const providers = [
     "nameOfficial": "GOLDEN GLOBAL YATIRIM BANKASI A.Ş.",
     "nameShort": "GOLDEN GLOBAL YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1323,7 +1323,7 @@ export const providers = [
     "nameOfficial": "D YATIRIM BANKASI A.Ş.",
     "nameShort": "D YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1351,7 +1351,7 @@ export const providers = [
     "nameOfficial": "DESTEK YATIRIM BANKASI A.Ş.",
     "nameShort": "DESTEK YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1379,7 +1379,7 @@ export const providers = [
     "nameOfficial": "MİSYON YATIRIM BANKASI A.Ş.",
     "nameShort": "MİSYON YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1407,7 +1407,7 @@ export const providers = [
     "nameOfficial": "TERA YATIRIM BANKASI A.Ş.",
     "nameShort": "TERA YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1435,7 +1435,7 @@ export const providers = [
     "nameOfficial": "Q YATIRIM BANKASI A.Ş.",
     "nameShort": "Q YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1463,7 +1463,7 @@ export const providers = [
     "nameOfficial": "HEDEF YATIRIM BANKASI A.Ş.",
     "nameShort": "HEDEF YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1491,7 +1491,7 @@ export const providers = [
     "nameOfficial": "ENPARA BANK A.Ş.",
     "nameShort": "ENPARA BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1519,7 +1519,7 @@ export const providers = [
     "nameOfficial": "COLENDİ BANK A.Ş.",
     "nameShort": "COLENDİ BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1547,7 +1547,7 @@ export const providers = [
     "nameOfficial": "FUPS BANK A.Ş.",
     "nameShort": "FUPS BANK",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1575,7 +1575,7 @@ export const providers = [
     "nameOfficial": "ZİRAAT DİNAMİK BANKA A.Ş.",
     "nameShort": "ZİRAAT DİNAMİK BANKA",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1603,7 +1603,7 @@ export const providers = [
     "nameOfficial": "AYTEMİZ YATIRIM BANKASI A.Ş.",
     "nameShort": "AYTEMİZ YATIRIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1631,7 +1631,7 @@ export const providers = [
     "nameOfficial": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
     "nameShort": "ALBARAKA TÜRK KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1659,7 +1659,7 @@ export const providers = [
     "nameOfficial": "KUVEYT TÜRK KATILIM BANKASI A.Ş.",
     "nameShort": "KUVEYT TÜRK KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1687,7 +1687,7 @@ export const providers = [
     "nameOfficial": "TÜRKİYE FİNANS KATILIM BANKASI A.Ş.",
     "nameShort": "TÜRKİYE FİNANS KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1715,7 +1715,7 @@ export const providers = [
     "nameOfficial": "ZİRAAT KATILIM BANKASI A.Ş.",
     "nameShort": "ZİRAAT KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1743,7 +1743,7 @@ export const providers = [
     "nameOfficial": "VAKIF KATILIM BANKASI A.Ş.",
     "nameShort": "VAKIF KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1771,7 +1771,7 @@ export const providers = [
     "nameOfficial": "TÜRKİYE EMLAK KATILIM BANKASI A.Ş.",
     "nameShort": "TÜRKİYE EMLAK KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1799,7 +1799,7 @@ export const providers = [
     "nameOfficial": "HAYAT FİNANS KATILIM BANKASI",
     "nameShort": "HAYAT FİNANS KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1827,7 +1827,7 @@ export const providers = [
     "nameOfficial": "T.O.M. KATILIM BANKASI A.Ş.",
     "nameShort": "T.O.M. KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1855,7 +1855,7 @@ export const providers = [
     "nameOfficial": "DÜNYA KATILIM BANKASI A.Ş.",
     "nameShort": "DÜNYA KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1883,7 +1883,7 @@ export const providers = [
     "nameOfficial": "ADİL KATILIM BANKASI A.Ş.",
     "nameShort": "ADİL KATILIM BANKASI",
     "type": "bank",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1911,7 +1911,7 @@ export const providers = [
     "nameOfficial": "MERKEZİ KAYIT KURULUŞU A.Ş.",
     "nameShort": "MERKEZİ KAYIT KURULUŞU",
     "type": "financial_market_infrastructure",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],
@@ -1939,7 +1939,7 @@ export const providers = [
     "nameOfficial": "POSTA VE TELGRAF TEŞKİLATI A.Ş.",
     "nameShort": "POSTA VE TELGRAF TEŞKİLATI",
     "type": "postal_operator",
-    "status": "active",
+    "status": "unknown",
     "systems": [
       "TCMB_PAYMENT_SYSTEMS"
     ],

@@ -15,8 +15,8 @@
         "institution_status",
         "institution_type"
       ],
-      "extractionMethod": "HTML table extraction used only to enrich participant records",
-      "redistributionStatus": "Extracted factual fields are redistributed; the source page is not bundled."
+      "extractionMethod": "HTML content hash monitoring; no record enrichment in this snapshot",
+      "redistributionStatus": "No source content is redistributed; only source metadata and its SHA-256 hash are published."
     },
     {
       "id": "tcmb-active-payment-institutions",
@@ -31,8 +31,8 @@
         "institution_status",
         "institution_type"
       ],
-      "extractionMethod": "HTML table extraction used only to enrich participant records",
-      "redistributionStatus": "Extracted factual fields are redistributed; the source page is not bundled."
+      "extractionMethod": "HTML content hash monitoring; no record enrichment in this snapshot",
+      "redistributionStatus": "No source content is redistributed; only source metadata and its SHA-256 hash are published."
     },
     {
       "id": "tcmb-payment-systems-participants-2025",

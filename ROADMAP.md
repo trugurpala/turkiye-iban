@@ -8,10 +8,10 @@
 - [x] Validate complete cross-format equality and generated-file drift.
 - [x] Detect official source changes and require human review.
 - [x] Publish synthetic fixtures, checksums, SBOM and community policies.
+- [x] Publish GitHub build provenance attestations for release assets.
 
 ## Next Repository Improvements
 
-- Add signed release attestations when the hosting workflow supports them cleanly.
 - Add historical institution validity periods only when official evidence supports them.
 - Add a small static data browser only if it consumes released artifacts without becoming a second data source.
 - Improve source parsers when official publication formats change, with fixture-based parser tests.
