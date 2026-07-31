@@ -9,6 +9,8 @@
 - Reject real IBANs and personal financial data in public contributions.
 - Keep runtime packages small, deterministic, and dependency-light.
 - Publish releases with generated data artifacts and checksums.
+- Preserve the canonical data review trail and reject automatic source promotion.
+- Keep unrelated datasets and separate-language clients outside this repository.
 
 ## Decision Making
 
@@ -18,5 +20,5 @@ changes require maintainer consensus.
 
 ## Release Authority
 
-Only maintainers listed in `MAINTAINERS.md` can publish GitHub Releases, NPM
-packages, or future Composer packages.
+Only maintainers listed in `MAINTAINERS.md` can approve canonical data changes,
+publish GitHub Releases, or publish the `tr-iban` NPM package.

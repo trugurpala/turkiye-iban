@@ -1,22 +1,27 @@
 [
   {
     "iban": "TR000004600000000000000026",
-    "reason": "invalid_check_digits"
+    "reason": "invalid_check_digits",
+    "synthetic": true
   },
   {
     "iban": "DE330004600000000000000026",
-    "reason": "invalid_country"
+    "reason": "invalid_country",
+    "synthetic": true
   },
   {
     "iban": "TR33000460000000000000002",
-    "reason": "invalid_length"
+    "reason": "invalid_length",
+    "synthetic": true
   },
   {
     "iban": "TR51000460999900000000001!",
-    "reason": "invalid_character"
+    "reason": "invalid_character",
+    "synthetic": true
   },
   {
     "iban": "TR510004619999000000000011",
-    "reason": "invalid_reserve_digit"
+    "reason": "invalid_reserve_digit",
+    "synthetic": true
   }
 ]

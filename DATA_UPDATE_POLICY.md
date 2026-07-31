@@ -1,54 +1,48 @@
-# Veri güncelleme politikası
+# Veri Güncelleme Politikası
 
-Resmî bir sayfanın değişmesi, projenin veriyi otomatik kabul ettiği anlamına gelmez. Kaynak değişikliği önce tespit edilir, üretilen veri farkı incelenir ve yalnız doğrulanmış değişiklik bir pull request ile yayımlanır.
+Canlı bir kaynağın değişmesi, canonical verinin otomatik değişeceği anlamına
+gelmez. Kaynak kontrolü yalnız değişikliği tespit eder ve inceleme raporu üretir.
 
-## Otomatik kaynak kontrolü
+## Güvenli Akış
 
-GitHub Actions ayda bir canlı TCMB kaynaklarının SHA-256 dijital parmak izlerini `data/source-manifest.json` ile karşılaştırır. Yayın kontrol listesi aynı komutu her sürüm öncesinde yeniden çalıştırır.
+1. `npm run data:check-remote` resmî kaynakları indirir.
+2. Hashler canonical katalogla karşılaştırılır.
+3. Birincil katılımcı kaynağı normalize edilir.
+4. Mevcut snapshot ile eklenen, kaldırılan ve değişen kayıt farkı çıkarılır.
+5. Kaynak değişimi, parser hatası veya kayıt farkı varsa kontrol başarısız olur.
+6. Scheduled workflow açık bir inceleme issue'su oluşturur veya mevcut issue'yu günceller.
+7. Maintainer resmî belgeyi ve farkı doğruladıktan sonra canonical dosyayı elle günceller.
+8. `npm run generate:data && npm test` bütün dağıtım dosyalarını yeniden üretir ve doğrular.
+9. CHANGELOG ve release etkisi belgelendikten sonra PR normal incelemeden geçer.
 
-- Değerler aynıysa kaynak kontrolü geçer
-- Bir değer değiştiyse kontrol başarısız olur
-- Başarısız kontrol veri dosyalarını otomatik güncellemez
-- Maintainer resmî kaynağı ve üretilen farkı incelemeden yeni sürüm hazırlanmaz
+Otomasyon canonical veriyi, NPM paketini veya GitHub Release'i kendi başına
+değiştiremez.
 
-## Güncelleme adımları
+## Canonical Değişiklik Kuralları
 
-Bakım yapan kişi şu komutları sırayla çalıştırır:
+- Yalnız `data/source/institutions.json` elle düzenlenir.
+- `data/tr-banks.*`, package data, TypeScript generated data ve fixture'lar elle düzenlenmez.
+- Kodlar beş haneli ve benzersiz, kayıtlar kod sırasındadır.
+- Her kayıt en az bir geçerli `sourceIds` referansı taşır.
+- `monitor_only` kaynak tek başına yeni provider kodu üretemez.
+- Silinen kayıt sessizce kaybolmaz; gerekçe CHANGELOG ve PR'da açıklanır.
+- Şüpheli veya çelişkili kanıt `unknown` veya ertelenmiş inceleme olarak kalır.
 
-```bash
-npm run data:check-remote
-npm run data:update
-npm test
-```
+## Deterministik Üretim
 
-Komutların ardından şu kontroller yapılır:
+Normal üretim ağ kullanmaz ve sistem saatini çıktıya yazmaz. Aynı canonical
+snapshot aynı JSON, CSV, SQL, SQLite, TypeScript ve fixture içeriğini üretir.
+`npm run check:generated` geçici dizinde tekrar üretip byte düzeyinde drift
+kontrolü yapar.
 
-1. Canlı resmî kaynaklar ile kayıtlı dijital parmak izleri karşılaştırılır
-2. JSON, CSV, SQL, TypeScript verisi ve sentetik fixture'lar birlikte üretilir
-3. Eklenen, silinen, yeniden adlandırılan ve türü değişen kayıtlar incelenir
-4. Lisans listesine eklenen fakat katılımcı listesinde bulunmayan kodların eşleştirme kümesine girmediği doğrulanır
-5. Şema, SQLite, gizlilik, TypeScript ve araç testleri çalıştırılır
-6. PR açıklamasına resmî kaynak adresi, kontrol tarihi ve değişiklik gerekçesi yazılır
-7. Zorunlu CI kontrolleri geçtikten sonra değişiklik birleştirilir
+## Veri Release Sürümü
 
-## Değişmemesi gereken kurallar
+Yeni kuruluş kaydı veya yeni çıktı formatı MINOR; yalnız metadata düzeltmesi
+PATCH; kırıcı şema veya anlam değişikliği MAJOR sürüm gerektirir. Ayrıntılı
+politika `RELEASE.md` içindedir.
 
-Her veri güncellemesi şu sözleşmeleri korur:
+## Gizlilik
 
-- `rawCode` resmî katılımcı kaynağındaki değeri değiştirmeden saklar
-- `code` yalnız ödeme sistemleri katılımcı kodunun soldan `0` ile beş haneye tamamlanmış halidir
-- Aktif lisans listeleri yeni bir IBAN kuruluş kodu üretmez
-- JSON, CSV ve SQL aynı kuruluşları aynı sırada içerir
-- Her kayıtta `payment_system_participant` kod kanıtı bulunur
-- Test IBAN'larının tamamı sentetiktir
-- Gerçek IBAN veya kişisel finansal veri repoya girmez
-
-## Silinen veya çelişen kayıtlar
-
-Bir kuruluş resmî katılımcı listesinden kaybolursa kayıt sessizce silinmez. Maintainer önceki veri sürümüyle farkı inceler ve gerekçeyi PR ile CHANGELOG içinde açıklar.
-
-Kaynaklar birbiriyle çelişirse belirli konu için daha özel ve güncel TCMB kaynağı tercih edilir. Katılımcı kodu için Ödeme Sistemleri Katılımcıları listesi, IBAN biçimi için IBAN Hakkında Tebliğ esas alınır.
-
-## Gizlilik sınırı
-
-Veri doğrulamak için gerçek IBAN, müşteri adı, telefon numarası, hesap sahibi veya banka dekontu kullanılamaz. Üretici yalnızca sentetik fixture oluşturur; gizlilik taraması repodaki IBAN benzeri değerleri izin verilen sentetik listeyle karşılaştırır.
+Kaynak doğrulamak için gerçek IBAN, müşteri adı, hesap sahibi, bordro, telefon,
+dekont veya üretim logu kullanılmaz. Yalnız `TEST_DATA.md` içinde açıklanan
+sentetik fixture'lar kabul edilir.

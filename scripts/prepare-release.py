@@ -37,13 +37,17 @@ def main() -> int:
 
     version = args.version.removeprefix("v")
     release_dir = Path(args.output_dir).resolve() / f"v{version}"
+    if release_dir.exists():
+        shutil.rmtree(release_dir)
     release_dir.mkdir(parents=True, exist_ok=True)
 
     artifact_paths = [
         ROOT / "data" / "tr-banks.json",
         ROOT / "data" / "tr-banks.csv",
         ROOT / "data" / "tr-banks.sql",
+        ROOT / "data" / "tr-banks.sqlite",
         ROOT / "data" / "source-manifest.json",
+        ROOT / "data" / "schema" / "institutions-source.schema.json",
         ROOT / "data" / "schema" / "tr-banks.schema.json",
         ROOT / "data" / "schema" / "source-manifest.schema.json",
         ROOT / "fixtures" / "valid.synthetic.json",
@@ -61,7 +65,10 @@ def main() -> int:
         copied.append(destination)
 
     checksum_lines = [f"{sha256(path)}  {path.name}" for path in sorted(copied, key=lambda item: item.name)]
-    (release_dir / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
+    checksum_text = "\n".join(checksum_lines) + "\n"
+    (release_dir / "SHA256SUMS").write_text(checksum_text, encoding="utf-8")
+    # Keep the v0.x filename for consumers that already automate against it.
+    (release_dir / "SHA256SUMS.txt").write_text(checksum_text, encoding="utf-8")
 
     print(f"Prepared release artifacts in {release_dir}")
     return 0

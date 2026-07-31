@@ -2,12 +2,13 @@
 
 `turkiye-iban`, Türkiye IBAN'ını doğrulama ve içindeki kuruluş kodunu resmî kanıta dayalı açık veriyle eşleştirme işini her geliştiricinin yeniden çözmek zorunda kalmamasını amaçlar.
 
-Proje tek bir doğrulanabilir kaynaktan dört kullanım biçimi üretir:
+Proje tek bir canonical ve şema doğrulamalı kaynaktan beş kullanım biçimi üretir:
 
 - Next.js, NestJS, Node.js ve TypeScript için `tr-iban` NPM paketi
 - PHP, Python ve diğer diller için sürümlenmiş JSON verisi
 - Elektronik tablo ve veri aktarımı için CSV çıktısı
 - Doğrudan veritabanı kullanan uygulamalar için taşınabilir SQL çıktısı
+- Sorgulanmaya hazır SQLite veritabanı
 
 ## Ürün sözleşmesi
 
@@ -17,16 +18,20 @@ Kuruluş eşleştirmesi hesabın gerçekten var olduğunu, kime ait olduğunu, i
 
 ## Tamamlanan temel
 
-- TCMB katılımcı kanıtlı 70 kuruluş kaydının JSON, CSV, SQL ve TypeScript çıktıları
+- TCMB katılımcı kanıtlı 70 kuruluş kaydının JSON, CSV, SQL, SQLite ve TypeScript çıktıları
+- Ağsız, deterministik üretim ve generated-file drift kontrolü
 - Kaynak adresi, erişim tarihi, kod kanıtı ve SHA-256 manifesti
 - ESM ve CommonJS destekli, sıfır runtime bağımlılıklı `tr-iban` paketi
 - Sentetik fixture, privacy scan, veri kalite kontrolleri ve Node 22/24 CI
 - Korumalı `main`, GitHub Release artifact'ları, SBOM ve NPM trusted publishing
 - Topluluk, güvenlik, yönetişim, katkı ve veri güncelleme politikaları
 
-## v0.1.1 hedefi
+## Uzun ömürlü temel
 
-`v0.1.1`, algoritmayı değiştirmeden projenin anlaşılabilirliğini ve katkıya açıklığını tamamlar. GitHub ile NPM anlatımı eşitlenir; Figma kaynaklı lansman varlıkları, sosyal önizleme, Discussions, başlangıç issue'ları, tanıtım metinleri ve telemetrisiz ölçüm planı yayımlanır.
+Bu repository yalnız Türkiye IBAN kapsamındadır. Python, PHP, Go, Rust ve .NET
+istemcileri gerektiğinde ayrı repository olarak bu projenin sürümlenmiş şema,
+veri ve fixture'larını kullanır. Adres, posta kodu, vergi dairesi ve diğer
+Türkiye veri kümeleri buraya eklenmez.
 
 ## Yonetim-Paneli entegrasyonu
 

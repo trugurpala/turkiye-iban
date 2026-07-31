@@ -1,44 +1,37 @@
 from __future__ import annotations
 
-import hashlib
+import argparse
 import json
-import urllib.request
 from pathlib import Path
+
+from source_review import build_remote_review, render_markdown_report
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST_PATH = ROOT / "data" / "source-manifest.json"
-
-
-def fetch_sha256(url: str) -> str:
-    request = urllib.request.Request(
-        url,
-        headers={"User-Agent": "turkiye-iban-source-check/0.1"},
-    )
-    digest = hashlib.sha256()
-    with urllib.request.urlopen(request, timeout=30) as response:
-        for chunk in iter(lambda: response.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
 
 
 def main() -> int:
-    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    changed: list[str] = []
+    parser = argparse.ArgumentParser(description="Compare live official sources with reviewed canonical data.")
+    parser.add_argument("--report", default="source-change-report.md")
+    parser.add_argument("--json-report", default="source-change-report.json")
+    args = parser.parse_args()
 
-    for source in manifest["sources"]:
-        actual = fetch_sha256(source["url"])
-        if actual != source["sha256"]:
-            changed.append(source["id"])
-            print(f"CHANGED {source['id']}: expected {source['sha256']}, received {actual}")
-        else:
-            print(f"UNCHANGED {source['id']}: {actual}")
-
-    if changed:
-        print("Official sources changed; run `npm run data:update` and review the diff.")
+    canonical = json.loads((ROOT / "data/source/institutions.json").read_text(encoding="utf-8"))
+    report = build_remote_review(canonical)
+    Path(args.report).write_text(render_markdown_report(report), encoding="utf-8")
+    Path(args.json_report).write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(
+        f"Source review complete: {len(report['institutionChanges']['added'])} added, "
+        f"{len(report['institutionChanges']['removed'])} removed, "
+        f"{len(report['institutionChanges']['changed'])} changed"
+    )
+    if report["requiresHumanReview"]:
+        print(f"Human review required. See {args.report}")
         return 1
-
-    print(f"Source check passed: {len(manifest['sources'])} official sources unchanged")
+    print("Official source content and normalized participant records are unchanged")
     return 0
 
 

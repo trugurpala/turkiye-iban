@@ -17,9 +17,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -40,9 +45,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -63,9 +73,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -86,9 +101,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -109,9 +129,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -132,9 +157,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -155,9 +185,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -178,9 +213,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -201,9 +241,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -224,9 +269,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -247,9 +297,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -270,9 +325,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -293,9 +353,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -316,9 +381,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -339,9 +409,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -362,9 +437,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -385,9 +465,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -408,9 +493,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -431,9 +521,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -454,9 +549,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -477,9 +577,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -500,9 +605,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -523,9 +633,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -546,9 +661,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -569,9 +689,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -592,9 +717,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -615,9 +745,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -638,9 +773,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -661,9 +801,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -684,9 +829,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -707,9 +857,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -730,9 +885,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -753,9 +913,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -776,9 +941,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -799,9 +969,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -822,9 +997,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -845,9 +1025,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -868,9 +1053,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -891,9 +1081,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -914,9 +1109,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -937,9 +1137,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -960,9 +1165,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -983,9 +1193,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1006,9 +1221,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1029,9 +1249,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1052,9 +1277,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1075,9 +1305,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1098,9 +1333,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1121,9 +1361,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1144,9 +1389,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1167,9 +1417,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1190,9 +1445,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1213,9 +1473,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1236,9 +1501,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1259,9 +1529,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1282,9 +1557,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1305,9 +1585,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1328,9 +1613,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1351,9 +1641,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1374,9 +1669,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1397,9 +1697,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1420,9 +1725,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1443,9 +1753,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1466,9 +1781,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1489,9 +1809,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1512,9 +1837,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1535,9 +1865,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1558,9 +1893,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1581,9 +1921,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"
@@ -1604,9 +1949,14 @@ export const providers = [
     "aliases": [],
     "sources": [
       {
-        "id": "tcmb-payment-systems-participants-2026",
+        "id": "tcmb-payment-systems-participants-2025",
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
-        "retrievedAt": "2026-07-31"
+        "retrievedAt": "2026-07-31",
+        "classification": "official",
+        "usage": "primary_code_evidence",
+        "evidenceScope": [
+          "provider_code"
+        ]
       }
     ],
     "lastVerifiedAt": "2026-07-31"

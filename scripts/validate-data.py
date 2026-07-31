@@ -5,26 +5,29 @@ import json
 import re
 import sqlite3
 from pathlib import Path
+from typing import Any
 
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker
 
 
 ROOT = Path(__file__).resolve().parents[1]
+DATABASE_COLUMNS = (
+    "code",
+    "raw_code",
+    "name_official",
+    "name_short",
+    "type",
+    "status",
+    "systems",
+    "code_evidence",
+    "aliases",
+    "sources_json",
+    "last_verified_at",
+)
 
 
-def load_json(path: Path) -> object:
+def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
-
-
-def validate_mod97(iban: str) -> bool:
-    rearranged = iban[4:] + iban[:4]
-    numeric = "".join(str(ord(char) - 55) if char.isalpha() else char for char in rearranged)
-    remainder = 0
-    for char in numeric:
-        if not char.isdigit():
-            return False
-        remainder = (remainder * 10 + int(char)) % 97
-    return remainder == 1
 
 
 def require(condition: bool, message: str) -> None:
@@ -32,91 +35,162 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
-def main() -> int:
-    data_path = ROOT / "data" / "tr-banks.json"
-    package_data_path = ROOT / "packages" / "typescript" / "data" / "tr-banks.json"
-    csv_path = ROOT / "data" / "tr-banks.csv"
-    sql_path = ROOT / "data" / "tr-banks.sql"
-    schema_path = ROOT / "data" / "schema" / "tr-banks.schema.json"
-    valid_fixture_path = ROOT / "fixtures" / "valid.synthetic.json"
-    invalid_fixture_path = ROOT / "fixtures" / "invalid.synthetic.json"
-    lookup_fixture_path = ROOT / "fixtures" / "lookup.synthetic.json"
-    source_manifest_path = ROOT / "data" / "source-manifest.json"
-    source_manifest_schema_path = ROOT / "data" / "schema" / "source-manifest.schema.json"
+def validate_schema(value: Any, schema: dict[str, Any], label: str) -> None:
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = sorted(validator.iter_errors(value), key=lambda error: list(error.absolute_path))
+    require(
+        not errors,
+        "\n".join(f"{label} {list(error.absolute_path)}: {error.message}" for error in errors),
+    )
 
-    payload = load_json(data_path)
-    schema = load_json(schema_path)
-    validator = Draft202012Validator(schema)
-    errors = sorted(validator.iter_errors(payload), key=lambda error: list(error.path))
-    require(not errors, "\n".join(error.message for error in errors))
 
-    source_manifest = load_json(source_manifest_path)
-    source_manifest_schema = load_json(source_manifest_schema_path)
-    manifest_validator = Draft202012Validator(source_manifest_schema)
-    manifest_errors = sorted(manifest_validator.iter_errors(source_manifest), key=lambda error: list(error.path))
-    require(not manifest_errors, "\n".join(error.message for error in manifest_errors))
+def validate_mod97(iban: str) -> bool:
+    rearranged = iban[4:] + iban[:4]
+    numeric = "".join(str(ord(character) - 55) if character.isalpha() else character for character in rearranged)
+    remainder = 0
+    for character in numeric:
+        if not character.isdigit():
+            return False
+        remainder = (remainder * 10 + int(character)) % 97
+    return remainder == 1
 
-    require(payload == load_json(package_data_path), "Package JSON data copy is out of sync")
-    require(isinstance(payload, dict), "Data payload must be an object")
-    require(payload["dataVersion"] == payload["generatedAt"], "dataVersion/generatedAt mismatch")
-    providers = payload["providers"]
-    require(isinstance(providers, list), "providers must be a list")
-    require(len(providers) >= 50, "Expected at least 50 verified payment-system participants")
 
-    codes = [provider["code"] for provider in providers]
-    require(codes == sorted(codes), "Provider codes must be sorted")
-    require(len(codes) == len(set(codes)), "Provider codes must be unique")
-
-    provider_codes = set()
-    for provider in providers:
-        code = provider["code"]
-        raw_code = provider["rawCode"]
-        provider_codes.add(code)
-        require(re.fullmatch(r"\d{5}", code) is not None, f"Invalid provider code {code}")
-        require(raw_code.zfill(5) == code, f"rawCode/code mismatch for {code}")
-        require("ibanEligible" not in provider, f"Unsupported ibanEligible claim for {code}")
-        require(provider["codeEvidence"], f"Provider {code} has no code evidence")
-        require(
-            provider["codeEvidence"] == ["payment_system_participant"],
-            f"Provider {code} lacks payment-system participant evidence",
+def expected_providers(canonical: dict[str, Any]) -> list[dict[str, Any]]:
+    source_map = {source["id"]: source for source in canonical["sources"]}
+    providers = []
+    for institution in canonical["institutions"]:
+        providers.append(
+            {
+                "code": institution["code"],
+                "rawCode": institution["rawCode"],
+                "nameOfficial": institution["nameOfficial"],
+                "nameShort": institution["nameShort"],
+                "type": institution["type"],
+                "status": institution["status"],
+                "systems": sorted(institution["systems"]),
+                "codeEvidence": sorted(institution["codeEvidence"]),
+                "aliases": sorted(institution["aliases"]),
+                "sources": [
+                    {
+                        "id": source_id,
+                        "url": source_map[source_id]["url"],
+                        "retrievedAt": source_map[source_id]["retrievedAt"],
+                        "classification": source_map[source_id]["classification"],
+                        "usage": source_map[source_id]["usage"],
+                        "evidenceScope": sorted(source_map[source_id]["evidenceScope"]),
+                    }
+                    for source_id in sorted(institution["sourceIds"])
+                ],
+                "lastVerifiedAt": institution["lastVerifiedAt"],
+            }
         )
-        require(provider["sources"], f"Provider {code} has no source")
-        for source in provider["sources"]:
-            require(source["url"].startswith("https://"), f"Provider {code} has non-HTTPS source")
+    return providers
 
-    with csv_path.open(encoding="utf-8", newline="") as handle:
+
+def expected_manifest(canonical: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "$schema": "./schema/source-manifest.schema.json",
+        "generatedAt": canonical["dataVersion"],
+        "sources": [
+            {
+                "id": source["id"],
+                "url": source["url"],
+                "retrievedAt": source["retrievedAt"],
+                "sha256": source["sha256"],
+                "publisher": source["publisher"],
+                "title": source["title"],
+                "classification": source["classification"],
+                "usage": source["usage"],
+                "evidenceScope": sorted(source["evidenceScope"]),
+                "extractionMethod": source["extractionMethod"],
+                "redistributionStatus": source["redistributionStatus"],
+            }
+            for source in sorted(canonical["sources"], key=lambda item: item["id"])
+        ],
+    }
+
+
+def database_values(provider: dict[str, Any]) -> tuple[str, ...]:
+    return (
+        provider["code"],
+        provider["rawCode"],
+        provider["nameOfficial"],
+        provider["nameShort"],
+        provider["type"],
+        provider["status"],
+        "|".join(provider["systems"]),
+        "|".join(provider["codeEvidence"]),
+        "|".join(provider["aliases"]),
+        json.dumps(provider["sources"], ensure_ascii=False, separators=(",", ":")),
+        provider["lastVerifiedAt"],
+    )
+
+
+def read_database_rows(connection: sqlite3.Connection) -> list[tuple[str, ...]]:
+    columns = ", ".join(DATABASE_COLUMNS)
+    return connection.execute(
+        f"SELECT {columns} FROM tr_iban_providers ORDER BY code"
+    ).fetchall()
+
+
+def validate_cross_format_outputs(providers: list[dict[str, Any]]) -> None:
+    expected_rows = [database_values(provider) for provider in providers]
+
+    with (ROOT / "data/tr-banks.csv").open(encoding="utf-8", newline="") as handle:
         csv_rows = list(csv.DictReader(handle))
     require(len(csv_rows) == len(providers), "CSV row count differs from JSON provider count")
-    require([row["code"] for row in csv_rows] == codes, "CSV provider order differs from JSON")
     for row, provider in zip(csv_rows, providers, strict=True):
-        require(
-            row["codeEvidence"].split("|") == provider["codeEvidence"],
-            f"CSV code evidence differs for {provider['code']}",
-        )
+        expected = {
+            "code": provider["code"],
+            "rawCode": provider["rawCode"],
+            "nameOfficial": provider["nameOfficial"],
+            "nameShort": provider["nameShort"],
+            "type": provider["type"],
+            "status": provider["status"],
+            "systems": "|".join(provider["systems"]),
+            "codeEvidence": "|".join(provider["codeEvidence"]),
+            "aliases": "|".join(provider["aliases"]),
+            "sourceIds": "|".join(source["id"] for source in provider["sources"]),
+            "lastVerifiedAt": provider["lastVerifiedAt"],
+        }
+        require(row == expected, f"CSV record differs for {provider['code']}")
 
-    sql_text = sql_path.read_text(encoding="utf-8")
-    insert_count = len(re.findall(r"^INSERT INTO tr_iban_providers VALUES", sql_text, flags=re.MULTILINE))
-    require(insert_count == len(providers), "SQL insert count differs from JSON provider count")
+    sql_text = (ROOT / "data/tr-banks.sql").read_text(encoding="utf-8")
     connection = sqlite3.connect(":memory:")
     try:
         connection.executescript(sql_text)
-        sql_count = connection.execute("SELECT COUNT(*) FROM tr_iban_providers").fetchone()[0]
+        sql_rows = read_database_rows(connection)
     finally:
         connection.close()
-    require(sql_count == len(providers), "SQL row count differs from JSON provider count")
+    require(sql_rows == expected_rows, "SQL records differ from JSON records")
 
-    valid_fixtures = load_json(valid_fixture_path)
-    invalid_fixtures = load_json(invalid_fixture_path)
-    lookup_fixtures = load_json(lookup_fixture_path)
-    require(isinstance(valid_fixtures, list), "Valid fixtures must be a list")
-    require(isinstance(invalid_fixtures, list), "Invalid fixtures must be a list")
-    require(isinstance(lookup_fixtures, list), "Lookup fixtures must be a list")
-    require(len(valid_fixtures) == len(providers), "Valid fixture count must match provider count")
+    connection = sqlite3.connect(ROOT / "data/tr-banks.sqlite")
+    try:
+        sqlite_rows = read_database_rows(connection)
+    finally:
+        connection.close()
+    require(sqlite_rows == expected_rows, "SQLite records differ from JSON records")
 
+
+def validate_fixtures(provider_codes: set[str], provider_count: int) -> None:
+    valid_fixtures = load_json(ROOT / "fixtures/valid.synthetic.json")
+    invalid_fixtures = load_json(ROOT / "fixtures/invalid.synthetic.json")
+    lookup_fixtures = load_json(ROOT / "fixtures/lookup.synthetic.json")
+    for label, fixtures in (
+        ("valid", valid_fixtures),
+        ("invalid", invalid_fixtures),
+        ("lookup", lookup_fixtures),
+    ):
+        require(isinstance(fixtures, list) and fixtures, f"{label} fixtures must be a non-empty list")
+        require(
+            all(fixture.get("synthetic") is True for fixture in fixtures),
+            f"Every {label} fixture must be explicitly synthetic",
+        )
+
+    require(len(valid_fixtures) == provider_count, "Valid fixture count must match provider count")
     seen_ibans: set[str] = set()
     for fixture in valid_fixtures:
         iban = fixture["iban"]
-        require(fixture.get("synthetic") is True, f"Fixture {iban} must be marked synthetic")
         require(iban not in seen_ibans, f"Duplicate fixture IBAN {iban}")
         seen_ibans.add(iban)
         require(re.fullmatch(r"TR[A-Z0-9]{24}", iban) is not None, f"Invalid fixture shape {iban}")
@@ -124,29 +198,72 @@ def main() -> int:
         require(fixture["providerCode"] in provider_codes, f"Unknown fixture provider {iban}")
 
     invalid_reasons = {fixture["reason"] for fixture in invalid_fixtures}
-    require(
-        {
-            "invalid_check_digits",
-            "invalid_country",
-            "invalid_length",
-            "invalid_character",
-            "invalid_reserve_digit",
-        }.issubset(invalid_reasons),
-        "Invalid fixture set is missing required reasons",
-    )
+    required_reasons = {
+        "invalid_check_digits",
+        "invalid_country",
+        "invalid_length",
+        "invalid_character",
+        "invalid_reserve_digit",
+    }
+    require(required_reasons.issubset(invalid_reasons), "Invalid fixture set is missing required reasons")
 
     lookup_statuses = {fixture["providerStatus"] for fixture in lookup_fixtures}
     require(lookup_statuses == {"known", "unknown"}, "Lookup fixtures must cover known and unknown")
     for fixture in lookup_fixtures:
         iban = fixture["iban"]
-        require(fixture.get("synthetic") is True, f"Lookup fixture {iban} must be synthetic")
         require(validate_mod97(iban), f"Invalid lookup fixture checksum {iban}")
         if fixture["providerStatus"] == "known":
             require(fixture["providerCode"] in provider_codes, f"Known lookup code missing for {iban}")
         else:
             require(fixture["providerCode"] not in provider_codes, f"Unknown lookup code exists for {iban}")
 
-    print(f"Data validation passed: {len(providers)} providers, {len(valid_fixtures)} valid fixtures")
+
+def main() -> int:
+    canonical = load_json(ROOT / "data/source/institutions.json")
+    canonical_schema = load_json(ROOT / "data/schema/institutions-source.schema.json")
+    validate_schema(canonical, canonical_schema, "canonical source")
+
+    source_ids = [source["id"] for source in canonical["sources"]]
+    require(source_ids == sorted(source_ids), "Canonical sources must be sorted by id")
+    require(len(source_ids) == len(set(source_ids)), "Canonical source ids must be unique")
+    source_id_set = set(source_ids)
+
+    institutions = canonical["institutions"]
+    codes = [institution["code"] for institution in institutions]
+    require(codes == sorted(codes), "Canonical institution codes must be sorted")
+    require(len(codes) == len(set(codes)), "Canonical institution codes must be unique")
+    require(len(codes) >= 50, "Expected at least 50 reviewed payment-system participants")
+    used_source_ids: set[str] = set()
+    for institution in institutions:
+        require(institution["rawCode"].zfill(5) == institution["code"], f"rawCode/code mismatch for {institution['code']}")
+        require(institution["sourceIds"], f"Institution {institution['code']} has no source")
+        require(set(institution["sourceIds"]).issubset(source_id_set), f"Unknown source id for {institution['code']}")
+        used_source_ids.update(institution["sourceIds"])
+    for source in canonical["sources"]:
+        if source["usage"] != "monitor_only":
+            require(source["id"] in used_source_ids, f"Non-monitor source {source['id']} contributes no records")
+
+    payload = load_json(ROOT / "data/tr-banks.json")
+    distribution_schema = load_json(ROOT / "data/schema/tr-banks.schema.json")
+    validate_schema(payload, distribution_schema, "distribution JSON")
+    require(payload == load_json(ROOT / "packages/typescript/data/tr-banks.json"), "Package JSON data copy is out of sync")
+    require(payload["dataVersion"] == canonical["dataVersion"], "Distribution dataVersion differs from canonical source")
+    require(payload["generatedAt"] == canonical["dataVersion"], "generatedAt must be deterministic")
+
+    providers = payload["providers"]
+    require(providers == expected_providers(canonical), "Distribution JSON differs from canonical source")
+    for provider in providers:
+        require("ibanEligible" not in provider, f"Unsupported ibanEligible claim for {provider['code']}")
+        require(provider["codeEvidence"] == ["payment_system_participant"], f"Invalid code evidence for {provider['code']}")
+
+    manifest = load_json(ROOT / "data/source-manifest.json")
+    manifest_schema = load_json(ROOT / "data/schema/source-manifest.schema.json")
+    validate_schema(manifest, manifest_schema, "source manifest")
+    require(manifest == expected_manifest(canonical), "Source manifest differs from canonical source catalog")
+
+    validate_cross_format_outputs(providers)
+    validate_fixtures(set(codes), len(codes))
+    print(f"Data validation passed: {len(codes)} institutions, JSON/CSV/SQL/SQLite parity confirmed")
     return 0
 
 

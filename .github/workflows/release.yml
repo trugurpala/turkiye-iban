@@ -38,6 +38,8 @@ jobs:
           test "$VERSION" = "$PACKAGE_VERSION"
       - name: Run verification suite
         run: npm test
+      - name: Confirm generated artifacts are reproducible
+        run: npm run check:generated
       - name: Build release artifacts
         shell: bash
         run: |
@@ -50,7 +52,7 @@ jobs:
             --extra "staging/tr-iban-${VERSION}.tgz" \
             --extra "staging/tr-iban-${VERSION}.cdx.json"
           cd "release-artifacts/v${VERSION}"
-          sha256sum --check SHA256SUMS.txt
+          sha256sum --check SHA256SUMS
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}

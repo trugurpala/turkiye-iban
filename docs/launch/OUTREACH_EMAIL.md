@@ -8,7 +8,7 @@ Merhaba [İsim],
 
 [Topluluk adı] içinde [ilgili kanal veya konu] paylaşımlarını takip ediyorum. Türkiye IBAN doğrulama ve banka/ödeme kuruluşu kodu eşleştirme ihtiyacı için hazırladığımız ücretsiz, MIT lisanslı `turkiye-iban` projesinin topluluğunuzdaki geliştiricilere faydalı olabileceğini düşündüm.
 
-Proje; TCMB kaynaklı kuruluş verisini JSON, CSV ve SQL olarak, TypeScript kullanıcıları için de sıfır runtime bağımlılıklı `tr-iban` paketiyle yayımlıyor. Kaynak adresleri ve SHA-256 parmak izleri açık; testler yalnız sentetik IBAN kullanıyor.
+Proje; TCMB kaynaklı kuruluş verisini JSON, CSV, SQL ve SQLite olarak, TypeScript kullanıcıları için de sıfır runtime bağımlılıklı `tr-iban` paketiyle yayımlıyor. Kaynak adresleri ve SHA-256 parmak izleri açık; testler yalnız sentetik IBAN kullanıyor.
 
 GitHub: https://github.com/trugurpala/turkiye-iban
 NPM: https://www.npmjs.com/package/tr-iban

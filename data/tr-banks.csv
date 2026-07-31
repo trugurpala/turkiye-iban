@@ -1,71 +1,71 @@
 code,rawCode,nameOfficial,nameShort,type,status,systems,codeEvidence,aliases,sourceIds,lastVerifiedAt
-00001,0001,T.C. MERKEZ BANKASI,T.C. MERKEZ BANKASI,central_bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00004,0004,İLLER BANKASI A.Ş.,İLLER BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00010,0010,T.C. ZİRAAT BANKASI A.Ş.,T.C. ZİRAAT BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00012,0012,T. HALK BANKASI A.Ş.,T. HALK BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00014,0014,T. SINAİ KALKINMA BANKASI A.Ş.,T. SINAİ KALKINMA BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00015,0015,T. VAKIFLAR BANKASI T.A.O.,T. VAKIFLAR BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00016,0016,T. EXİMBANK,T. EXİMBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00017,0017,T. KALKINMA BANKASI A.Ş.,T. KALKINMA BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00029,0029,BİRLEŞİK FON BANKASI A.Ş.,BİRLEŞİK FON BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00032,0032,T. EKONOMİ BANKASI A.Ş.,T. EKONOMİ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00046,0046,AKBANK T.A.Ş.,AKBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00059,0059,ŞEKERBANK T.A.Ş.,ŞEKERBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00060,0060,TÜRK TİCARET BANKASI A.Ş.,TÜRK TİCARET BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00062,0062,T. GARANTİ BANKASI A.Ş.,T. GARANTİ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00064,0064,T. İŞ BANKASI A.Ş.,T. İŞ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00067,0067,YAPI VE KREDİ BANKASI A.Ş.,YAPI VE KREDİ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00091,0091,ARAP TÜRK BANKASI,ARAP TÜRK BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00092,0092,CITIBANK A.Ş.,CITIBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00096,0096,TURKISH BANK A.Ş.,TURKISH BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00098,0098,JPMORGAN CHASE BANK N.A.,JPMORGAN CHASE BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00099,0099,ING BANK A.Ş.,ING BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00103,0103,FİBABANKA A.Ş.,FİBABANKA,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00108,0108,TURKLAND BANK A.S.,TURKLAND BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00109,0109,ICBC TURKEY BANK A.Ş.,ICBC TURKEY BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00111,0111,QNB FİNANSBANK A.Ş.,QNB FİNANSBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00115,0115,DEUTSCHE BANK A.Ş.,DEUTSCHE BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00116,0116,PASHA YATIRIM BANK A.Ş.,PASHA YATIRIM BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00121,0121,STANDARD CHARTERED YATIRIM BANKASI TÜRK A.Ş.,STANDARD CHARTERED YATIRIM BANKASI TÜRK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00122,0122,SOCIETE GENERALE (SA),SOCIETE GENERALE (SA),bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00123,0123,HSBC BANK A.Ş.,HSBC BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00124,0124,ALTERNATİFBANK A.Ş.,ALTERNATİFBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00125,0125,BURGAN BANK A.Ş.,BURGAN BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00129,0129,BANK OF AMERICA YATIRIM BANK A.Ş.,BANK OF AMERICA YATIRIM BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00132,0132,İSTANBUL TAKAS VE SAKLAMA BANK. A.Ş.,İSTANBUL TAKAS VE SAKLAMA BANK.,financial_market_infrastructure,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00134,0134,DENİZBANK A.Ş.,DENİZBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00135,0135,ANADOLUBANK A.Ş.,ANADOLUBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00137,0137,RABOBANK A.Ş.,RABOBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00138,0138,DİLER YATIRIM BANKASI A.Ş.,DİLER YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00139,0139,GSD YATIRIM BANKASI A.Ş.,GSD YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00141,0141,NUROL YATIRIM BANKASI A.Ş.,NUROL YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00142,0142,BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.,BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00143,0143,AKTİF YATIRIM BANKASI A.Ş.,AKTİF YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00146,0146,ODEA BANK A.Ş.,ODEA BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00147,0147,MUFG BANK TURKEY A.Ş.,MUFG BANK TURKEY,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00148,0148,INTESA SANPAOLO S.P.A.,INTESA SANPAOLO S.P.A.,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00149,0149,BANK OF CHINA TURKEY A.Ş.,BANK OF CHINA TURKEY,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00150,0150,GOLDEN GLOBAL YATIRIM BANKASI A.Ş.,GOLDEN GLOBAL YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00151,0151,D YATIRIM BANKASI A.Ş.,D YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00152,0152,DESTEK YATIRIM BANKASI A.Ş.,DESTEK YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00153,0153,MİSYON YATIRIM BANKASI A.Ş.,MİSYON YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00154,0154,TERA YATIRIM BANKASI A.Ş.,TERA YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00155,0155,Q YATIRIM BANKASI A.Ş.,Q YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00156,0156,HEDEF YATIRIM BANKASI A.Ş.,HEDEF YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00157,0157,ENPARA BANK A.Ş.,ENPARA BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00158,0158,COLENDİ BANK A.Ş.,COLENDİ BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00159,0159,FUPS BANK A.Ş.,FUPS BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00160,0160,ZİRAAT DİNAMİK BANKA A.Ş.,ZİRAAT DİNAMİK BANKA,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00161,0161,AYTEMİZ YATIRIM BANKASI A.Ş.,AYTEMİZ YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00203,0203,ALBARAKA TÜRK KATILIM BANKASI A.Ş.,ALBARAKA TÜRK KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00205,0205,KUVEYT TÜRK KATILIM BANKASI A.Ş.,KUVEYT TÜRK KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00206,0206,TÜRKİYE FİNANS KATILIM BANKASI A.Ş.,TÜRKİYE FİNANS KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00209,0209,ZİRAAT KATILIM BANKASI A.Ş.,ZİRAAT KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00210,0210,VAKIF KATILIM BANKASI A.Ş.,VAKIF KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00211,0211,TÜRKİYE EMLAK KATILIM BANKASI A.Ş.,TÜRKİYE EMLAK KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00212,0212,HAYAT FİNANS KATILIM BANKASI,HAYAT FİNANS KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00213,0213,T.O.M. KATILIM BANKASI A.Ş.,T.O.M. KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00214,0214,DÜNYA KATILIM BANKASI A.Ş.,DÜNYA KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00215,0215,ADİL KATILIM BANKASI A.Ş.,ADİL KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00806,0806,MERKEZİ KAYIT KURULUŞU A.Ş.,MERKEZİ KAYIT KURULUŞU,financial_market_infrastructure,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
-00807,0807,POSTA VE TELGRAF TEŞKİLATI A.Ş.,POSTA VE TELGRAF TEŞKİLATI,postal_operator,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2026,2026-07-31
+00001,0001,T.C. MERKEZ BANKASI,T.C. MERKEZ BANKASI,central_bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00004,0004,İLLER BANKASI A.Ş.,İLLER BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00010,0010,T.C. ZİRAAT BANKASI A.Ş.,T.C. ZİRAAT BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00012,0012,T. HALK BANKASI A.Ş.,T. HALK BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00014,0014,T. SINAİ KALKINMA BANKASI A.Ş.,T. SINAİ KALKINMA BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00015,0015,T. VAKIFLAR BANKASI T.A.O.,T. VAKIFLAR BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00016,0016,T. EXİMBANK,T. EXİMBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00017,0017,T. KALKINMA BANKASI A.Ş.,T. KALKINMA BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00029,0029,BİRLEŞİK FON BANKASI A.Ş.,BİRLEŞİK FON BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00032,0032,T. EKONOMİ BANKASI A.Ş.,T. EKONOMİ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00046,0046,AKBANK T.A.Ş.,AKBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00059,0059,ŞEKERBANK T.A.Ş.,ŞEKERBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00060,0060,TÜRK TİCARET BANKASI A.Ş.,TÜRK TİCARET BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00062,0062,T. GARANTİ BANKASI A.Ş.,T. GARANTİ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00064,0064,T. İŞ BANKASI A.Ş.,T. İŞ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00067,0067,YAPI VE KREDİ BANKASI A.Ş.,YAPI VE KREDİ BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00091,0091,ARAP TÜRK BANKASI,ARAP TÜRK BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00092,0092,CITIBANK A.Ş.,CITIBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00096,0096,TURKISH BANK A.Ş.,TURKISH BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00098,0098,JPMORGAN CHASE BANK N.A.,JPMORGAN CHASE BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00099,0099,ING BANK A.Ş.,ING BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00103,0103,FİBABANKA A.Ş.,FİBABANKA,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00108,0108,TURKLAND BANK A.S.,TURKLAND BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00109,0109,ICBC TURKEY BANK A.Ş.,ICBC TURKEY BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00111,0111,QNB FİNANSBANK A.Ş.,QNB FİNANSBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00115,0115,DEUTSCHE BANK A.Ş.,DEUTSCHE BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00116,0116,PASHA YATIRIM BANK A.Ş.,PASHA YATIRIM BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00121,0121,STANDARD CHARTERED YATIRIM BANKASI TÜRK A.Ş.,STANDARD CHARTERED YATIRIM BANKASI TÜRK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00122,0122,SOCIETE GENERALE (SA),SOCIETE GENERALE (SA),bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00123,0123,HSBC BANK A.Ş.,HSBC BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00124,0124,ALTERNATİFBANK A.Ş.,ALTERNATİFBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00125,0125,BURGAN BANK A.Ş.,BURGAN BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00129,0129,BANK OF AMERICA YATIRIM BANK A.Ş.,BANK OF AMERICA YATIRIM BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00132,0132,İSTANBUL TAKAS VE SAKLAMA BANK. A.Ş.,İSTANBUL TAKAS VE SAKLAMA BANK.,financial_market_infrastructure,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00134,0134,DENİZBANK A.Ş.,DENİZBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00135,0135,ANADOLUBANK A.Ş.,ANADOLUBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00137,0137,RABOBANK A.Ş.,RABOBANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00138,0138,DİLER YATIRIM BANKASI A.Ş.,DİLER YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00139,0139,GSD YATIRIM BANKASI A.Ş.,GSD YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00141,0141,NUROL YATIRIM BANKASI A.Ş.,NUROL YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00142,0142,BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.,BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00143,0143,AKTİF YATIRIM BANKASI A.Ş.,AKTİF YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00146,0146,ODEA BANK A.Ş.,ODEA BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00147,0147,MUFG BANK TURKEY A.Ş.,MUFG BANK TURKEY,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00148,0148,INTESA SANPAOLO S.P.A.,INTESA SANPAOLO S.P.A.,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00149,0149,BANK OF CHINA TURKEY A.Ş.,BANK OF CHINA TURKEY,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00150,0150,GOLDEN GLOBAL YATIRIM BANKASI A.Ş.,GOLDEN GLOBAL YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00151,0151,D YATIRIM BANKASI A.Ş.,D YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00152,0152,DESTEK YATIRIM BANKASI A.Ş.,DESTEK YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00153,0153,MİSYON YATIRIM BANKASI A.Ş.,MİSYON YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00154,0154,TERA YATIRIM BANKASI A.Ş.,TERA YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00155,0155,Q YATIRIM BANKASI A.Ş.,Q YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00156,0156,HEDEF YATIRIM BANKASI A.Ş.,HEDEF YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00157,0157,ENPARA BANK A.Ş.,ENPARA BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00158,0158,COLENDİ BANK A.Ş.,COLENDİ BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00159,0159,FUPS BANK A.Ş.,FUPS BANK,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00160,0160,ZİRAAT DİNAMİK BANKA A.Ş.,ZİRAAT DİNAMİK BANKA,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00161,0161,AYTEMİZ YATIRIM BANKASI A.Ş.,AYTEMİZ YATIRIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00203,0203,ALBARAKA TÜRK KATILIM BANKASI A.Ş.,ALBARAKA TÜRK KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00205,0205,KUVEYT TÜRK KATILIM BANKASI A.Ş.,KUVEYT TÜRK KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00206,0206,TÜRKİYE FİNANS KATILIM BANKASI A.Ş.,TÜRKİYE FİNANS KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00209,0209,ZİRAAT KATILIM BANKASI A.Ş.,ZİRAAT KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00210,0210,VAKIF KATILIM BANKASI A.Ş.,VAKIF KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00211,0211,TÜRKİYE EMLAK KATILIM BANKASI A.Ş.,TÜRKİYE EMLAK KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00212,0212,HAYAT FİNANS KATILIM BANKASI,HAYAT FİNANS KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00213,0213,T.O.M. KATILIM BANKASI A.Ş.,T.O.M. KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00214,0214,DÜNYA KATILIM BANKASI A.Ş.,DÜNYA KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00215,0215,ADİL KATILIM BANKASI A.Ş.,ADİL KATILIM BANKASI,bank,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00806,0806,MERKEZİ KAYIT KURULUŞU A.Ş.,MERKEZİ KAYIT KURULUŞU,financial_market_infrastructure,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31
+00807,0807,POSTA VE TELGRAF TEŞKİLATI A.Ş.,POSTA VE TELGRAF TEŞKİLATI,postal_operator,active,TCMB_PAYMENT_SYSTEMS,payment_system_participant,,tcmb-payment-systems-participants-2025,2026-07-31

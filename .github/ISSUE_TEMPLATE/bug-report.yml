@@ -25,8 +25,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: Package version
-      placeholder: "0.1.0"
+      label: Package or data version
+      placeholder: "0.1.2 or 2026-07-31"
     validations:
       required: true
   - type: checkboxes

@@ -1,16 +1,18 @@
 # Contributing
 
-`turkiye-iban` katkılarına teşekkürler. Küçük, kaynaklandırılmış ve test edilmiş
-değişiklikler incelemeyi kolaylaştırır.
+`turkiye-iban` accepts small, sourced and tested improvements within Turkish
+IBAN validation, provider lookup and reference data. Unrelated Türkiye datasets
+and additional language packages belong in separate repositories.
 
-## Değişmez Gizlilik Kuralı
+## Privacy Rule
 
-Gerçek IBAN, hesap sahibi/müşteri adı, telefon, bordro, dekont, banka ekranı veya
-kişisel finansal veri issue, PR, commit, fixture ve testlerde kullanılamaz.
-Yalnız sentetik örnek kullanın. Güvenlik açıklarını [SECURITY.md](SECURITY.md)
-üzerinden özel bildirin.
+Never use a real IBAN, account holder or customer name, telephone number,
+payroll record, statement, screenshot, support transcript or production
+financial data in issues, pull requests, commits, fixtures or examples. Use only
+the explicitly synthetic values described in `TEST_DATA.md`. Report security or
+privacy incidents privately through `SECURITY.md`.
 
-## Kurulum
+## Setup
 
 ```bash
 python -m pip install -r tools/requirements.txt
@@ -18,41 +20,52 @@ npm ci
 npm test
 ```
 
-Normal testler çevrimdışıdır. Resmî kaynakları yalnız veri değişikliğinde çekin:
+Normal generation, tests and builds are offline.
+
+## Data Changes
+
+Start with a remote review:
 
 ```bash
 npm run data:check-remote
-npm run data:update
+```
+
+This command never changes release data. Review its source hashes and
+added/removed/changed institution report against the official document. Apply
+an accepted change only to `data/source/institutions.json`, then run:
+
+```bash
+npm run generate:data
 npm test
 ```
 
-## Veri Katkıları
+Do not edit JSON, CSV, SQL, SQLite, TypeScript generated data or fixtures by
+hand. A data PR must include the official source URL, access date, evidence
+scope, change reason, review report and resulting generated diff. An active
+license registry entry is not automatically provider-code evidence.
 
-Veri PR'ı şunları içermelidir:
+## Code Changes
 
-- Resmî TCMB kaynak URL'si ve kontrol tarihi.
-- Değişikliğin kısa gerekçesi.
-- Birincil katılımcı kodu kanıtı ile lisans/statü bilgisinin açık ayrımı.
-- Birlikte üretilmiş JSON, CSV, SQL, TypeScript verisi ve fixture diff'i.
+- Preserve the current public API, package exports and compatibility aliases.
+- Add a failing test before changing behavior.
+- Keep runtime code deterministic, dependency-free and network-free.
+- Check both ESM and CommonJS packed consumers.
+- Never log a raw IBAN; use `maskIban` in diagnostics.
+- Breaking changes require a major release and migration guide.
 
-Üretilen dosyaları elle düzenlemeyin. Üreticinin ifade edemediği bir düzeltme
-varsa önce üreticiyi değiştirin. Schwifty karşılaştırma için kullanılabilir ama
-birincil kaynak değildir.
+## Documentation and Public Surfaces
 
-## Kod Katkıları
+Every task follows `AGENTS.md`. Review at least five public surfaces and record
+each as `updated` or `no change required` in the pull request. README,
+CHANGELOG, relevant technical documentation, tests, generated data, schemas,
+security and release impact must never be silently skipped.
 
-- API deterministik kalmalı ve runtime ağ çağrısı yapmamalıdır.
-- Yeni runtime bağımlılığı maintainer kararı gerektirir.
-- Davranış değişikliğini önce başarısız bir testle belgeleyin.
-- ESM ve CommonJS tüketici testlerini koruyun.
-- Ham IBAN loglamayın.
-
-## Pull Request Kontrolü
+## Pull Request Verification
 
 ```bash
 npm test
 npm pack --workspace packages/typescript --dry-run
 ```
 
-PR şablonundaki gizlilik onayı zorunludur. Maintainerlar kaynak veya güvenlik
-kanıtı yetersiz değişiklikleri reddedebilir.
+Complete the pull request checklist. Maintainers may reject changes whose
+evidence, privacy treatment, compatibility or release impact is unclear.

@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest a package, API, or documentation improvement.
+description: Suggest an in-scope Turkish IBAN, data, API, or documentation improvement.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
@@ -7,14 +7,14 @@ body:
     id: problem
     attributes:
       label: Problem
-      description: What developer problem should this solve?
+      description: What Turkish IBAN developer problem should this solve?
     validations:
       required: true
   - type: textarea
     id: proposal
     attributes:
       label: Proposal
-      description: Describe the smallest useful change.
+      description: Describe the smallest useful and backward-compatible change.
     validations:
       required: true
   - type: dropdown
@@ -22,11 +22,11 @@ body:
     attributes:
       label: Area
       options:
-        - TypeScript package
-        - Data files
-        - SQL export
-        - PHP package
-        - Python package
+        - JavaScript or TypeScript API
+        - Canonical institution data
+        - JSON or CSV output
+        - SQL or SQLite output
+        - Schema or validation
         - Documentation
     validations:
       required: true

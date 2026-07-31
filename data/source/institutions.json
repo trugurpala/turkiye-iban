@@ -1,0 +1,1394 @@
+{
+  "$schema": "../schema/institutions-source.schema.json",
+  "schemaVersion": "1.0.0",
+  "country": "TR",
+  "ibanFormat": {
+    "length": 26,
+    "providerCodeLength": 5,
+    "reserveLength": 1,
+    "accountLength": 16
+  },
+  "dataVersion": "2026-07-31",
+  "sourcePolicy": "Official-source-first with explicit evidence scope and human review.",
+  "sources": [
+    {
+      "id": "tcmb-active-electronic-money-institutions",
+      "publisher": "Türkiye Cumhuriyet Merkez Bankası",
+      "title": "Aktif Elektronik Para Kuruluşları",
+      "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+      "classification": "official",
+      "usage": "monitor_only",
+      "evidenceScope": [
+        "institution_type",
+        "institution_status"
+      ],
+      "retrievedAt": "2026-07-31",
+      "sha256": "af102df0406957f17d0c2a9c2d1bab90a4de718ec346e99d07b64bb85ea167a0",
+      "extractionMethod": "HTML table extraction used only to enrich participant records",
+      "redistributionStatus": "Extracted factual fields are redistributed; the source page is not bundled."
+    },
+    {
+      "id": "tcmb-active-payment-institutions",
+      "publisher": "Türkiye Cumhuriyet Merkez Bankası",
+      "title": "Aktif Ödeme Kuruluşları",
+      "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+      "classification": "official",
+      "usage": "monitor_only",
+      "evidenceScope": [
+        "institution_type",
+        "institution_status"
+      ],
+      "retrievedAt": "2026-07-31",
+      "sha256": "cdba0f3ec40b984fb778344e88ab2f716f9deb5da23b31edc20dc7d9b69eed66",
+      "extractionMethod": "HTML table extraction used only to enrich participant records",
+      "redistributionStatus": "Extracted factual fields are redistributed; the source page is not bundled."
+    },
+    {
+      "id": "tcmb-payment-systems-participants-2025",
+      "publisher": "Türkiye Cumhuriyet Merkez Bankası",
+      "title": "TCMB Ödeme Sistemleri Katılımcıları (2025)",
+      "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+      "classification": "official",
+      "usage": "primary_code_evidence",
+      "evidenceScope": [
+        "provider_code"
+      ],
+      "retrievedAt": "2026-07-31",
+      "sha256": "55685b26c05f051983a310e475b24c1beeed9f22d712c1bfa66508f6b41204b2",
+      "extractionMethod": "PDF text table extraction followed by maintainer review",
+      "redistributionStatus": "Extracted factual fields are redistributed; the source PDF is not bundled."
+    }
+  ],
+  "institutions": [
+    {
+      "code": "00001",
+      "rawCode": "0001",
+      "nameOfficial": "T.C. MERKEZ BANKASI",
+      "nameShort": "T.C. MERKEZ BANKASI",
+      "type": "central_bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00004",
+      "rawCode": "0004",
+      "nameOfficial": "İLLER BANKASI A.Ş.",
+      "nameShort": "İLLER BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00010",
+      "rawCode": "0010",
+      "nameOfficial": "T.C. ZİRAAT BANKASI A.Ş.",
+      "nameShort": "T.C. ZİRAAT BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00012",
+      "rawCode": "0012",
+      "nameOfficial": "T. HALK BANKASI A.Ş.",
+      "nameShort": "T. HALK BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00014",
+      "rawCode": "0014",
+      "nameOfficial": "T. SINAİ KALKINMA BANKASI A.Ş.",
+      "nameShort": "T. SINAİ KALKINMA BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00015",
+      "rawCode": "0015",
+      "nameOfficial": "T. VAKIFLAR BANKASI T.A.O.",
+      "nameShort": "T. VAKIFLAR BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00016",
+      "rawCode": "0016",
+      "nameOfficial": "T. EXİMBANK",
+      "nameShort": "T. EXİMBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00017",
+      "rawCode": "0017",
+      "nameOfficial": "T. KALKINMA BANKASI A.Ş.",
+      "nameShort": "T. KALKINMA BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00029",
+      "rawCode": "0029",
+      "nameOfficial": "BİRLEŞİK FON BANKASI A.Ş.",
+      "nameShort": "BİRLEŞİK FON BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00032",
+      "rawCode": "0032",
+      "nameOfficial": "T. EKONOMİ BANKASI A.Ş.",
+      "nameShort": "T. EKONOMİ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00046",
+      "rawCode": "0046",
+      "nameOfficial": "AKBANK T.A.Ş.",
+      "nameShort": "AKBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00059",
+      "rawCode": "0059",
+      "nameOfficial": "ŞEKERBANK T.A.Ş.",
+      "nameShort": "ŞEKERBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00060",
+      "rawCode": "0060",
+      "nameOfficial": "TÜRK TİCARET BANKASI A.Ş.",
+      "nameShort": "TÜRK TİCARET BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00062",
+      "rawCode": "0062",
+      "nameOfficial": "T. GARANTİ BANKASI A.Ş.",
+      "nameShort": "T. GARANTİ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00064",
+      "rawCode": "0064",
+      "nameOfficial": "T. İŞ BANKASI A.Ş.",
+      "nameShort": "T. İŞ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00067",
+      "rawCode": "0067",
+      "nameOfficial": "YAPI VE KREDİ BANKASI A.Ş.",
+      "nameShort": "YAPI VE KREDİ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00091",
+      "rawCode": "0091",
+      "nameOfficial": "ARAP TÜRK BANKASI",
+      "nameShort": "ARAP TÜRK BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00092",
+      "rawCode": "0092",
+      "nameOfficial": "CITIBANK A.Ş.",
+      "nameShort": "CITIBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00096",
+      "rawCode": "0096",
+      "nameOfficial": "TURKISH BANK A.Ş.",
+      "nameShort": "TURKISH BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00098",
+      "rawCode": "0098",
+      "nameOfficial": "JPMORGAN CHASE BANK N.A.",
+      "nameShort": "JPMORGAN CHASE BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00099",
+      "rawCode": "0099",
+      "nameOfficial": "ING BANK A.Ş.",
+      "nameShort": "ING BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00103",
+      "rawCode": "0103",
+      "nameOfficial": "FİBABANKA A.Ş.",
+      "nameShort": "FİBABANKA",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00108",
+      "rawCode": "0108",
+      "nameOfficial": "TURKLAND BANK A.S.",
+      "nameShort": "TURKLAND BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00109",
+      "rawCode": "0109",
+      "nameOfficial": "ICBC TURKEY BANK A.Ş.",
+      "nameShort": "ICBC TURKEY BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00111",
+      "rawCode": "0111",
+      "nameOfficial": "QNB FİNANSBANK A.Ş.",
+      "nameShort": "QNB FİNANSBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00115",
+      "rawCode": "0115",
+      "nameOfficial": "DEUTSCHE BANK A.Ş.",
+      "nameShort": "DEUTSCHE BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00116",
+      "rawCode": "0116",
+      "nameOfficial": "PASHA YATIRIM BANK A.Ş.",
+      "nameShort": "PASHA YATIRIM BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00121",
+      "rawCode": "0121",
+      "nameOfficial": "STANDARD CHARTERED YATIRIM BANKASI TÜRK A.Ş.",
+      "nameShort": "STANDARD CHARTERED YATIRIM BANKASI TÜRK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00122",
+      "rawCode": "0122",
+      "nameOfficial": "SOCIETE GENERALE (SA)",
+      "nameShort": "SOCIETE GENERALE (SA)",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00123",
+      "rawCode": "0123",
+      "nameOfficial": "HSBC BANK A.Ş.",
+      "nameShort": "HSBC BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00124",
+      "rawCode": "0124",
+      "nameOfficial": "ALTERNATİFBANK A.Ş.",
+      "nameShort": "ALTERNATİFBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00125",
+      "rawCode": "0125",
+      "nameOfficial": "BURGAN BANK A.Ş.",
+      "nameShort": "BURGAN BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00129",
+      "rawCode": "0129",
+      "nameOfficial": "BANK OF AMERICA YATIRIM BANK A.Ş.",
+      "nameShort": "BANK OF AMERICA YATIRIM BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00132",
+      "rawCode": "0132",
+      "nameOfficial": "İSTANBUL TAKAS VE SAKLAMA BANK. A.Ş.",
+      "nameShort": "İSTANBUL TAKAS VE SAKLAMA BANK.",
+      "type": "financial_market_infrastructure",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00134",
+      "rawCode": "0134",
+      "nameOfficial": "DENİZBANK A.Ş.",
+      "nameShort": "DENİZBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00135",
+      "rawCode": "0135",
+      "nameOfficial": "ANADOLUBANK A.Ş.",
+      "nameShort": "ANADOLUBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00137",
+      "rawCode": "0137",
+      "nameOfficial": "RABOBANK A.Ş.",
+      "nameShort": "RABOBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00138",
+      "rawCode": "0138",
+      "nameOfficial": "DİLER YATIRIM BANKASI A.Ş.",
+      "nameShort": "DİLER YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00139",
+      "rawCode": "0139",
+      "nameOfficial": "GSD YATIRIM BANKASI A.Ş.",
+      "nameShort": "GSD YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00141",
+      "rawCode": "0141",
+      "nameOfficial": "NUROL YATIRIM BANKASI A.Ş.",
+      "nameShort": "NUROL YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00142",
+      "rawCode": "0142",
+      "nameOfficial": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
+      "nameShort": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00143",
+      "rawCode": "0143",
+      "nameOfficial": "AKTİF YATIRIM BANKASI A.Ş.",
+      "nameShort": "AKTİF YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00146",
+      "rawCode": "0146",
+      "nameOfficial": "ODEA BANK A.Ş.",
+      "nameShort": "ODEA BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00147",
+      "rawCode": "0147",
+      "nameOfficial": "MUFG BANK TURKEY A.Ş.",
+      "nameShort": "MUFG BANK TURKEY",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00148",
+      "rawCode": "0148",
+      "nameOfficial": "INTESA SANPAOLO S.P.A.",
+      "nameShort": "INTESA SANPAOLO S.P.A.",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00149",
+      "rawCode": "0149",
+      "nameOfficial": "BANK OF CHINA TURKEY A.Ş.",
+      "nameShort": "BANK OF CHINA TURKEY",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00150",
+      "rawCode": "0150",
+      "nameOfficial": "GOLDEN GLOBAL YATIRIM BANKASI A.Ş.",
+      "nameShort": "GOLDEN GLOBAL YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00151",
+      "rawCode": "0151",
+      "nameOfficial": "D YATIRIM BANKASI A.Ş.",
+      "nameShort": "D YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00152",
+      "rawCode": "0152",
+      "nameOfficial": "DESTEK YATIRIM BANKASI A.Ş.",
+      "nameShort": "DESTEK YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00153",
+      "rawCode": "0153",
+      "nameOfficial": "MİSYON YATIRIM BANKASI A.Ş.",
+      "nameShort": "MİSYON YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00154",
+      "rawCode": "0154",
+      "nameOfficial": "TERA YATIRIM BANKASI A.Ş.",
+      "nameShort": "TERA YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00155",
+      "rawCode": "0155",
+      "nameOfficial": "Q YATIRIM BANKASI A.Ş.",
+      "nameShort": "Q YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00156",
+      "rawCode": "0156",
+      "nameOfficial": "HEDEF YATIRIM BANKASI A.Ş.",
+      "nameShort": "HEDEF YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00157",
+      "rawCode": "0157",
+      "nameOfficial": "ENPARA BANK A.Ş.",
+      "nameShort": "ENPARA BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00158",
+      "rawCode": "0158",
+      "nameOfficial": "COLENDİ BANK A.Ş.",
+      "nameShort": "COLENDİ BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00159",
+      "rawCode": "0159",
+      "nameOfficial": "FUPS BANK A.Ş.",
+      "nameShort": "FUPS BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00160",
+      "rawCode": "0160",
+      "nameOfficial": "ZİRAAT DİNAMİK BANKA A.Ş.",
+      "nameShort": "ZİRAAT DİNAMİK BANKA",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00161",
+      "rawCode": "0161",
+      "nameOfficial": "AYTEMİZ YATIRIM BANKASI A.Ş.",
+      "nameShort": "AYTEMİZ YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00203",
+      "rawCode": "0203",
+      "nameOfficial": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
+      "nameShort": "ALBARAKA TÜRK KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00205",
+      "rawCode": "0205",
+      "nameOfficial": "KUVEYT TÜRK KATILIM BANKASI A.Ş.",
+      "nameShort": "KUVEYT TÜRK KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00206",
+      "rawCode": "0206",
+      "nameOfficial": "TÜRKİYE FİNANS KATILIM BANKASI A.Ş.",
+      "nameShort": "TÜRKİYE FİNANS KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00209",
+      "rawCode": "0209",
+      "nameOfficial": "ZİRAAT KATILIM BANKASI A.Ş.",
+      "nameShort": "ZİRAAT KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00210",
+      "rawCode": "0210",
+      "nameOfficial": "VAKIF KATILIM BANKASI A.Ş.",
+      "nameShort": "VAKIF KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00211",
+      "rawCode": "0211",
+      "nameOfficial": "TÜRKİYE EMLAK KATILIM BANKASI A.Ş.",
+      "nameShort": "TÜRKİYE EMLAK KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00212",
+      "rawCode": "0212",
+      "nameOfficial": "HAYAT FİNANS KATILIM BANKASI",
+      "nameShort": "HAYAT FİNANS KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00213",
+      "rawCode": "0213",
+      "nameOfficial": "T.O.M. KATILIM BANKASI A.Ş.",
+      "nameShort": "T.O.M. KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00214",
+      "rawCode": "0214",
+      "nameOfficial": "DÜNYA KATILIM BANKASI A.Ş.",
+      "nameShort": "DÜNYA KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00215",
+      "rawCode": "0215",
+      "nameOfficial": "ADİL KATILIM BANKASI A.Ş.",
+      "nameShort": "ADİL KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00806",
+      "rawCode": "0806",
+      "nameOfficial": "MERKEZİ KAYIT KURULUŞU A.Ş.",
+      "nameShort": "MERKEZİ KAYIT KURULUŞU",
+      "type": "financial_market_infrastructure",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00807",
+      "rawCode": "0807",
+      "nameOfficial": "POSTA VE TELGRAF TEŞKİLATI A.Ş.",
+      "nameShort": "POSTA VE TELGRAF TEŞKİLATI",
+      "type": "postal_operator",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "codeEvidence": [
+        "payment_system_participant"
+      ],
+      "aliases": [],
+      "sourceIds": [
+        "tcmb-payment-systems-participants-2025"
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    }
+  ]
+}

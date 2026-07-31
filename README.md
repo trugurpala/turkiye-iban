@@ -26,6 +26,18 @@ Paket bir Türkiye IBAN'ı için şu işlemleri yapar:
 - Kodu doğrulanmış TCMB katılımcı verisiyle eşleştirir
 - IBAN'ı okunabilir biçimde gruplar veya güvenli gösterim için maskeler
 
+## Ne yapmaz?
+
+- Hesabın varlığını, sahibini, bakiyesini veya transfer yapılabilirliğini doğrulamaz
+- TCMB, banka veya ödeme kuruluşu adına resmî doğrulama hizmeti sunmaz
+- Gerçek IBAN veya kişisel finansal veri toplamaz
+- Posta kodu, adres, il/ilçe, vergi dairesi, plaka veya telefon kodu yayımlamaz
+- Python, PHP, Go, Rust veya .NET istemcilerini bu repository içinde barındırmaz
+
+Bu depo tek sorumluluklu Türkiye IBAN temelidir. Gelecekteki dil istemcileri bu
+projenin sürümlenmiş veri, şema ve sentetik fixture'larını ayrı repository'lerden
+tüketecektir.
+
 ## Türkiye IBAN'ı nasıl okunur?
 
 Türkiye IBAN'ı beş bölümden oluşur. Aşağıdaki sentetik örnekte bölümler `TR | 51 | 00046 | 0 | 9999000000000011` şeklinde ayrılır:
@@ -67,9 +79,11 @@ JavaScript kullanmayan uygulamalar da aynı kuruluş listesinden yararlanabilir:
 | TypeScript, Next.js, NestJS veya Node.js | NPM paketi `tr-iban` |
 | PHP veya Python | `data/tr-banks.json` |
 | Excel, veri aktarımı veya raporlama | `data/tr-banks.csv` |
-| Doğrudan veritabanı kullanımı | `data/tr-banks.sql` |
+| SQL migration veya farklı veritabanları | `data/tr-banks.sql` |
+| Hazır SQLite veritabanı | `data/tr-banks.sqlite` |
 
-PHP/Composer ve Python paketleri yol haritasındadır. JSON, CSV ve SQL dosyaları bugün doğrudan kullanılabilir.
+JSON, CSV, SQL ve SQLite dosyaları bugün doğrudan kullanılabilir. Başka dil
+paketleri bu deponun içine eklenmeyecek, gerektiğinde ayrı projeler olacaktır.
 
 ## Kurulum
 
@@ -141,11 +155,17 @@ Proje aynı kuruluş listesini farklı kullanım biçimleriyle yayımlar:
 
 - `data/tr-banks.json`: uygulamalar için ana veri dosyası
 - `data/tr-banks.csv`: elektronik tablo ve veri aktarımı için satır tabanlı çıktı
-- `data/tr-banks.sql`: SQLite ile uyumlu veritabanı aktarımı
+- `data/tr-banks.sql`: taşınabilir SQL aktarımı
+- `data/tr-banks.sqlite`: sorgulanmaya hazır SQLite veritabanı
+- `data/source/institutions.json`: elle incelenen tek canonical veri kaynağı
 - `fixtures/`: yalnızca sentetik, yani gerçek kişilere ait olmayan test IBAN'ları
 - `data/source-manifest.json`: kullanılan resmî kaynakların değişmediğini denetleyen dijital parmak izleri (SHA-256)
 
-JSON, CSV ve SQL dosyaları aynı kaynaktan üretilir. Bu nedenle farklı dillerdeki uygulamalar aynı kuruluş kodlarını kullanır.
+JSON, CSV, SQL, SQLite ve TypeScript verisi canonical kaynaktan deterministik
+olarak üretilir. Release assetleri ve checksum dosyaları [son GitHub
+Release](https://github.com/trugurpala/turkiye-iban/releases/latest) sayfasından
+indirilebilir. `SHA256SUMS` içindeki değeri indirdiğiniz dosyanın SHA-256
+değeriyle karşılaştırın.
 
 ## Verinin kaynağı
 
@@ -154,8 +174,8 @@ Proje kuruluş kodlarını yalnızca resmî TCMB kaynaklarından hazırlar. Her 
 | Resmî kaynak | Projedeki görevi | Tek başına neyi kanıtlamaz? |
 | --- | --- | --- |
 | [TCMB Ödeme Sistemleri Katılımcıları](https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES) | Otomatik kuruluş eşleştirmesinin birincil kod kanıtıdır | Hesabın varlığını veya transfer yapılabilirliğini |
-| [TCMB aktif ödeme kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari) | Katılımcı listesinde zaten bulunan kaydın tür ve statü bilgisini zenginleştirir | Yeni bir IBAN kuruluş kodunu |
-| [TCMB aktif elektronik para kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari) | Katılımcı listesinde zaten bulunan kaydın tür ve statü bilgisini zenginleştirir | Yeni bir IBAN kuruluş kodunu |
+| [TCMB aktif ödeme kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari) | Değişiklik için izlenen `monitor_only` kaynak; mevcut snapshotta kayıt üretmez | Yeni bir IBAN kuruluş kodunu |
+| [TCMB aktif elektronik para kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari) | Değişiklik için izlenen `monitor_only` kaynak; mevcut snapshotta kayıt üretmez | Yeni bir IBAN kuruluş kodunu |
 | [TCMB IBAN Hakkında Tebliğ](https://www.tcmb.gov.tr/wps/wcm/connect/c8357e06-1ab6-4c49-8352-7b9c19fcb77e/Teblig%2B2021_5.pdf?MOD=AJPERES) | Türkiye IBAN yapısı ve doğrulama kurallarını belirler | Kuruluş listesini |
 
 Katılımcı PDF'indeki dört haneli kod, IBAN içindeki beş haneli alana soldan `0` eklenerek yazılır. Örneğin `0046` kaynak kodu, IBAN alanında `00046` olur. Bu dönüşüm yalnızca ödeme sistemleri katılımcı kodlarına uygulanır; lisans sayfalarındaki başka kodlar otomatik olarak IBAN koduna çevrilmez.
@@ -164,19 +184,22 @@ Katılımcı PDF'indeki dört haneli kod, IBAN içindeki beş haneli alana solda
 
 ## Veri nasıl hazırlanıyor?
 
-Veri güncellemesi kaynak indirmeden GitHub Release'e kadar izlenebilir bir akış kullanır:
+Veri güncellemesi, canlı kaynak incelemesini deterministik üretimden ayırır:
 
-1. `scripts/generate-data.py` üç kuruluş kaynağını TCMB adreslerinden indirir
-2. Her indirilen dosyanın SHA-256 dijital parmak izi `data/source-manifest.json` dosyasına yazılır
-3. Ödeme sistemleri katılımcı kodları ayıklanır ve beş haneye tamamlanır
-4. Aktif ödeme ve elektronik para listeleri yalnız mevcut katılımcı kayıtlarını zenginleştirir
-5. Aynı veri çalışmasından JSON, CSV, SQL, TypeScript verisi ve sentetik test IBAN'ları üretilir
-6. Şema, tekrarsız kod, JSON/CSV/SQL eşitliği, SQLite, gizlilik ve paket testleri çalıştırılır
-7. Kaynak farkı bir maintainer tarafından PR üzerinde incelendikten sonra yeni sürüm yayımlanır
+1. `data/source/institutions.json` incelenmiş tek canonical snapshot olarak tutulur
+2. `scripts/check-sources.py` canlı kaynak hashlerini ve normalize kayıtları karşılaştırır
+3. Eklenen, kaldırılan ve değişen kayıtlar Markdown/JSON raporuna yazılır
+4. Değişiklik veya parser hatası canonical veriyi otomatik güncellemez; insan incelemesi gerekir
+5. Maintainer kabul edilen değişikliği canonical dosyaya uygular
+6. `scripts/generate-data.py` ağ kullanmadan JSON, CSV, SQL, SQLite, TypeScript ve fixture'ları üretir
+7. Şema, tam kayıt eşliği, drift, gizlilik, paket ve release testleri geçtikten sonra sürüm hazırlanır
 
 GitHub Actions resmî kaynakların dijital parmak izlerini ayda bir karşılaştırır. Yayın kontrol listesi aynı denetimi her sürüm öncesinde tekrar çalıştırır. Kaynak değiştiğinde veri otomatik olarak güvenilir kabul edilmez; kontrol başarısız olur ve insan incelemesi gerekir.
 
-Her kuruluş kaydı kaynak adresini, erişim tarihini ve `codeEvidence` alanında kodun hangi kanıta dayandığını taşır. Ayrıntılı kurallar [veri kaynakları](DATA_SOURCES.md) ve [veri güncelleme politikası](DATA_UPDATE_POLICY.md) belgelerindedir.
+Her kuruluş kaydı kaynak grubunu, resmî/ikincil/elle doğrulanmış sınıfını, erişim
+tarihini ve kanıt kapsamını taşır. Ayrıntılı kurallar [veri
+kaynakları](DATA_SOURCES.md), [veri şeması](DATA_SCHEMA.md) ve [veri güncelleme
+politikası](DATA_UPDATE_POLICY.md) belgelerindedir.
 
 Schwifty yalnızca MIT lisanslı karşılaştırma ve test referansı olarak kullanılabilir. Ana veri kaynağı değildir.
 
@@ -196,7 +219,9 @@ Kod ve belgeler MIT lisansıyla açıktır. Katkı yalnız kod yazmak değildir:
 
 Bir kullanım sorunuz veya geliştirme fikriniz varsa [GitHub Discussions](https://github.com/trugurpala/turkiye-iban/discussions) üzerinden konuşmaya katılın. Tekrarlanabilir bir hata ya da resmî kaynak değişikliği bulduysanız uygun [issue formunu](https://github.com/trugurpala/turkiye-iban/issues/new/choose) kullanın.
 
-İlk katkılar için belge örnekleri, PHP/Composer, Python ve veri fark raporu başlıkları [açık issue'larda](https://github.com/trugurpala/turkiye-iban/issues) tutulur. Issue veya tartışmalara gerçek IBAN ya da kişisel finansal veri eklemeyin.
+İlk katkılar için belge örnekleri, veri doğrulaması ve framework kullanım
+örnekleri [açık issue'larda](https://github.com/trugurpala/turkiye-iban/issues)
+tutulur. Issue veya tartışmalara gerçek IBAN ya da kişisel finansal veri eklemeyin.
 
 ## Projeye katkı
 
@@ -208,19 +233,46 @@ npm ci
 npm test
 ```
 
-Resmî kaynaklardan veri güncellemek ağ bağlantısı gerektirir:
+Resmî kaynak değişikliğini incelemek ağ bağlantısı gerektirir:
 
 ```bash
 npm run data:check-remote
-npm run data:update
-npm test
 ```
 
-Katkı kuralları [CONTRIBUTING.md](CONTRIBUTING.md), proje yönetimi [GOVERNANCE.md](GOVERNANCE.md), yayın adımları ise [yayın süreci belgesinde](docs/RELEASE_PROCESS.md) açıklanır.
+Bu kontrol veri dosyalarını otomatik değiştirmez. Kabul edilen canonical
+değişiklikten sonra `npm run generate:data` ve `npm test` çalıştırılır.
+
+Katkı kuralları [CONTRIBUTING.md](CONTRIBUTING.md), proje yönetimi
+[GOVERNANCE.md](GOVERNANCE.md), yayın adımları ise [RELEASE.md](RELEASE.md)
+içinde açıklanır.
 
 ## Yol haritası
 
-İlk sürüm TypeScript/NPM paketini ve dil bağımsız veri dosyalarını içerir. PHP/Composer ikinci, Python paketi sonraki aşamadır. Güncel planı [yol haritasında](docs/ROADMAP.md) görebilirsiniz.
+Bu repository TypeScript/NPM paketini ve dil bağımsız Türkiye IBAN temelini
+korur. Gelecekteki başka dil istemcileri ayrı repository olacaktır. Güncel planı
+[ROADMAP.md](ROADMAP.md) içinde görebilirsiniz.
+
+## Proje belgeleri
+
+- [Mimari ve veri üretim hattı](ARCHITECTURE.md)
+- [Veri alanları ve normalizasyon kuralları](DATA_SCHEMA.md)
+- [Kaynaklar ve güvenilirlik düzeyi](DATA_SOURCES.md)
+- [Veri güncelleme politikası](DATA_UPDATE_POLICY.md)
+- [API ve geriye uyumluluk](docs/API.md)
+- [Sentetik test verisi](TEST_DATA.md)
+- [Release, checksum ve geri alma](RELEASE.md)
+- [Yol haritası](ROADMAP.md)
+- [Katkı rehberi](CONTRIBUTING.md), [destek](SUPPORT.md), [güvenlik](SECURITY.md)
+- [Değişiklik geçmişi](CHANGELOG.md) ve [davranış kuralları](CODE_OF_CONDUCT.md)
+
+## Son release ve doğrulama
+
+En son yayın [GitHub Releases](https://github.com/trugurpala/turkiye-iban/releases/latest)
+ve [NPM `tr-iban`](https://www.npmjs.com/package/tr-iban) üzerinde bulunur. Bu veri
+temeliyle hazırlanacak yeni GitHub Release sürümleri JSON, CSV, SQL, SQLite,
+şemalar, sentetik fixture'lar, NPM tarball, SBOM ve SHA-256 checksum listesi
+içerir. Eski release dosyaları değişmeden korunur. CI sonucu repository rozetinden
+ve ilgili release workflow çalışmasından doğrulanabilir.
 
 ## Divan ile üretildi
 
