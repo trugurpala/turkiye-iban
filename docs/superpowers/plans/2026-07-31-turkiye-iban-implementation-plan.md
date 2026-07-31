@@ -72,18 +72,18 @@
 
 **Files:** release hazırlama araçları ve kalite testleri
 
-- [ ] JSON, CSV, SQL, schema, fixture, SHA-256, SBOM ve tarball üret.
+- [x] JSON, CSV, SQL, schema, fixture, SHA-256, SBOM ve tarball üret.
 - [x] Temiz geçici klasörde tarball'ı ESM ve CommonJS ile tüket.
-- [ ] Gizlilik taraması, schema, SQLite, tam test ve build komutlarını çalıştır.
-- [ ] `git diff --check`, tracked-file hijyeni ve placeholder taramasını çalıştır.
+- [x] Gizlilik taraması, schema, SQLite, tam test ve build komutlarını çalıştır.
+- [x] `git diff --check`, tracked-file hijyeni ve placeholder taramasını çalıştır.
 
 ### Task 7: GitHub ve NPM Yayını
 
 **External interfaces:** `trugurpala/turkiye-iban`, npm `tr-iban`
 
-- [ ] Doğrulanmış değişiklikleri amaçlı commit'lere ayır.
-- [ ] Public GitHub reposunu oluştur, dalı push et ve CI sonucunu doğrula.
-- [ ] Repo açıklaması, topics, merge ayarları, branch ruleset ve private vulnerability reporting'i yapılandır.
-- [ ] `v0.1.0` tag ve GitHub Release'i artefact/checksumlarla yayımla.
+- [x] Doğrulanmış değişiklikleri amaçlı commit'lere ayır.
+- [x] Public GitHub reposunu oluştur, dalı push et ve CI sonucunu doğrula.
+- [x] Repo açıklaması, topics, merge ayarları, branch koruması ve private vulnerability reporting'i yapılandır.
+- [x] `v0.1.0` tag ve GitHub Release'i artefact/checksumlarla yayımla.
 - [ ] NPM kimlik doğrulaması mevcutsa `tr-iban@0.1.0` yayımla ve kurulumla doğrula.
-- [ ] NPM kimlik doğrulaması yoksa tarball/provenance workflow'unu tamamlayıp tek dış bağımlılığı açıkça raporla.
+- [x] NPM kimlik doğrulaması yoksa tarball/provenance workflow'unu tamamlayıp tek dış bağımlılığı açıkça raporla.

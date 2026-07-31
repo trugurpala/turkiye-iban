@@ -1,6 +1,7 @@
 # turkiye-iban
 
 [![CI](https://github.com/trugurpala/turkiye-iban/actions/workflows/ci.yml/badge.svg)](https://github.com/trugurpala/turkiye-iban/actions/workflows/ci.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/trugurpala/turkiye-iban)](https://github.com/trugurpala/turkiye-iban/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Türkiye IBAN doğrulaması ve TCMB kaynaklı ödeme hizmeti sağlayıcı kodu eşlemesi
@@ -26,6 +27,15 @@ JSON, CSV ve SQL aynı üreticiden çıkar. JavaScript kullanmayan projeler pake
 runtime'ına ihtiyaç duymadan bu dosyaları tüketebilir.
 
 ## Kurulum / Installation
+
+`tr-iban` için ilk NPM registry yayını maintainer hesap yetkilendirmesini
+bekliyor. Doğrulanmış `v0.1.0` paketi bu sırada GitHub Release'ten kurulabilir:
+
+```bash
+npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.1.0/tr-iban-0.1.0.tgz
+```
+
+NPM yayını tamamlandıktan sonra standart kurulum komutu:
 
 ```bash
 npm install tr-iban
