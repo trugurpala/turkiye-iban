@@ -10,7 +10,7 @@
 - [x] `v0.1.0` GitHub Release ve uzaktan checksum doğrulaması.
 - [x] İlk NPM registry yayını ve temiz ESM/CommonJS kurulum doğrulaması.
 - [x] Geçici NPM bootstrap token'ının ilk yayından sonra iptali.
-- [ ] NPM trusted publisher bağlantısı.
+- [x] NPM trusted publisher bağlantısı.
 
 ## v0.2 - PHP/Composer
 
