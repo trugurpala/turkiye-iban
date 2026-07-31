@@ -8,12 +8,13 @@
     "packages/typescript"
   ],
   "scripts": {
-    "generate:data": "python scripts/generate-data.py",
+    "data:update": "python scripts/generate-data.py",
+    "generate:data": "npm run data:update",
     "validate:data": "python scripts/validate-data.py",
     "check:privacy": "python scripts/check-privacy.py",
     "test:tools": "python -m unittest discover -s tools -p \"test_*.py\"",
     "prepare:release": "python scripts/prepare-release.py",
-    "build": "npm run generate:data && npm -w packages/typescript run build",
-    "test": "npm run generate:data && npm run validate:data && npm run check:privacy && npm -w packages/typescript test && npm run test:tools"
+    "build": "npm -w packages/typescript run build",
+    "test": "npm run validate:data && npm run check:privacy && npm -w packages/typescript test && npm run test:tools"
   }
 }

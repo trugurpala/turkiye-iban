@@ -1,0 +1,20 @@
+[
+  {
+    "iban": "TR280000109999000000000001",
+    "providerCode": "00001",
+    "providerStatus": "known",
+    "synthetic": true
+  },
+  {
+    "iban": "TR56000460ABC123DEF456GHIJ",
+    "providerCode": "00046",
+    "providerStatus": "known",
+    "synthetic": true
+  },
+  {
+    "iban": "TR16999990ABC123DEF456GHIJ",
+    "providerCode": "99999",
+    "providerStatus": "unknown",
+    "synthetic": true
+  }
+]

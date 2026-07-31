@@ -18,9 +18,5 @@
   {
     "iban": "TR510004619999000000000011",
     "reason": "invalid_reserve_digit"
-  },
-  {
-    "iban": "TR749999909999000000000000",
-    "reason": "unknown_provider_code"
   }
 ]

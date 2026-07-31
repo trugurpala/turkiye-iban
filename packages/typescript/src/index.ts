@@ -1,4 +1,4 @@
-import { providers } from "./generated/banks.js";
+import { dataVersion, providers } from "./generated/banks.js";
 
 export type ProviderType =
   | "bank"
@@ -16,7 +16,11 @@ export interface TurkishIbanProvider {
   type: ProviderType;
   status: "active" | "inactive" | "unknown";
   systems: readonly string[];
-  ibanEligible: boolean;
+  codeEvidence: readonly (
+    | "payment_system_participant"
+    | "licensed_payment_institution"
+    | "licensed_electronic_money_institution"
+  )[];
   aliases: readonly string[];
   sources: readonly {
     id: string;
@@ -54,6 +58,7 @@ export interface IdentifiedTurkishIban {
   providerCode: string | null;
   provider: TurkishIbanProvider | null;
   providerStatus: "known" | "unknown";
+  dataVersion: string;
   bankCode: string | null;
   bank: TurkishIbanProvider | null;
   isKnownProvider: boolean;
@@ -211,6 +216,7 @@ export function identifyBankFromIban(input: string): IdentifiedTurkishIban {
     providerCode: bankCode,
     provider: bank,
     providerStatus: bank === null ? "unknown" : "known",
+    dataVersion,
     bankCode,
     bank,
     isKnownProvider: bank !== null,

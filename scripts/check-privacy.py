@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-IBAN_PATTERN = re.compile(r"\bTR\d{24}\b")
+IBAN_PATTERN = re.compile(r"\bTR[A-Z0-9]{24}\b")
 TEXT_SUFFIXES = {
     ".csv",
     ".json",
@@ -25,7 +25,11 @@ EXCLUDED_PARTS = {".git", "node_modules", "dist", "release-artifacts"}
 
 def load_fixture_ibans() -> set[str]:
     allowed: set[str] = set()
-    for relative_path in ["fixtures/valid.synthetic.json", "fixtures/invalid.synthetic.json"]:
+    for relative_path in [
+        "fixtures/valid.synthetic.json",
+        "fixtures/invalid.synthetic.json",
+        "fixtures/lookup.synthetic.json",
+    ]:
         data = json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
         for item in data:
             iban = item.get("iban")

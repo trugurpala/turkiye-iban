@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import shutil
+import sqlite3
 import subprocess
 import tempfile
 import unittest
@@ -25,6 +27,50 @@ class QualityScriptsTest(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("Data validation passed", result.stdout)
+
+    def test_data_contract_uses_source_evidence_without_iban_eligibility_claims(self) -> None:
+        payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
+
+        self.assertRegex(payload["dataVersion"], r"^\d{4}-\d{2}-\d{2}$")
+        self.assertGreater(len(payload["providers"]), 100)
+        for provider in payload["providers"]:
+            self.assertNotIn("ibanEligible", provider)
+            self.assertTrue(provider["codeEvidence"])
+            self.assertTrue(
+                set(provider["codeEvidence"])
+                <= {
+                    "payment_system_participant",
+                    "licensed_payment_institution",
+                    "licensed_electronic_money_institution",
+                }
+            )
+
+    def test_source_manifest_records_retrieval_hashes(self) -> None:
+        manifest = json.loads((ROOT / "data" / "source-manifest.json").read_text(encoding="utf-8"))
+
+        self.assertRegex(manifest["generatedAt"], r"^\d{4}-\d{2}-\d{2}$")
+        self.assertEqual(len(manifest["sources"]), 3)
+        for source in manifest["sources"]:
+            self.assertTrue(source["url"].startswith("https://"))
+            self.assertRegex(source["sha256"], r"^[0-9a-f]{64}$")
+
+    def test_sql_artifact_applies_cleanly(self) -> None:
+        sql_text = (ROOT / "data" / "tr-banks.sql").read_text(encoding="utf-8")
+        connection = sqlite3.connect(":memory:")
+        try:
+            connection.executescript(sql_text)
+            row_count = connection.execute("SELECT COUNT(*) FROM tr_iban_providers").fetchone()[0]
+        finally:
+            connection.close()
+
+        payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
+        self.assertEqual(row_count, len(payload["providers"]))
+
+    def test_normal_test_script_is_offline(self) -> None:
+        package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
+
+        self.assertNotIn("generate:data", package["scripts"]["test"])
+        self.assertIn("data:update", package["scripts"])
 
     def test_privacy_guard_accepts_only_known_synthetic_ibans(self) -> None:
         result = self.run_python("scripts/check-privacy.py")

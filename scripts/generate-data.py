@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 import sys
@@ -21,14 +22,17 @@ SOURCES = {
     "tcmb-payment-systems-participants-2026": {
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
         "system": "TCMB_PAYMENT_SYSTEMS",
+        "evidence": "payment_system_participant",
     },
     "tcmb-active-payment-institutions": {
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
         "system": "TCMB_PAYMENT_SERVICES_REGISTRY",
+        "evidence": "licensed_payment_institution",
     },
     "tcmb-active-electronic-money-institutions": {
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
         "system": "TCMB_PAYMENT_SERVICES_REGISTRY",
+        "evidence": "licensed_electronic_money_institution",
     },
 }
 
@@ -42,7 +46,7 @@ class Provider:
     type: str
     status: str = "active"
     systems: set[str] = field(default_factory=set)
-    ibanEligible: bool = True
+    codeEvidence: set[str] = field(default_factory=set)
     aliases: set[str] = field(default_factory=set)
     sources: list[dict[str, str]] = field(default_factory=list)
     lastVerifiedAt: str = GENERATED_DATE
@@ -56,7 +60,7 @@ class Provider:
             "type": self.type,
             "status": self.status,
             "systems": sorted(self.systems),
-            "ibanEligible": self.ibanEligible,
+            "codeEvidence": sorted(self.codeEvidence),
             "aliases": sorted(self.aliases),
             "sources": self.sources,
             "lastVerifiedAt": self.lastVerifiedAt,
@@ -161,6 +165,7 @@ def add_provider(providers: dict[str, Provider], raw_code: str, name: str, kind:
     else:
         provider.aliases.add(official_name)
     provider.systems.add(SOURCES[source_id]["system"])
+    provider.codeEvidence.add(SOURCES[source_id]["evidence"])
     provider.sources.append(source_ref(source_id))
 
 
@@ -218,6 +223,7 @@ def write_json_csv_sql(providers: list[dict[str, object]]) -> None:
             "accountLength": 16,
         },
         "generatedAt": GENERATED_DATE,
+        "dataVersion": GENERATED_DATE,
         "sourcePolicy": "Official-source-first. See DATA_SOURCES.md and DATA_UPDATE_POLICY.md.",
         "providers": providers,
     }
@@ -238,7 +244,7 @@ def write_json_csv_sql(providers: list[dict[str, object]]) -> None:
                 "type",
                 "status",
                 "systems",
-                "ibanEligible",
+                "codeEvidence",
                 "aliases",
                 "sourceIds",
                 "lastVerifiedAt",
@@ -255,7 +261,7 @@ def write_json_csv_sql(providers: list[dict[str, object]]) -> None:
                     "type": provider["type"],
                     "status": provider["status"],
                     "systems": "|".join(provider["systems"]),
-                    "ibanEligible": str(provider["ibanEligible"]).lower(),
+                    "codeEvidence": "|".join(provider["codeEvidence"]),
                     "aliases": "|".join(provider["aliases"]),
                     "sourceIds": "|".join(source["id"] for source in provider["sources"]),
                     "lastVerifiedAt": provider["lastVerifiedAt"],
@@ -271,7 +277,7 @@ def write_json_csv_sql(providers: list[dict[str, object]]) -> None:
         "  type TEXT NOT NULL,",
         "  status TEXT NOT NULL,",
         "  systems TEXT NOT NULL,",
-        "  iban_eligible INTEGER NOT NULL,",
+        "  code_evidence TEXT NOT NULL,",
         "  aliases TEXT NOT NULL,",
         "  sources_json TEXT NOT NULL,",
         "  last_verified_at TEXT NOT NULL",
@@ -287,7 +293,7 @@ def write_json_csv_sql(providers: list[dict[str, object]]) -> None:
             sql_string(str(provider["type"])),
             sql_string(str(provider["status"])),
             sql_string("|".join(provider["systems"])),
-            "1" if provider["ibanEligible"] else "0",
+            sql_string("|".join(provider["codeEvidence"])),
             sql_string("|".join(provider["aliases"])),
             sql_string(json.dumps(provider["sources"], ensure_ascii=False, separators=(",", ":"))),
             sql_string(str(provider["lastVerifiedAt"])),
@@ -332,9 +338,25 @@ def write_fixtures(providers: list[dict[str, object]]) -> None:
         {"iban": "TR33000460000000000000002", "reason": "invalid_length"},
         {"iban": "TR51000460999900000000001!", "reason": "invalid_character"},
         {"iban": "TR510004619999000000000011", "reason": "invalid_reserve_digit"},
+    ]
+    lookup = [
         {
-            "iban": build_iban("99999", "9999000000000000"),
-            "reason": "unknown_provider_code",
+            "iban": valid[0]["iban"],
+            "providerCode": valid[0]["providerCode"],
+            "providerStatus": "known",
+            "synthetic": True,
+        },
+        {
+            "iban": build_iban("00046", "ABC123DEF456GHIJ"),
+            "providerCode": "00046",
+            "providerStatus": "known",
+            "synthetic": True,
+        },
+        {
+            "iban": build_iban("99999", "ABC123DEF456GHIJ"),
+            "providerCode": "99999",
+            "providerStatus": "unknown",
+            "synthetic": True,
         },
     ]
     (fixture_dir / "valid.synthetic.json").write_text(
@@ -345,6 +367,10 @@ def write_fixtures(providers: list[dict[str, object]]) -> None:
         json.dumps(invalid, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+    (fixture_dir / "lookup.synthetic.json").write_text(
+        json.dumps(lookup, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def write_typescript_data(providers: list[dict[str, object]]) -> None:
@@ -353,17 +379,42 @@ def write_typescript_data(providers: list[dict[str, object]]) -> None:
     body = json.dumps(providers, ensure_ascii=False, indent=2)
     text = (
         "/* This file is generated by scripts/generate-data.py. Do not edit by hand. */\n"
+        f"export const dataVersion = {json.dumps(GENERATED_DATE)} as const;\n"
         f"export const providers = {body} as const;\n"
         "export type GeneratedProvider = (typeof providers)[number];\n"
     )
     (generated_dir / "banks.ts").write_text(text, encoding="utf-8")
 
 
+def write_source_manifest(source_payloads: dict[str, bytes]) -> None:
+    manifest = {
+        "$schema": "./schema/source-manifest.schema.json",
+        "generatedAt": GENERATED_DATE,
+        "sources": [
+            {
+                "id": source_id,
+                "url": SOURCES[source_id]["url"],
+                "retrievedAt": GENERATED_DATE,
+                "sha256": hashlib.sha256(payload).hexdigest(),
+            }
+            for source_id, payload in source_payloads.items()
+        ],
+    }
+    (ROOT / "data" / "source-manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
 def main() -> int:
     providers_by_code: dict[str, Provider] = {}
+    source_payloads = {
+        source_id: fetch_bytes(source["url"])
+        for source_id, source in SOURCES.items()
+    }
 
     payment_pdf_id = "tcmb-payment-systems-participants-2026"
-    for raw_code, name in parse_payment_systems_pdf(fetch_bytes(SOURCES[payment_pdf_id]["url"])):
+    for raw_code, name in parse_payment_systems_pdf(source_payloads[payment_pdf_id]):
         add_provider(
             providers_by_code,
             raw_code,
@@ -373,17 +424,18 @@ def main() -> int:
         )
 
     payment_id = "tcmb-active-payment-institutions"
-    for raw_code, name in parse_institution_rows(fetch_bytes(SOURCES[payment_id]["url"])):
+    for raw_code, name in parse_institution_rows(source_payloads[payment_id]):
         add_provider(providers_by_code, raw_code, name, "payment_institution", payment_id)
 
     emoney_id = "tcmb-active-electronic-money-institutions"
-    for raw_code, name in parse_institution_rows(fetch_bytes(SOURCES[emoney_id]["url"])):
+    for raw_code, name in parse_institution_rows(source_payloads[emoney_id]):
         add_provider(providers_by_code, raw_code, name, "electronic_money_institution", emoney_id)
 
     providers = [item.to_json() for item in sorted(providers_by_code.values(), key=lambda item: item.code)]
     write_json_csv_sql(providers)
     write_fixtures(providers)
     write_typescript_data(providers)
+    write_source_manifest(source_payloads)
     print(f"Generated {len(providers)} providers")
     return 0
 

@@ -37,9 +37,12 @@ def main() -> int:
         ROOT / "data" / "tr-banks.json",
         ROOT / "data" / "tr-banks.csv",
         ROOT / "data" / "tr-banks.sql",
+        ROOT / "data" / "source-manifest.json",
         ROOT / "data" / "schema" / "tr-banks.schema.json",
+        ROOT / "data" / "schema" / "source-manifest.schema.json",
         ROOT / "fixtures" / "valid.synthetic.json",
         ROOT / "fixtures" / "invalid.synthetic.json",
+        ROOT / "fixtures" / "lookup.synthetic.json",
     ]
 
     copied: list[Path] = []

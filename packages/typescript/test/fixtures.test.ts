@@ -24,8 +24,14 @@ interface InvalidFixture {
     | "invalid_country"
     | "invalid_length"
     | "invalid_character"
-    | "invalid_reserve_digit"
-    | "unknown_provider_code";
+    | "invalid_reserve_digit";
+}
+
+interface LookupFixture {
+  iban: string;
+  providerCode: string;
+  providerStatus: "known" | "unknown";
+  synthetic: true;
 }
 
 function loadJsonFixture<T>(relativePath: string): T {
@@ -35,6 +41,7 @@ function loadJsonFixture<T>(relativePath: string): T {
 describe("synthetic fixture contract", () => {
   const validFixtures = loadJsonFixture<ValidFixture[]>("../../../../fixtures/valid.synthetic.json");
   const invalidFixtures = loadJsonFixture<InvalidFixture[]>("../../../../fixtures/invalid.synthetic.json");
+  const lookupFixtures = loadJsonFixture<LookupFixture[]>("../../../../fixtures/lookup.synthetic.json");
 
   it("validates every generated valid fixture", () => {
     assert.ok(validFixtures.length >= 100);
@@ -51,14 +58,16 @@ describe("synthetic fixture contract", () => {
   });
 
   it("keeps unknown provider fixtures format-valid but lookup-unknown", () => {
-    const fixture = invalidFixtures.find((item) => item.reason === "unknown_provider_code");
+    const fixture = lookupFixtures.find((item) => item.providerStatus === "unknown");
     assert.ok(fixture);
 
     const identified = identifyBankFromIban(fixture.iban);
 
     assert.equal(identified.parsed.isValid, true);
-    assert.equal(identified.isKnownProvider, false);
-    assert.equal(identified.bank, null);
+    assert.equal(identified.providerCode, fixture.providerCode);
+    assert.equal(identified.providerStatus, "unknown");
+    assert.equal(identified.provider, null);
+    assert.match(identified.dataVersion, /^\d{4}-\d{2}-\d{2}$/);
   });
 
   it("rejects invalid fixtures for their documented reason", () => {
@@ -71,10 +80,6 @@ describe("synthetic fixture contract", () => {
     ]);
 
     for (const fixture of invalidFixtures) {
-      if (fixture.reason === "unknown_provider_code") {
-        continue;
-      }
-
       const parsed = parseIban(fixture.iban);
       const expectedError = expectedErrors.get(fixture.reason);
 
