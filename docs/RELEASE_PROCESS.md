@@ -44,8 +44,8 @@ korumasıyla annotated tag kullanabilir. `release.yml` iş akışı testleri tek
 
 ## İlk NPM Yayını
 
-NPM'de paket henüz yokken ilk yayın, 2FA etkin maintainer hesabıyla bir kez
-bootstrap edilir:
+`tr-iban@0.1.0` için ilk yayın, 2FA etkin maintainer hesabıyla bir kez
+bootstrap edilmiştir. Yeni bir paket adı için aynı işlem gerekirse:
 
 ```bash
 npm login

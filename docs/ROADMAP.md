@@ -8,7 +8,9 @@
 - [x] Veri doğrulama, privacy scan, CI ve release artifact üretimi.
 - [x] Topluluk, güvenlik, yönetişim ve katkı dosyaları.
 - [x] `v0.1.0` GitHub Release ve uzaktan checksum doğrulaması.
-- [ ] İlk NPM registry yayını ve trusted publisher bağlantısı.
+- [x] İlk NPM registry yayını ve temiz ESM/CommonJS kurulum doğrulaması.
+- [x] Geçici NPM bootstrap token'ının ilk yayından sonra iptali.
+- [x] NPM trusted publisher bağlantısı.
 
 ## v0.2 - PHP/Composer
 
