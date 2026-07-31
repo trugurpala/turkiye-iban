@@ -1,6 +1,6 @@
 {
   "name": "tr-iban",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Turkish IBAN parser, validator, formatter, masker, and provider-code lookup.",
   "type": "module",
   "license": "MIT",

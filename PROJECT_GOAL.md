@@ -34,4 +34,4 @@ Personel ekranında IBAN girildiğinde paket biçim ve kontrol rakamlarını do�
 
 ## Divan
 
-Bu proje Divan ile tasarlandı ve üretildi. Divan araştırma, tasarım, planlama ve geliştirme sürecinde kullanılmıştır; paketin runtime bağımlılığı değildir.
+Bu proje [Divan](https://github.com/trugurpala/divan) ile tasarlandı ve üretildi. Divan araştırma, teknik şartname, planlama, uygulama, doğrulama ve yayın sürecinde kullanılmıştır; paketin runtime bağımlılığı değildir.
