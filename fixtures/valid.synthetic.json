@@ -1,0 +1,1045 @@
+[
+  {
+    "iban": "TR280000109999000000000001",
+    "providerCode": "00001",
+    "rawCode": "0001",
+    "providerName": "T.C. MERKEZ BANKASI",
+    "synthetic": true
+  },
+  {
+    "iban": "TR270000409999000000000002",
+    "providerCode": "00004",
+    "rawCode": "0004",
+    "providerName": "İLLER BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR520001009999000000000003",
+    "providerCode": "00010",
+    "rawCode": "0010",
+    "providerName": "T.C. ZİRAAT BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR100001209999000000000004",
+    "providerCode": "00012",
+    "rawCode": "0012",
+    "providerName": "T. HALK BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR650001409999000000000005",
+    "providerCode": "00014",
+    "rawCode": "0014",
+    "providerName": "T. SINAİ KALKINMA BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR790001509999000000000006",
+    "providerCode": "00015",
+    "rawCode": "0015",
+    "providerName": "T. VAKIFLAR BANKASI T.A.O.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR930001609999000000000007",
+    "providerCode": "00016",
+    "rawCode": "0016",
+    "providerName": "T. EXİMBANK",
+    "synthetic": true
+  },
+  {
+    "iban": "TR100001709999000000000008",
+    "providerCode": "00017",
+    "rawCode": "0017",
+    "providerName": "T. KALKINMA BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR870002909999000000000009",
+    "providerCode": "00029",
+    "rawCode": "0029",
+    "providerName": "BİRLEŞİK FON BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR860003209999000000000010",
+    "providerCode": "00032",
+    "rawCode": "0032",
+    "providerName": "T. EKONOMİ BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR510004609999000000000011",
+    "providerCode": "00046",
+    "rawCode": "0046",
+    "providerName": "AKBANK T.A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR720005909999000000000012",
+    "providerCode": "00059",
+    "rawCode": "0059",
+    "providerName": "ŞEKERBANK T.A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR860006009999000000000013",
+    "providerCode": "00060",
+    "rawCode": "0060",
+    "providerName": "TÜRK TİCARET BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR440006209999000000000014",
+    "providerCode": "00062",
+    "rawCode": "0062",
+    "providerName": "T. GARANTİ BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR020006409999000000000015",
+    "providerCode": "00064",
+    "rawCode": "0064",
+    "providerName": "T. İŞ BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR980006709999000000000016",
+    "providerCode": "00067",
+    "rawCode": "0067",
+    "providerName": "YAPI VE KREDİ BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR850009109999000000000017",
+    "providerCode": "00091",
+    "rawCode": "0091",
+    "providerName": "ARAP TÜRK BANKASI",
+    "synthetic": true
+  },
+  {
+    "iban": "TR020009209999000000000018",
+    "providerCode": "00092",
+    "rawCode": "0092",
+    "providerName": "CITIBANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR420009609999000000000019",
+    "providerCode": "00096",
+    "rawCode": "0096",
+    "providerName": "TURKISH BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR970009809999000000000020",
+    "providerCode": "00098",
+    "rawCode": "0098",
+    "providerName": "JPMORGAN CHASE BANK N.A.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR140009909999000000000021",
+    "providerCode": "00099",
+    "rawCode": "0099",
+    "providerName": "ING BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR540010309999000000000022",
+    "providerCode": "00103",
+    "rawCode": "0103",
+    "providerName": "FİBABANKA A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR380010809999000000000023",
+    "providerCode": "00108",
+    "rawCode": "0108",
+    "providerName": "TURKLAND BANK A.S.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR520010909999000000000024",
+    "providerCode": "00109",
+    "rawCode": "0109",
+    "providerName": "ICBC TURKEY BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR100011109999000000000025",
+    "providerCode": "00111",
+    "rawCode": "0111",
+    "providerName": "QNB FİNANSBANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR500011509999000000000026",
+    "providerCode": "00115",
+    "rawCode": "0115",
+    "providerName": "DEUTSCHE BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR640011609999000000000027",
+    "providerCode": "00116",
+    "rawCode": "0116",
+    "providerName": "PASHA YATIRIM BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR480012109999000000000028",
+    "providerCode": "00121",
+    "rawCode": "0121",
+    "providerName": "STANDARD CHARTERED YATIRIM BANKASI TÜRK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR620012209999000000000029",
+    "providerCode": "00122",
+    "rawCode": "0122",
+    "providerName": "SOCIETE GENERALE (SA)",
+    "synthetic": true
+  },
+  {
+    "iban": "TR760012309999000000000030",
+    "providerCode": "00123",
+    "rawCode": "0123",
+    "providerName": "HSBC BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR900012409999000000000031",
+    "providerCode": "00124",
+    "rawCode": "0124",
+    "providerName": "ALTERNATİFBANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR070012509999000000000032",
+    "providerCode": "00125",
+    "rawCode": "0125",
+    "providerName": "BURGAN BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR470012909999000000000033",
+    "providerCode": "00129",
+    "rawCode": "0129",
+    "providerName": "BANK OF AMERICA YATIRIM BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR460013209999000000000034",
+    "providerCode": "00132",
+    "rawCode": "0132",
+    "providerName": "İSTANBUL TAKAS VE SAKLAMA BANK. A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR040013409999000000000035",
+    "providerCode": "00134",
+    "rawCode": "0134",
+    "providerName": "DENİZBANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR180013509999000000000036",
+    "providerCode": "00135",
+    "rawCode": "0135",
+    "providerName": "ANADOLUBANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR730013709999000000000037",
+    "providerCode": "00137",
+    "rawCode": "0137",
+    "providerName": "RABOBANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR870013809999000000000038",
+    "providerCode": "00138",
+    "rawCode": "0138",
+    "providerName": "DİLER YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR040013909999000000000039",
+    "providerCode": "00139",
+    "rawCode": "0139",
+    "providerName": "GSD YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR590014109999000000000040",
+    "providerCode": "00141",
+    "rawCode": "0141",
+    "providerName": "NUROL YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR730014209999000000000041",
+    "providerCode": "00142",
+    "rawCode": "0142",
+    "providerName": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR870014309999000000000042",
+    "providerCode": "00143",
+    "rawCode": "0143",
+    "providerName": "AKTİF YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR860014609999000000000043",
+    "providerCode": "00146",
+    "rawCode": "0146",
+    "providerName": "ODEA BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR030014709999000000000044",
+    "providerCode": "00147",
+    "rawCode": "0147",
+    "providerName": "MUFG BANK TURKEY A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR170014809999000000000045",
+    "providerCode": "00148",
+    "rawCode": "0148",
+    "providerName": "INTESA SANPAOLO S.P.A.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR310014909999000000000046",
+    "providerCode": "00149",
+    "rawCode": "0149",
+    "providerName": "BANK OF CHINA TURKEY A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR450015009999000000000047",
+    "providerCode": "00150",
+    "rawCode": "0150",
+    "providerName": "GOLDEN GLOBAL YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR590015109999000000000048",
+    "providerCode": "00151",
+    "rawCode": "0151",
+    "providerName": "D YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR730015209999000000000049",
+    "providerCode": "00152",
+    "rawCode": "0152",
+    "providerName": "DESTEK YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR870015309999000000000050",
+    "providerCode": "00153",
+    "rawCode": "0153",
+    "providerName": "MİSYON YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR040015409999000000000051",
+    "providerCode": "00154",
+    "rawCode": "0154",
+    "providerName": "TERA YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR180015509999000000000052",
+    "providerCode": "00155",
+    "rawCode": "0155",
+    "providerName": "Q YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR320015609999000000000053",
+    "providerCode": "00156",
+    "rawCode": "0156",
+    "providerName": "HEDEF YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR460015709999000000000054",
+    "providerCode": "00157",
+    "rawCode": "0157",
+    "providerName": "ENPARA BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR600015809999000000000055",
+    "providerCode": "00158",
+    "rawCode": "0158",
+    "providerName": "COLENDİ BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR740015909999000000000056",
+    "providerCode": "00159",
+    "rawCode": "0159",
+    "providerName": "FUPS BANK A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR880016009999000000000057",
+    "providerCode": "00160",
+    "rawCode": "0160",
+    "providerName": "ZİRAAT DİNAMİK BANKA A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR050016109999000000000058",
+    "providerCode": "00161",
+    "rawCode": "0161",
+    "providerName": "AYTEMİZ YATIRIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR510020309999000000000059",
+    "providerCode": "00203",
+    "rawCode": "0203",
+    "providerName": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR090020509999000000000060",
+    "providerCode": "00205",
+    "rawCode": "0205",
+    "providerName": "KUVEYT TÜRK KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR230020609999000000000061",
+    "providerCode": "00206",
+    "rawCode": "0206",
+    "providerName": "TÜRKİYE FİNANS KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR220020909999000000000062",
+    "providerCode": "00209",
+    "rawCode": "0209",
+    "providerName": "ZİRAAT KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR360021009999000000000063",
+    "providerCode": "00210",
+    "rawCode": "0210",
+    "providerName": "VAKIF KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR500021109999000000000064",
+    "providerCode": "00211",
+    "rawCode": "0211",
+    "providerName": "TÜRKİYE EMLAK KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR640021209999000000000065",
+    "providerCode": "00212",
+    "rawCode": "0212",
+    "providerName": "HAYAT FİNANS KATILIM BANKASI",
+    "synthetic": true
+  },
+  {
+    "iban": "TR780021309999000000000066",
+    "providerCode": "00213",
+    "rawCode": "0213",
+    "providerName": "T.O.M. KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR920021409999000000000067",
+    "providerCode": "00214",
+    "rawCode": "0214",
+    "providerName": "DÜNYA KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR090021509999000000000068",
+    "providerCode": "00215",
+    "rawCode": "0215",
+    "providerName": "ADİL KATILIM BANKASI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR600080609999000000000069",
+    "providerCode": "00806",
+    "rawCode": "0806",
+    "providerName": "MERKEZİ KAYIT KURULUŞU A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR740080709999000000000070",
+    "providerCode": "00807",
+    "rawCode": "0807",
+    "providerName": "POSTA VE TELGRAF TEŞKİLATI A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR090082509999000000000071",
+    "providerCode": "00825",
+    "rawCode": "825",
+    "providerName": "Moka United Ödeme Hizmetleri ve Elektronik Para Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR640082709999000000000072",
+    "providerCode": "00827",
+    "rawCode": "827",
+    "providerName": "Turk Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR780082809999000000000073",
+    "providerCode": "00828",
+    "rawCode": "828",
+    "providerName": "Belbim Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR920082909999000000000074",
+    "providerCode": "00829",
+    "rawCode": "829",
+    "providerName": "Papara Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR090083009999000000000075",
+    "providerCode": "00830",
+    "rawCode": "830",
+    "providerName": "D Ödeme Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR230083109999000000000076",
+    "providerCode": "00831",
+    "rawCode": "831",
+    "providerName": "Nomu Pay Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR780083309999000000000077",
+    "providerCode": "00833",
+    "rawCode": "833",
+    "providerName": "Payporter Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR920083409999000000000078",
+    "providerCode": "00834",
+    "rawCode": "834",
+    "providerName": "Paladyum Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR090083509999000000000079",
+    "providerCode": "00835",
+    "rawCode": "835",
+    "providerName": "Vodafone Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR230083609999000000000080",
+    "providerCode": "00836",
+    "rawCode": "836",
+    "providerName": "Aköde Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR370083709999000000000081",
+    "providerCode": "00837",
+    "rawCode": "837",
+    "providerName": "Erpa Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR510083809999000000000082",
+    "providerCode": "00838",
+    "rawCode": "838",
+    "providerName": "Sipay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR650083909999000000000083",
+    "providerCode": "00839",
+    "rawCode": "839",
+    "providerName": "Ozan Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR790084009999000000000084",
+    "providerCode": "00840",
+    "rawCode": "840",
+    "providerName": "Token Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR370084209999000000000085",
+    "providerCode": "00842",
+    "rawCode": "842",
+    "providerName": "Moneypay Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR920084409999000000000086",
+    "providerCode": "00844",
+    "rawCode": "844",
+    "providerName": "Beeso Elektronik Para ve Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR910084709999000000000087",
+    "providerCode": "00847",
+    "rawCode": "847",
+    "providerName": "Parakolay Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR080084809999000000000088",
+    "providerCode": "00848",
+    "rawCode": "848",
+    "providerName": "Trendpay Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR220084909999000000000089",
+    "providerCode": "00849",
+    "rawCode": "849",
+    "providerName": "Payco Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR360085009999000000000090",
+    "providerCode": "00850",
+    "rawCode": "850",
+    "providerName": "BPN Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR500085109999000000000091",
+    "providerCode": "00851",
+    "rawCode": "851",
+    "providerName": "Gönderal Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR640085209999000000000092",
+    "providerCode": "00852",
+    "rawCode": "852",
+    "providerName": "N Kolay Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR780085309999000000000093",
+    "providerCode": "00853",
+    "rawCode": "853",
+    "providerName": "UPT Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR360085509999000000000094",
+    "providerCode": "00855",
+    "rawCode": "855",
+    "providerName": "Elekse Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR500085609999000000000095",
+    "providerCode": "00856",
+    "rawCode": "856",
+    "providerName": "Paytrek Ödeme Kuruluşu Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR080085809999000000000096",
+    "providerCode": "00858",
+    "rawCode": "858",
+    "providerName": "Faturakom Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR630086009999000000000097",
+    "providerCode": "00860",
+    "rawCode": "860",
+    "providerName": "Pratik İşlem Ödeme ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR770086109999000000000098",
+    "providerCode": "00861",
+    "rawCode": "861",
+    "providerName": "Faturamatik Elektronik Para ve Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR910086209999000000000099",
+    "providerCode": "00862",
+    "rawCode": "862",
+    "providerName": "Trend Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR080086309999000000000100",
+    "providerCode": "00863",
+    "rawCode": "863",
+    "providerName": "Paytr Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR220086409999000000000101",
+    "providerCode": "00864",
+    "rawCode": "864",
+    "providerName": "İyzi Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR360086509999000000000102",
+    "providerCode": "00865",
+    "rawCode": "865",
+    "providerName": "Paratika Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR350086809999000000000103",
+    "providerCode": "00868",
+    "rawCode": "868",
+    "providerName": "Ödeal Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR490086909999000000000104",
+    "providerCode": "00869",
+    "rawCode": "869",
+    "providerName": "Turkcell Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR630087009999000000000105",
+    "providerCode": "00870",
+    "rawCode": "870",
+    "providerName": "TT Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR770087109999000000000106",
+    "providerCode": "00871",
+    "rawCode": "871",
+    "providerName": "MoneyGram Turkey Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR760087409999000000000107",
+    "providerCode": "00874",
+    "rawCode": "874",
+    "providerName": "Octet Express Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR900087509999000000000108",
+    "providerCode": "00875",
+    "rawCode": "875",
+    "providerName": "Sender Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR070087609999000000000109",
+    "providerCode": "00876",
+    "rawCode": "876",
+    "providerName": "Efix Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR620087809999000000000110",
+    "providerCode": "00878",
+    "rawCode": "878",
+    "providerName": "Paratim Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR460088309999000000000111",
+    "providerCode": "00883",
+    "rawCode": "883",
+    "providerName": "İstanbul Ödeme ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR600088409999000000000112",
+    "providerCode": "00884",
+    "rawCode": "884",
+    "providerName": "Global Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR180088609999000000000113",
+    "providerCode": "00886",
+    "rawCode": "886",
+    "providerName": "Western Union Turkey Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR320088709999000000000114",
+    "providerCode": "00887",
+    "rawCode": "887",
+    "providerName": "Tronapay Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR460088809999000000000115",
+    "providerCode": "00888",
+    "rawCode": "888",
+    "providerName": "Paragram Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR040089009999000000000116",
+    "providerCode": "00890",
+    "rawCode": "890",
+    "providerName": "Lydians Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR180089109999000000000117",
+    "providerCode": "00891",
+    "rawCode": "891",
+    "providerName": "Denizöde Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR730089309999000000000118",
+    "providerCode": "00893",
+    "rawCode": "893",
+    "providerName": "Dgpara Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR870089409999000000000119",
+    "providerCode": "00894",
+    "rawCode": "894",
+    "providerName": "Ahlatcı Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR040089509999000000000120",
+    "providerCode": "00895",
+    "rawCode": "895",
+    "providerName": "Lidio Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR030089809999000000000121",
+    "providerCode": "00898",
+    "rawCode": "898",
+    "providerName": "BRQ Link Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR170089909999000000000122",
+    "providerCode": "00899",
+    "rawCode": "899",
+    "providerName": "Rubik Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR940091109999000000000123",
+    "providerCode": "00911",
+    "rawCode": "911",
+    "providerName": "As Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR110091209999000000000124",
+    "providerCode": "00912",
+    "rawCode": "912",
+    "providerName": "Tom Pay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR250091309999000000000125",
+    "providerCode": "00913",
+    "rawCode": "913",
+    "providerName": "A Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR390091409999000000000126",
+    "providerCode": "00914",
+    "rawCode": "914",
+    "providerName": "Papel Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR530091509999000000000127",
+    "providerCode": "00915",
+    "rawCode": "915",
+    "providerName": "Turkonay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR110091709999000000000128",
+    "providerCode": "00917",
+    "rawCode": "917",
+    "providerName": "Moneyout Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR250091809999000000000129",
+    "providerCode": "00918",
+    "rawCode": "918",
+    "providerName": "Valenspara Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR390091909999000000000130",
+    "providerCode": "00919",
+    "rawCode": "919",
+    "providerName": "TRPOS Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR530092009999000000000131",
+    "providerCode": "00920",
+    "rawCode": "920",
+    "providerName": "Dinamik Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR670092109999000000000132",
+    "providerCode": "00921",
+    "rawCode": "921",
+    "providerName": "Vakıf Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR810092209999000000000133",
+    "providerCode": "00922",
+    "rawCode": "922",
+    "providerName": "Ziraat Finansal Teknolojiler Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR950092309999000000000134",
+    "providerCode": "00923",
+    "rawCode": "923",
+    "providerName": "Yemekpay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR120092409999000000000135",
+    "providerCode": "00924",
+    "rawCode": "924",
+    "providerName": "Halk Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR260092509999000000000136",
+    "providerCode": "00925",
+    "rawCode": "925",
+    "providerName": "Garanti Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR400092609999000000000137",
+    "providerCode": "00926",
+    "rawCode": "926",
+    "providerName": "Qnbpay Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR540092709999000000000138",
+    "providerCode": "00927",
+    "rawCode": "927",
+    "providerName": "SBM Elektronik Para ve Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR680092809999000000000139",
+    "providerCode": "00928",
+    "rawCode": "928",
+    "providerName": "Qpay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR820092909999000000000140",
+    "providerCode": "00929",
+    "rawCode": "929",
+    "providerName": "Fintlix Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR960093009999000000000141",
+    "providerCode": "00930",
+    "rawCode": "930",
+    "providerName": "Moneymate Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR130093109999000000000142",
+    "providerCode": "00931",
+    "rawCode": "931",
+    "providerName": "Hayhay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR270093209999000000000143",
+    "providerCode": "00932",
+    "rawCode": "932",
+    "providerName": "Türk Hava Yolları Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR410093309999000000000144",
+    "providerCode": "00933",
+    "rawCode": "933",
+    "providerName": "Junomoney Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR550093409999000000000145",
+    "providerCode": "00934",
+    "rawCode": "934",
+    "providerName": "Mps Ödeme Kuruluşu A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR690093509999000000000146",
+    "providerCode": "00935",
+    "rawCode": "935",
+    "providerName": "Loop Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR830093609999000000000147",
+    "providerCode": "00936",
+    "rawCode": "936",
+    "providerName": "Hangipara Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR970093709999000000000148",
+    "providerCode": "00937",
+    "rawCode": "937",
+    "providerName": "Logo Ödeme Hizmetleri A.Ş.",
+    "synthetic": true
+  },
+  {
+    "iban": "TR140093809999000000000149",
+    "providerCode": "00938",
+    "rawCode": "938",
+    "providerName": "Sağlam Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+    "synthetic": true
+  }
+]

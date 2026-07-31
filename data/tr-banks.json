@@ -1,0 +1,3143 @@
+{
+  "$schema": "./schema/tr-banks.schema.json",
+  "country": "TR",
+  "ibanFormat": {
+    "length": 26,
+    "providerCodeLength": 5,
+    "reserveLength": 1,
+    "accountLength": 16
+  },
+  "generatedAt": "2026-07-31",
+  "sourcePolicy": "Official-source-first. See DATA_SOURCES.md and DATA_UPDATE_POLICY.md.",
+  "providers": [
+    {
+      "code": "00001",
+      "rawCode": "0001",
+      "nameOfficial": "T.C. MERKEZ BANKASI",
+      "nameShort": "T.C. MERKEZ BANKASI",
+      "type": "central_bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00004",
+      "rawCode": "0004",
+      "nameOfficial": "İLLER BANKASI A.Ş.",
+      "nameShort": "İLLER BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00010",
+      "rawCode": "0010",
+      "nameOfficial": "T.C. ZİRAAT BANKASI A.Ş.",
+      "nameShort": "T.C. ZİRAAT BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00012",
+      "rawCode": "0012",
+      "nameOfficial": "T. HALK BANKASI A.Ş.",
+      "nameShort": "T. HALK BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00014",
+      "rawCode": "0014",
+      "nameOfficial": "T. SINAİ KALKINMA BANKASI A.Ş.",
+      "nameShort": "T. SINAİ KALKINMA BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00015",
+      "rawCode": "0015",
+      "nameOfficial": "T. VAKIFLAR BANKASI T.A.O.",
+      "nameShort": "T. VAKIFLAR BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00016",
+      "rawCode": "0016",
+      "nameOfficial": "T. EXİMBANK",
+      "nameShort": "T. EXİMBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00017",
+      "rawCode": "0017",
+      "nameOfficial": "T. KALKINMA BANKASI A.Ş.",
+      "nameShort": "T. KALKINMA BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00029",
+      "rawCode": "0029",
+      "nameOfficial": "BİRLEŞİK FON BANKASI A.Ş.",
+      "nameShort": "BİRLEŞİK FON BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00032",
+      "rawCode": "0032",
+      "nameOfficial": "T. EKONOMİ BANKASI A.Ş.",
+      "nameShort": "T. EKONOMİ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00046",
+      "rawCode": "0046",
+      "nameOfficial": "AKBANK T.A.Ş.",
+      "nameShort": "AKBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00059",
+      "rawCode": "0059",
+      "nameOfficial": "ŞEKERBANK T.A.Ş.",
+      "nameShort": "ŞEKERBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00060",
+      "rawCode": "0060",
+      "nameOfficial": "TÜRK TİCARET BANKASI A.Ş.",
+      "nameShort": "TÜRK TİCARET BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00062",
+      "rawCode": "0062",
+      "nameOfficial": "T. GARANTİ BANKASI A.Ş.",
+      "nameShort": "T. GARANTİ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00064",
+      "rawCode": "0064",
+      "nameOfficial": "T. İŞ BANKASI A.Ş.",
+      "nameShort": "T. İŞ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00067",
+      "rawCode": "0067",
+      "nameOfficial": "YAPI VE KREDİ BANKASI A.Ş.",
+      "nameShort": "YAPI VE KREDİ BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00091",
+      "rawCode": "0091",
+      "nameOfficial": "ARAP TÜRK BANKASI",
+      "nameShort": "ARAP TÜRK BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00092",
+      "rawCode": "0092",
+      "nameOfficial": "CITIBANK A.Ş.",
+      "nameShort": "CITIBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00096",
+      "rawCode": "0096",
+      "nameOfficial": "TURKISH BANK A.Ş.",
+      "nameShort": "TURKISH BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00098",
+      "rawCode": "0098",
+      "nameOfficial": "JPMORGAN CHASE BANK N.A.",
+      "nameShort": "JPMORGAN CHASE BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00099",
+      "rawCode": "0099",
+      "nameOfficial": "ING BANK A.Ş.",
+      "nameShort": "ING BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00103",
+      "rawCode": "0103",
+      "nameOfficial": "FİBABANKA A.Ş.",
+      "nameShort": "FİBABANKA",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00108",
+      "rawCode": "0108",
+      "nameOfficial": "TURKLAND BANK A.S.",
+      "nameShort": "TURKLAND BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00109",
+      "rawCode": "0109",
+      "nameOfficial": "ICBC TURKEY BANK A.Ş.",
+      "nameShort": "ICBC TURKEY BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00111",
+      "rawCode": "0111",
+      "nameOfficial": "QNB FİNANSBANK A.Ş.",
+      "nameShort": "QNB FİNANSBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00115",
+      "rawCode": "0115",
+      "nameOfficial": "DEUTSCHE BANK A.Ş.",
+      "nameShort": "DEUTSCHE BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00116",
+      "rawCode": "0116",
+      "nameOfficial": "PASHA YATIRIM BANK A.Ş.",
+      "nameShort": "PASHA YATIRIM BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00121",
+      "rawCode": "0121",
+      "nameOfficial": "STANDARD CHARTERED YATIRIM BANKASI TÜRK A.Ş.",
+      "nameShort": "STANDARD CHARTERED YATIRIM BANKASI TÜRK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00122",
+      "rawCode": "0122",
+      "nameOfficial": "SOCIETE GENERALE (SA)",
+      "nameShort": "SOCIETE GENERALE (SA)",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00123",
+      "rawCode": "0123",
+      "nameOfficial": "HSBC BANK A.Ş.",
+      "nameShort": "HSBC BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00124",
+      "rawCode": "0124",
+      "nameOfficial": "ALTERNATİFBANK A.Ş.",
+      "nameShort": "ALTERNATİFBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00125",
+      "rawCode": "0125",
+      "nameOfficial": "BURGAN BANK A.Ş.",
+      "nameShort": "BURGAN BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00129",
+      "rawCode": "0129",
+      "nameOfficial": "BANK OF AMERICA YATIRIM BANK A.Ş.",
+      "nameShort": "BANK OF AMERICA YATIRIM BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00132",
+      "rawCode": "0132",
+      "nameOfficial": "İSTANBUL TAKAS VE SAKLAMA BANK. A.Ş.",
+      "nameShort": "İSTANBUL TAKAS VE SAKLAMA BANK.",
+      "type": "financial_market_infrastructure",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00134",
+      "rawCode": "0134",
+      "nameOfficial": "DENİZBANK A.Ş.",
+      "nameShort": "DENİZBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00135",
+      "rawCode": "0135",
+      "nameOfficial": "ANADOLUBANK A.Ş.",
+      "nameShort": "ANADOLUBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00137",
+      "rawCode": "0137",
+      "nameOfficial": "RABOBANK A.Ş.",
+      "nameShort": "RABOBANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00138",
+      "rawCode": "0138",
+      "nameOfficial": "DİLER YATIRIM BANKASI A.Ş.",
+      "nameShort": "DİLER YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00139",
+      "rawCode": "0139",
+      "nameOfficial": "GSD YATIRIM BANKASI A.Ş.",
+      "nameShort": "GSD YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00141",
+      "rawCode": "0141",
+      "nameOfficial": "NUROL YATIRIM BANKASI A.Ş.",
+      "nameShort": "NUROL YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00142",
+      "rawCode": "0142",
+      "nameOfficial": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
+      "nameShort": "BANKPOZİTİF KREDİ VE KALK.BANK.A.Ş.",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00143",
+      "rawCode": "0143",
+      "nameOfficial": "AKTİF YATIRIM BANKASI A.Ş.",
+      "nameShort": "AKTİF YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00146",
+      "rawCode": "0146",
+      "nameOfficial": "ODEA BANK A.Ş.",
+      "nameShort": "ODEA BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00147",
+      "rawCode": "0147",
+      "nameOfficial": "MUFG BANK TURKEY A.Ş.",
+      "nameShort": "MUFG BANK TURKEY",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00148",
+      "rawCode": "0148",
+      "nameOfficial": "INTESA SANPAOLO S.P.A.",
+      "nameShort": "INTESA SANPAOLO S.P.A.",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00149",
+      "rawCode": "0149",
+      "nameOfficial": "BANK OF CHINA TURKEY A.Ş.",
+      "nameShort": "BANK OF CHINA TURKEY",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00150",
+      "rawCode": "0150",
+      "nameOfficial": "GOLDEN GLOBAL YATIRIM BANKASI A.Ş.",
+      "nameShort": "GOLDEN GLOBAL YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00151",
+      "rawCode": "0151",
+      "nameOfficial": "D YATIRIM BANKASI A.Ş.",
+      "nameShort": "D YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00152",
+      "rawCode": "0152",
+      "nameOfficial": "DESTEK YATIRIM BANKASI A.Ş.",
+      "nameShort": "DESTEK YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00153",
+      "rawCode": "0153",
+      "nameOfficial": "MİSYON YATIRIM BANKASI A.Ş.",
+      "nameShort": "MİSYON YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00154",
+      "rawCode": "0154",
+      "nameOfficial": "TERA YATIRIM BANKASI A.Ş.",
+      "nameShort": "TERA YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00155",
+      "rawCode": "0155",
+      "nameOfficial": "Q YATIRIM BANKASI A.Ş.",
+      "nameShort": "Q YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00156",
+      "rawCode": "0156",
+      "nameOfficial": "HEDEF YATIRIM BANKASI A.Ş.",
+      "nameShort": "HEDEF YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00157",
+      "rawCode": "0157",
+      "nameOfficial": "ENPARA BANK A.Ş.",
+      "nameShort": "ENPARA BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00158",
+      "rawCode": "0158",
+      "nameOfficial": "COLENDİ BANK A.Ş.",
+      "nameShort": "COLENDİ BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00159",
+      "rawCode": "0159",
+      "nameOfficial": "FUPS BANK A.Ş.",
+      "nameShort": "FUPS BANK",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00160",
+      "rawCode": "0160",
+      "nameOfficial": "ZİRAAT DİNAMİK BANKA A.Ş.",
+      "nameShort": "ZİRAAT DİNAMİK BANKA",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00161",
+      "rawCode": "0161",
+      "nameOfficial": "AYTEMİZ YATIRIM BANKASI A.Ş.",
+      "nameShort": "AYTEMİZ YATIRIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00203",
+      "rawCode": "0203",
+      "nameOfficial": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
+      "nameShort": "ALBARAKA TÜRK KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00205",
+      "rawCode": "0205",
+      "nameOfficial": "KUVEYT TÜRK KATILIM BANKASI A.Ş.",
+      "nameShort": "KUVEYT TÜRK KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00206",
+      "rawCode": "0206",
+      "nameOfficial": "TÜRKİYE FİNANS KATILIM BANKASI A.Ş.",
+      "nameShort": "TÜRKİYE FİNANS KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00209",
+      "rawCode": "0209",
+      "nameOfficial": "ZİRAAT KATILIM BANKASI A.Ş.",
+      "nameShort": "ZİRAAT KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00210",
+      "rawCode": "0210",
+      "nameOfficial": "VAKIF KATILIM BANKASI A.Ş.",
+      "nameShort": "VAKIF KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00211",
+      "rawCode": "0211",
+      "nameOfficial": "TÜRKİYE EMLAK KATILIM BANKASI A.Ş.",
+      "nameShort": "TÜRKİYE EMLAK KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00212",
+      "rawCode": "0212",
+      "nameOfficial": "HAYAT FİNANS KATILIM BANKASI",
+      "nameShort": "HAYAT FİNANS KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00213",
+      "rawCode": "0213",
+      "nameOfficial": "T.O.M. KATILIM BANKASI A.Ş.",
+      "nameShort": "T.O.M. KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00214",
+      "rawCode": "0214",
+      "nameOfficial": "DÜNYA KATILIM BANKASI A.Ş.",
+      "nameShort": "DÜNYA KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00215",
+      "rawCode": "0215",
+      "nameOfficial": "ADİL KATILIM BANKASI A.Ş.",
+      "nameShort": "ADİL KATILIM BANKASI",
+      "type": "bank",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00806",
+      "rawCode": "0806",
+      "nameOfficial": "MERKEZİ KAYIT KURULUŞU A.Ş.",
+      "nameShort": "MERKEZİ KAYIT KURULUŞU",
+      "type": "financial_market_infrastructure",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00807",
+      "rawCode": "0807",
+      "nameOfficial": "POSTA VE TELGRAF TEŞKİLATI A.Ş.",
+      "nameShort": "POSTA VE TELGRAF TEŞKİLATI",
+      "type": "postal_operator",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SYSTEMS"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-payment-systems-participants-2026",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00825",
+      "rawCode": "825",
+      "nameOfficial": "Moka United Ödeme Hizmetleri ve Elektronik Para Kuruluşu A.Ş.",
+      "nameShort": "Moka United Ödeme Hizmetleri ve Elektronik Para Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00827",
+      "rawCode": "827",
+      "nameOfficial": "Turk Elektronik Para A.Ş.",
+      "nameShort": "Turk Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00828",
+      "rawCode": "828",
+      "nameOfficial": "Belbim Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Belbim Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00829",
+      "rawCode": "829",
+      "nameOfficial": "Papara Elektronik Para A.Ş.",
+      "nameShort": "Papara Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00830",
+      "rawCode": "830",
+      "nameOfficial": "D Ödeme Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "D Ödeme Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00831",
+      "rawCode": "831",
+      "nameOfficial": "Nomu Pay Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Nomu Pay Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00833",
+      "rawCode": "833",
+      "nameOfficial": "Payporter Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+      "nameShort": "Payporter Ödeme Hizmetleri ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00834",
+      "rawCode": "834",
+      "nameOfficial": "Paladyum Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Paladyum Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00835",
+      "rawCode": "835",
+      "nameOfficial": "Vodafone Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Vodafone Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00836",
+      "rawCode": "836",
+      "nameOfficial": "Aköde Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Aköde Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00837",
+      "rawCode": "837",
+      "nameOfficial": "Erpa Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+      "nameShort": "Erpa Ödeme Hizmetleri ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00838",
+      "rawCode": "838",
+      "nameOfficial": "Sipay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Sipay Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00839",
+      "rawCode": "839",
+      "nameOfficial": "Ozan Elektronik Para A.Ş.",
+      "nameShort": "Ozan Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00840",
+      "rawCode": "840",
+      "nameOfficial": "Token Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+      "nameShort": "Token Ödeme Hizmetleri ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00842",
+      "rawCode": "842",
+      "nameOfficial": "Moneypay Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Moneypay Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00844",
+      "rawCode": "844",
+      "nameOfficial": "Beeso Elektronik Para ve Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Beeso Elektronik Para ve Ödeme Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00847",
+      "rawCode": "847",
+      "nameOfficial": "Parakolay Elektronik Para A.Ş.",
+      "nameShort": "Parakolay Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00848",
+      "rawCode": "848",
+      "nameOfficial": "Trendpay Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Trendpay Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00849",
+      "rawCode": "849",
+      "nameOfficial": "Payco Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Payco Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00850",
+      "rawCode": "850",
+      "nameOfficial": "BPN Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "BPN Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00851",
+      "rawCode": "851",
+      "nameOfficial": "Gönderal Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Gönderal Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00852",
+      "rawCode": "852",
+      "nameOfficial": "N Kolay Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+      "nameShort": "N Kolay Ödeme ve Elektronik Para Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00853",
+      "rawCode": "853",
+      "nameOfficial": "UPT Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+      "nameShort": "UPT Ödeme Hizmetleri ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00855",
+      "rawCode": "855",
+      "nameOfficial": "Elekse Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Elekse Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00856",
+      "rawCode": "856",
+      "nameOfficial": "Paytrek Ödeme Kuruluşu Hizmetleri A.Ş.",
+      "nameShort": "Paytrek Ödeme Kuruluşu Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00858",
+      "rawCode": "858",
+      "nameOfficial": "Faturakom Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Faturakom Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00860",
+      "rawCode": "860",
+      "nameOfficial": "Pratik İşlem Ödeme ve Elektronik Para A.Ş.",
+      "nameShort": "Pratik İşlem Ödeme ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00861",
+      "rawCode": "861",
+      "nameOfficial": "Faturamatik Elektronik Para ve Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Faturamatik Elektronik Para ve Ödeme Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00862",
+      "rawCode": "862",
+      "nameOfficial": "Trend Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Trend Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00863",
+      "rawCode": "863",
+      "nameOfficial": "Paytr Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+      "nameShort": "Paytr Ödeme ve Elektronik Para Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00864",
+      "rawCode": "864",
+      "nameOfficial": "İyzi Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "İyzi Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00865",
+      "rawCode": "865",
+      "nameOfficial": "Paratika Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Paratika Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00868",
+      "rawCode": "868",
+      "nameOfficial": "Ödeal Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Ödeal Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00869",
+      "rawCode": "869",
+      "nameOfficial": "Turkcell Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Turkcell Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00870",
+      "rawCode": "870",
+      "nameOfficial": "TT Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "TT Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00871",
+      "rawCode": "871",
+      "nameOfficial": "MoneyGram Turkey Ödeme Hizmetleri A.Ş.",
+      "nameShort": "MoneyGram Turkey Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00874",
+      "rawCode": "874",
+      "nameOfficial": "Octet Express Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Octet Express Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00875",
+      "rawCode": "875",
+      "nameOfficial": "Sender Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Sender Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00876",
+      "rawCode": "876",
+      "nameOfficial": "Efix Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Efix Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00878",
+      "rawCode": "878",
+      "nameOfficial": "Paratim Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+      "nameShort": "Paratim Ödeme ve Elektronik Para Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00883",
+      "rawCode": "883",
+      "nameOfficial": "İstanbul Ödeme ve Elektronik Para A.Ş.",
+      "nameShort": "İstanbul Ödeme ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00884",
+      "rawCode": "884",
+      "nameOfficial": "Global Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Global Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00886",
+      "rawCode": "886",
+      "nameOfficial": "Western Union Turkey Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Western Union Turkey Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00887",
+      "rawCode": "887",
+      "nameOfficial": "Tronapay Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Tronapay Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00888",
+      "rawCode": "888",
+      "nameOfficial": "Paragram Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Paragram Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00890",
+      "rawCode": "890",
+      "nameOfficial": "Lydians Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Lydians Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00891",
+      "rawCode": "891",
+      "nameOfficial": "Denizöde Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Denizöde Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00893",
+      "rawCode": "893",
+      "nameOfficial": "Dgpara Ödeme ve Elektronik Para Kuruluşu A.Ş.",
+      "nameShort": "Dgpara Ödeme ve Elektronik Para Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00894",
+      "rawCode": "894",
+      "nameOfficial": "Ahlatcı Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Ahlatcı Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00895",
+      "rawCode": "895",
+      "nameOfficial": "Lidio Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Lidio Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00898",
+      "rawCode": "898",
+      "nameOfficial": "BRQ Link Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "BRQ Link Elektronik Para ve Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00899",
+      "rawCode": "899",
+      "nameOfficial": "Rubik Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Rubik Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00911",
+      "rawCode": "911",
+      "nameOfficial": "As Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+      "nameShort": "As Ödeme Hizmetleri ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00912",
+      "rawCode": "912",
+      "nameOfficial": "Tom Pay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Tom Pay Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00913",
+      "rawCode": "913",
+      "nameOfficial": "A Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "A Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00914",
+      "rawCode": "914",
+      "nameOfficial": "Papel Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Papel Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00915",
+      "rawCode": "915",
+      "nameOfficial": "Turkonay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Turkonay Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00917",
+      "rawCode": "917",
+      "nameOfficial": "Moneyout Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Moneyout Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00918",
+      "rawCode": "918",
+      "nameOfficial": "Valenspara Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Valenspara Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00919",
+      "rawCode": "919",
+      "nameOfficial": "TRPOS Ödeme Kuruluşu A.Ş.",
+      "nameShort": "TRPOS Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00920",
+      "rawCode": "920",
+      "nameOfficial": "Dinamik Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Dinamik Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00921",
+      "rawCode": "921",
+      "nameOfficial": "Vakıf Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Vakıf Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00922",
+      "rawCode": "922",
+      "nameOfficial": "Ziraat Finansal Teknolojiler Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Ziraat Finansal Teknolojiler Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00923",
+      "rawCode": "923",
+      "nameOfficial": "Yemekpay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Yemekpay Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00924",
+      "rawCode": "924",
+      "nameOfficial": "Halk Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Halk Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00925",
+      "rawCode": "925",
+      "nameOfficial": "Garanti Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Garanti Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00926",
+      "rawCode": "926",
+      "nameOfficial": "Qnbpay Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Qnbpay Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00927",
+      "rawCode": "927",
+      "nameOfficial": "SBM Elektronik Para ve Ödeme Kuruluşu A.Ş.",
+      "nameShort": "SBM Elektronik Para ve Ödeme Kuruluşu",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00928",
+      "rawCode": "928",
+      "nameOfficial": "Qpay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Qpay Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00929",
+      "rawCode": "929",
+      "nameOfficial": "Fintlix Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Fintlix Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00930",
+      "rawCode": "930",
+      "nameOfficial": "Moneymate Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Moneymate Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00931",
+      "rawCode": "931",
+      "nameOfficial": "Hayhay Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Hayhay Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00932",
+      "rawCode": "932",
+      "nameOfficial": "Türk Hava Yolları Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Türk Hava Yolları Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00933",
+      "rawCode": "933",
+      "nameOfficial": "Junomoney Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Junomoney Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00934",
+      "rawCode": "934",
+      "nameOfficial": "Mps Ödeme Kuruluşu A.Ş.",
+      "nameShort": "Mps Ödeme Kuruluşu",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00935",
+      "rawCode": "935",
+      "nameOfficial": "Loop Ödeme Hizmetleri ve Elektronik Para A.Ş.",
+      "nameShort": "Loop Ödeme Hizmetleri ve Elektronik Para",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00936",
+      "rawCode": "936",
+      "nameOfficial": "Hangipara Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Hangipara Elektronik Para ve Ödeme Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00937",
+      "rawCode": "937",
+      "nameOfficial": "Logo Ödeme Hizmetleri A.Ş.",
+      "nameShort": "Logo Ödeme Hizmetleri",
+      "type": "payment_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-payment-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    },
+    {
+      "code": "00938",
+      "rawCode": "938",
+      "nameOfficial": "Sağlam Ödeme ve Elektronik Para Hizmetleri A.Ş.",
+      "nameShort": "Sağlam Ödeme ve Elektronik Para Hizmetleri",
+      "type": "electronic_money_institution",
+      "status": "active",
+      "systems": [
+        "TCMB_PAYMENT_SERVICES_REGISTRY"
+      ],
+      "ibanEligible": true,
+      "aliases": [],
+      "sources": [
+        {
+          "id": "tcmb-active-electronic-money-institutions",
+          "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
+          "retrievedAt": "2026-07-31"
+        }
+      ],
+      "lastVerifiedAt": "2026-07-31"
+    }
+  ]
+}

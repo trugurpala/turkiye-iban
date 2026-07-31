@@ -1,0 +1,26 @@
+[
+  {
+    "iban": "TR000004600000000000000026",
+    "reason": "invalid_check_digits"
+  },
+  {
+    "iban": "DE330004600000000000000026",
+    "reason": "invalid_country"
+  },
+  {
+    "iban": "TR33000460000000000000002",
+    "reason": "invalid_length"
+  },
+  {
+    "iban": "TR51000460999900000000001!",
+    "reason": "invalid_character"
+  },
+  {
+    "iban": "TR510004619999000000000011",
+    "reason": "invalid_reserve_digit"
+  },
+  {
+    "iban": "TR749999909999000000000000",
+    "reason": "unknown_provider_code"
+  }
+]

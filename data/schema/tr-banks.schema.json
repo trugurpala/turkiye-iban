@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Turkish IBAN Provider Dataset",
+  "type": "object",
+  "required": ["country", "ibanFormat", "generatedAt", "providers"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "country": { "const": "TR" },
+    "ibanFormat": {
+      "type": "object",
+      "required": ["length", "providerCodeLength", "reserveLength", "accountLength"],
+      "properties": {
+        "length": { "const": 26 },
+        "providerCodeLength": { "const": 5 },
+        "reserveLength": { "const": 1 },
+        "accountLength": { "const": 16 }
+      },
+      "additionalProperties": false
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "sourcePolicy": {
+      "type": "string"
+    },
+    "providers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/provider" },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "provider": {
+      "type": "object",
+      "required": [
+        "code",
+        "rawCode",
+        "nameOfficial",
+        "nameShort",
+        "type",
+        "status",
+        "systems",
+        "ibanEligible",
+        "aliases",
+        "sources",
+        "lastVerifiedAt"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$"
+        },
+        "rawCode": {
+          "type": "string",
+          "pattern": "^[0-9]{3,5}$"
+        },
+        "nameOfficial": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nameShort": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "bank",
+            "central_bank",
+            "payment_institution",
+            "electronic_money_institution",
+            "postal_operator",
+            "financial_market_infrastructure"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive", "unknown"]
+        },
+        "systems": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "ibanEligible": {
+          "type": "boolean"
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "url", "retrievedAt"],
+            "properties": {
+              "id": { "type": "string" },
+              "url": { "type": "string" },
+              "retrievedAt": { "type": "string", "format": "date" }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "lastVerifiedAt": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

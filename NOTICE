@@ -1,0 +1,11 @@
+turkiye-iban
+
+This project publishes Turkish IBAN parsing utilities and provider-code data
+derived from official public sources. Source names and URLs are recorded in
+DATA_SOURCES.md and generated data records.
+
+Divan was used during project design, planning, and development. Divan is not a
+runtime dependency of this package.
+
+Schwifty may be used as an MIT-licensed reference or test oracle during
+development. Schwifty is not the primary data source for this project.

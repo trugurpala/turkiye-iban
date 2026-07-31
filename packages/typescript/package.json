@@ -1,0 +1,43 @@
+{
+  "name": "tr-iban",
+  "version": "0.1.0",
+  "description": "Turkish IBAN parser, validator, formatter, masker, and provider-code lookup.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./data/tr-banks.json": "./data/tr-banks.json"
+  },
+  "files": [
+    "dist/src",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js"
+  },
+  "keywords": [
+    "iban",
+    "turkey",
+    "turkiye",
+    "bank",
+    "payment",
+    "tcmb"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "^5.9.2"
+  }
+}
