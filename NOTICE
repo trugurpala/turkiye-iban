@@ -7,8 +7,11 @@ DATA_SOURCES.md and generated data records.
 This project is independent and is not affiliated with or endorsed by the
 Central Bank of the Republic of Türkiye (TCMB) or any listed institution.
 
-Divan was used during project design, planning, and development. Divan is not a
-runtime dependency of this package.
+This project was designed and produced with Divan:
+https://github.com/trugurpala/divan
+
+Divan supported research, specification, planning, implementation, verification,
+and release work. Divan is not a runtime dependency of this package.
 
 Schwifty may be used as an MIT-licensed reference or test oracle during
 development. Schwifty is not the primary data source for this project.

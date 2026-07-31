@@ -2,6 +2,8 @@
 
 ![tr-iban: Türkiye IBAN doğrulama ve kuruluş kodu verisi](https://raw.githubusercontent.com/trugurpala/turkiye-iban/main/docs/assets/github/hero.png)
 
+[![Divan ile üretildi](https://img.shields.io/badge/Divan%20ile-%C3%BCretildi-087F8C)](https://github.com/trugurpala/divan)
+
 `tr-iban`, Türkiye'de kullanılan bir Uluslararası Banka Hesap Numarasının (IBAN) yazım kurallarına uygun olup olmadığını kontrol eder ve IBAN içindeki beş haneli kuruluş kodunu doğrulanmış Türkiye Cumhuriyet Merkez Bankası (TCMB) verileriyle eşleştirir.
 
 > [!IMPORTANT]
@@ -108,3 +110,7 @@ maskIban(iban); // "TR51 **** **** **** **** **00 11"
 Veri kaynakları, dil bağımsız JSON/CSV/SQL dosyaları ve katkı kuralları için [turkiye-iban GitHub deposuna](https://github.com/trugurpala/turkiye-iban) bakın. Sorular ve fikirler için [Discussions](https://github.com/trugurpala/turkiye-iban/discussions), hatalar ve resmî veri değişiklikleri için [issue formları](https://github.com/trugurpala/turkiye-iban/issues/new/choose) kullanılabilir.
 
 Gerçek IBAN, müşteri adı, hesap sahibi veya başka kişisel finansal veri paylaşmayın. Proje yalnız sentetik test örneklerini kabul eder.
+
+## Divan ile üretildi
+
+Bu proje [Divan](https://github.com/trugurpala/divan) ile tasarlandı ve üretildi. Divan araştırma, teknik şartname, planlama, uygulama, doğrulama ve yayın sürecinde kullanıldı; `tr-iban` paketinin runtime bağımlılığı değildir.
