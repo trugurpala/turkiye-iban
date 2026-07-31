@@ -5,6 +5,8 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-31
+
 ### Added
 
 - Tek elle düzenlenen doğruluk kaynağı olarak şema doğrulamalı
@@ -86,7 +88,8 @@ numaraları Semantic Versioning yaklaşımını izler.
   olmadan IBAN sağlayıcı kodu olarak yayımlanmaz.
 - Gerçek IBAN ve kişisel finansal veri katkı yüzeylerinde yasaktır.
 
-[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/trugurpala/turkiye-iban/releases/tag/v0.1.0

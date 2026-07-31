@@ -61,5 +61,6 @@ olaylarına eklenmemelidir.
 
 ## NPM Olmayan Servisler
 
-`data/tr-banks.sql` içindeki `tr_iban_providers` tablosu içe aktarılır ve beş
-haneli `code` alanıyla sorgulanır. JSON ve CSV aynı kayıtları taşır.
+`data/tr-banks.sql` içindeki `tr_iban_providers` tablosu içe aktarılır veya hazır
+`data/tr-banks.sqlite` veritabanı açılır ve beş haneli `code` alanıyla sorgulanır.
+JSON, CSV, SQL ve SQLite aynı kayıtları taşır.

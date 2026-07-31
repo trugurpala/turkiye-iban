@@ -17,7 +17,7 @@ permissions:
 jobs:
   publish:
     name: Publish tr-iban
-    if: github.repository == 'trugurpala/turkiye-iban'
+    if: github.repository == 'trugurpala/turkiye-iban' && github.ref == 'refs/heads/main'
     environment: npm
     runs-on: ubuntu-latest
     steps:

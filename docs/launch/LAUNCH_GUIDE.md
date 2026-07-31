@@ -1,4 +1,4 @@
-# v0.1.1 Lansman Rehberi
+# v0.2.0 Lansman Rehberi
 
 ## Tek cümlelik konumlandırma
 
@@ -9,7 +9,7 @@
 - Personel, ödeme veya hesap bilgisi formu geliştiren ekipler
 - Next.js, NestJS, Node.js ve TypeScript geliştiricileri
 - PHP veya Python'dan ortak kuruluş verisi tüketmek isteyenler
-- JSON yerine CSV ya da SQL ile doğrudan çalışan kurumlar
+- JSON yerine CSV, SQL veya SQLite ile doğrudan çalışan kurumlar
 - Resmî kaynağa dayalı, incelenebilir veri zinciri arayan açık kaynak katkıcıları
 
 ## Mesaj sırası
@@ -40,11 +40,11 @@ Düzenlenebilir kaynak [Figma dosyasındadır](https://www.figma.com/design/1pFu
 
 ## Yayın kontrol listesi
 
-- GitHub ve NPM sürümü `0.1.1` gösteriyor
+- GitHub ve NPM sürümü `0.2.0` gösteriyor
 - NPM README yeni kullanıcı dostu metni gösteriyor
 - Release artifact'ları ve SHA256 dosyası indirilebiliyor
 - GitHub sosyal önizlemesi özel görseli gösteriyor
-- Discussions ve dört başlangıç issue'su açık
+- Discussions ve roadmap issue'ları güncel repository kapsamıyla uyumlu
 - Paylaşım bağlantıları doğru ve görseller kırpılmıyor
 - Hiçbir metin ya da görsel gerçek IBAN içermiyor
 

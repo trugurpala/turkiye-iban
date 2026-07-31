@@ -12,6 +12,6 @@ Kompozisyon, tek bir güçlü sayı şeridini imza öğesi olarak kullanır. Çe
 
 ## Lansman uygulaması
 
-`v0.1.1` lansman ailesi aynı sistemi üç farklı göreve uyarlar. `Social Preview` depo bağlantısının kimliğini, `Launch Horizontal` sürümün kullanıcıya sağladığı sonucu, `Community Square` ise açık veri ve ücretsiz topluluk niteliğini öne çıkarır. Bunlar aynı görselin kırpılmış sürümleri değildir; ortak renk, tipografi ve IBAN ritmini kullanan ayrı kompozisyonlardır.
+`v0.2.0` lansman ailesi aynı sistemi üç farklı göreve uyarlar. `Social Preview` depo bağlantısının kimliğini, `Launch Horizontal` sürümün kullanıcıya sağladığı sonucu, `Community Square` ise açık veri ve ücretsiz topluluk niteliğini öne çıkarır. Bunlar aynı görselin kırpılmış sürümleri değildir; ortak renk, tipografi ve IBAN ritmini kullanan ayrı kompozisyonlardır.
 
 Düzenlenebilir kaynak [Figma dosyasında](https://www.figma.com/design/1pFu8ImZ4oO7KfhZzMKdIR) tutulur. Kaynak frame'ler `Social Preview` (`6:2`), `Launch Horizontal` (`6:28`) ve `Community Square` (`6:60`) adlarını taşır. GitHub ve sosyal paylaşım için kullanılan PNG çıktıları `docs/assets/` altında sürümlenir; hiçbir varlık TCMB veya başka bir kurumun logosunu ya da resmî desteğini ima etmez.
