@@ -38,6 +38,7 @@ SQL_COLUMNS = (
     "sources_json",
     "last_verified_at",
 )
+SQLITE_LIBRARY_VERSION_OFFSET = 96
 
 
 def load_canonical() -> dict[str, Any]:
@@ -190,6 +191,11 @@ def write_sqlite(path: Path, institutions: list[dict[str, Any]]) -> None:
         connection.execute("VACUUM")
     finally:
         connection.close()
+    # The producer library version is informational but varies by platform.
+    # Normalize only that header field so release checksums stay reproducible.
+    with temporary_path.open("r+b") as handle:
+        handle.seek(SQLITE_LIBRARY_VERSION_OFFSET)
+        handle.write(b"\0\0\0\0")
     os.replace(temporary_path, path)
 
 

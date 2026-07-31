@@ -11,6 +11,8 @@ numaraları Semantic Versioning yaklaşımını izler.
   `data/source/institutions.json`.
 - Canonical veriden deterministik üretilen `data/tr-banks.sqlite` release
   çıktısı ve tam JSON/CSV/SQL/SQLite kayıt eşliği kontrolleri.
+- SQLite üretici sürümü header alanının platformlar arası aynı checksum için
+  normalize edilmesi.
 - Ağsız generated-file drift kontrolü, kaynak bazında eklenen/silinen/değişen
   kayıt raporu ve insan inceleme issue'su açan zamanlanmış workflow.
 - `ARCHITECTURE.md`, `DATA_SCHEMA.md`, `RELEASE.md`, `ROADMAP.md`,

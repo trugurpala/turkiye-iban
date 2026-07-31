@@ -39,6 +39,10 @@ Generated files are never edited by hand. `python scripts/generate-data.py
 --check` builds all outputs in a temporary directory and compares their bytes
 with the committed artifacts. A difference fails CI.
 
+Text outputs always use LF line endings. SQLite's informational producer-library
+version header is normalized after creation so Windows and Linux produce the
+same release bytes and SHA-256 checksum from identical canonical data.
+
 ## Remote Source Review
 
 Normal builds never use the network. `scripts/check-sources.py` downloads the

@@ -24,6 +24,7 @@ DATABASE_COLUMNS = (
     "sources_json",
     "last_verified_at",
 )
+SQLITE_LIBRARY_VERSION_OFFSET = 96
 
 
 def load_json(path: Path) -> Any:
@@ -164,7 +165,13 @@ def validate_cross_format_outputs(providers: list[dict[str, Any]]) -> None:
         connection.close()
     require(sql_rows == expected_rows, "SQL records differ from JSON records")
 
-    connection = sqlite3.connect(ROOT / "data/tr-banks.sqlite")
+    sqlite_path = ROOT / "data/tr-banks.sqlite"
+    sqlite_bytes = sqlite_path.read_bytes()
+    require(
+        sqlite_bytes[SQLITE_LIBRARY_VERSION_OFFSET : SQLITE_LIBRARY_VERSION_OFFSET + 4] == b"\0\0\0\0",
+        "SQLite producer-version header must be normalized for deterministic release bytes",
+    )
+    connection = sqlite3.connect(sqlite_path)
     try:
         sqlite_rows = read_database_rows(connection)
     finally:
