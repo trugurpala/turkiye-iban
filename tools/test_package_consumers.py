@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import tempfile
 import unittest
@@ -8,6 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+NPM_COMMAND = "npm.cmd" if os.name == "nt" else "npm"
 
 
 class PackageConsumerTest(unittest.TestCase):
@@ -28,7 +30,7 @@ class PackageConsumerTest(unittest.TestCase):
             temp_path = Path(temp_dir)
             pack = self.run_command(
                 [
-                    "npm.cmd",
+                    NPM_COMMAND,
                     "pack",
                     "--workspace",
                     "tr-iban",
@@ -44,7 +46,7 @@ class PackageConsumerTest(unittest.TestCase):
             self.assertTrue(tarball.is_file())
 
             install = self.run_command(
-                ["npm.cmd", "install", "--ignore-scripts", "--no-audit", "--no-fund", str(tarball)],
+                [NPM_COMMAND, "install", "--ignore-scripts", "--no-audit", "--no-fund", str(tarball)],
                 temp_path,
             )
             self.assertEqual(install.returncode, 0, install.stdout + install.stderr)
