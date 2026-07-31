@@ -5,111 +5,160 @@
 [![GitHub Release](https://img.shields.io/github/v/release/trugurpala/turkiye-iban)](https://github.com/trugurpala/turkiye-iban/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Türkiye IBAN doğrulaması ve TCMB kaynaklı ödeme hizmeti sağlayıcı kodu eşlemesi
-için dil bağımsız açık kaynak veri kümesi ve sıfır runtime bağımlılıklı
-TypeScript/JavaScript paketi.
+Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBAN) yazımını kontrol eder ve IBAN içindeki beş haneli kuruluş kodunu Türkiye Cumhuriyet Merkez Bankası (TCMB) verileriyle eşleştirir. Bir kod veri kümesinde bulunduğunda uygulamanız banka veya ödeme kuruluşu alanını otomatik doldurabilir.
 
 > [!IMPORTANT]
-> Bu proje IBAN biçimini ve MOD 97-10 kontrol basamaklarını doğrular; IBAN'daki
-> beş haneli sağlayıcı kodunu veri kümesiyle eşleştirir. Hesabın varlığını,
-> hesap sahibini, ad-soyad eşleşmesini veya transfer yapılabilirliğini doğrulamaz.
+> Paket bir hesabın gerçekten var olduğunu, kime ait olduğunu veya para transferine açık olduğunu doğrulamaz. Yalnızca IBAN'ın kurallara uygun yazıldığını ve içindeki kuruluş kodunun doğrulanmış veri kümesinde bulunup bulunmadığını kontrol eder.
 
-## İçindekiler / What's Included
+## Ne işe yarar?
 
-- `data/tr-banks.json`: şemalı ana veri çıktısı.
-- `data/tr-banks.csv`: elektronik tablo ve ETL kullanımı.
-- `data/tr-banks.sql`: doğrudan veritabanına aktarılabilir SQLite uyumlu çıktı.
-- `fixtures/`: yalnız sentetik geçerli, geçersiz ve lookup örnekleri.
-- `tr-iban`: ESM ve CommonJS destekli NPM paketi.
-- Kaynak hash manifesti, çevrimdışı testler, gizlilik taraması ve release
-  checksum'ları.
+Paket bir Türkiye IBAN'ı için şu işlemleri yapar:
 
-JSON, CSV ve SQL aynı üreticiden çıkar. JavaScript kullanmayan projeler paket
-runtime'ına ihtiyaç duymadan bu dosyaları tüketebilir.
+- IBAN'ın `TR` ile başladığını ve 26 karakterden oluştuğunu kontrol eder
+- Eksik, fazla veya hatalı yazılmış karakterleri tespit eder
+- IBAN'ın kontrol rakamlarını matematiksel olarak doğrular
+- Beş haneli banka veya ödeme kuruluşu kodunu çıkarır
+- Kodu doğrulanmış TCMB katılımcı verisiyle eşleştirir
+- IBAN'ı okunabilir biçimde gruplar veya güvenli gösterim için maskeler
 
-## Kurulum / Installation
+## Türkiye IBAN'ı nasıl okunur?
 
-NPM registry'den standart kurulum:
+Türkiye IBAN'ı beş bölümden oluşur. Aşağıdaki sentetik örnekte bölümler `TR | 51 | 00046 | 0 | 9999000000000011` şeklinde ayrılır:
+
+| Bölüm | Uzunluk | Örnekteki değer | Açıklama |
+| --- | ---: | --- | --- |
+| Ülke kodu | 2 karakter | `TR` | IBAN'ın Türkiye'ye ait olduğunu gösterir |
+| Kontrol rakamları | 2 rakam | `51` | Yazım hatalarını matematiksel olarak kontrol eder |
+| Kuruluş kodu | 5 rakam | `00046` | Banka veya ödeme kuruluşunu tanımlar |
+| Rezerv alanı | 1 rakam | `0` | Türkiye IBAN standardında `0` olmalıdır |
+| Hesap alanı | 16 karakter | `9999000000000011` | Kuruluşun kendi hesap tanımlama alanıdır ve harf içerebilir |
+
+Paket hesap alanının bankada kayıtlı olup olmadığını kontrol etmez. Yalnızca alanın uzunluğunu ve izin verilen karakterleri doğrular.
+
+## MOD 97-10 ne demek?
+
+MOD 97-10, IBAN standardının yazım hatalarını yakalamak için kullandığı matematiksel kontrolün teknik adıdır. Paket bu hesabı sizin yerinize yapar; formülü bilmeniz gerekmez.
+
+Kontrol başarılıysa IBAN'daki harf ve rakamlar birbiriyle matematiksel olarak uyumludur. Bu kontrol yanlış yazılmış bir rakamı yakalayabilir, ancak hesabın bankada gerçekten bulunduğunu kanıtlamaz.
+
+## Sonuçları nasıl yorumlamalısınız?
+
+IBAN doğrulaması ile kuruluş eşleştirmesi iki ayrı sonuçtur:
+
+| Sonuç | Anlamı | Uygulama davranışı |
+| --- | --- | --- |
+| `isValid: false` | IBAN'ın ülkesi, uzunluğu, karakterleri, `0` olması gereken rezerv alanı veya kontrol rakamları hatalıdır | IBAN'ı kabul etmeyin |
+| `isValid: true`, `providerStatus: "known"` | IBAN yazım kurallarına uygundur ve kuruluş kodu veri kümesinde bulunur | Kuruluş alanını otomatik doldurabilirsiniz |
+| `isValid: true`, `providerStatus: "unknown"` | IBAN yazım kurallarına uygundur, ancak kuruluş kodu bu veri sürümünde bulunmaz | Kuruluşu otomatik seçmeyin; veri sürümünü ve kendi iş kuralınızı kontrol edin |
+
+`unknown`, hesabın var olduğu anlamına gelmez. Yalnızca beş haneli kodun kullanılan veri sürümünde eşleşmediğini belirtir.
+
+## Hangi çıktıyı kullanmalısınız?
+
+JavaScript kullanmayan uygulamalar da aynı kuruluş listesinden yararlanabilir:
+
+| Kullanım alanı | Önerilen çıktı |
+| --- | --- |
+| TypeScript, Next.js, NestJS veya Node.js | NPM paketi `tr-iban` |
+| PHP veya Python | `data/tr-banks.json` |
+| Excel, veri aktarımı veya raporlama | `data/tr-banks.csv` |
+| Doğrudan veritabanı kullanımı | `data/tr-banks.sql` |
+
+PHP/Composer ve Python paketleri yol haritasındadır. JSON, CSV ve SQL dosyaları bugün doğrudan kullanılabilir.
+
+## Kurulum
+
+Node.js 22 veya üzeriyle paketi NPM paket deposundan kurun:
 
 ```bash
 npm install tr-iban
 ```
 
-Sürüme sabitlenmiş GitHub Release tarball'ı da doğrudan kurulabilir:
+Belirli bir sürümün GitHub Release paketini doğrudan kurmak için:
 
 ```bash
 npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.1.0/tr-iban-0.1.0.tgz
 ```
 
-Node.js 22 veya üzeri gerekir. Paketin runtime bağımlılığı yoktur.
+Paketin çalışırken yüklediği başka bir NPM bağımlılığı yoktur.
 
-## Kullanım / Usage
+## İlk kullanım
 
-Aşağıdaki IBAN yalnız test amacıyla üretilmiş sentetik bir fixture'dır.
+Aşağıdaki IBAN yalnızca test için üretilmiştir ve gerçek bir hesaba ait değildir:
 
 ```ts
-import {
-  formatIban,
-  identifyBankFromIban,
-  maskIban,
-  validateTurkishIban,
-} from "tr-iban";
+import { identifyBankFromIban } from "tr-iban";
 
-const iban = "TR510004609999000000000011";
+const result = identifyBankFromIban(
+  "TR510004609999000000000011",
+);
 
-validateTurkishIban(iban); // true
-formatIban(iban); // "TR51 0004 6099 9900 0000 0000 11"
-maskIban(iban); // "TR51 **** **** **** **** **00 11"
-
-const result = identifyBankFromIban(iban);
+result.parsed.isValid; // true
 result.providerCode; // "00046"
 result.providerStatus; // "known"
 result.provider?.nameOfficial; // "AKBANK T.A.Ş."
-result.dataVersion; // "YYYY-MM-DD"
 ```
 
-`providerStatus: "unknown"`, IBAN'ın biçim/checksum bakımından otomatik olarak
-geçersiz olduğu anlamına gelmez. Yalnız kodun bu sürümdeki doğrulanmış TCMB
-katılımcı kümesinde bulunmadığını söyler. Uygulamalar kendi risk politikalarını
-ayrıca uygular; örneğin Yonetim-Paneli bu durumda banka seçmez ve kaydı engeller.
+Önce `result.parsed.isValid` değerini kontrol edin. Değer `true` ise `providerStatus` sonucuna göre kuruluşu otomatik seçip seçmeyeceğinize karar verin.
 
-## API
+## Biçimlendirme ve maskeleme
 
-| Fonksiyon | Sonuç |
+Gerçek IBAN'ları loglara veya hata mesajlarına açık biçimde yazmayın. Ekranda gösterirken `maskIban` kullanın:
+
+```ts
+import { formatIban, maskIban } from "tr-iban";
+
+const iban = "TR510004609999000000000011";
+
+formatIban(iban); // "TR51 0004 6099 9900 0000 0000 11"
+maskIban(iban); // "TR51 **** **** **** **** **00 11"
+```
+
+`formatIban` yalnızca okunabilirliği artırır. `maskIban`, IBAN'ın büyük bölümünü gizleyerek ekranda veya hata mesajında gereksiz kişisel veri gösterilmesini önler.
+
+## Kullanabileceğiniz fonksiyonlar
+
+| Fonksiyon | Ne yapar? |
 | --- | --- |
-| `parseIban` | TR IBAN alanlarını, normalize edilmiş değeri ve hata kodlarını döndürür. |
-| `validateTurkishIban` | Biçim, uzunluk, rezerv alan ve MOD 97-10 kontrolünü yapar. |
-| `getBankCodeFromIban` | Beş haneli sağlayıcı kodunu çıkarır. |
-| `findBankByCode` | Doğrulanmış katılımcı kodunu veri kümesinde arar. |
-| `identifyBankFromIban` | Parse ve lookup sonucunu `known/unknown` olarak birleştirir. |
-| `formatIban` | IBAN'ı dörtlü gruplar halinde biçimler. |
-| `maskIban` | İlk ve son dört karakter dışını maskeler. |
+| `parseIban` | IBAN'ı bölümlerine ayırır ve bulunan hataları listeler |
+| `validateTurkishIban` | Türkiye IBAN yazım kurallarının ve kontrol rakamlarının geçerli olup olmadığını döndürür |
+| `getBankCodeFromIban` | IBAN içindeki beş haneli kuruluş kodunu çıkarır |
+| `findBankByCode` | Verilen kuruluş kodunu doğrulanmış veri kümesinde arar |
+| `identifyBankFromIban` | IBAN kontrolünü ve kuruluş aramasını tek sonuçta birleştirir |
+| `formatIban` | IBAN'ı dörder karakterlik gruplara ayırır |
+| `maskIban` | IBAN'ın büyük bölümünü yıldız karakteriyle gizler |
 
-Ayrıntılı sözleşme: [docs/API.md](docs/API.md).
+Tüm alanlar, dönüş tipleri ve hata kodları için [API belgesine](docs/API.md) bakın.
 
-## Veri ve Kanıt Politikası
+## Veri dosyaları
 
-Otomatik eşleme kümesine yalnız TCMB Ödeme Sistemleri Katılımcıları listesinde
-koduyla yayımlanan kuruluşlar girer. TCMB aktif ödeme kuruluşu ve elektronik para
-kuruluşu listeleri tür/statü zenginleştirmesi için kullanılır; bu listelerde yer
-almak tek başına IBAN sağlayıcı kodu kanıtı değildir.
+Proje aynı kuruluş listesini farklı kullanım biçimleriyle yayımlar:
 
-Her kayıt kaynak URL'sini, erişim tarihini ve `codeEvidence` alanını taşır.
-İndirilen resmî kaynakların SHA-256 değerleri `data/source-manifest.json` içinde
-sürümle birlikte saklanır. Ayrıntılar için [DATA_SOURCES.md](DATA_SOURCES.md) ve
-[DATA_UPDATE_POLICY.md](DATA_UPDATE_POLICY.md) dosyalarına bakın.
+- `data/tr-banks.json`: uygulamalar için ana veri dosyası
+- `data/tr-banks.csv`: elektronik tablo ve veri aktarımı için satır tabanlı çıktı
+- `data/tr-banks.sql`: SQLite ile uyumlu veritabanı aktarımı
+- `fixtures/`: yalnızca sentetik, yani gerçek kişilere ait olmayan test IBAN'ları
+- `data/source-manifest.json`: kullanılan resmî kaynakların değişmediğini denetleyen dijital parmak izleri (SHA-256)
 
-Schwifty yalnız MIT lisanslı karşılaştırma/test oracle'ı olabilir; ana veri
-kaynağı değildir.
+JSON, CSV ve SQL dosyaları aynı kaynaktan üretilir. Bu nedenle farklı dillerdeki uygulamalar aynı kuruluş kodlarını kullanır.
 
-## Güvenlik ve Gizlilik
+## Kuruluş kodları nereden geliyor?
 
-Gerçek IBAN, müşteri adı, hesap sahibi, telefon, bordro kaydı, banka dekontu veya
-kişisel finansal veri issue, pull request, fixture, test ve örneklere kabul
-edilmez. Güvenlik açığını public issue ile bildirmeyin; [Security
-Policy](SECURITY.md) içindeki özel bildirim kanalını kullanın.
+Otomatik eşleştirmeye yalnızca TCMB Ödeme Sistemleri Katılımcıları listesinde koduyla birlikte yayımlanan kuruluşlar girer. Bir şirketin aktif ödeme veya elektronik para kuruluşu listesinde bulunması, tek başına IBAN kuruluş kodu kanıtı sayılmaz.
 
-## Geliştirme / Development
+Her veri kaydı kaynak adresini, kaynağa erişilen tarihi ve kodun hangi kanıta dayandığını içerir. Ayrıntılar için [veri kaynaklarını](DATA_SOURCES.md) ve [veri güncelleme politikasını](DATA_UPDATE_POLICY.md) okuyun.
+
+Schwifty projesi yalnızca karşılaştırma ve test amacıyla kullanılabilir. Ana veri kaynağı TCMB'dir.
+
+## Güvenlik ve gizlilik
+
+GitHub issue, pull request, test veya örneklere gerçek IBAN, müşteri adı, hesap sahibi, telefon numarası, bordro kaydı ya da banka dekontu eklemeyin. Bu proje yalnızca sentetik test verisi kabul eder.
+
+Bir güvenlik açığı bulursanız public issue açmayın. [Güvenlik politikasındaki](SECURITY.md) özel bildirim kanalını kullanın.
+
+## Projeye katkı
+
+Geliştirme ortamını hazırlayıp tüm kontrolleri çalıştırmak için:
 
 ```bash
 python -m pip install -r tools/requirements.txt
@@ -117,7 +166,7 @@ npm ci
 npm test
 ```
 
-Veri güncellemesi ağ erişimi gerektirir ve normal testlerden ayrıdır:
+Resmî kaynaklardan veri güncellemek ağ bağlantısı gerektirir:
 
 ```bash
 npm run data:check-remote
@@ -125,22 +174,16 @@ npm run data:update
 npm test
 ```
 
-Katkı kuralları [CONTRIBUTING.md](CONTRIBUTING.md), yönetişim
-[GOVERNANCE.md](GOVERNANCE.md), yayın süreci
-[docs/RELEASE_PROCESS.md](docs/RELEASE_PROCESS.md) içindedir.
+Katkı kuralları [CONTRIBUTING.md](CONTRIBUTING.md), proje yönetimi [GOVERNANCE.md](GOVERNANCE.md), yayın adımları ise [yayın süreci belgesinde](docs/RELEASE_PROCESS.md) açıklanır.
 
-## Yol Haritası / Roadmap
+## Yol haritası
 
-İlk sürüm TypeScript/NPM ve dil bağımsız veriye odaklanır. PHP/Composer ikinci,
-Python paketi sonraki fazdır. Tüm dil paketleri aynı kök veri ve fixture
-sözleşmesini kullanacaktır. Bkz. [docs/ROADMAP.md](docs/ROADMAP.md).
+İlk sürüm TypeScript/NPM paketini ve dil bağımsız veri dosyalarını içerir. PHP/Composer ikinci, Python paketi sonraki aşamadır. Güncel planı [yol haritasında](docs/ROADMAP.md) görebilirsiniz.
 
-## Divan ile Üretildi / Built with Divan
+## Divan ile üretildi
 
-Bu proje Divan ile tasarlandı ve üretildi. Divan; araştırma, tasarım, planlama ve
-geliştirme sürecinde kullanılmıştır, paketin runtime bağımlılığı değildir.
+Bu proje Divan ile tasarlandı ve üretildi. Divan araştırma, tasarım, planlama ve geliştirme sürecinde kullanıldı; paketi kullanmak için Divan gerekmez.
 
-## Lisans / License
+## Lisans
 
-Kod ve proje belgeleri [MIT Lisansı](LICENSE) ile yayımlanır. Kaynak ve atıf
-notları [NOTICE](NOTICE) dosyasındadır.
+Kod ve proje belgeleri [MIT Lisansı](LICENSE) ile yayımlanır. Kaynak ve atıf notları [NOTICE](NOTICE) dosyasındadır.
