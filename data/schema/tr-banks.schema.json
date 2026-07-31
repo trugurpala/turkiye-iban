@@ -96,9 +96,7 @@
           "items": {
             "type": "string",
             "enum": [
-              "payment_system_participant",
-              "licensed_payment_institution",
-              "licensed_electronic_money_institution"
+              "payment_system_participant"
             ]
           },
           "minItems": 1,

@@ -61,7 +61,7 @@ def main() -> int:
     require(payload["dataVersion"] == payload["generatedAt"], "dataVersion/generatedAt mismatch")
     providers = payload["providers"]
     require(isinstance(providers, list), "providers must be a list")
-    require(len(providers) >= 100, "Expected at least 100 providers")
+    require(len(providers) >= 50, "Expected at least 50 verified payment-system participants")
 
     codes = [provider["code"] for provider in providers]
     require(codes == sorted(codes), "Provider codes must be sorted")
@@ -76,6 +76,10 @@ def main() -> int:
         require(raw_code.zfill(5) == code, f"rawCode/code mismatch for {code}")
         require("ibanEligible" not in provider, f"Unsupported ibanEligible claim for {code}")
         require(provider["codeEvidence"], f"Provider {code} has no code evidence")
+        require(
+            provider["codeEvidence"] == ["payment_system_participant"],
+            f"Provider {code} lacks payment-system participant evidence",
+        )
         require(provider["sources"], f"Provider {code} has no source")
         for source in provider["sources"]:
             require(source["url"].startswith("https://"), f"Provider {code} has non-HTTPS source")

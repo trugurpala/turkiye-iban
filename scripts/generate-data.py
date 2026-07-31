@@ -27,12 +27,10 @@ SOURCES = {
     "tcmb-active-payment-institutions": {
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari",
         "system": "TCMB_PAYMENT_SERVICES_REGISTRY",
-        "evidence": "licensed_payment_institution",
     },
     "tcmb-active-electronic-money-institutions": {
         "url": "https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari",
         "system": "TCMB_PAYMENT_SERVICES_REGISTRY",
-        "evidence": "licensed_electronic_money_institution",
     },
 }
 
@@ -166,6 +164,22 @@ def add_provider(providers: dict[str, Provider], raw_code: str, name: str, kind:
         provider.aliases.add(official_name)
     provider.systems.add(SOURCES[source_id]["system"])
     provider.codeEvidence.add(SOURCES[source_id]["evidence"])
+    provider.sources.append(source_ref(source_id))
+
+
+def enrich_provider_from_registry(
+    providers: dict[str, Provider], raw_code: str, name: str, kind: str, source_id: str
+) -> None:
+    """Enrich an already verified participant without promoting registry-only codes."""
+    provider = providers.get(raw_code.strip().zfill(5))
+    if provider is None:
+        return
+
+    official_name = " ".join(name.strip().split())
+    if official_name != provider.nameOfficial:
+        provider.aliases.add(official_name)
+    provider.type = kind
+    provider.systems.add(SOURCES[source_id]["system"])
     provider.sources.append(source_ref(source_id))
 
 
@@ -425,11 +439,15 @@ def main() -> int:
 
     payment_id = "tcmb-active-payment-institutions"
     for raw_code, name in parse_institution_rows(source_payloads[payment_id]):
-        add_provider(providers_by_code, raw_code, name, "payment_institution", payment_id)
+        enrich_provider_from_registry(
+            providers_by_code, raw_code, name, "payment_institution", payment_id
+        )
 
     emoney_id = "tcmb-active-electronic-money-institutions"
     for raw_code, name in parse_institution_rows(source_payloads[emoney_id]):
-        add_provider(providers_by_code, raw_code, name, "electronic_money_institution", emoney_id)
+        enrich_provider_from_registry(
+            providers_by_code, raw_code, name, "electronic_money_institution", emoney_id
+        )
 
     providers = [item.to_json() for item in sorted(providers_by_code.values(), key=lambda item: item.code)]
     write_json_csv_sql(providers)

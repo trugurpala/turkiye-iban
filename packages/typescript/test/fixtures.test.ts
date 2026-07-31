@@ -44,7 +44,7 @@ describe("synthetic fixture contract", () => {
   const lookupFixtures = loadJsonFixture<LookupFixture[]>("../../../../fixtures/lookup.synthetic.json");
 
   it("validates every generated valid fixture", () => {
-    assert.ok(validFixtures.length >= 100);
+    assert.ok(validFixtures.length >= 50);
 
     for (const fixture of validFixtures) {
       const identified = identifyBankFromIban(fixture.iban);

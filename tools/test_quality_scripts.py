@@ -32,18 +32,18 @@ class QualityScriptsTest(unittest.TestCase):
         payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
 
         self.assertRegex(payload["dataVersion"], r"^\d{4}-\d{2}-\d{2}$")
-        self.assertGreater(len(payload["providers"]), 100)
+        self.assertGreater(len(payload["providers"]), 50)
         for provider in payload["providers"]:
             self.assertNotIn("ibanEligible", provider)
-            self.assertTrue(provider["codeEvidence"])
-            self.assertTrue(
-                set(provider["codeEvidence"])
-                <= {
-                    "payment_system_participant",
-                    "licensed_payment_institution",
-                    "licensed_electronic_money_institution",
-                }
-            )
+            self.assertEqual(provider["codeEvidence"], ["payment_system_participant"])
+
+    def test_licence_registry_codes_are_not_promoted_to_iban_provider_codes(self) -> None:
+        payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
+        providers_by_code = {provider["code"]: provider for provider in payload["providers"]}
+
+        # Code 825 is present in the active e-money registry but is not a row in
+        # the TCMB payment-systems participant list used for IBAN lookup.
+        self.assertNotIn("00825", providers_by_code)
 
     def test_source_manifest_records_retrieval_hashes(self) -> None:
         manifest = json.loads((ROOT / "data" / "source-manifest.json").read_text(encoding="utf-8"))

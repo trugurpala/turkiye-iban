@@ -16,11 +16,7 @@ export interface TurkishIbanProvider {
   type: ProviderType;
   status: "active" | "inactive" | "unknown";
   systems: readonly string[];
-  codeEvidence: readonly (
-    | "payment_system_participant"
-    | "licensed_payment_institution"
-    | "licensed_electronic_money_institution"
-  )[];
+  codeEvidence: readonly "payment_system_participant"[];
   aliases: readonly string[];
   sources: readonly {
     id: string;
