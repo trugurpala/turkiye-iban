@@ -1,25 +1,49 @@
 ## Summary
 
-Describe the change.
+Describe the Turkish IBAN code, data, documentation, or release change.
 
 ## Type
 
 - [ ] Code
-- [ ] Data
+- [ ] Canonical data
+- [ ] Generated artifact
 - [ ] Documentation
 - [ ] Governance or policy
 
 ## Data Source
 
-If this changes provider data, include the official source URL and date checked.
+For data changes, include the official source URL, access date, and the generated
+added/removed/changed record report. A source change is never accepted or
+published automatically.
 
-## Privacy
+## Required Checklist
 
-- [ ] This pull request contains no real IBANs, customer names, account owner data, phone numbers, payroll data, screenshots, or private financial data.
-- [ ] Fixtures and examples are synthetic.
+- [ ] Code or data change completed
+- [ ] Tests updated
+- [ ] README reviewed
+- [ ] CHANGELOG updated
+- [ ] Relevant public documentation reviewed
+- [ ] Generated JSON, CSV, SQL, SQLite, fixtures, and TypeScript data rebuilt
+- [ ] Schema validation passed
+- [ ] Security impact reviewed
+- [ ] Backward compatibility reviewed
+- [ ] Release impact determined
+- [ ] Release note or draft updated
+- [ ] No real IBAN or other personal data was used
+
+## Public Surface Review
+
+List at least five reviewed public surfaces and mark each `updated` or `no change
+required`, for example:
+
+- README.md:
+- CHANGELOG.md:
+- DATA_SCHEMA.md:
+- RELEASE.md:
+- examples/:
 
 ## Verification
 
-- [ ] `npm run data:update` (only when official data changed)
+- [ ] `npm run generate:data` when canonical data changed
 - [ ] `npm test`
-- [ ] `npm pack --workspace packages/typescript --dry-run` (when package contents changed)
+- [ ] `npm pack --workspace packages/typescript --dry-run` when package contents changed

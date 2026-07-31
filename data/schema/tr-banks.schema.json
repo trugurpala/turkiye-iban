@@ -111,11 +111,28 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["id", "url", "retrievedAt"],
+            "required": ["id", "url", "retrievedAt", "classification", "usage", "evidenceScope"],
             "properties": {
               "id": { "type": "string" },
               "url": { "type": "string" },
-              "retrievedAt": { "type": "string", "format": "date" }
+              "retrievedAt": { "type": "string", "format": "date" },
+              "classification": {
+                "type": "string",
+                "enum": ["official", "secondary", "manually_verified"]
+              },
+              "usage": {
+                "type": "string",
+                "enum": ["primary_code_evidence", "enrichment", "monitor_only"]
+              },
+              "evidenceScope": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "enum": ["provider_code", "institution_type", "institution_status", "iban_format"]
+                },
+                "uniqueItems": true
+              }
             },
             "additionalProperties": false
           },

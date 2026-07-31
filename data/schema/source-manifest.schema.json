@@ -11,12 +11,45 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "url", "retrievedAt", "sha256"],
+        "required": [
+          "id",
+          "url",
+          "retrievedAt",
+          "sha256",
+          "publisher",
+          "title",
+          "classification",
+          "usage",
+          "evidenceScope",
+          "extractionMethod",
+          "redistributionStatus"
+        ],
         "properties": {
           "id": { "type": "string", "minLength": 1 },
           "url": { "type": "string", "format": "uri", "pattern": "^https://" },
           "retrievedAt": { "type": "string", "format": "date" },
-          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "publisher": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "classification": {
+            "type": "string",
+            "enum": ["official", "secondary", "manually_verified"]
+          },
+          "usage": {
+            "type": "string",
+            "enum": ["primary_code_evidence", "enrichment", "monitor_only"]
+          },
+          "evidenceScope": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": ["provider_code", "institution_type", "institution_status", "iban_format"]
+            },
+            "uniqueItems": true
+          },
+          "extractionMethod": { "type": "string", "minLength": 1 },
+          "redistributionStatus": { "type": "string", "minLength": 1 }
         },
         "additionalProperties": false
       }

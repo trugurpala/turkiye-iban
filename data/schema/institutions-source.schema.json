@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/trugurpala/turkiye-iban/raw/main/data/schema/institutions-source.schema.json",
+  "title": "Canonical Turkish IBAN Institution Source",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "country",
+    "ibanFormat",
+    "dataVersion",
+    "sourcePolicy",
+    "sources",
+    "institutions"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "country": { "const": "TR" },
+    "ibanFormat": {
+      "type": "object",
+      "required": ["length", "providerCodeLength", "reserveLength", "accountLength"],
+      "properties": {
+        "length": { "const": 26 },
+        "providerCodeLength": { "const": 5 },
+        "reserveLength": { "const": 1 },
+        "accountLength": { "const": 16 }
+      },
+      "additionalProperties": false
+    },
+    "dataVersion": { "type": "string", "format": "date" },
+    "sourcePolicy": { "type": "string", "minLength": 1 },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "institutions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/institution" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "publisher",
+        "title",
+        "url",
+        "classification",
+        "usage",
+        "evidenceScope",
+        "retrievedAt",
+        "sha256",
+        "extractionMethod",
+        "redistributionStatus"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+        "publisher": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "pattern": "^https://" },
+        "classification": { "enum": ["official", "secondary", "manually_verified"] },
+        "usage": { "enum": ["primary_code_evidence", "enrichment", "monitor_only"] },
+        "evidenceScope": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["provider_code", "institution_type", "institution_status", "iban_format"] },
+          "uniqueItems": true
+        },
+        "retrievedAt": { "type": "string", "format": "date" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "extractionMethod": { "type": "string", "minLength": 1 },
+        "redistributionStatus": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "institution": {
+      "type": "object",
+      "required": [
+        "code",
+        "rawCode",
+        "nameOfficial",
+        "nameShort",
+        "type",
+        "status",
+        "systems",
+        "codeEvidence",
+        "aliases",
+        "sourceIds",
+        "lastVerifiedAt"
+      ],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[0-9]{5}$" },
+        "rawCode": { "type": "string", "pattern": "^[0-9]{3,5}$" },
+        "nameOfficial": { "type": "string", "minLength": 1 },
+        "nameShort": { "type": "string", "minLength": 1 },
+        "type": {
+          "enum": [
+            "bank",
+            "central_bank",
+            "payment_institution",
+            "electronic_money_institution",
+            "postal_operator",
+            "financial_market_infrastructure"
+          ]
+        },
+        "status": { "enum": ["active", "inactive", "unknown"] },
+        "systems": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "codeEvidence": {
+          "type": "array",
+          "items": { "enum": ["payment_system_participant"] },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "aliases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "sourceIds": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "lastVerifiedAt": { "type": "string", "format": "date" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

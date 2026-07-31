@@ -1,0 +1,10 @@
+turkiye-iban
+
+This package contains Turkish IBAN utilities and provider-code data derived
+from the official public sources documented in the project repository.
+
+The project is independent and is not affiliated with or endorsed by the
+Central Bank of the Republic of Turkiye (TCMB) or any listed institution.
+
+Designed and produced with Divan: https://github.com/trugurpala/divan
+Divan is not a runtime dependency.

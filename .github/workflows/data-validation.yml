@@ -1,0 +1,42 @@
+name: Data Validation
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "fixtures/**"
+      - "scripts/**"
+      - "packages/typescript/data/**"
+      - "packages/typescript/src/generated/**"
+      - ".github/workflows/data-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Canonical data and generated artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install validation tools
+        run: python -m pip install --disable-pip-version-check -r tools/requirements.txt
+      - name: Install deterministic SQLite tooling
+        run: npm ci --ignore-scripts
+      - name: Check generated-file drift
+        run: python scripts/generate-data.py --check
+      - name: Validate canonical and distribution data
+        run: python scripts/validate-data.py
+      - name: Scan for non-synthetic IBAN data
+        run: python scripts/check-privacy.py

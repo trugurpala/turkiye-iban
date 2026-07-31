@@ -10,6 +10,7 @@ import unittest
 from pathlib import Path
 
 import yaml
+from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,45 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("Data validation passed", result.stdout)
 
+    def test_canonical_source_is_the_single_schema_validated_input(self) -> None:
+        source_path = ROOT / "data" / "source" / "institutions.json"
+        schema_path = ROOT / "data" / "schema" / "institutions-source.schema.json"
+
+        self.assertTrue(source_path.is_file())
+        self.assertTrue(schema_path.is_file())
+        source = json.loads(source_path.read_text(encoding="utf-8"))
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        errors = list(Draft202012Validator(schema).iter_errors(source))
+
+        self.assertEqual(errors, [])
+        self.assertEqual(source["institutions"], sorted(source["institutions"], key=lambda item: item["code"]))
+        self.assertEqual(
+            len(source["institutions"]),
+            len({item["code"] for item in source["institutions"]}),
+        )
+
+    def test_generated_files_have_no_drift_from_canonical_source(self) -> None:
+        result = self.run_python("scripts/generate-data.py", "--check")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Generated files are up to date", result.stdout)
+
+    def test_sqlite_artifact_matches_json_records(self) -> None:
+        database_path = ROOT / "data" / "tr-banks.sqlite"
+        self.assertTrue(database_path.is_file())
+
+        connection = sqlite3.connect(database_path)
+        try:
+            rows = connection.execute(
+                "SELECT code, name_official FROM tr_iban_providers ORDER BY code"
+            ).fetchall()
+        finally:
+            connection.close()
+
+        payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
+        expected = [(item["code"], item["nameOfficial"]) for item in payload["providers"]]
+        self.assertEqual(rows, expected)
+
     def test_data_contract_uses_source_evidence_without_iban_eligibility_claims(self) -> None:
         payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
 
@@ -39,6 +79,9 @@ class QualityScriptsTest(unittest.TestCase):
         for provider in payload["providers"]:
             self.assertNotIn("ibanEligible", provider)
             self.assertEqual(provider["codeEvidence"], ["payment_system_participant"])
+            for source in provider["sources"]:
+                self.assertEqual(source["classification"], "official")
+                self.assertGreater(len(source["evidenceScope"]), 0)
 
     def test_licence_registry_codes_are_not_promoted_to_iban_provider_codes(self) -> None:
         payload = json.loads((ROOT / "data" / "tr-banks.json").read_text(encoding="utf-8"))
@@ -74,6 +117,20 @@ class QualityScriptsTest(unittest.TestCase):
 
         self.assertNotIn("generate:data", package["scripts"]["test"])
         self.assertIn("data:update", package["scripts"])
+        for script in [
+            "format:check",
+            "lint",
+            "typecheck",
+            "check:generated",
+            "test:unit",
+            "test:integration",
+            "test:examples",
+            "test:release",
+        ]:
+            self.assertIn(script, package["scripts"])
+
+        self.assertTrue((ROOT / "examples/javascript.mjs").is_file())
+        self.assertTrue((ROOT / "examples/data_files.py").is_file())
 
     def test_typescript_package_declares_dual_module_exports(self) -> None:
         package = json.loads(
@@ -88,6 +145,11 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertEqual(package["repository"]["url"], "git+https://github.com/trugurpala/turkiye-iban.git")
 
     def test_privacy_guard_accepts_only_known_synthetic_ibans(self) -> None:
+        for fixture_path in (ROOT / "fixtures").glob("*.synthetic.json"):
+            fixtures = json.loads(fixture_path.read_text(encoding="utf-8"))
+            self.assertTrue(fixtures)
+            self.assertTrue(all(item.get("synthetic") is True for item in fixtures))
+
         result = self.run_python("scripts/check-privacy.py")
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
@@ -97,6 +159,9 @@ class QualityScriptsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             extra_artifact = Path(temp_dir) / "tr-iban-0.1.0-test.tgz"
             extra_artifact.write_bytes(b"synthetic package artifact")
+            stale_dir = Path(temp_dir) / "v0.1.0-test"
+            stale_dir.mkdir()
+            (stale_dir / "stale-artifact.txt").write_text("stale", encoding="utf-8")
             result = self.run_python(
                 "scripts/prepare-release.py",
                 "--version",
@@ -112,14 +177,48 @@ class QualityScriptsTest(unittest.TestCase):
             self.assertTrue((release_dir / "tr-banks.json").is_file())
             self.assertTrue((release_dir / "tr-banks.csv").is_file())
             self.assertTrue((release_dir / "tr-banks.sql").is_file())
+            self.assertTrue((release_dir / "tr-banks.sqlite").is_file())
+            self.assertTrue((release_dir / "tr-banks.schema.json").is_file())
             self.assertTrue((release_dir / extra_artifact.name).is_file())
             self.assertTrue((release_dir / "SHA256SUMS.txt").is_file())
+            self.assertTrue((release_dir / "SHA256SUMS").is_file())
+            self.assertFalse((release_dir / "stale-artifact.txt").exists())
 
             checksums = (release_dir / "SHA256SUMS.txt").read_text(encoding="utf-8")
             self.assertIn("tr-banks.json", checksums)
             self.assertIn("tr-banks.csv", checksums)
             self.assertIn("tr-banks.sql", checksums)
+            self.assertIn("tr-banks.sqlite", checksums)
             self.assertIn(extra_artifact.name, checksums)
+
+    def test_repository_has_permanent_task_and_public_surface_checklists(self) -> None:
+        agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        pull_request = (ROOT / ".github" / "pull_request_template.md").read_text(encoding="utf-8")
+
+        required_items = [
+            "README",
+            "CHANGELOG",
+            "schema",
+            "security",
+            "backward compatibility",
+            "release",
+            "personal data",
+        ]
+        for item in required_items:
+            self.assertIn(item.lower(), agents.lower())
+            self.assertIn(item.lower(), pull_request.lower())
+
+        self.assertIn("at least five", agents.lower())
+
+    def test_required_quality_workflows_exist(self) -> None:
+        workflow_dir = ROOT / ".github" / "workflows"
+        for filename in [
+            "ci.yml",
+            "data-validation.yml",
+            "release.yml",
+            "scheduled-source-check.yml",
+        ]:
+            self.assertTrue((workflow_dir / filename).is_file(), filename)
 
     def test_workflows_pin_third_party_actions_to_full_commit_shas(self) -> None:
         workflow_dir = ROOT / ".github" / "workflows"

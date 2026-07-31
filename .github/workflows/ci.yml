@@ -37,8 +37,26 @@ jobs:
         run: python -m pip install --disable-pip-version-check -r tools/requirements.txt
       - name: Install Node.js dependencies
         run: npm ci --ignore-scripts
-      - name: Run offline verification suite
-        run: npm test
+      - name: Check formatting
+        run: npm run format:check
+      - name: Lint Python and TypeScript
+        run: npm run lint
+      - name: Type-check public package and tests
+        run: npm run typecheck
+      - name: Check generated-file drift
+        run: npm run check:generated
+      - name: Validate schemas and data formats
+        run: npm run validate:data
+      - name: Scan for non-synthetic IBAN data
+        run: npm run check:privacy
+      - name: Run unit tests
+        run: npm run test:unit
+      - name: Run integration tests
+        run: npm run test:integration
+      - name: Run executable examples
+        run: npm run test:examples
+      - name: Test release asset preparation
+        run: npm run test:release
       - name: Inspect publish contents
         if: matrix.node-version == 24
         run: npm pack --workspace packages/typescript --dry-run

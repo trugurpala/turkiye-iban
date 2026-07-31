@@ -76,6 +76,7 @@ class PackageConsumerTest(unittest.TestCase):
             self.assertIn("dist/cjs/index.js", package_files)
             self.assertIn("dist/types/index.d.ts", package_files)
             self.assertIn("data/tr-banks.json", package_files)
+            self.assertIn("NOTICE", package_files)
             self.assertFalse(any("test" in path.lower() for path in package_files))
 
 

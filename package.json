@@ -10,13 +10,25 @@
   ],
   "scripts": {
     "data:update": "python scripts/generate-data.py",
-    "data:check-remote": "python scripts/check-sources.py",
+    "data:check-remote": "python scripts/check-sources.py --report source-change-report.md --json-report source-change-report.json",
     "generate:data": "npm run data:update",
+    "check:generated": "python scripts/generate-data.py --check",
+    "format:check": "python scripts/check-format.py",
+    "lint": "python -m compileall -q scripts tools examples && npm -w packages/typescript run typecheck",
+    "typecheck": "npm -w packages/typescript run typecheck",
     "validate:data": "python scripts/validate-data.py",
     "check:privacy": "python scripts/check-privacy.py",
     "test:tools": "python -m unittest discover -s tools -p \"test_*.py\"",
+    "test:unit": "npm -w packages/typescript run test:unit",
+    "test:integration": "npm run test:tools",
+    "test:examples": "npm run build && node examples/javascript.mjs && python examples/data_files.py",
+    "test:release": "python -m unittest tools.test_quality_scripts.QualityScriptsTest.test_prepare_release_writes_artifacts_and_checksums",
     "prepare:release": "python scripts/prepare-release.py",
     "build": "npm -w packages/typescript run build",
-    "test": "npm run validate:data && npm run check:privacy && npm -w packages/typescript test && npm run test:tools"
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run check:generated && npm run validate:data && npm run check:privacy && npm run test:unit && npm run test:integration && npm run test:examples && npm run test:release",
+    "test": "npm run verify"
+  },
+  "devDependencies": {
+    "sql.js": "1.14.1"
   }
 }

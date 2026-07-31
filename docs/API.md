@@ -45,6 +45,10 @@ Parse ve lookup işlemini birleştirir:
 
 `bankCode`, `bank` ve `isKnownProvider` alanları v0.x geriye uyumluluk alias'larıdır.
 
+> Önce `parsed.isValid` alanını kontrol edin. Geçersiz bir IBAN içinde biçimsel
+> olarak çıkarılabilen beş haneli kod veri kümesinde bulunabilir; bu durumda
+> kuruluş eşleşmesi IBAN'ı geçerli hâle getirmez ve otomatik seçim yapılmamalıdır.
+
 ## `formatIban(input: string): string`
 
 Normalize edilmiş değeri dörtlü gruplar halinde döndürür.
@@ -58,3 +62,12 @@ yerine bu fonksiyonu kullanın.
 
 API hesabın varlığını, sahibini, ad eşleşmesini, bakiyeyi veya transfer
 yapılabilirliğini doğrulamaz. `known` yalnız sağlayıcı kodu eşleşmesidir.
+
+## Geriye Uyumluluk
+
+`parseIban`, `validateTurkishIban`, `getBankCodeFromIban`, `findBankByCode`,
+`identifyBankFromIban`, `formatIban` ve `maskIban` ile mevcut package export
+yolları major release olmadan kaldırılmaz. Bir alan önce dokümantasyonda ve
+CHANGELOG'da deprecated ilan edilir, migration yolu verilir ve en erken sonraki
+major sürümde kaldırılır. v0.x alias'ları ilk 1.x major serisi boyunca korunacak
+ve kaldırma planı ayrıca duyurulacaktır.

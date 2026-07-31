@@ -28,3 +28,9 @@ Issue, PR, commit, fixture veya release içinde gerçek IBAN, hesap sahibi,
 telefon, bordro ya da başka kişisel finansal veri görülürse içerik public
 görünümden kaldırılır; gerekirse Git geçmişi ve release artifact'ları yeniden
 oluşturulur. Böyle bir veriyi örnek olarak tekrar paylaşmayın.
+
+CI, kompakt veya boşluklu Türkiye IBAN adaylarını tarar ve yalnız açıkça
+`synthetic: true` olarak işaretlenmiş fixture değerlerine izin verir. Hata
+çıktısı bilinmeyen adayları maskeler. Tarama bir veri kaynağı veya hukuki
+uyumluluk garantisi değildir; katkı yapan kişi gerçek veri kullanmamakla
+sorumludur.

@@ -40,6 +40,9 @@ result.provider?.nameOfficial; // "AKBANK T.A.Ş."
 
 `isValid`, IBAN'ın ülke, uzunluk, karakter ve kontrol rakamı kurallarından geçip geçmediğini gösterir. `providerStatus: "known"` ise beş haneli kuruluş kodunun paket veri kümesinde bulunduğunu belirtir.
 
+Önce her zaman `result.parsed.isValid` değerini kontrol edin. Geçersiz bir IBAN
+içinde çıkarılabilen kod eşleşse bile bu sonuç IBAN'ı geçerli hâle getirmez.
+
 ## Türkiye IBAN'ının bölümleri
 
 Sentetik örnek `TR | 51 | 00046 | 0 | 9999000000000011` şeklinde ayrılır:
@@ -76,7 +79,10 @@ Bu durumda kuruluşu otomatik seçmeyin. Veri sürümünü veya uygulamanızın 
 
 ## Verinin kaynağı
 
-Kuruluş eşleştirmesine yalnız TCMB Ödeme Sistemleri Katılımcıları listesinde koduyla yayımlanan kayıtlar girer. Aktif ödeme ve elektronik para kuruluşu sayfaları mevcut kayıtların tür ve statüsünü zenginleştirir; tek başına yeni bir IBAN kuruluş kodu üretmez.
+Kuruluş eşleştirmesine yalnız TCMB Ödeme Sistemleri Katılımcıları listesinde
+koduyla yayımlanan kayıtlar girer. Aktif ödeme ve elektronik para kuruluşu
+sayfaları mevcut snapshotta `monitor_only` olarak izlenir ve tek başına yeni bir
+IBAN kuruluş kodu üretmez.
 
 Paket sürümlenmiş veriyle çalışır ve runtime sırasında ağ isteği yapmaz. Kaynak adresleri, erişim tarihleri ve SHA-256 dijital parmak izleri [ana projede](https://github.com/trugurpala/turkiye-iban#verinin-kaynağı) yayımlanır.
 
@@ -107,7 +113,11 @@ maskIban(iban); // "TR51 **** **** **** **** **00 11"
 
 ## Topluluğa katılın
 
-Veri kaynakları, dil bağımsız JSON/CSV/SQL dosyaları ve katkı kuralları için [turkiye-iban GitHub deposuna](https://github.com/trugurpala/turkiye-iban) bakın. Sorular ve fikirler için [Discussions](https://github.com/trugurpala/turkiye-iban/discussions), hatalar ve resmî veri değişiklikleri için [issue formları](https://github.com/trugurpala/turkiye-iban/issues/new/choose) kullanılabilir.
+Veri kaynakları, dil bağımsız JSON/CSV/SQL/SQLite dosyaları, şemalar ve katkı
+kuralları için [turkiye-iban GitHub deposuna](https://github.com/trugurpala/turkiye-iban)
+bakın. Sorular ve fikirler için [Discussions](https://github.com/trugurpala/turkiye-iban/discussions),
+hatalar ve resmî veri değişiklikleri için [issue formları](https://github.com/trugurpala/turkiye-iban/issues/new/choose)
+kullanılabilir.
 
 Gerçek IBAN, müşteri adı, hesap sahibi veya başka kişisel finansal veri paylaşmayın. Proje yalnız sentetik test örneklerini kabul eder.
 

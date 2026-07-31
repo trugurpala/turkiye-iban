@@ -11,3 +11,5 @@ __pycache__/
 .env.*
 work/
 tmp/
+source-change-report.md
+source-change-report.json

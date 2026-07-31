@@ -26,7 +26,8 @@
     "dist",
     "data",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "NOTICE"
   ],
   "repository": {
     "type": "git",
@@ -47,7 +48,9 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/write-cjs-package.mjs",
     "build:types": "tsc -p tsconfig.types.json",
-    "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/test/*.test.js"
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "test:unit": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/test/*.test.js",
+    "test": "npm run test:unit"
   },
   "keywords": [
     "iban",
@@ -55,7 +58,10 @@
     "turkiye",
     "bank",
     "payment",
-    "tcmb"
+    "tcmb",
+    "turkish-iban",
+    "iban-validator",
+    "typescript"
   ],
   "devDependencies": {
     "@types/node": "^22.13.0",

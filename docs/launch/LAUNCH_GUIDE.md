@@ -2,7 +2,7 @@
 
 ## Tek cümlelik konumlandırma
 
-`turkiye-iban`, Türkiye IBAN'ını doğrulayan ve içindeki kuruluş kodunu TCMB kaynaklı açık veriyle eşleştiren, JSON/CSV/SQL ile TypeScript/NPM çıktıları sunan ücretsiz açık kaynak projedir.
+`turkiye-iban`, Türkiye IBAN'ını doğrulayan ve içindeki kuruluş kodunu TCMB kaynaklı açık veriyle eşleştiren, JSON/CSV/SQL/SQLite ile TypeScript/NPM çıktıları sunan ücretsiz açık kaynak projedir.
 
 ## Kimin için?
 
@@ -15,10 +15,10 @@
 ## Mesaj sırası
 
 1. Sorun: Her ekip aynı Türkiye IBAN ve kuruluş kodu eşlemesini yeniden kuruyor.
-2. Çözüm: Tek kaynak; JSON, CSV, SQL ve sıfır runtime bağımlılıklı NPM paketi.
+2. Çözüm: Tek kanonik kaynak; JSON, CSV, SQL, SQLite ve sıfır runtime bağımlılıklı NPM paketi.
 3. Güven: Kod kanıtı TCMB Ödeme Sistemleri Katılımcıları listesinden geliyor; kaynak parmak izleri ve testler açık.
 4. Sınır: Proje hesabın varlığını, sahibini veya transfer yapılabilirliğini doğrulamıyor.
-5. Davet: Kullan, geri bildirim ver veya PHP, Python, belge ve veri araçlarına katkıda bulun.
+5. Davet: Kullan, geri bildirim ver; belgeye, veriye, araçlara veya ayrı dil istemcilerine katkıda bulun.
 
 ## Kanal sırası
 

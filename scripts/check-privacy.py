@@ -7,7 +7,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-IBAN_PATTERN = re.compile(r"\bTR[A-Z0-9]{24}\b")
+IBAN_PATTERN = re.compile(
+    r"\bTR(?:[ \t]*[0-9]){8}(?:[ \t]*[A-Z0-9]){16}\b",
+    re.IGNORECASE,
+)
 TEXT_SUFFIXES = {
     ".csv",
     ".json",
@@ -33,8 +36,8 @@ def load_fixture_ibans() -> set[str]:
         data = json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
         for item in data:
             iban = item.get("iban")
-            if isinstance(iban, str):
-                allowed.add(iban)
+            if isinstance(iban, str) and item.get("synthetic") is True:
+                allowed.add(re.sub(r"\s+", "", iban).upper())
     return allowed
 
 
@@ -64,6 +67,8 @@ def main() -> int:
     violations: list[str] = []
 
     for path in iter_project_files():
+        if not path.is_file():
+            continue
         relative_path = path.relative_to(ROOT)
         if path.suffix.lower() not in TEXT_SUFFIXES:
             continue
@@ -72,9 +77,10 @@ def main() -> int:
         except UnicodeDecodeError:
             continue
         for match in IBAN_PATTERN.finditer(text):
-            iban = match.group(0)
+            iban = re.sub(r"\s+", "", match.group(0)).upper()
             if iban not in allowed_ibans:
-                violations.append(f"{relative_path}:{match.start()}: unknown IBAN-like value {iban}")
+                masked = iban[:4] + "*" * max(0, len(iban) - 8) + iban[-4:]
+                violations.append(f"{relative_path}:{match.start()}: unknown IBAN-like value {masked}")
 
     if violations:
         print("Privacy scan failed. Unknown IBAN-like values found:")
