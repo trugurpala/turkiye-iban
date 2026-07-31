@@ -5,6 +5,11 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+### Changed
+
+- ROADMAP içinde tamamlanmış `v0.2.1` temeli ile taahhüt niteliği taşımayan,
+  kanıta bağlı gelecek fikirlerinin ayrımı netleştirildi.
+
 ## [0.2.1] - 2026-07-31
 
 ### Fixed
