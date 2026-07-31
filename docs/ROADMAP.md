@@ -7,7 +7,8 @@
 - [x] ESM/CommonJS `tr-iban` paketi ve tüketici testleri.
 - [x] Veri doğrulama, privacy scan, CI ve release artifact üretimi.
 - [x] Topluluk, güvenlik, yönetişim ve katkı dosyaları.
-- [ ] GitHub Release ve ilk NPM registry yayını.
+- [x] `v0.1.0` GitHub Release ve uzaktan checksum doğrulaması.
+- [ ] İlk NPM registry yayını ve trusted publisher bağlantısı.
 
 ## v0.2 - PHP/Composer
 
