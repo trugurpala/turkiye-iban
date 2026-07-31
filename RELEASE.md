@@ -14,6 +14,10 @@ The JavaScript package and repository releases use Semantic Versioning.
 Versions are selected by maintainers after reviewing the actual diff. Workflows
 never choose or increment a version automatically.
 
+Release tags must point to the current `origin/main` commit. The NPM trusted
+publishing workflow accepts dispatches only from `main` and verifies that the
+matching immutable GitHub Release and tag already exist at the same commit.
+
 ## Pre-release Gates
 
 Run from a clean checkout:

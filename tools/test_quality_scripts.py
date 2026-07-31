@@ -230,6 +230,15 @@ class QualityScriptsTest(unittest.TestCase):
                 reference = action.rsplit("@", 1)[-1]
                 self.assertRegex(reference, r"^[0-9a-f]{40}$", f"Unpinned action in {workflow}")
 
+    def test_publish_workflows_only_release_current_main(self) -> None:
+        workflow_dir = ROOT / ".github" / "workflows"
+        release = (workflow_dir / "release.yml").read_text(encoding="utf-8")
+        publish_npm = (workflow_dir / "publish-npm.yml").read_text(encoding="utf-8")
+
+        self.assertIn('git fetch --force origin main:refs/remotes/origin/main', release)
+        self.assertIn('test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"', release)
+        self.assertIn("github.ref == 'refs/heads/main'", publish_npm)
+
     def test_github_yaml_files_parse(self) -> None:
         for yaml_path in (ROOT / ".github").rglob("*.yml"):
             with self.subTest(path=yaml_path.relative_to(ROOT)):
