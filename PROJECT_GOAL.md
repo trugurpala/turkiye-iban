@@ -2,7 +2,7 @@
 
 `turkiye-iban`, Türkiye IBAN biçimini ve MOD 97-10 kontrol basamaklarını
 doğrulayan; IBAN içindeki beş haneli ödeme hizmeti sağlayıcısı kodunu TCMB
-kaynaklı kuruluş verisiyle eşleştiren, dil bağımsız bir açık kaynak veri ve
+ödeme sistemleri katılımcı kanıtıyla eşleştiren, dil bağımsız bir açık kaynak veri ve
 paket projesidir.
 
 Proje üç kullanım biçimini aynı kaynak üzerinden destekler:
@@ -18,7 +18,7 @@ eşleşmesini veya transfer yapılabilirliğini kanıtlamaz.
 
 ## İlk Sürümün Başarı Ölçütleri
 
-- JSON, CSV ve SQL aynı TCMB kaynaklı kuruluş kayıtlarını içerir.
+- JSON, CSV ve SQL aynı TCMB katılımcı kanıtlı kuruluş kayıtlarını içerir.
 - Her veri kaydı kaynağını, erişim tarihini ve kanıt türünü taşır.
 - TypeScript paketi ESM ve CommonJS tüketicilerinde çalışır.
 - Yalnız sentetik IBAN fixture'ları kullanılır; gerçek kişisel finansal veri

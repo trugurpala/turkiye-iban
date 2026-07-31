@@ -20,5 +20,6 @@ If this changes provider data, include the official source URL and date checked.
 
 ## Verification
 
-- [ ] `npm run generate:data`
+- [ ] `npm run data:update` (only when official data changed)
 - [ ] `npm test`
+- [ ] `npm pack --workspace packages/typescript --dry-run` (when package contents changed)

@@ -27,6 +27,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Prepare GitHub Release data artifacts.")
     parser.add_argument("--version", default=project_version())
     parser.add_argument("--output-dir", default=str(ROOT / "release-artifacts"))
+    parser.add_argument(
+        "--extra",
+        action="append",
+        default=[],
+        help="Additional artifact to copy into the release and checksum.",
+    )
     args = parser.parse_args()
 
     version = args.version.removeprefix("v")
@@ -46,7 +52,10 @@ def main() -> int:
     ]
 
     copied: list[Path] = []
-    for source in artifact_paths:
+    extra_paths = [Path(item).resolve() for item in args.extra]
+    for source in [*artifact_paths, *extra_paths]:
+        if not source.is_file():
+            raise FileNotFoundError(f"Release artifact not found: {source}")
         destination = release_dir / source.name
         shutil.copy2(source, destination)
         copied.append(destination)

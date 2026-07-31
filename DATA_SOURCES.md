@@ -1,32 +1,38 @@
 # Data Sources
 
-This project uses official and institutional sources first. If two sources
-conflict, the most specific current TCMB source wins unless maintainers document
-a different reason in the changelog.
+Bu proje resmî ve kurumsal kaynakları önceliklendirir. Üretilen dosyadaki her
+kayıt kaynak kimliği, URL, erişim tarihi ve kod kanıtını taşır; indirilen kaynak
+içeriğinin SHA-256 özeti `data/source-manifest.json` içinde tutulur.
 
-## Primary Sources
+## Birincil Kod Kaynağı
 
-- TCMB payment systems participants list:
-  `https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES`
-- TCMB active payment institutions list:
-  `https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari`
-- TCMB active electronic money institutions list:
-  `https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari`
-- TCMB IBAN regulation:
-  `https://tcmb.gov.tr/wps/wcm/connect/c8357e06-1ab6-4c49-8352-7b9c19fcb77e/Teblig%2B2021_5.pdf?MOD=AJPERES`
+- [TCMB Ödeme Sistemleri Katılımcıları](https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES)
 
-These sources were checked for the starter repository on 2026-07-31.
+Bu listedeki dört haneli katılımcı kodu, Türkiye IBAN'ındaki beş haneli alana sol
+taraftan sıfır eklenerek yazılır. `codeEvidence: payment_system_participant`
+yalnız bu kaynaktan üretilir.
 
-## Secondary Sources
+## Statü ve Tür Kaynakları
 
-Secondary sources may be used only for cross-checking, tests, or issue triage.
-They must not replace official source data.
+- [TCMB aktif ödeme kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari)
+- [TCMB aktif elektronik para kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari)
 
-- Schwifty, MIT licensed, may be used as a reference or test oracle.
+Bu listeler yalnız ödeme sistemleri katılımcı kümesinde zaten bulunan bir kaydı
+tür/statü ve kaynak bilgisiyle zenginleştirir. Aktif lisans kaydı veya sayfadaki
+kuruluş kodu tek başına IBAN düzenleme yetkisinin ya da belirli bir IBAN
+sağlayıcı kodunun kanıtı değildir.
 
-## Source Rules
+## IBAN Düzenlemesi
 
-- Every generated data record must keep at least one source identifier.
-- Data updates must include the retrieval date.
-- Real customer data is never an acceptable source.
-- Screenshots from online banking or payroll systems are never acceptable.
+- [TCMB Uluslararası Banka Hesap Numarası Hakkında Tebliğ](https://www.tcmb.gov.tr/wps/wcm/connect/c8357e06-1ab6-4c49-8352-7b9c19fcb77e/Teblig%2B2021_5.pdf?MOD=AJPERES)
+
+Tebliğ biçim/doğrulama politikasının ana kaynağıdır; kuruluş dizini olarak
+kullanılmaz.
+
+Kaynaklar 2026-07-31 tarihinde çekilmiş ve hash manifestine kaydedilmiştir.
+
+## İkincil Kaynaklar
+
+Schwifty MIT lisanslı referans veya test oracle'ı olarak karşılaştırmada
+kullanılabilir. Veri üreticisinin ana kaynağı olamaz. Blog, forum, müşteri
+kaydı, banka ekran görüntüsü veya gerçek IBAN veri kaynağı olarak kabul edilmez.

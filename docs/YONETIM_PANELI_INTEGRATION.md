@@ -1,13 +1,9 @@
-# Yonetim-Paneli Integration
+# Yonetim-Paneli Entegrasyonu
 
-`turkiye-iban` should be consumed as an external dependency, not copied into the
-Yonetim-Paneli repository.
+`tr-iban`, Yonetim-Paneli deposuna kopyalanmayacak; sürümlenmiş dış NPM
+bağımlılığı olarak kullanılacaktır.
 
-## Frontend
-
-Use `formatIban` while the user edits the IBAN field and `maskIban` anywhere the
-IBAN is shown after entry. Do not show provider auto-detection as a guarantee
-that the account exists.
+## Personel Formu
 
 ```ts
 import { formatIban, identifyBankFromIban } from "tr-iban";
@@ -15,15 +11,26 @@ import { formatIban, identifyBankFromIban } from "tr-iban";
 const formatted = formatIban(inputValue);
 const identified = identifyBankFromIban(formatted);
 
-if (identified.parsed.isValid && identified.bank) {
-  setSelectedBankCode(identified.bank.code);
+if (identified.parsed.isValid && identified.providerStatus === "known") {
+  setSelectedBankCode(identified.provider!.code);
+  setBankSelectionLocked(true);
+} else {
+  clearSelectedBank();
+  setBankSelectionLocked(true);
 }
 ```
 
-## Backend
+- `known`: banka/kuruluş otomatik seçilir; kullanıcı farklı kuruluş seçemez.
+- Geçersiz biçim/checksum: banka temizlenir, kayıt engellenir.
+- `unknown`: banka temizlenir, manuel seçim açılmaz, kayıt engellenir ve veri
+  sürümünün güncelliği incelenir.
 
-Repeat validation in NestJS before saving a personnel record. Never trust
-frontend-only validation for payroll or personnel data.
+Bu son madde panelin iş kuralıdır. Genel amaçlı paket `unknown` kodu checksum
+geçerliliğinden ayrı raporlar.
+
+## NestJS Backend
+
+Frontend sonucu güvenlik sınırı değildir. Backend aynı kontrolü tekrarlar:
 
 ```ts
 import { identifyBankFromIban, maskIban } from "tr-iban";
@@ -31,19 +38,28 @@ import { identifyBankFromIban, maskIban } from "tr-iban";
 const identified = identifyBankFromIban(dto.iban);
 
 if (!identified.parsed.isValid) {
-  throw new BadRequestException("IBAN formatı geçerli değil.");
+  throw new BadRequestException("IBAN biçimi veya kontrol basamakları geçersiz.");
 }
 
-logger.info({ iban: maskIban(dto.iban), providerCode: identified.bankCode }, "IBAN provider checked");
+if (identified.providerStatus !== "known") {
+  throw new UnprocessableEntityException("IBAN sağlayıcı kodu tanınmıyor.");
+}
+
+logger.info(
+  {
+    iban: maskIban(dto.iban),
+    providerCode: identified.providerCode,
+    dataVersion: identified.dataVersion,
+  },
+  "IBAN sağlayıcısı doğrulandı",
+);
 ```
 
-## Unknown Provider
+Veritabanına seçilen kuruluşun `code` değeri ve kullanılan `dataVersion`
+yazılabilir. Ham IBAN uygulama loglarına, hata izleme etiketlerine veya analitik
+olaylarına eklenmemelidir.
 
-If `identified.parsed.isValid` is true but `identified.isKnownProvider` is false,
-keep manual bank/provider selection enabled. This means the IBAN format and
-checksum are valid, but the bundled dataset does not know the provider code.
+## NPM Olmayan Servisler
 
-## Database Fallback
-
-Applications that do not use NPM can import `data/tr-banks.sql` into their own
-database and lookup by the five-digit `code` field.
+`data/tr-banks.sql` içindeki `tr_iban_providers` tablosu içe aktarılır ve beş
+haneli `code` alanıyla sorgulanır. JSON ve CSV aynı kayıtları taşır.

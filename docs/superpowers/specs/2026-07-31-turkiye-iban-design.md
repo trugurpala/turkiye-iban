@@ -36,17 +36,13 @@ Her sağlayıcı kaydı şu alanları taşır: `code`, `rawCode`, `nameOfficial`
 `nameShort`, `type`, `status`, `systems`, `codeEvidence`, `aliases`, `sources`
 ve `lastVerifiedAt`.
 
-`codeEvidence`, kodun hangi resmî bağlamda yayımlandığını açıklar:
-
-- `payment_system_participant`: TCMB ödeme sistemleri katılımcı kodu.
-- `licensed_payment_institution`: TCMB aktif ödeme kuruluşu kodu.
-- `licensed_electronic_money_institution`: TCMB aktif elektronik para kuruluşu
-  kodu.
-
-Aktif kuruluş statüsü veya kuruluş kodu, tek başına IBAN düzenleme yetkisi diye
-sunulmaz. Eski `ibanEligible` alanı kaldırılır. Üç ve dört haneli kaynak kodlar
-beş haneli IBAN sağlayıcı alanıyla karşılaştırılabilmesi için sola sıfırla
-tamamlanır; hem ham hem normalize değer korunur.
+`codeEvidence` v0.1'de yalnız `payment_system_participant` değerini kabul eder.
+Otomatik eşleme kümesine TCMB ödeme sistemleri katılımcı listesinde koduyla
+yayımlanan kayıtlar girer. Aktif ödeme/elektronik para kuruluşu listeleri yalnız
+zaten eşleşmiş kaydı tür ve statü bakımından zenginleştirir; sicil kodunu IBAN
+koduna dönüştürmez. Eski `ibanEligible` alanı kaldırılır. Katılımcı kaynağındaki
+dört haneli kod beş haneli alana sola sıfırla tamamlanır; hem ham hem normalize
+değer korunur.
 
 ## IBAN Sözleşmesi
 
@@ -83,7 +79,8 @@ GitHub Private Vulnerability Reporting üzerinden bildirilir.
 ## Yayın ve Entegrasyon
 
 Her release JSON, CSV, SQL, schema, fixture, SHA-256 listesi, SBOM ve NPM
-tarball yayımlar. NPM paketi GitHub Actions provenance ile oluşturulur.
+tarball yayımlar. Bootstrap sonrasındaki NPM yayınları GitHub Actions trusted
+publishing ve provenance kullanır.
 
 Yonetim-Paneli `providerStatus: known` sonucunda kuruluşu otomatik seçer.
 `unknown` sonucunda banka seçmez ve kendi iş kuralıyla kaydı engeller. Paket bu

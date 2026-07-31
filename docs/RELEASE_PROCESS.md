@@ -1,51 +1,72 @@
 # Release Process
 
-## Preflight
+## Sürümleme
+
+Proje Semantic Versioning kullanır:
+
+- Patch: düzeltme, belge ve geriye uyumlu veri yenilemesi.
+- Minor: geriye uyumlu API veya veri alanı eklemesi.
+- Major: API, JSON/CSV/SQL veya fixture sözleşmesinde kırıcı değişiklik.
+
+## Ön Kontrol
 
 ```bash
 python -m pip install -r tools/requirements.txt
 npm ci
+npm run data:check-remote
 npm test
-npm run prepare:release
-npm -w packages/typescript pack --dry-run
+npm pack --workspace packages/typescript --dry-run
+npm audit
 ```
 
-## Versioning
-
-Use semantic versioning.
-
-- Patch: documentation, source refresh with no API changes, fixture additions.
-- Minor: new package API, new generated artifact shape that remains backward
-  compatible.
-- Major: breaking API, data model, SQL schema, or fixture contract change.
+Paket sürümü ile oluşturulacak `vX.Y.Z` etiketi aynı olmalıdır. `CHANGELOG.md`,
+kaynak erişim tarihi ve veri farkı release öncesinde güncellenir.
 
 ## GitHub Release
 
-Attach the files generated under `release-artifacts/vX.Y.Z`:
-
-- `tr-banks.json`
-- `tr-banks.csv`
-- `tr-banks.sql`
-- `tr-banks.schema.json`
-- `valid.synthetic.json`
-- `invalid.synthetic.json`
-- `SHA256SUMS.txt`
-
-Release notes must include the source retrieval date and a summary of provider
-additions, removals, renames, or status changes.
-
-## NPM
-
-Publish from `packages/typescript` after `npm pack --dry-run` shows the expected
-files.
+İmzalanmış veya doğrulanmış maintainer etiketi `main` commit'ine gönderilir:
 
 ```bash
-npm -w packages/typescript publish --access public
+git tag -s v0.1.0 -m "v0.1.0"
+git push origin v0.1.0
 ```
 
-Recheck the package name before the first public publish.
+İmzalama anahtarı yoksa maintainer, GitHub'da korunan tag ve hesabının 2FA
+korumasıyla annotated tag kullanabilir. `release.yml` iş akışı testleri tekrar
+çalıştırır ve şu artifact'ları yayımlar:
 
-## Composer
+- `tr-banks.json`, `tr-banks.csv`, `tr-banks.sql`
+- Veri ve kaynak manifesti JSON Schema dosyaları
+- Geçerli, geçersiz ve lookup sentetik fixture setleri
+- `tr-iban-X.Y.Z.tgz`
+- `tr-iban-X.Y.Z.cdx.json` CycloneDX SBOM
+- Tüm dosyaları kapsayan `SHA256SUMS.txt`
 
-Composer publication is phase two. It must consume the same root data files and
-fixtures rather than maintaining a separate source of truth.
+## İlk NPM Yayını
+
+NPM'de paket henüz yokken ilk yayın, 2FA etkin maintainer hesabıyla bir kez
+bootstrap edilir:
+
+```bash
+npm login
+npm publish --workspace packages/typescript --access public --provenance=false
+```
+
+Ardından npmjs.com paket ayarlarında Trusted Publisher şu değerlerle tanımlanır:
+
+- Provider: GitHub Actions
+- Organization or user: `trugurpala`
+- Repository: `turkiye-iban`
+- Workflow filename: `publish-npm.yml`
+- Environment: `npm`
+- Allowed action: `npm publish`
+
+Sonraki yayınlar GitHub Actions içindeki `Publish NPM` workflow_dispatch akışıyla
+OIDC üzerinden yapılır. Uzun ömürlü `NPM_TOKEN` saklanmaz; npm provenance
+otomatik üretilir. Akış yalnız eşleşen GitHub Release varsa yayın yapar.
+
+## Geri Alma
+
+Yayımlanmış sürüm sessizce değiştirilmez. Hatalı paket mümkünse `npm deprecate`
+ile işaretlenir ve düzeltme yeni patch sürümü olarak yayımlanır. Veri artifact'ı
+değiştiyse eski release korunur; yeni sürümde fark ve gerekçe açıklanır.

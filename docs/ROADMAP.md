@@ -1,29 +1,29 @@
 # Roadmap
 
-## Phase 1: TypeScript and Data
+## v0.1 - TypeScript ve Dil Bağımsız Veri
 
-- Official-source-first data generator.
-- JSON, CSV, SQL, schema, and synthetic fixtures.
-- TypeScript/NPM package with deterministic runtime API.
-- GitHub community, security, and governance files.
-- Release artifact checksums.
+- [x] TCMB katılımcı kanıtlı JSON, CSV ve SQL.
+- [x] JSON Schema, kaynak hash manifesti ve sentetik fixture'lar.
+- [x] ESM/CommonJS `tr-iban` paketi ve tüketici testleri.
+- [x] Veri doğrulama, privacy scan, CI ve release artifact üretimi.
+- [x] Topluluk, güvenlik, yönetişim ve katkı dosyaları.
+- [ ] GitHub Release ve ilk NPM registry yayını.
 
-## Phase 2: PHP and Composer
+## v0.2 - PHP/Composer
 
-- Add `packages/php`.
-- Reuse root fixtures in PHPUnit tests.
-- Publish as `turkiye/iban` or the chosen Composer package name.
-- Keep API names close to TypeScript where language conventions allow it.
+- `packages/php` altında PHP 8.2+ paketini geliştirme.
+- Kök fixture'ları PHPUnit ile ortak kullanma.
+- TypeScript ile aynı doğrulama ve lookup semantiğini koruma.
+- Composer paket adı ve Packagist yayın zincirini doğrulama.
 
-## Phase 3: Python
+## v0.3 - Python
 
-- Add `packages/python`.
-- Reuse root fixtures in pytest tests.
-- Provide pure Python lookup and formatting helpers.
+- `packages/python` altında saf Python paketi.
+- Kök fixture'ları pytest ile ortak kullanma.
+- PyPI trusted publishing ve provenance.
 
-## Later
+## Sonraki Çalışmalar
 
-- GitHub Pages documentation site.
-- Scheduled source refresh workflow.
-- Maintainer dashboard for data diffs.
-- Optional machine-readable source provenance report per release.
+- Makinece okunabilir veri diff raporu.
+- Kaynak değişikliğinden kontrollü PR hazırlayan bakım otomasyonu.
+- Gerekli olursa GitHub Pages API/data belgeleri.

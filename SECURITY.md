@@ -1,30 +1,30 @@
 # Security Policy
 
-## Supported Versions
+## Desteklenen Sürümler
 
-Only the latest released minor version receives security updates.
+Yalnız en güncel minor sürüm güvenlik güncellemesi alır. Eski sürümde bulunan
+bir açık mümkünse en güncel sürümde yeniden doğrulanmalıdır.
 
-## Reporting a Vulnerability
+## Özel Bildirim
 
-Do not open a public issue for security vulnerabilities or real financial data
-exposure.
+Güvenlik açığı veya gerçek finansal veri sızıntısı için public issue açmayın.
+[GitHub Private Vulnerability Reporting](https://github.com/trugurpala/turkiye-iban/security/advisories/new)
+kanalını kullanın.
 
-When this repository is published on GitHub, maintainers should enable GitHub
-Private Vulnerability Reporting and use GitHub Security Advisories for reports.
-Until then, this local starter repository cannot receive private external
-security reports.
+Raporda yalnız sentetik örneklerle şu bilgileri verin:
 
-Reports should include:
+- Etkilenen sürüm veya commit.
+- Kısa etki açıklaması.
+- Tekrarlama adımları.
+- IBAN doğrulaması, sağlayıcı eşlemesi veya veri ifşası üzerindeki etkisi.
 
-- A concise description of the issue.
-- The affected package version or commit.
-- Reproduction steps that use synthetic data only.
-- Any impact on IBAN validation, provider identification, or accidental data
-  exposure.
+Maintainer ilk alındı bildirimini makul olarak 72 saat içinde vermeyi, durum
+güncellemelerini koordine etmeyi ve düzeltme yayımlanana kadar ayrıntıları özel
+tutmayı hedefler. Bu süre garanti veya hizmet seviyesi sözleşmesi değildir.
 
-## Privacy Incidents
+## Gizlilik Olayları
 
-If real IBANs, customer names, account owner data, phone numbers, payroll
-records, screenshots, or other personal financial data appear in an issue, pull
-request, commit, or fixture, maintainers should remove the content from public
-view and rotate any affected release artifacts if needed.
+Issue, PR, commit, fixture veya release içinde gerçek IBAN, hesap sahibi,
+telefon, bordro ya da başka kişisel finansal veri görülürse içerik public
+görünümden kaldırılır; gerekirse Git geçmişi ve release artifact'ları yeniden
+oluşturulur. Böyle bir veriyi örnek olarak tekrar paylaşmayın.

@@ -1,33 +1,44 @@
 # Data Update Policy
 
-## Update Cadence
+## Sıklık
 
-Check official sources before each release and at least once per month while the
-project is active.
+Resmî kaynak hash'leri GitHub Actions ile ayda bir ve her release öncesinde
+kontrol edilir. Değişiklik bulunduğunda otomatik olarak güvenilir kabul edilmez;
+üretim diff'i maintainer tarafından incelenir.
 
-## Update Process
+## Güncelleme Akışı
 
-1. Fetch official TCMB sources.
-2. Regenerate JSON, CSV, SQL, TypeScript generated data, and fixtures.
-3. Run tests.
-4. Review the diff for renamed, added, removed, or status-changed providers.
-5. Cite the source and retrieval date in the release notes.
+```bash
+npm run data:check-remote
+npm run data:update
+npm test
+```
 
-## Provider Code Normalization
+1. `data/source-manifest.json` ile canlı resmî kaynakların SHA-256 değerlerini
+   karşılaştırın.
+2. Üreticiyi çalıştırarak JSON, CSV, SQL, TypeScript verisi ve sentetik
+   fixture'ları birlikte yenileyin.
+3. Eklenen, silinen, yeniden adlandırılan ve türü değişen kayıtları inceleyin.
+4. Lisans listesine yeni eklenen fakat katılımcı listesinde bulunmayan kodların
+   lookup kümesine girmediğini doğrulayın.
+5. `npm test` ve privacy taramasını çalıştırın.
+6. PR açıklamasına resmî URL, kontrol tarihi ve değişiklik gerekçesini yazın.
 
-TCMB source tables may show three- or four-digit institution codes. Turkish IBANs
-encode the provider field as five digits, so the generated dataset stores:
+## Kod Normalizasyonu
 
-- `rawCode`: the official code exactly as listed.
-- `code`: the IBAN provider field, left-padded to five digits.
+Katılımcı kaynağındaki `rawCode` olduğu gibi saklanır. IBAN alanında kullanılan
+`code`, yalnız rakamlardan oluşan değerin beş haneye soldan sıfırla
+tamamlanmasıdır. Lisans sicilindeki kuruluş kodları bu dönüşümle otomatik olarak
+IBAN koduna çevrilmez.
 
-## Removal Policy
+## Silme ve Uyuşmazlık
 
-Do not silently delete providers. If an official source marks a provider as no
-longer active, keep the record and update `status` when enough source evidence
-exists. Removal from active source tables alone should be reviewed carefully.
+Bir kayıt resmî katılımcı listesinden kaybolursa sessizce silinmez. İlgili
+release/PR içinde kaynak değişikliği belirtilir ve önceki sürümle farkı
+incelenir. Kaynaklar çatışırsa daha özel ve güncel TCMB kaynağı tercih edilir;
+karar CHANGELOG ve PR'da belgelenir.
 
-## Privacy Policy
+## Gizlilik
 
-No real IBAN, account owner, customer, employee, payroll, phone, or transfer
-data may be committed. All fixtures must be synthetic.
+Gerçek IBAN veya kişisel finansal veri veri doğrulamak için kullanılamaz. Tüm
+fixture'lar üretici tarafından sentetik olarak oluşturulur.

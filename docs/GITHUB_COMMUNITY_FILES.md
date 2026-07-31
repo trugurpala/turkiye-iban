@@ -1,26 +1,30 @@
 # GitHub Community Files
 
-GitHub detects community health files from common repository locations such as
-the repository root, `.github`, and `docs`. Issue templates are stricter: they
-must live under `.github/ISSUE_TEMPLATE` and must have valid metadata.
+GitHub Community Profile, desteklenen konumlardaki README, LICENSE,
+CODE_OF_CONDUCT, CONTRIBUTING, SECURITY ve issue template dosyalarını denetler.
+Bu repo proje-özel politika gerektiği için dosyaları kendi kökünde ve `.github`
+altında tutar.
 
-This repository uses:
+## Repo Yapısı
 
-- Root files for `README.md`, `LICENSE`, `CODE_OF_CONDUCT.md`,
-  `CONTRIBUTING.md`, `SECURITY.md`, `SUPPORT.md`, `GOVERNANCE.md`,
-  `MAINTAINERS.md`, and `CHANGELOG.md`.
-- `.github/ISSUE_TEMPLATE/*.yml` for issue forms.
-- `.github/pull_request_template.md` for pull request guidance.
-- `.github/workflows/ci.yml` for basic validation.
+- Kök: `README.md`, `LICENSE`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`,
+  `SECURITY.md`, `SUPPORT.md`, `GOVERNANCE.md`, `MAINTAINERS.md`, `CHANGELOG.md`.
+- `.github/ISSUE_TEMPLATE/*.yml`: şemalı bug, veri ve özellik issue formları.
+- `.github/ISSUE_TEMPLATE/config.yml`: boş issue'ları kapatır, güvenlik
+  bildirimini Private Vulnerability Reporting'e yönlendirir.
+- `.github/pull_request_template.md`: kaynak, gizlilik ve test kontrolü.
+- `.github/CODEOWNERS`: genel ve veri-kritik dosya sahipliği.
+- `.github/dependabot.yml`: NPM ve GitHub Actions güncellemeleri.
+- `.github/workflows/`: CI, kaynak kontrolü, release ve NPM yayını.
 
-Default organization-wide community health files can also be placed in a public
-or internal `.github` repository, but this project keeps its policy files inside
-the project repository so contributors see package-specific data and privacy
-rules.
+GitHub'ın community profile API sonucu public yayın sonrası kontrol edilir.
+Private Vulnerability Reporting ayrıca repository ayarından etkinleştirilir.
 
-References checked on 2026-07-31:
+## Resmî Referanslar
 
-- GitHub Docs: `https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file`
-- GitHub Docs: `https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository`
-- GitHub Docs: `https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository`
-- GitHub Docs: `https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository`
+2026-07-31 tarihinde kontrol edilen GitHub belgeleri:
+
+- https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories
+- https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+- https://docs.github.com/en/actions/reference/security/secure-use
+- https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference

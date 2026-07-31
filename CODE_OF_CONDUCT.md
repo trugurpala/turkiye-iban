@@ -24,3 +24,7 @@ and keep discussion focused on improving the software and data quality.
 Maintainers may edit, hide, lock, or delete comments and issues that violate this
 code. Repeated or severe violations may result in temporary or permanent loss of
 participation privileges.
+
+Davranış ihlallerini public tartışmayı büyütmeden maintainer'a GitHub profili
+üzerinden bildirin. Güvenlik veya kişisel finansal veri olayı için doğrudan
+`SECURITY.md` içindeki özel bildirim kanalını kullanın.

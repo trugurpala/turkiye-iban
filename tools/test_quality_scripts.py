@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sqlite3
 import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -92,12 +95,16 @@ class QualityScriptsTest(unittest.TestCase):
 
     def test_prepare_release_writes_artifacts_and_checksums(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
+            extra_artifact = Path(temp_dir) / "tr-iban-0.1.0-test.tgz"
+            extra_artifact.write_bytes(b"synthetic package artifact")
             result = self.run_python(
                 "scripts/prepare-release.py",
                 "--version",
                 "0.1.0-test",
                 "--output-dir",
                 temp_dir,
+                "--extra",
+                str(extra_artifact),
             )
             release_dir = Path(temp_dir) / "v0.1.0-test"
 
@@ -105,12 +112,29 @@ class QualityScriptsTest(unittest.TestCase):
             self.assertTrue((release_dir / "tr-banks.json").is_file())
             self.assertTrue((release_dir / "tr-banks.csv").is_file())
             self.assertTrue((release_dir / "tr-banks.sql").is_file())
+            self.assertTrue((release_dir / extra_artifact.name).is_file())
             self.assertTrue((release_dir / "SHA256SUMS.txt").is_file())
 
             checksums = (release_dir / "SHA256SUMS.txt").read_text(encoding="utf-8")
             self.assertIn("tr-banks.json", checksums)
             self.assertIn("tr-banks.csv", checksums)
             self.assertIn("tr-banks.sql", checksums)
+            self.assertIn(extra_artifact.name, checksums)
+
+    def test_workflows_pin_third_party_actions_to_full_commit_shas(self) -> None:
+        workflow_dir = ROOT / ".github" / "workflows"
+        uses_pattern = re.compile(r"^\s*-?\s*uses:\s+([^#\s]+)", re.MULTILINE)
+
+        for workflow in workflow_dir.glob("*.yml"):
+            text = workflow.read_text(encoding="utf-8")
+            for action in uses_pattern.findall(text):
+                reference = action.rsplit("@", 1)[-1]
+                self.assertRegex(reference, r"^[0-9a-f]{40}$", f"Unpinned action in {workflow}")
+
+    def test_github_yaml_files_parse(self) -> None:
+        for yaml_path in (ROOT / ".github").rglob("*.yml"):
+            with self.subTest(path=yaml_path.relative_to(ROOT)):
+                self.assertIsNotNone(yaml.compose(yaml_path.read_text(encoding="utf-8")))
 
         shutil.rmtree(ROOT / "release-artifacts", ignore_errors=True)
 

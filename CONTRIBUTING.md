@@ -1,47 +1,58 @@
 # Contributing
 
-Thank you for helping improve `turkiye-iban`.
+`turkiye-iban` katkılarına teşekkürler. Küçük, kaynaklandırılmış ve test edilmiş
+değişiklikler incelemeyi kolaylaştırır.
 
-## Before You Start
+## Değişmez Gizlilik Kuralı
 
-- Do not submit real IBANs, account owner names, phone numbers, payroll data,
-  screenshots, bank slips, or customer records.
-- Use only synthetic examples in tests, fixtures, issues, and pull requests.
-- Data changes must cite official or institutional sources.
-- Schwifty can be used for comparison, but it is not an accepted primary data
-  source for this repository.
+Gerçek IBAN, hesap sahibi/müşteri adı, telefon, bordro, dekont, banka ekranı veya
+kişisel finansal veri issue, PR, commit, fixture ve testlerde kullanılamaz.
+Yalnız sentetik örnek kullanın. Güvenlik açıklarını [SECURITY.md](SECURITY.md)
+üzerinden özel bildirin.
 
-## Development Setup
+## Kurulum
 
 ```bash
 python -m pip install -r tools/requirements.txt
-npm install
-npm run generate:data
+npm ci
 npm test
 ```
 
-## Data Contributions
+Normal testler çevrimdışıdır. Resmî kaynakları yalnız veri değişikliğinde çekin:
 
-Data pull requests must include:
+```bash
+npm run data:check-remote
+npm run data:update
+npm test
+```
 
-- The official source URL.
-- The date you checked the source.
-- A short explanation of the change.
-- Regenerated `data/tr-banks.json`, `data/tr-banks.csv`, `data/tr-banks.sql`,
-  and `packages/typescript/src/generated/banks.ts`.
+## Veri Katkıları
 
-Do not hand-edit generated data files unless the generator itself cannot express
-the correction. If that happens, explain the reason in the pull request.
+Veri PR'ı şunları içermelidir:
 
-## Code Contributions
+- Resmî TCMB kaynak URL'si ve kontrol tarihi.
+- Değişikliğin kısa gerekçesi.
+- Birincil katılımcı kodu kanıtı ile lisans/statü bilgisinin açık ayrımı.
+- Birlikte üretilmiş JSON, CSV, SQL, TypeScript verisi ve fixture diff'i.
 
-Keep the API small and deterministic. The package must not make network calls at
-runtime, must not log IBANs, and must not introduce runtime dependencies without
-a maintainer decision.
+Üretilen dosyaları elle düzenlemeyin. Üreticinin ifade edemediği bir düzeltme
+varsa önce üreticiyi değiştirin. Schwifty karşılaştırma için kullanılabilir ama
+birincil kaynak değildir.
 
-## Pull Request Checklist
+## Kod Katkıları
 
-- Tests pass with `npm test`.
-- Generated data is up to date when data changed.
-- No real IBANs or personal financial data are included.
-- Documentation changed when behavior or policy changed.
+- API deterministik kalmalı ve runtime ağ çağrısı yapmamalıdır.
+- Yeni runtime bağımlılığı maintainer kararı gerektirir.
+- Davranış değişikliğini önce başarısız bir testle belgeleyin.
+- ESM ve CommonJS tüketici testlerini koruyun.
+- Ham IBAN loglamayın.
+
+## Pull Request Kontrolü
+
+```bash
+npm test
+npm pack --workspace packages/typescript --dry-run
+```
+
+PR şablonundaki gizlilik onayı zorunludur. Maintainerlar kaynak veya güvenlik
+kanıtı yetersiz değişiklikleri reddedebilir.

@@ -1,12 +1,13 @@
 # Maintainers
 
-This starter repository does not name individual maintainers yet. The first
-published GitHub repository should update this file in the initial public
-commit with the maintainer GitHub handles that are allowed to review data
-changes and publish releases.
+## Aktif Maintainer
 
-Maintainer roles:
+- [@trugurpala](https://github.com/trugurpala) - veri, paket ve release maintainer
 
-- Data maintainer: reviews TCMB and institutional source changes.
-- Package maintainer: reviews TypeScript, PHP, and future Python packages.
-- Release maintainer: signs off release artifacts and package publishing.
+Maintainer; resmî kaynak değişikliklerini incelemekten, kişisel veri içeren
+katkıları kaldırmaktan, API sözleşmesini korumaktan ve GitHub/NPM yayınlarını
+onaylamaktan sorumludur.
+
+Yeni maintainer ekleme veya çıkarma kararı `GOVERNANCE.md` uyarınca pull request
+ile belgelenir. NPM ve GitHub release yetkileri bu listedeki aktif maintainerlarla
+sınırlıdır.

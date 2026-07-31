@@ -4,6 +4,9 @@ This project publishes Turkish IBAN parsing utilities and provider-code data
 derived from official public sources. Source names and URLs are recorded in
 DATA_SOURCES.md and generated data records.
 
+This project is independent and is not affiliated with or endorsed by the
+Central Bank of the Republic of Türkiye (TCMB) or any listed institution.
+
 Divan was used during project design, planning, and development. Divan is not a
 runtime dependency of this package.
 

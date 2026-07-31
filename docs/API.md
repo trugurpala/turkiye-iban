@@ -1,44 +1,60 @@
-# API
+# API Reference
 
-The first package is `tr-iban` for TypeScript and JavaScript runtimes.
+`tr-iban`, Node.js 22+ üzerinde ESM ve CommonJS olarak yayımlanır. Runtime ağ
+çağrısı veya runtime bağımlılığı yoktur.
 
-## Functions
+## `parseIban(input: string)`
 
-### `parseIban(input)`
+Boşlukları kaldırır, harfleri büyütür ve Türkiye IBAN alanlarını döndürür:
+`countryCode`, `checkDigits`, `bankCode`, `reserveDigit`, `accountNumber`,
+`normalized`, `formatted`, `isValid` ve `errors`.
 
-Normalizes a value, splits it into Turkish IBAN parts, validates format and
-checksum, and returns structured errors.
+Türkiye sözleşmesi: `TR` + 2 kontrol hanesi + 5 haneli sağlayıcı kodu + `0`
+rezerv alanı + 16 alfasayısal hesap alanı. Tire gibi başka ayraçlar kabul
+edilmez.
 
-### `validateTurkishIban(input)`
+## `validateTurkishIban(input: string): boolean`
 
-Returns `true` when the input is a valid Turkish IBAN shape with valid MOD 97-10
-check digits. It does not require the provider code to be known in the bundled
-dataset.
+Uzunluk, karakterler, ülke, rezerv alan ve MOD 97-10 checksum kontrolünü yapar.
+Sağlayıcı kodunun veri kümesinde bulunması bu doğrulamanın parçası değildir.
 
-### `getBankCodeFromIban(input)`
+## `getBankCodeFromIban(input: string): string | null`
 
-Returns the five-digit provider code from the IBAN or `null` when the input is
-not long enough to contain one.
+TR önekli yeterli uzunluktaki girdiden beş haneli sağlayıcı alanını çıkarır.
+Adındaki `Bank` geriye uyumluluk içindir; alan ödeme hizmeti sağlayıcısını ifade
+eder.
 
-### `findBankByCode(code)`
+## `findBankByCode(code: string): TurkishIbanProvider | null`
 
-Looks up a provider by raw or normalized code. `46`, `0046`, and `00046` all
-resolve to the same provider code.
+`46`, `0046` ve `00046` değerlerini `00046` biçimine getirip doğrulanmış
+katılımcı kümesinde arar. Yalnız lisans kaydı bulunan kodları eşleşme saymaz.
 
-### `identifyBankFromIban(input)`
+## `identifyBankFromIban(input: string): IdentifiedTurkishIban`
 
-Combines parsing and provider lookup. A result can be format-valid while
-`isKnownProvider` is false.
+Parse ve lookup işlemini birleştirir:
 
-### `formatIban(input)`
+```ts
+{
+  parsed: ParsedTurkishIban;
+  providerCode: string | null;
+  provider: TurkishIbanProvider | null;
+  providerStatus: "known" | "unknown";
+  dataVersion: string;
+}
+```
 
-Formats a normalized IBAN in four-character groups.
+`bankCode`, `bank` ve `isKnownProvider` alanları v0.x geriye uyumluluk alias'larıdır.
 
-### `maskIban(input)`
+## `formatIban(input: string): string`
 
-Keeps the first four and last four characters visible, masking the middle.
+Normalize edilmiş değeri dörtlü gruplar halinde döndürür.
 
-## Privacy
+## `maskIban(input: string): string`
 
-Do not log the raw input value in application code. Use `maskIban` for user
-interface display, audit notes, and error messages.
+İlk ve son dört karakteri korur, orta alanı `*` ile maskeler. Ham IBAN'ı loglamak
+yerine bu fonksiyonu kullanın.
+
+## Doğrulama Sınırı
+
+API hesabın varlığını, sahibini, ad eşleşmesini, bakiyeyi veya transfer
+yapılabilirliğini doğrulamaz. `known` yalnız sağlayıcı kodu eşleşmesidir.

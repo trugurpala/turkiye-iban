@@ -1,12 +1,30 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Tüm önemli değişiklikler bu dosyada belgelenir. Biçim Keep a Changelog ve sürüm
+numaraları Semantic Versioning yaklaşımını izler.
 
-## 0.1.0 - 2026-07-31
+## [Unreleased]
 
-- Added initial project goal, governance, security, and contribution policies.
-- Added official-source-first data generation workflow.
-- Added TypeScript package scaffold and Turkish IBAN API surface.
-- Added synthetic fixture generation policy.
-- Added data validation, privacy scanning, release artifact preparation, and
-  fixture contract tests.
+## [0.1.0] - 2026-07-31
+
+### Added
+
+- TCMB Ödeme Sistemleri Katılımcıları kanıtlı 70 sağlayıcı kaydı.
+- Aynı kaynaktan üretilen JSON, CSV, SQL ve TypeScript verisi.
+- Kaynak SHA-256 manifesti ve JSON Schema sözleşmeleri.
+- Yalnız sentetik geçerli, geçersiz ve `known/unknown` lookup fixture'ları.
+- `parseIban`, `validateTurkishIban`, `getBankCodeFromIban`, `findBankByCode`,
+  `identifyBankFromIban`, `formatIban` ve `maskIban` API'leri.
+- ESM/CommonJS NPM çıktıları ve gerçek tarball tüketici testleri.
+- Privacy scan, veri kalite kontrolleri, CI, scheduled kaynak kontrolü, SBOM ve
+  checksum'lı GitHub Release otomasyonu.
+- GitHub community health, güvenlik, yönetişim ve katkı belgeleri.
+
+### Security
+
+- Aktif lisans sicilindeki kuruluş kodları, ödeme sistemi katılımcı kanıtı
+  olmadan IBAN sağlayıcı kodu olarak yayımlanmaz.
+- Gerçek IBAN ve kişisel finansal veri katkı yüzeylerinde yasaktır.
+
+[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/trugurpala/turkiye-iban/releases/tag/v0.1.0

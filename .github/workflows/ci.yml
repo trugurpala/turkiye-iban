@@ -4,20 +4,41 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
+    name: Test (Node ${{ matrix.node-version }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22, 24]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: "22"
+          node-version: ${{ matrix.node-version }}
           cache: npm
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
-      - run: python -m pip install -r tools/requirements.txt
-      - run: npm ci
-      - run: npm test
-      - run: npm run prepare:release
+      - name: Install Python tools
+        run: python -m pip install --disable-pip-version-check -r tools/requirements.txt
+      - name: Install Node.js dependencies
+        run: npm ci --ignore-scripts
+      - name: Run offline verification suite
+        run: npm test
+      - name: Inspect publish contents
+        if: matrix.node-version == 24
+        run: npm pack --workspace packages/typescript --dry-run

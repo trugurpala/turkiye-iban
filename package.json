@@ -4,11 +4,13 @@
   "private": true,
   "description": "Official-source-first Turkish IBAN provider data and packages.",
   "license": "MIT",
+  "packageManager": "npm@11.16.0",
   "workspaces": [
     "packages/typescript"
   ],
   "scripts": {
     "data:update": "python scripts/generate-data.py",
+    "data:check-remote": "python scripts/check-sources.py",
     "generate:data": "npm run data:update",
     "validate:data": "python scripts/validate-data.py",
     "check:privacy": "python scripts/check-privacy.py",
