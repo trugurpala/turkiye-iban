@@ -12,6 +12,14 @@
 - [x] Geçici NPM bootstrap token'ının ilk yayından sonra iptali.
 - [x] NPM trusted publisher bağlantısı.
 
+## v0.1.1 - Lansman ve Topluluk Temeli
+
+- GitHub ve NPM README anlatımını aynı ürün sözleşmesinde buluşturma.
+- Figma kaynaklı sosyal önizleme ve topluluk tanıtım varlıkları.
+- GitHub Discussions ve katkıya açık başlangıç issue'ları.
+- Türkçe kanal metinleri, topluluk iletişimi ve telemetrisiz ölçüm planı.
+- GitHub Release ile NPM trusted publishing zincirini yeniden doğrulama.
+
 ## v0.2 - PHP/Composer
 
 - `packages/php` altında PHP 8.2+ paketini geliştirme.

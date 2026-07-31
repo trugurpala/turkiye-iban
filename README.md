@@ -12,7 +12,7 @@ Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBA
 > [!IMPORTANT]
 > Paket bir hesabın gerçekten var olduğunu, kime ait olduğunu veya para transferine açık olduğunu doğrulamaz. Yalnızca IBAN'ın kurallara uygun yazıldığını ve içindeki kuruluş kodunun doğrulanmış veri kümesinde bulunup bulunmadığını kontrol eder.
 
-[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Katkı](#projeye-katkı)
+[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Topluluk](#topluluğa-katılın) · [Katkı](#projeye-katkı)
 
 ## Ne işe yarar?
 
@@ -39,9 +39,9 @@ Türkiye IBAN'ı beş bölümden oluşur. Aşağıdaki sentetik örnekte bölüm
 
 Paket hesap alanının bankada kayıtlı olup olmadığını kontrol etmez. Yalnızca alanın uzunluğunu ve izin verilen karakterleri doğrular.
 
-## MOD 97-10 ne demek?
+## Kontrol rakamları neyi doğrular?
 
-MOD 97-10, IBAN standardının yazım hatalarını yakalamak için kullandığı matematiksel kontrolün teknik adıdır. Paket bu hesabı sizin yerinize yapar; formülü bilmeniz gerekmez.
+IBAN içindeki iki kontrol rakamı, diğer harf ve rakamların matematiksel olarak birbiriyle uyumlu olup olmadığını gösterir. Bu hesabın teknik adı MOD 97-10'dur; formülü bilmeniz gerekmez, paket kontrolü sizin yerinize yapar.
 
 Kontrol başarılıysa IBAN'daki harf ve rakamlar birbiriyle matematiksel olarak uyumludur. Bu kontrol yanlış yazılmış bir rakamı yakalayabilir, ancak hesabın bankada gerçekten bulunduğunu kanıtlamaz.
 
@@ -81,7 +81,7 @@ npm install tr-iban
 Belirli bir sürümün GitHub Release paketini doğrudan kurmak için:
 
 ```bash
-npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.1.0/tr-iban-0.1.0.tgz
+npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.1.1/tr-iban-0.1.1.tgz
 ```
 
 Paketin çalışırken yüklediği başka bir NPM bağımlılığı yoktur.
@@ -191,6 +191,12 @@ Bu proje, Türkiye'deki geliştiricilerin aynı resmî veriyi ayrı ayrı derlem
 
 Kod ve belgeler MIT lisansıyla açıktır. Katkı yalnız kod yazmak değildir: resmî kaynak değişikliklerini bildirmek, veri farkını incelemek, belgeyi sadeleştirmek ve yeni dil paketleri hazırlamak da projeyi büyütür.
 
+## Topluluğa katılın
+
+Bir kullanım sorunuz veya geliştirme fikriniz varsa [GitHub Discussions](https://github.com/trugurpala/turkiye-iban/discussions) üzerinden konuşmaya katılın. Tekrarlanabilir bir hata ya da resmî kaynak değişikliği bulduysanız uygun [issue formunu](https://github.com/trugurpala/turkiye-iban/issues/new/choose) kullanın.
+
+İlk katkılar için belge örnekleri, PHP/Composer, Python ve veri fark raporu başlıkları [açık issue'larda](https://github.com/trugurpala/turkiye-iban/issues) tutulur. Issue veya tartışmalara gerçek IBAN ya da kişisel finansal veri eklemeyin.
+
 ## Projeye katkı
 
 Geliştirme ortamını hazırlayıp tüm kontrolleri çalıştırmak için:
@@ -219,7 +225,7 @@ Katkı kuralları [CONTRIBUTING.md](CONTRIBUTING.md), proje yönetimi [GOVERNANC
 
 Bu proje Divan ile tasarlandı ve üretildi. Divan araştırma, tasarım, planlama ve geliştirme sürecinde kullanıldı; paketi kullanmak için Divan gerekmez.
 
-Görsel sistemin tasarım ilkeleri [Sayısal Müşterek](docs/design/VISUAL_PHILOSOPHY.md) belgesinde açıklanır.
+Görsel sistemin tasarım ilkeleri [Sayısal Müşterek](docs/design/VISUAL_PHILOSOPHY.md) belgesinde açıklanır. Düzenlenebilir kaynaklar [Figma görsel sistemi](https://www.figma.com/design/1pFu8ImZ4oO7KfhZzMKdIR) içinde tutulur.
 
 ## Lisans
 

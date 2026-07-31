@@ -1,9 +1,13 @@
 # tr-iban
 
+![tr-iban: Türkiye IBAN doğrulama ve kuruluş kodu verisi](https://raw.githubusercontent.com/trugurpala/turkiye-iban/main/docs/assets/github/hero.png)
+
 `tr-iban`, Türkiye'de kullanılan bir Uluslararası Banka Hesap Numarasının (IBAN) yazım kurallarına uygun olup olmadığını kontrol eder ve IBAN içindeki beş haneli kuruluş kodunu doğrulanmış Türkiye Cumhuriyet Merkez Bankası (TCMB) verileriyle eşleştirir.
 
 > [!IMPORTANT]
 > Paket hesabın varlığını, hesap sahibini veya para transferi yapılabilirliğini doğrulamaz. Yalnızca IBAN yazımını ve kuruluş kodu eşleşmesini kontrol eder.
+
+[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Sonuçları yorumlama](#sonuçları-yorumlama) · [Verinin kaynağı](#verinin-kaynağı) · [API](#kullanabileceğiniz-fonksiyonlar)
 
 ## Kurulum
 
@@ -48,17 +52,31 @@ Sentetik örnek `TR | 51 | 00046 | 0 | 9999000000000011` şeklinde ayrılır:
 
 Paket hesap alanının bankada kayıtlı olup olmadığını kontrol etmez.
 
-## MOD 97-10 nedir?
+## Kontrol rakamları neyi doğrular?
 
-MOD 97-10, IBAN standardının yazım hatalarını yakalamak için kullandığı matematiksel kontrolün adıdır. Paket bu hesabı otomatik yapar.
+IBAN içindeki iki kontrol rakamı, diğer harf ve rakamların matematiksel olarak birbiriyle uyumlu olup olmadığını gösterir. Bu hesabın teknik adı MOD 97-10'dur; formülü bilmeniz gerekmez, paket kontrolü otomatik yapar.
 
 Başarılı sonuç, IBAN'ın matematiksel olarak tutarlı yazıldığını gösterir. Hesabın bankada gerçekten bulunduğunu veya kime ait olduğunu göstermez.
+
+## Sonuçları yorumlama
+
+| Sonuç | Anlamı | Önerilen davranış |
+| --- | --- | --- |
+| `isValid: false` | Ülke, uzunluk, karakter, rezerv alanı veya kontrol rakamları hatalıdır | IBAN'ı kabul etmeyin |
+| `isValid: true`, `providerStatus: "known"` | Yazım geçerlidir ve kuruluş kodu veri kümesinde bulunur | Kuruluş alanını otomatik doldurabilirsiniz |
+| `isValid: true`, `providerStatus: "unknown"` | Yazım geçerlidir ancak kod bu veri sürümünde yoktur | Kuruluşu otomatik seçmeyin; veri sürümünü ve iş kuralınızı kontrol edin |
 
 ## Bilinmeyen kuruluş kodu
 
 `providerStatus: "unknown"` sonucu, IBAN'ın otomatik olarak hatalı olduğu anlamına gelmez. IBAN yazım ve kontrol rakamı kurallarından geçebilir, ancak beş haneli kod bu paket sürümündeki doğrulanmış veri kümesinde bulunmayabilir.
 
 Bu durumda kuruluşu otomatik seçmeyin. Veri sürümünü veya uygulamanızın kabul politikasını kontrol edin.
+
+## Verinin kaynağı
+
+Kuruluş eşleştirmesine yalnız TCMB Ödeme Sistemleri Katılımcıları listesinde koduyla yayımlanan kayıtlar girer. Aktif ödeme ve elektronik para kuruluşu sayfaları mevcut kayıtların tür ve statüsünü zenginleştirir; tek başına yeni bir IBAN kuruluş kodu üretmez.
+
+Paket sürümlenmiş veriyle çalışır ve runtime sırasında ağ isteği yapmaz. Kaynak adresleri, erişim tarihleri ve SHA-256 dijital parmak izleri [ana projede](https://github.com/trugurpala/turkiye-iban#verinin-kaynağı) yayımlanır.
 
 ## Biçimlendirme ve güvenli gösterim
 
@@ -85,4 +103,8 @@ maskIban(iban); // "TR51 **** **** **** **** **00 11"
 | `formatIban` | IBAN'ı okunabilir gruplara ayırır |
 | `maskIban` | IBAN'ın büyük bölümünü gizler |
 
-Veri kaynakları, dil bağımsız JSON/CSV/SQL dosyaları ve katkı kuralları için [turkiye-iban GitHub deposuna](https://github.com/trugurpala/turkiye-iban) bakın.
+## Topluluğa katılın
+
+Veri kaynakları, dil bağımsız JSON/CSV/SQL dosyaları ve katkı kuralları için [turkiye-iban GitHub deposuna](https://github.com/trugurpala/turkiye-iban) bakın. Sorular ve fikirler için [Discussions](https://github.com/trugurpala/turkiye-iban/discussions), hatalar ve resmî veri değişiklikleri için [issue formları](https://github.com/trugurpala/turkiye-iban/issues/new/choose) kullanılabilir.
+
+Gerçek IBAN, müşteri adı, hesap sahibi veya başka kişisel finansal veri paylaşmayın. Proje yalnız sentetik test örneklerini kabul eder.
