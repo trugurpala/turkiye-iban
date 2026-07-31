@@ -4,8 +4,7 @@ import argparse
 import csv
 import hashlib
 import json
-import os
-import sqlite3
+import subprocess
 import tempfile
 from pathlib import Path
 from typing import Any
@@ -25,22 +24,6 @@ GENERATED_PATHS = (
     Path("packages/typescript/data/tr-banks.json"),
     Path("packages/typescript/src/generated/banks.ts"),
 )
-
-SQL_COLUMNS = (
-    "code",
-    "raw_code",
-    "name_official",
-    "name_short",
-    "type",
-    "status",
-    "systems",
-    "code_evidence",
-    "aliases",
-    "sources_json",
-    "last_verified_at",
-)
-SQLITE_LIBRARY_VERSION_OFFSET = 96
-
 
 def load_canonical() -> dict[str, Any]:
     return json.loads(CANONICAL_PATH.read_text(encoding="utf-8"))
@@ -156,48 +139,13 @@ def render_sql(institutions: list[dict[str, Any]]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def write_sqlite(path: Path, institutions: list[dict[str, Any]]) -> None:
+def write_sqlite(path: Path, distribution_json: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary_path = path.with_suffix(".sqlite.tmp")
-    temporary_path.unlink(missing_ok=True)
-    connection = sqlite3.connect(temporary_path)
-    try:
-        connection.execute("PRAGMA page_size = 4096")
-        connection.execute("PRAGMA journal_mode = OFF")
-        connection.execute("PRAGMA synchronous = OFF")
-        connection.execute(
-            """
-            CREATE TABLE tr_iban_providers (
-              code TEXT PRIMARY KEY,
-              raw_code TEXT NOT NULL,
-              name_official TEXT NOT NULL,
-              name_short TEXT NOT NULL,
-              type TEXT NOT NULL,
-              status TEXT NOT NULL,
-              systems TEXT NOT NULL,
-              code_evidence TEXT NOT NULL,
-              aliases TEXT NOT NULL,
-              sources_json TEXT NOT NULL,
-              last_verified_at TEXT NOT NULL
-            ) WITHOUT ROWID
-            """
-        )
-        placeholders = ", ".join("?" for _ in SQL_COLUMNS)
-        connection.executemany(
-            f"INSERT INTO tr_iban_providers ({', '.join(SQL_COLUMNS)}) VALUES ({placeholders})",
-            [record_values(institution) for institution in institutions],
-        )
-        connection.execute("PRAGMA user_version = 1")
-        connection.commit()
-        connection.execute("VACUUM")
-    finally:
-        connection.close()
-    # The producer library version is informational but varies by platform.
-    # Normalize only that header field so release checksums stay reproducible.
-    with temporary_path.open("r+b") as handle:
-        handle.seek(SQLITE_LIBRARY_VERSION_OFFSET)
-        handle.write(b"\0\0\0\0")
-    os.replace(temporary_path, path)
+    subprocess.run(
+        ["node", str(ROOT / "scripts/generate-sqlite.mjs"), str(distribution_json), str(path)],
+        cwd=ROOT,
+        check=True,
+    )
 
 
 def compute_check_digits(provider_code: str, account_number: str, reserve_digit: str = "0") -> str:
@@ -314,7 +262,7 @@ def write_outputs(output_root: Path) -> None:
 
     sql_path = output_root / "data/tr-banks.sql"
     write_text_lf(sql_path, render_sql(institutions))
-    write_sqlite(output_root / "data/tr-banks.sqlite", institutions)
+    write_sqlite(output_root / "data/tr-banks.sqlite", output_root / "data/tr-banks.json")
 
     valid, invalid, lookup = fixture_payloads(institutions)
     write_json(output_root / "fixtures/valid.synthetic.json", valid)
