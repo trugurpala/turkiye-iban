@@ -37,6 +37,8 @@ Paket bir Türkiye IBAN'ı için şu işlemleri yapar:
 Bu depo tek sorumluluklu Türkiye IBAN temelidir. Gelecekteki dil istemcileri bu
 projenin sürümlenmiş veri, şema ve sentetik fixture'larını ayrı repository'lerden
 tüketecektir.
+İlk ayrı istemci karar kayıtları [PHP/Composer](docs/clients/PHP_CLIENT.md) ve
+[Python/PyPI](docs/clients/PYTHON_CLIENT.md) belgelerinde tutulur.
 
 ## Türkiye IBAN'ı nasıl okunur?
 
@@ -268,6 +270,8 @@ korur. Gelecekteki başka dil istemcileri ayrı repository olacaktır. Güncel p
 - [API ve geriye uyumluluk](docs/API.md)
 - [Riskler ve public iddia sınırları](docs/RISK_REGISTER.md)
 - [Next.js ve NestJS sentetik kullanım örnekleri](docs/examples/NEXTJS_NESTJS.md)
+- [Ayrı PHP/Composer istemci tasarımı](docs/clients/PHP_CLIENT.md)
+- [Ayrı Python/PyPI istemci tasarımı](docs/clients/PYTHON_CLIENT.md)
 - [Sentetik test verisi](TEST_DATA.md)
 - [Release, checksum ve geri alma](RELEASE.md)
 - [Yol haritası](ROADMAP.md)

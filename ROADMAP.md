@@ -26,14 +26,16 @@ Future Python, PHP, Go, Rust and .NET clients must be separate repositories that
 consume versioned schemas, fixtures and release assets from this project. They
 must not be added as packages in this repository. Suggested names are:
 
-- `turkiye-iban-python`
-- `turkiye-iban-php`
+- `turkiye-iban-python` ([design](docs/clients/PYTHON_CLIENT.md))
+- `turkiye-iban-php` ([design](docs/clients/PHP_CLIENT.md))
 - `turkiye-iban-go`
 - `turkiye-iban-rust`
 - `turkiye-iban-dotnet`
 
 Each client should preserve the core validation semantics and run the shared
 synthetic fixture contract, while maintaining its own ecosystem release cycle.
+The PHP and Python design documents are ready; implementation and publishing
+remain separate repository work, not hidden packages in this repository.
 
 Unrelated Türkiye data such as addresses, postal codes, tax offices, plate
 codes and telephone codes are outside this roadmap and would require separate
