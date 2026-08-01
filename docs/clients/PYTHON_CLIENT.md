@@ -70,7 +70,8 @@ yapilmaz.
 
 Uygulama repository'si [trugurpala/turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python)
 adresindedir. GitHub release `v0.1.1` ve wheel/sdist assetleri yayinlanmistir;
-PyPI index kaydi bu tarih itibariyla dogrulanmamistir.
+PyPI index kaydi bu tarih itibariyla dogrulanmamistir. Ayrintili adimlar
+[package index yayin durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
 
 PyPI yayini GitHub Actions OIDC trusted publishing ile yapilir. Yayindan once:
 

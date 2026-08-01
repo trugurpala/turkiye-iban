@@ -69,7 +69,8 @@ yapilmaz.
 
 Uygulama repository'si [trugurpala/turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php)
 adresindedir. GitHub release `v0.1.4` yayinlanmistir; Packagist index kaydi bu
-tarih itibariyla dogrulanmamistir.
+tarih itibariyla dogrulanmamistir. Ayrintili adimlar [package index yayin
+durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
 
 Packagist yayini GitHub Actions uzerinden yapilir. Yayindan once:
 
