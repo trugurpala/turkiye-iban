@@ -18,7 +18,7 @@
 
 ### Task 1: Verify current release state
 
-- [ ] Confirm PHP GitHub release `v0.1.4` and Python GitHub release `v0.1.1` exist with expected assets.
+- [x] Confirm PHP GitHub release `v0.1.4` and Python GitHub release `v0.1.2` exist with expected assets.
 - [ ] Confirm Packagist `trugurpala/turkiye-iban` and PyPI `turkiye-iban` public index queries before making any claim.
 
 ### Task 2: Prepare PyPI trusted publishing
@@ -51,4 +51,3 @@
 - [ ] Run Python package pytest, mypy, build, and twine checks.
 - [ ] Verify PHP package CI on PHP 8.2, 8.3, and 8.4.
 - [ ] Report any external account configuration blocker explicitly.
-

@@ -38,7 +38,7 @@ Bu depo tek sorumluluklu Türkiye IBAN temelidir. Gelecekteki dil istemcileri bu
 projenin sürümlenmiş veri, şema ve sentetik fixture'larını ayrı repository'lerden
 tüketecektir.
 İlk istemci uygulamaları ayrı repository'lerde yayımlandı: [PHP client](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.4)
-ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.1).
+ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.2).
 Packagist ve PyPI indeks yayınları henüz yapılmadı; paketler bu veri temelini ve
 sentetik fixture sözleşmesini tüketir. Tasarım kararları [PHP/Composer](docs/clients/PHP_CLIENT.md)
 ve [Python/PyPI](docs/clients/PYTHON_CLIENT.md) belgelerinde tutulur.
