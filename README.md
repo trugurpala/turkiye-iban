@@ -277,6 +277,7 @@ korur. Gelecekteki başka dil istemcileri ayrı repository olacaktır. Güncel p
 - [Ayrı Python/PyPI istemci tasarımı](docs/clients/PYTHON_CLIENT.md)
 - [PHP client release deposu](https://github.com/trugurpala/turkiye-iban-php)
 - [Python client release deposu](https://github.com/trugurpala/turkiye-iban-python)
+- [Packagist/PyPI yayın durumu](docs/PACKAGE_INDEX_PUBLICATION.md)
 - [Sentetik test verisi](TEST_DATA.md)
 - [Release, checksum ve geri alma](RELEASE.md)
 - [Yol haritası](ROADMAP.md)
