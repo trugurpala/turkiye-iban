@@ -28,6 +28,9 @@ if (identified.parsed.isValid && identified.providerStatus === "known") {
 Bu son madde panelin iş kuralıdır. Genel amaçlı paket `unknown` kodu checksum
 geçerliliğinden ayrı raporlar.
 
+Next.js ve NestJS tarafındaki daha geniş sentetik örnekler
+[framework kullanım notunda](examples/NEXTJS_NESTJS.md) tutulur.
+
 ## NestJS Backend
 
 Frontend sonucu güvenlik sınırı değildir. Backend aynı kontrolü tekrarlar:

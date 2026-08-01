@@ -230,6 +230,57 @@ class QualityScriptsTest(unittest.TestCase):
 
         self.assertIn("at least five", agents.lower())
 
+    def test_residual_risk_register_is_linked_from_public_surfaces(self) -> None:
+        risk_register = (ROOT / "docs" / "RISK_REGISTER.md").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        package_readme = (
+            ROOT / "packages" / "typescript" / "README.md"
+        ).read_text(encoding="utf-8")
+        launch_guide = (ROOT / "docs" / "launch" / "LAUNCH_GUIDE.md").read_text(
+            encoding="utf-8"
+        )
+        pull_request = (
+            ROOT / ".github" / "pull_request_template.md"
+        ).read_text(encoding="utf-8")
+
+        for required in [
+            "TCMB onayli",
+            "hesabi dogrular",
+            "transfer garantisi verir",
+            "her dilde paket hazir",
+            "providerStatus",
+            "Node `>=22`",
+        ]:
+            self.assertIn(required, risk_register)
+
+        self.assertIn("docs/RISK_REGISTER.md", readme)
+        self.assertIn("docs/examples/NEXTJS_NESTJS.md", readme)
+        self.assertIn("docs/RISK_REGISTER.md", package_readme)
+        self.assertIn("../RISK_REGISTER.md", launch_guide)
+        self.assertIn(
+            "Risk register reviewed when public claims, source data, release, examples, or onboarding docs changed",
+            pull_request,
+        )
+
+    def test_nextjs_nestjs_example_documents_safe_synthetic_usage(self) -> None:
+        framework_example = (
+            ROOT / "docs" / "examples" / "NEXTJS_NESTJS.md"
+        ).read_text(encoding="utf-8")
+
+        for required in [
+            "identifyBankFromIban",
+            "providerStatus",
+            "maskIban",
+            "sentetik",
+            "TR56000460ABC123DEF456GHIJ",
+            "TR16999990ABC123DEF456GHIJ",
+            "Yonetim-Paneli",
+        ]:
+            self.assertIn(required, framework_example)
+
+        self.assertIn('providerStatus; // "unknown"', framework_example)
+        self.assertIn("Gercek IBAN", framework_example)
+
     def test_issue_forms_collect_actionable_and_privacy_safe_reports(self) -> None:
         template_dir = ROOT / ".github" / "ISSUE_TEMPLATE"
         bug = yaml.safe_load((template_dir / "bug-report.yml").read_text(encoding="utf-8"))

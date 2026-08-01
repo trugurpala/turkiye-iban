@@ -90,6 +90,7 @@ sayfaları mevcut snapshotta `monitor_only` olarak izlenir ve tek başına yeni 
 IBAN kuruluş kodu üretmez.
 
 Paket sürümlenmiş veriyle çalışır ve runtime sırasında ağ isteği yapmaz. Kaynak adresleri, erişim tarihleri ve SHA-256 dijital parmak izleri [ana projede](https://github.com/trugurpala/turkiye-iban#verinin-kaynağı) yayımlanır.
+Public iddia sınırları ve kalan bakım riskleri [risk register](https://github.com/trugurpala/turkiye-iban/blob/main/docs/RISK_REGISTER.md) içinde tutulur.
 
 ## Biçimlendirme ve güvenli gösterim
 

@@ -13,7 +13,7 @@ Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBA
 > [!IMPORTANT]
 > Paket bir hesabın gerçekten var olduğunu, kime ait olduğunu veya para transferine açık olduğunu doğrulamaz. Yalnızca IBAN'ın kurallara uygun yazıldığını ve içindeki kuruluş kodunun doğrulanmış veri kümesinde bulunup bulunmadığını kontrol eder.
 
-[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Topluluk](#topluluğa-katılın) · [Katkı](#projeye-katkı)
+[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Riskler ve sınırlar](docs/RISK_REGISTER.md) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Topluluk](#topluluğa-katılın) · [Katkı](#projeye-katkı)
 
 ## Ne işe yarar?
 
@@ -153,6 +153,8 @@ maskIban(iban); // "TR51 **** **** **** **** **00 11"
 | `maskIban` | IBAN'ın büyük bölümünü yıldız karakteriyle gizler |
 
 Tüm alanlar, dönüş tipleri ve hata kodları için [API belgesine](docs/API.md) bakın.
+Next.js ve NestJS personel/ödeme ekranı örnekleri için
+[sentetik framework kullanım notuna](docs/examples/NEXTJS_NESTJS.md) bakın.
 
 ## Veri dosyaları
 
@@ -264,6 +266,8 @@ korur. Gelecekteki başka dil istemcileri ayrı repository olacaktır. Güncel p
 - [Kaynaklar ve güvenilirlik düzeyi](DATA_SOURCES.md)
 - [Veri güncelleme politikası](DATA_UPDATE_POLICY.md)
 - [API ve geriye uyumluluk](docs/API.md)
+- [Riskler ve public iddia sınırları](docs/RISK_REGISTER.md)
+- [Next.js ve NestJS sentetik kullanım örnekleri](docs/examples/NEXTJS_NESTJS.md)
 - [Sentetik test verisi](TEST_DATA.md)
 - [Release, checksum ve geri alma](RELEASE.md)
 - [Yol haritası](ROADMAP.md)
