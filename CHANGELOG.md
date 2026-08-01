@@ -7,6 +7,8 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ### Changed
 
+- Kalan public iddia ve bakım riskleri için risk register, Next.js/NestJS
+  sentetik kullanım örnekleri ve PR kontrol maddesi eklendi.
 - ROADMAP içinde tamamlanmış `v0.2.1` temeli ile taahhüt niteliği taşımayan,
   kanıta bağlı gelecek fikirlerinin ayrımı netleştirildi.
 

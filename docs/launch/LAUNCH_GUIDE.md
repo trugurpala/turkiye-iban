@@ -4,6 +4,12 @@
 
 `turkiye-iban`, Türkiye IBAN'ını doğrulayan ve içindeki kuruluş kodunu TCMB kaynaklı açık veriyle eşleştiren, JSON/CSV/SQL/SQLite ile TypeScript/NPM çıktıları sunan ücretsiz açık kaynak projedir.
 
+Onaylı uzun ifade: `turkiye-iban`, Türkiye IBAN formatını ve kontrol
+basamaklarını doğrulayan; IBAN içindeki beş haneli kuruluş kodunu TCMB kaynaklı
+veriyle eşleştiren açık kaynak veri ve TypeScript/NPM paketidir. Hesap varlığı,
+hesap sahibi veya transfer yapılabilirliği doğrulamaz. Kamuya açık metinlerde
+[risk register](../RISK_REGISTER.md) sınırları korunur.
+
 ## Kimin için?
 
 - Personel, ödeme veya hesap bilgisi formu geliştiren ekipler

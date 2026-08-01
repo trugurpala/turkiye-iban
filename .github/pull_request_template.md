@@ -26,6 +26,7 @@ published automatically.
 - [ ] Generated JSON, CSV, SQL, SQLite, fixtures, and TypeScript data rebuilt when inputs changed, or confirmed unchanged
 - [ ] Schema validation passed
 - [ ] Security impact reviewed
+- [ ] Risk register reviewed when public claims, source data, release, examples, or onboarding docs changed
 - [ ] Backward compatibility reviewed
 - [ ] Release impact determined
 - [ ] Release note or draft updated
