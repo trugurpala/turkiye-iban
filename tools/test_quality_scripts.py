@@ -281,6 +281,51 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertIn('providerStatus; // "unknown"', framework_example)
         self.assertIn("Gercek IBAN", framework_example)
 
+    def test_separate_language_client_designs_are_decision_records(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+        risk_register = (ROOT / "docs" / "RISK_REGISTER.md").read_text(encoding="utf-8")
+        php_design = (ROOT / "docs" / "clients" / "PHP_CLIENT.md").read_text(
+            encoding="utf-8"
+        )
+        python_design = (ROOT / "docs" / "clients" / "PYTHON_CLIENT.md").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("docs/clients/PHP_CLIENT.md", readme)
+        self.assertIn("docs/clients/PYTHON_CLIENT.md", readme)
+        self.assertIn("docs/clients/PHP_CLIENT.md", roadmap)
+        self.assertIn("docs/clients/PYTHON_CLIENT.md", roadmap)
+        self.assertIn("istemci tasarimlari", risk_register)
+
+        expected_apis = [
+            "parse_iban",
+            "validate_turkish_iban",
+            "get_bank_code_from_iban",
+            "find_bank_by_code",
+            "identify_bank_from_iban",
+            "format_iban",
+            "mask_iban",
+        ]
+        for design, repository, package_name in [
+            (php_design, "trugurpala/turkiye-iban-php", "trugurpala/turkiye-iban"),
+            (python_design, "trugurpala/turkiye-iban-python", "turkiye-iban"),
+        ]:
+            self.assertIn(repository, design)
+            self.assertIn(package_name, design)
+            self.assertIn("v0.2.1", design)
+            self.assertIn("SHA256SUMS", design)
+            self.assertIn("Runtime ag istegi | Yok", design)
+            self.assertIn("lookup.synthetic.json", design)
+            self.assertIn("providerStatus", design)
+            self.assertIn("Bu repository icine", design)
+            for api in expected_apis:
+                self.assertIn(api, design)
+
+        self.assertIn("PHP surumu | `8.2`", php_design)
+        self.assertIn("Python surumu | `3.10`", python_design)
+        self.assertIn("PyPI yayini GitHub Actions OIDC trusted publishing", python_design)
+
     def test_issue_forms_collect_actionable_and_privacy_safe_reports(self) -> None:
         template_dir = ROOT / ".github" / "ISSUE_TEMPLATE"
         bug = yaml.safe_load((template_dir / "bug-report.yml").read_text(encoding="utf-8"))
