@@ -13,6 +13,7 @@ numaraları Semantic Versioning yaklaşımını izler.
   istemci tasarım kararları belgelendi.
 - PHP `v0.1.4` ve Python `v0.1.1` ayrı GitHub client release'leri hazırlandı;
   Packagist/PyPI indeks yayını doğrulanmadığı için henüz yayımlanmış gibi sunulmaz.
+- Python client `v0.1.2` release'i paket metadata sürümü `0.1.1` ile eşitlendi.
 - Packagist/PyPI yayın durumunu ve doğrulanmış yayın dilini açıklayan belge eklendi.
 - ROADMAP içinde tamamlanmış `v0.2.1` temeli ile taahhüt niteliği taşımayan,
   kanıta bağlı gelecek fikirlerinin ayrımı netleştirildi.

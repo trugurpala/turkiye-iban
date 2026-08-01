@@ -69,7 +69,7 @@ yapilmaz.
 ## Yayin
 
 Uygulama repository'si [trugurpala/turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python)
-adresindedir. GitHub release `v0.1.1` ve wheel/sdist assetleri yayinlanmistir;
+adresindedir. GitHub release `v0.1.2` ve wheel/sdist assetleri yayinlanmistir;
 PyPI index kaydi bu tarih itibariyla dogrulanmamistir. Ayrintili adimlar
 [package index yayin durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
 
