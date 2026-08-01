@@ -68,6 +68,10 @@ yapilmaz.
 
 ## Yayin
 
+Uygulama repository'si [trugurpala/turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python)
+adresindedir. GitHub release `v0.1.1` ve wheel/sdist assetleri yayinlanmistir;
+PyPI index kaydi bu tarih itibariyla dogrulanmamistir.
+
 PyPI yayini GitHub Actions OIDC trusted publishing ile yapilir. Yayindan once:
 
 1. Release asset checksum dogrulamasi gecer.

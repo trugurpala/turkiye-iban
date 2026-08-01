@@ -34,8 +34,10 @@ must not be added as packages in this repository. Suggested names are:
 
 Each client should preserve the core validation semantics and run the shared
 synthetic fixture contract, while maintaining its own ecosystem release cycle.
-The PHP and Python design documents are ready; implementation and publishing
-remain separate repository work, not hidden packages in this repository.
+PHP and Python client implementations now exist in separate repositories and
+have GitHub releases (`turkiye-iban-php` v0.1.4 and `turkiye-iban-python` v0.1.1).
+Packagist and PyPI indexing remain separate publication steps and are not
+claimed here until their public index entries are verified.
 
 Unrelated Türkiye data such as addresses, postal codes, tax offices, plate
 codes and telephone codes are outside this roadmap and would require separate

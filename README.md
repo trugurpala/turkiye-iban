@@ -37,8 +37,11 @@ Paket bir Türkiye IBAN'ı için şu işlemleri yapar:
 Bu depo tek sorumluluklu Türkiye IBAN temelidir. Gelecekteki dil istemcileri bu
 projenin sürümlenmiş veri, şema ve sentetik fixture'larını ayrı repository'lerden
 tüketecektir.
-İlk ayrı istemci karar kayıtları [PHP/Composer](docs/clients/PHP_CLIENT.md) ve
-[Python/PyPI](docs/clients/PYTHON_CLIENT.md) belgelerinde tutulur.
+İlk istemci uygulamaları ayrı repository'lerde yayımlandı: [PHP client](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.4)
+ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.1).
+Packagist ve PyPI indeks yayınları henüz yapılmadı; paketler bu veri temelini ve
+sentetik fixture sözleşmesini tüketir. Tasarım kararları [PHP/Composer](docs/clients/PHP_CLIENT.md)
+ve [Python/PyPI](docs/clients/PYTHON_CLIENT.md) belgelerinde tutulur.
 
 ## Türkiye IBAN'ı nasıl okunur?
 
@@ -272,6 +275,8 @@ korur. Gelecekteki başka dil istemcileri ayrı repository olacaktır. Güncel p
 - [Next.js ve NestJS sentetik kullanım örnekleri](docs/examples/NEXTJS_NESTJS.md)
 - [Ayrı PHP/Composer istemci tasarımı](docs/clients/PHP_CLIENT.md)
 - [Ayrı Python/PyPI istemci tasarımı](docs/clients/PYTHON_CLIENT.md)
+- [PHP client release deposu](https://github.com/trugurpala/turkiye-iban-php)
+- [Python client release deposu](https://github.com/trugurpala/turkiye-iban-python)
 - [Sentetik test verisi](TEST_DATA.md)
 - [Release, checksum ve geri alma](RELEASE.md)
 - [Yol haritası](ROADMAP.md)
