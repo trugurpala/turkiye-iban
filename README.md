@@ -10,7 +10,7 @@
 
 Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBAN) yazımını kontrol eder ve IBAN içindeki beş haneli kuruluş kodunu Türkiye Cumhuriyet Merkez Bankası (TCMB) verileriyle eşleştirir. Bir kod veri kümesinde bulunduğunda uygulamanız banka veya ödeme kuruluşu alanını otomatik doldurabilir.
 
-> [!IMPORTANT]
+> **Önemli sınır**
 > Paket bir hesabın gerçekten var olduğunu, kime ait olduğunu veya para transferine açık olduğunu doğrulamaz. Yalnızca IBAN'ın kurallara uygun yazıldığını ve içindeki kuruluş kodunun doğrulanmış veri kümesinde bulunup bulunmadığını kontrol eder.
 
 [Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Riskler ve sınırlar](docs/RISK_REGISTER.md) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Topluluk](#topluluğa-katılın) · [Katkı](#projeye-katkı)
