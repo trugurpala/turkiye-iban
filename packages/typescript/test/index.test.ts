@@ -79,6 +79,19 @@ describe("Turkish IBAN API", () => {
     assert.ok(parsed.errors.includes("INVALID_RESERVE_DIGIT"));
   });
 
+  it("rejects oversized input without producing a large display value", () => {
+    const oversized = `TR${"1".repeat(1_023)}`;
+    const parsed = parseIban(oversized);
+
+    assert.equal(parsed.isValid, false);
+    assert.ok(parsed.errors.includes("INVALID_LENGTH"));
+    assert.equal(parsed.normalized, "");
+    assert.equal(parsed.formatted, "");
+    assert.equal(formatIban(oversized), "");
+    assert.equal(maskIban(oversized), "");
+    assert.equal(getBankCodeFromIban(oversized), null);
+  });
+
   it("loads the generated provider dataset", () => {
     assert.ok(turkishBanks.length >= 50);
     assert.equal(findBankByCode("46")?.code, "00046");

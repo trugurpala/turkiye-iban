@@ -13,6 +13,11 @@ Türkiye sözleşmesi: `TR` + 2 kontrol hanesi + 5 haneli sağlayıcı kodu + `0
 rezerv alanı + 16 alfasayısal hesap alanı. Tire gibi başka ayraçlar kabul
 edilmez.
 
+Girdi 1.024 karakterden uzunsa API bunu `INVALID_LENGTH` olarak reddeder.
+Bu sınır, HTTP gibi bir dış giriş noktasında büyük metinlerin gereksiz bellek
+kullanmasına karşı istemci tarafındaki son savunmadır; sunucu uygulamaları
+ayrıca kendi request-body limitlerini koymalıdır.
+
 ## `validateTurkishIban(input: string): boolean`
 
 Uzunluk, karakterler, ülke, rezerv alan ve MOD 97-10 checksum kontrolünü yapar.
@@ -57,10 +62,15 @@ alanıdır. Açık statü kanıtı yoksa bu alan `unknown` kalır.
 
 Normalize edilmiş değeri dörtlü gruplar halinde döndürür.
 
+1.024 karakterden uzun girdiler için boş metin döndürür.
+
 ## `maskIban(input: string): string`
 
 İlk ve son dört karakteri korur, orta alanı `*` ile maskeler. Ham IBAN'ı loglamak
 yerine bu fonksiyonu kullanın.
+
+1.024 karakterden uzun girdiler için boş metin döndürür. Bu durumda ham girdiyi
+loglamayın; isteği uygulamanızın güvenli hata akışında reddedin.
 
 ## Doğrulama Sınırı
 

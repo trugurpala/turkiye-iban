@@ -98,6 +98,9 @@ JavaScript kullanmayan uygulamalar da aynı kuruluş listesinden yararlanabilir:
 
 JSON, CSV, SQL ve SQLite dosyaları bugün doğrudan kullanılabilir. Başka dil
 paketleri bu deponun içine eklenmeyecek, gerektiğinde ayrı projeler olacaktır.
+SQL çıktısı, `tr_iban_providers` referans tablosunu bir transaction içinde
+tamamen yeniler. Uygulamanıza ait kayıtları bu tabloya eklemeyin; kendi
+tablonuzda saklayın veya bu referans tablosunu yalnız okunur kullanın.
 
 ## Kurulum
 
@@ -171,7 +174,7 @@ Proje aynı kuruluş listesini farklı kullanım biçimleriyle yayımlar:
 
 - `data/tr-banks.json`: uygulamalar için ana veri dosyası
 - `data/tr-banks.csv`: elektronik tablo ve veri aktarımı için satır tabanlı çıktı
-- `data/tr-banks.sql`: taşınabilir SQL aktarımı
+- `data/tr-banks.sql`: tekrar uygulanabilir taşınabilir SQL aktarımı
 - `data/tr-banks.sqlite`: sorgulanmaya hazır SQLite veritabanı
 - `data/source/institutions.json`: elle incelenen tek canonical veri kaynağı
 - `fixtures/`: yalnızca sentetik, yani gerçek kişilere ait olmayan test IBAN'ları
@@ -227,6 +230,11 @@ GitHub issue, pull request, test veya örneklere gerçek IBAN, müşteri adı, h
 
 Bir güvenlik açığı bulursanız public issue açmayın. [Güvenlik politikasındaki](SECURITY.md) özel bildirim kanalını kullanın.
 
+CI, metin dosyalarındaki bitişik, boşluklu, tireli veya satıra bölünmüş Türkiye
+IBAN benzeri değerleri tarar. Bu kontrol görselleri ve dış platformlardaki
+mesajları incelemez; gerçek verinin hiç paylaşılmaması ve görsel eklerin insan
+tarafından gözden geçirilmesi yine zorunludur.
+
 ## Topluluk için ücretsiz
 
 Bu proje, Türkiye'deki geliştiricilerin aynı resmî veriyi ayrı ayrı derlemek zorunda kalmaması için topluluk adına ücretsiz üretilmiştir. Ücretli API, kullanım kotası veya telemetri içermez; veri dosyaları repodan indirilebilir ve NPM paketi ağ isteği yapmadan çalışır.
@@ -246,10 +254,14 @@ tutulur. Issue veya tartışmalara gerçek IBAN ya da kişisel finansal veri ekl
 Geliştirme ortamını hazırlayıp tüm kontrolleri çalıştırmak için:
 
 ```bash
+python -m venv .venv
 python -m pip install -r tools/requirements.txt
 npm ci
 npm test
 ```
+
+`.venv/` ve `venv/` yerel geliştirme klasörleri ignore edilir; sanal ortam
+dosyaları biçim veya gizlilik kontrollerine dahil edilmez.
 
 Resmî kaynak değişikliğini incelemek ağ bağlantısı gerektirir:
 

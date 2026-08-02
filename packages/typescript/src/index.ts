@@ -63,8 +63,16 @@ export interface IdentifiedTurkishIban {
 export const turkishBanks: readonly TurkishIbanProvider[] = providers;
 
 const providersByCode = new Map(turkishBanks.map((provider) => [provider.code, provider]));
+const MAX_INPUT_LENGTH = 1_024;
+
+function isOversizedInput(input: string): boolean {
+  return input.length > MAX_INPUT_LENGTH;
+}
 
 function normalizeIban(input: string): string {
+  if (isOversizedInput(input)) {
+    return "";
+  }
   return input.replace(/\s/g, "").toUpperCase();
 }
 
@@ -135,6 +143,21 @@ export function findBankByCode(code: string): TurkishIbanProvider | null {
 }
 
 export function parseIban(input: string): ParsedTurkishIban {
+  if (isOversizedInput(input)) {
+    return {
+      input,
+      normalized: "",
+      formatted: "",
+      countryCode: "",
+      checkDigits: "",
+      bankCode: "",
+      reserveDigit: "",
+      accountNumber: "",
+      isValid: false,
+      errors: ["INVALID_LENGTH"],
+    };
+  }
+
   const normalized = normalizeIban(input);
   const errors: IbanValidationError[] = [];
 

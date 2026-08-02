@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import importlib.util
+import inspect
 import json
 import re
-import shutil
 import sqlite3
 import subprocess
 import tempfile
@@ -15,6 +16,16 @@ from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_script_module(name: str):
+    script_path = ROOT / "scripts" / f"{name}.py"
+    spec = importlib.util.spec_from_file_location(name.replace("-", "_"), script_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Could not load {script_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 class QualityScriptsTest(unittest.TestCase):
@@ -120,10 +131,11 @@ class QualityScriptsTest(unittest.TestCase):
             self.assertTrue(source["url"].startswith("https://"))
             self.assertRegex(source["sha256"], r"^[0-9a-f]{64}$")
 
-    def test_sql_artifact_applies_cleanly(self) -> None:
+    def test_sql_artifact_can_be_applied_twice_without_duplicate_rows(self) -> None:
         sql_text = (ROOT / "data" / "tr-banks.sql").read_text(encoding="utf-8")
         connection = sqlite3.connect(":memory:")
         try:
+            connection.executescript(sql_text)
             connection.executescript(sql_text)
             row_count = connection.execute("SELECT COUNT(*) FROM tr_iban_providers").fetchone()[0]
         finally:
@@ -174,6 +186,20 @@ class QualityScriptsTest(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("Privacy scan passed", result.stdout)
+
+    def test_privacy_guard_detects_hyphenated_and_line_wrapped_iban_like_values(self) -> None:
+        privacy = load_script_module("check-privacy")
+        allowed = privacy.load_fixture_ibans()
+        synthetic = next(iter(allowed))
+        unknown = "TR" + ("0" * 24)
+        line_wrapped_unknown = f"{unknown[:10]}" + chr(10) + unknown[10:]
+
+        self.assertNotIn(unknown, allowed)
+        self.assertEqual(privacy.find_unknown_ibans(f"{synthetic[:4]}-{synthetic[4:]}", allowed), [])
+        self.assertEqual(
+            len(privacy.find_unknown_ibans(line_wrapped_unknown, allowed)),
+            1,
+        )
 
     def test_prepare_release_writes_artifacts_and_checksums(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -431,7 +457,21 @@ class QualityScriptsTest(unittest.TestCase):
             with self.subTest(path=yaml_path.relative_to(ROOT)):
                 self.assertIsNotNone(yaml.compose(yaml_path.read_text(encoding="utf-8")))
 
-        shutil.rmtree(ROOT / "release-artifacts", ignore_errors=True)
+    def test_github_yaml_parse_does_not_delete_existing_release_artifacts(self) -> None:
+        test_source = inspect.getsource(self.test_github_yaml_files_parse)
+
+        self.assertNotIn('shutil.rmtree(ROOT / "release-artifacts"', test_source)
+
+    def test_virtual_environment_paths_are_ignored_by_format_check(self) -> None:
+        result = subprocess.run(
+            ["git", "check-ignore", ".venv/site-packages/example.py", "venv/site-packages/example.py"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_relative_markdown_links_resolve(self) -> None:
         link_pattern = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
