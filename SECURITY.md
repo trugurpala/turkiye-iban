@@ -33,8 +33,13 @@ telefon, bordro ya da başka kişisel finansal veri görülürse içerik public
 görünümden kaldırılır; gerekirse Git geçmişi ve release artifact'ları yeniden
 oluşturulur. Böyle bir veriyi örnek olarak tekrar paylaşmayın.
 
-CI, kompakt veya boşluklu Türkiye IBAN adaylarını tarar ve yalnız açıkça
-`synthetic: true` olarak işaretlenmiş fixture değerlerine izin verir. Hata
-çıktısı bilinmeyen adayları maskeler. Tarama bir veri kaynağı veya hukuki
-uyumluluk garantisi değildir; katkı yapan kişi gerçek veri kullanmamakla
-sorumludur.
+CI, bitişik, boşluklu, tireli veya satıra bölünmüş Türkiye IBAN adaylarını
+tarar ve yalnız açıkça `synthetic: true` olarak işaretlenmiş fixture değerlerine
+izin verir. Hata çıktısı bilinmeyen adayları maskeler. Tarama metin dosyaları
+için bir savunma katmanıdır; görsel, ek veya dış platform içeriğini incelemez.
+Tarama bir veri kaynağı veya hukuki uyumluluk garantisi değildir; katkı yapan
+kişi gerçek veri kullanmamakla sorumludur.
+
+Kütüphane 1.024 karakterden uzun API girdilerini `INVALID_LENGTH` olarak
+reddeder. Bu, uygulama katmanındaki request-body, rate-limit ve log maskeleme
+önlemlerinin yerine geçmez.

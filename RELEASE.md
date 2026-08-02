@@ -35,6 +35,10 @@ format, lint, typecheck, drift, schemas, privacy, unit, integration, examples
 and release staging. The package version, `CHANGELOG.md`, data version and tag
 must agree with the intended release.
 
+`data/tr-banks.sql`, `tr_iban_providers` referans tablosunu transaction içinde
+temizleyip canonical kayıtlarla yeniden doldurur. Release öncesi SQL çıktısını
+aynı SQLite veritabanına iki kez uygulayan kalite testi geçmelidir.
+
 ## Release Assets
 
 Every GitHub Release contains:
@@ -71,6 +75,10 @@ gh attestation verify tr-banks.json --repo trugurpala/turkiye-iban
 Checksum verification detects transfer or storage corruption. Attestation
 verification also confirms that the repository's release workflow produced the
 file.
+
+`tr-banks.sql` uygulamanıza ait satırlar için migration değildir. Referans
+tablosunu yalnız bu projenin verisi için ayırın; uygulama verilerini ayrı bir
+tabloda saklayın.
 
 ## Retention and Rollback
 

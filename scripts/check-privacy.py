@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 IBAN_PATTERN = re.compile(
-    r"\bTR(?:[ \t]*[0-9]){8}(?:[ \t]*[A-Z0-9]){16}\b",
+    r"\bTR(?:[ \t\r\n-]*[0-9]){8}(?:[ \t\r\n-]*[A-Z0-9]){16}\b",
     re.IGNORECASE,
 )
 TEXT_SUFFIXES = {
@@ -26,6 +26,10 @@ TEXT_SUFFIXES = {
 EXCLUDED_PARTS = {".git", "node_modules", "dist", "release-artifacts"}
 
 
+def normalize_iban(value: str) -> str:
+    return re.sub(r"[\s-]+", "", value).upper()
+
+
 def load_fixture_ibans() -> set[str]:
     allowed: set[str] = set()
     for relative_path in [
@@ -37,7 +41,7 @@ def load_fixture_ibans() -> set[str]:
         for item in data:
             iban = item.get("iban")
             if isinstance(iban, str) and item.get("synthetic") is True:
-                allowed.add(re.sub(r"\s+", "", iban).upper())
+                allowed.add(normalize_iban(iban))
     return allowed
 
 
@@ -62,6 +66,15 @@ def iter_project_files() -> list[Path]:
     return files
 
 
+def find_unknown_ibans(text: str, allowed_ibans: set[str]) -> list[tuple[int, str]]:
+    unknown: list[tuple[int, str]] = []
+    for match in IBAN_PATTERN.finditer(text):
+        iban = normalize_iban(match.group(0))
+        if iban not in allowed_ibans:
+            unknown.append((match.start(), iban))
+    return unknown
+
+
 def main() -> int:
     allowed_ibans = load_fixture_ibans()
     violations: list[str] = []
@@ -76,11 +89,9 @@ def main() -> int:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        for match in IBAN_PATTERN.finditer(text):
-            iban = re.sub(r"\s+", "", match.group(0)).upper()
-            if iban not in allowed_ibans:
-                masked = iban[:4] + "*" * max(0, len(iban) - 8) + iban[-4:]
-                violations.append(f"{relative_path}:{match.start()}: unknown IBAN-like value {masked}")
+        for offset, iban in find_unknown_ibans(text, allowed_ibans):
+            masked = iban[:4] + "*" * max(0, len(iban) - 8) + iban[-4:]
+            violations.append(f"{relative_path}:{offset}: unknown IBAN-like value {masked}")
 
     if violations:
         print("Privacy scan failed. Unknown IBAN-like values found:")

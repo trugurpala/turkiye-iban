@@ -5,6 +5,18 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+### Fixed
+
+- Yerel `.venv/` ve `venv/` klasörleri kalite kontrollerinin dışında bırakıldı;
+  testler artık depo kökündeki kullanıcının `release-artifacts/` klasörünü
+  silmez.
+- Üretilmiş genel SQL çıktısı transaction içinde referans tablosunu yenileyerek
+  aynı veritabanına tekrar uygulanabilir hâle getirildi.
+- Gizlilik taraması tireli ve satıra bölünmüş Türkiye IBAN benzeri metinleri de
+  sentetik fixture allowlist'iyle karşılaştırır.
+- TypeScript API, 1.024 karakterden uzun girdileri büyük ara gösterim üretmeden
+  `INVALID_LENGTH` ile reddeder.
+
 ### Changed
 
 - PHP release workflow quality checks and tag-only archive publication were

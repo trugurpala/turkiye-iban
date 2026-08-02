@@ -118,7 +118,12 @@ def record_values(institution: dict[str, Any]) -> tuple[str, ...]:
 
 
 def render_sql(institutions: list[dict[str, Any]]) -> str:
+    columns = (
+        "code, raw_code, name_official, name_short, type, status, systems, "
+        "code_evidence, aliases, sources_json, last_verified_at"
+    )
     lines = [
+        "BEGIN TRANSACTION;",
         "CREATE TABLE IF NOT EXISTS tr_iban_providers (",
         "  code TEXT PRIMARY KEY,",
         "  raw_code TEXT NOT NULL,",
@@ -132,11 +137,13 @@ def render_sql(institutions: list[dict[str, Any]]) -> str:
         "  sources_json TEXT NOT NULL,",
         "  last_verified_at TEXT NOT NULL",
         ");",
+        "DELETE FROM tr_iban_providers;",
         "",
     ]
     for institution in institutions:
         values = ", ".join(sql_string(value) for value in record_values(institution))
-        lines.append(f"INSERT INTO tr_iban_providers VALUES ({values});")
+        lines.append(f"INSERT INTO tr_iban_providers ({columns}) VALUES ({values});")
+    lines.append("COMMIT;")
     return "\n".join(lines) + "\n"
 
 
