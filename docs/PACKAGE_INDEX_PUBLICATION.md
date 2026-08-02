@@ -8,8 +8,21 @@ indeks yayını aynı şey değildir.
 
 | Client | GitHub repository | Verified GitHub release | Package index | Current status |
 | --- | --- | --- | --- | --- |
+| NPM | [tr-iban](https://github.com/trugurpala/turkiye-iban/tree/main/packages/typescript) | [v0.2.1](https://github.com/trugurpala/turkiye-iban/releases/tag/v0.2.1) | [npmjs.com/package/tr-iban](https://www.npmjs.com/package/tr-iban) | Published; `latest` is `0.2.1` |
 | PHP | [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php) | [v0.1.5](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.5) | Packagist `trugurpala/turkiye-iban` | Index entry not verified |
-| Python | [turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python) | [v0.1.4](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.4) | PyPI `turkiye-iban` | Trusted Publisher not configured; index entry not verified |
+| Python | [turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python) | [v0.1.4](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.4) | PyPI `turkiye-iban` | GitHub environment ready; Publisher registration pending |
+
+## Verification record
+
+The public indexes were checked on 2026-08-02:
+
+- NPM returned `tr-iban@0.2.1` with the `latest` dist-tag.
+- Packagist returned HTTP 404 for `trugurpala/turkiye-iban`.
+- PyPI returned HTTP 404 for `turkiye-iban`.
+- An unauthenticated Packagist submission was rejected; no package was
+  created. Packagist requires the repository owner account or API token.
+- GitHub environments `pypi` and `testpypi` now exist in the Python client and
+  require approval from `trugurpala` before the OIDC publish job can run.
 
 ## PHP / Packagist
 
@@ -20,6 +33,10 @@ GitHub webhook should be enabled so new Git tags are imported automatically.
 The first public index page and a clean `composer require` installation must be
 checked before README installation instructions claim Packagist availability.
 
+Submit URL: <https://packagist.org/packages/submit>. Use the repository URL
+`https://github.com/trugurpala/turkiye-iban-php`, then verify the package page
+and `composer require trugurpala/turkiye-iban` from a clean temporary project.
+
 ## Python / PyPI
 
 The Python repository contains a manual `publish-pypi.yml` workflow. It builds
@@ -29,6 +46,11 @@ maintainer must register the pending publisher on the matching package index
 before running it.
 
 No long-lived PyPI token is required or stored in the repository.
+
+The required PyPI Trusted Publisher values are: owner `trugurpala`, repository
+`turkiye-iban-python`, workflow `publish-pypi.yml`, environment `pypi`, and
+project `turkiye-iban`. TestPyPI uses the same values with environment
+`testpypi`. The GitHub environments are protected by maintainer approval.
 
 ## Release language
 
