@@ -72,6 +72,9 @@ Uygulama repository'si [trugurpala/turkiye-iban-python](https://github.com/trugu
 adresindedir. GitHub release `v0.1.2` ve wheel/sdist assetleri yayinlanmistir;
 PyPI index kaydi bu tarih itibariyla dogrulanmamistir. Ayrintili adimlar
 [package index yayin durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
+Tek tek public API testleri [Python Test Report](https://github.com/trugurpala/turkiye-iban-python/blob/main/TEST_REPORT.md)
+belgesinde, paralel PHP istemcisi ise [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php)
+adresinde bulunur.
 
 PyPI yayini GitHub Actions OIDC trusted publishing ile yapilir. Yayindan once:
 

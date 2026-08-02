@@ -15,6 +15,7 @@ numaraları Semantic Versioning yaklaşımını izler.
   Packagist/PyPI indeks yayını doğrulanmadığı için henüz yayımlanmış gibi sunulmaz.
 - Python client `v0.1.2` release'i paket metadata sürümü `0.1.1` ile eşitlendi.
 - PHP client public API test raporu ana README üzerinden erişilebilir hale getirildi.
+- PHP ve Python istemci README'leri ortak kurulum, API, release, test ve topluluk bağlantılarıyla eşitlendi.
 - Packagist/PyPI yayın durumunu ve doğrulanmış yayın dilini açıklayan belge eklendi.
 - ROADMAP içinde tamamlanmış `v0.2.1` temeli ile taahhüt niteliği taşımayan,
   kanıta bağlı gelecek fikirlerinin ayrımı netleştirildi.
