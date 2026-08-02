@@ -37,12 +37,14 @@ Bu depo tek sorumluluklu Türkiye IBAN temelidir. Gelecekteki dil istemcileri bu
 projenin sürümlenmiş veri, şema ve sentetik fixture'larını ayrı repository'lerden
 tüketecektir.
 İlk istemci uygulamaları ayrı repository'lerde yayımlandı: [PHP client](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.5)
-ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.4).
+ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.5).
 PHP public API'sinin tek tek test sonuçları [PHP Test Report](https://github.com/trugurpala/turkiye-iban-php/blob/main/TEST_REPORT.md)
 belgesinde, Python public API'sinin test sonuçları ise [Python Test Report](https://github.com/trugurpala/turkiye-iban-python/blob/main/TEST_REPORT.md)
 belgesinde görülebilir.
-Packagist ve PyPI indeks yayınları henüz yapılmadı; paketler bu veri temelini ve
-sentetik fixture sözleşmesini tüketir. Tasarım kararları [PHP/Composer](docs/clients/PHP_CLIENT.md)
+Packagist indeks yayını henüz doğrulanmadı. Python `turkiye-iban` paketi
+PyPI'da `0.1.5` sürümüyle yayımlandı ve temiz virtualenv kurulumu sentetik
+IBAN smoke testiyle doğrulandı. Paketler bu veri temelini ve sentetik fixture
+sözleşmesini tüketir. Tasarım kararları [PHP/Composer](docs/clients/PHP_CLIENT.md)
 ve [Python/PyPI](docs/clients/PYTHON_CLIENT.md) belgelerinde tutulur.
 
 ## Türkiye IBAN'ı nasıl okunur?
