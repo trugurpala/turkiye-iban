@@ -69,8 +69,10 @@ yapilmaz.
 ## Yayin
 
 Uygulama repository'si [trugurpala/turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python)
-adresindedir. GitHub release `v0.1.4` ve wheel/sdist assetleri yayinlanmistir;
-PyPI index kaydi bu tarih itibariyla dogrulanmamistir. Ayrintili adimlar
+adresindedir. GitHub release `v0.1.5` ve wheel/sdist assetleri yayinlanmistir;
+[PyPI `turkiye-iban==0.1.5`](https://pypi.org/project/turkiye-iban/0.1.5/)
+yayinlanmis ve temiz virtualenv kurulumu sentetik IBAN smoke testiyle
+dogrulanmistir. Ayrintili adimlar
 [package index yayin durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
 Tek tek public API testleri [Python Test Report](https://github.com/trugurpala/turkiye-iban-python/blob/main/TEST_REPORT.md)
 belgesinde, paralel PHP istemcisi ise [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php)
