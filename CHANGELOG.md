@@ -7,6 +7,8 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ### Changed
 
+- PHP release workflow quality checks and tag-only archive publication were
+  verified after the separate client release hardening work.
 - Kalan public iddia ve bakım riskleri için risk register, Next.js/NestJS
   sentetik kullanım örnekleri ve PR kontrol maddesi eklendi.
 - Ayrı `turkiye-iban-php` ve `turkiye-iban-python` depoları için Composer/PyPI

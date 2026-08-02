@@ -18,7 +18,7 @@
 
 ### Task 1: Verify current release state
 
-- [x] Confirm PHP GitHub release `v0.1.4` and Python GitHub release `v0.1.2` exist with expected assets.
+- [x] Confirm PHP GitHub release `v0.1.5` and Python GitHub release `v0.1.2` exist with expected assets.
 - [ ] Confirm Packagist `trugurpala/turkiye-iban` and PyPI `turkiye-iban` public index queries before making any claim.
 
 ### Task 2: Prepare PyPI trusted publishing
@@ -41,13 +41,13 @@
 
 ### Task 4: Update public claims
 
-- [ ] Link the package index status document from README and client designs.
+- [x] Link the package index status document from README and client designs.
 - [ ] Keep “GitHub release ready” separate from “Packagist/PyPI published”.
-- [ ] Update CHANGELOG only with verified status.
+- [x] Update CHANGELOG only with verified status.
 
 ### Task 5: Final gates
 
-- [ ] Run main `npm.cmd test`.
-- [ ] Run Python package pytest, mypy, build, and twine checks.
-- [ ] Verify PHP package CI on PHP 8.2, 8.3, and 8.4.
-- [ ] Report any external account configuration blocker explicitly.
+- [x] Run main `npm.cmd test`.
+- [x] Run Python package pytest, mypy, build, and twine checks.
+- [x] Verify PHP package CI on PHP 8.2, 8.3, and 8.4.
+- [x] Report the Packagist/PyPI external account configuration blocker explicitly.
