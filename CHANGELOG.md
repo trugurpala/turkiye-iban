@@ -11,7 +11,7 @@ numaraları Semantic Versioning yaklaşımını izler.
   sentetik kullanım örnekleri ve PR kontrol maddesi eklendi.
 - Ayrı `turkiye-iban-php` ve `turkiye-iban-python` depoları için Composer/PyPI
   istemci tasarım kararları belgelendi.
-- PHP `v0.1.4` ve Python `v0.1.1` ayrı GitHub client release'leri hazırlandı;
+- PHP `v0.1.4` ve Python `v0.1.2` ayrı GitHub client release'leri hazırlandı;
   Packagist/PyPI indeks yayını doğrulanmadığı için henüz yayımlanmış gibi sunulmaz.
 - Python client `v0.1.2` release'i paket metadata sürümü `0.1.1` ile eşitlendi.
 - Packagist/PyPI yayın durumunu ve doğrulanmış yayın dilini açıklayan belge eklendi.
