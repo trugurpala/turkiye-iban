@@ -1,6 +1,6 @@
 {
   "name": "turkiye-iban-repo",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "description": "Official-source-first Turkish IBAN provider data and packages.",
   "license": "MIT",

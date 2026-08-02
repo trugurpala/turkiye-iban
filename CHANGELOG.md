@@ -5,6 +5,8 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-08-02
+
 ### Fixed
 
 - Yerel `.venv/` ve `venv/` klasörleri kalite kontrollerinin dışında bırakıldı;
@@ -38,7 +40,7 @@ numaraları Semantic Versioning yaklaşımını izler.
   ve release asset bağlantısını taşıyan `conformance/manifest.json` eklendi.
 - Laravel, Symfony, FastAPI ve Django için framework adapter örnekleri;
   Next.js/NestJS akışıyla birlikte dokümante edildi.
-- NPM `tr-iban@0.2.1`, Packagist ve PyPI indeks doğrulama durumları ile
+- NPM `tr-iban@0.2.2`, Packagist ve PyPI indeks doğrulama durumları ile
   Python OIDC yayın ortamları public yayın kaydına işlendi.
 
 ## [0.2.1] - 2026-07-31
@@ -147,7 +149,8 @@ numaraları Semantic Versioning yaklaşımını izler.
   olmadan IBAN sağlayıcı kodu olarak yayımlanmaz.
 - Gerçek IBAN ve kişisel finansal veri katkı yüzeylerinde yasaktır.
 
-[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/trugurpala/turkiye-iban/compare/v0.1.1...v0.1.2
