@@ -1,0 +1,39 @@
+{
+  "$schema": "./schema.json",
+  "contractVersion": "1.0.0",
+  "dataVersion": "2026-07-31",
+  "files": [
+    {
+      "path": "fixtures/valid.synthetic.json",
+      "assetName": "valid.synthetic.json",
+      "kind": "valid",
+      "sha256": "d0ab9cb1e3b7d1f5ecca8d570db2f8848c2046075545fb8fd9b206e0bc4cb603"
+    },
+    {
+      "path": "fixtures/invalid.synthetic.json",
+      "assetName": "invalid.synthetic.json",
+      "kind": "invalid",
+      "sha256": "6d333e55ff5289022df3a4ca29a4db706df792cbcf5fee3b0863acfa49e86d3e"
+    },
+    {
+      "path": "fixtures/lookup.synthetic.json",
+      "assetName": "lookup.synthetic.json",
+      "kind": "lookup",
+      "sha256": "4b09b8889ea9e74553f9aae096b38998544f1e844d40d422db1e733011866957"
+    }
+  ],
+  "requiredBehaviors": [
+    "parseIban",
+    "validateTurkishIban",
+    "getBankCodeFromIban",
+    "findBankByCode",
+    "identifyBankFromIban",
+    "formatIban",
+    "maskIban"
+  ],
+  "semantics": {
+    "syntheticOnly": true,
+    "unknownProvider": "A format-valid IBAN may have providerStatus unknown when its code is absent from the pinned dataset.",
+    "accountVerification": "IBAN validation does not verify account existence, ownership, or transferability."
+  }
+}

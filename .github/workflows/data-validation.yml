@@ -5,6 +5,7 @@ on:
     paths:
       - "data/**"
       - "fixtures/**"
+      - "conformance/**"
       - "scripts/**"
       - "packages/typescript/data/**"
       - "packages/typescript/src/generated/**"

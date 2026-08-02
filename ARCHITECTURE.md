@@ -38,6 +38,7 @@ canonical source and writes, in code order:
 - `packages/typescript/data/tr-banks.json`
 - `packages/typescript/src/generated/banks.ts`
 - synthetic valid, invalid and lookup fixtures
+- `conformance/manifest.json` and `conformance/schema.json`
 
 Generated files are never edited by hand. `python scripts/generate-data.py
 --check` builds all outputs in a temporary directory and compares their bytes
@@ -73,6 +74,9 @@ place until a documented major release.
 
 - TypeScript unit tests cover parsing, validation, formatting, masking and lookup.
 - Fixture contract tests exercise every known code plus unknown and invalid cases.
+- `conformance/manifest.json` gives separate-language clients a versioned,
+  hash-verified fixture contract; clients must pass the same valid, invalid and
+  lookup cases before claiming compatibility.
 - Data validation checks JSON Schema and complete JSON/CSV/SQL/SQLite equality.
 - Generated drift checks prove outputs match the canonical source.
 - Privacy scanning permits only explicitly marked synthetic fixtures.

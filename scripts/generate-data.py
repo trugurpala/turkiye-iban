@@ -21,6 +21,7 @@ GENERATED_PATHS = (
     Path("fixtures/valid.synthetic.json"),
     Path("fixtures/invalid.synthetic.json"),
     Path("fixtures/lookup.synthetic.json"),
+    Path("conformance/manifest.json"),
     Path("packages/typescript/data/tr-banks.json"),
     Path("packages/typescript/src/generated/banks.ts"),
 )
@@ -213,6 +214,45 @@ def write_json(path: Path, value: Any) -> None:
     write_text_lf(path, json.dumps(value, ensure_ascii=False, indent=2) + "\n")
 
 
+def conformance_manifest(canonical: dict[str, Any], output_root: Path) -> dict[str, Any]:
+    fixture_definitions = (
+        ("fixtures/valid.synthetic.json", "valid"),
+        ("fixtures/invalid.synthetic.json", "invalid"),
+        ("fixtures/lookup.synthetic.json", "lookup"),
+    )
+    files = []
+    for relative_path, kind in fixture_definitions:
+        path = output_root / relative_path
+        files.append(
+            {
+                "path": relative_path,
+                "assetName": path.name,
+                "kind": kind,
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+        )
+    return {
+        "$schema": "./schema.json",
+        "contractVersion": "1.0.0",
+        "dataVersion": canonical["dataVersion"],
+        "files": files,
+        "requiredBehaviors": [
+            "parseIban",
+            "validateTurkishIban",
+            "getBankCodeFromIban",
+            "findBankByCode",
+            "identifyBankFromIban",
+            "formatIban",
+            "maskIban",
+        ],
+        "semantics": {
+            "syntheticOnly": True,
+            "unknownProvider": "A format-valid IBAN may have providerStatus unknown when its code is absent from the pinned dataset.",
+            "accountVerification": "IBAN validation does not verify account existence, ownership, or transferability.",
+        },
+    }
+
+
 def write_outputs(output_root: Path) -> None:
     canonical = load_canonical()
     institutions = normalized_institutions(canonical)
@@ -268,6 +308,7 @@ def write_outputs(output_root: Path) -> None:
     write_json(output_root / "fixtures/valid.synthetic.json", valid)
     write_json(output_root / "fixtures/invalid.synthetic.json", invalid)
     write_json(output_root / "fixtures/lookup.synthetic.json", lookup)
+    write_json(output_root / "conformance/manifest.json", conformance_manifest(canonical, output_root))
 
     generated_dir = output_root / "packages/typescript/src/generated"
     generated_dir.mkdir(parents=True, exist_ok=True)

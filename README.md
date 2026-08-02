@@ -173,6 +173,8 @@ Proje aynı kuruluş listesini farklı kullanım biçimleriyle yayımlar:
 - `data/tr-banks.sqlite`: sorgulanmaya hazır SQLite veritabanı
 - `data/source/institutions.json`: elle incelenen tek canonical veri kaynağı
 - `fixtures/`: yalnızca sentetik, yani gerçek kişilere ait olmayan test IBAN'ları
+- `conformance/manifest.json`: istemcilerin ortak fixture ve davranış sözleşmesi
+  için sürüm/checksum manifesti
 - `data/source-manifest.json`: kullanılan resmî kaynakların değişmediğini denetleyen dijital parmak izleri (SHA-256)
 
 JSON, CSV, SQL, SQLite ve TypeScript verisi canonical kaynaktan deterministik
@@ -275,6 +277,8 @@ korur. Gelecekteki başka dil istemcileri ayrı repository olacaktır. Güncel p
 - [API ve geriye uyumluluk](docs/API.md)
 - [Riskler ve public iddia sınırları](docs/RISK_REGISTER.md)
 - [Next.js ve NestJS sentetik kullanım örnekleri](docs/examples/NEXTJS_NESTJS.md)
+- [Laravel, Symfony, FastAPI ve Django adapter örnekleri](docs/examples/FRAMEWORK_ADAPTERS.md)
+- [Diller arası conformance sözleşmesi](conformance/README.md)
 - [Ayrı PHP/Composer istemci tasarımı](docs/clients/PHP_CLIENT.md)
 - [Ayrı Python/PyPI istemci tasarımı](docs/clients/PYTHON_CLIENT.md)
 - [PHP client release deposu](https://github.com/trugurpala/turkiye-iban-php)

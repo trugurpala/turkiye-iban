@@ -199,6 +199,8 @@ class QualityScriptsTest(unittest.TestCase):
             self.assertTrue((release_dir / "tr-banks.sql").is_file())
             self.assertTrue((release_dir / "tr-banks.sqlite").is_file())
             self.assertTrue((release_dir / "tr-banks.schema.json").is_file())
+            self.assertTrue((release_dir / "manifest.json").is_file())
+            self.assertTrue((release_dir / "schema.json").is_file())
             self.assertTrue((release_dir / extra_artifact.name).is_file())
             self.assertTrue((release_dir / "SHA256SUMS.txt").is_file())
             self.assertTrue((release_dir / "SHA256SUMS").is_file())
@@ -209,6 +211,8 @@ class QualityScriptsTest(unittest.TestCase):
             self.assertIn("tr-banks.csv", checksums)
             self.assertIn("tr-banks.sql", checksums)
             self.assertIn("tr-banks.sqlite", checksums)
+            self.assertIn("manifest.json", checksums)
+            self.assertIn("schema.json", checksums)
             self.assertIn(extra_artifact.name, checksums)
 
     def test_repository_has_permanent_task_and_public_surface_checklists(self) -> None:
@@ -280,6 +284,35 @@ class QualityScriptsTest(unittest.TestCase):
 
         self.assertIn('providerStatus; // "unknown"', framework_example)
         self.assertIn("Gercek IBAN", framework_example)
+
+    def test_framework_adapter_examples_are_scoped_and_safe(self) -> None:
+        adapters = (ROOT / "docs" / "examples" / "FRAMEWORK_ADAPTERS.md").read_text(encoding="utf-8")
+        for required in [
+            "Laravel",
+            "Symfony",
+            "FastAPI",
+            "Django",
+            "identifyBankFromIban",
+            "identify_bank_from_iban",
+            "maskIban",
+            "mask_iban",
+            "sentetik",
+            "providerStatus",
+            "provider_status",
+        ]:
+            self.assertIn(required, adapters)
+
+        self.assertIn("sentetik fixture", adapters)
+
+    def test_conformance_manifest_is_publicly_linked_and_machine_readable(self) -> None:
+        manifest = json.loads((ROOT / "conformance" / "manifest.json").read_text(encoding="utf-8"))
+        schema = json.loads((ROOT / "conformance" / "schema.json").read_text(encoding="utf-8"))
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+
+        self.assertEqual(manifest["contractVersion"], "1.0.0")
+        self.assertEqual({item["kind"] for item in manifest["files"]}, {"valid", "invalid", "lookup"})
+        self.assertEqual(schema["title"], "T\u00fcrkiye IBAN cross-language conformance manifest")
+        self.assertIn("conformance/README.md", readme)
 
     def test_separate_language_client_designs_are_decision_records(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

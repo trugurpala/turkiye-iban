@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/trugurpala/turkiye-iban/releases/latest/download/conformance.schema.json",
+  "title": "Türkiye IBAN cross-language conformance manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "contractVersion", "dataVersion", "files", "requiredBehaviors", "semantics"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "contractVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "dataVersion": { "type": "string", "format": "date" },
+    "files": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "assetName", "kind", "sha256"],
+        "properties": {
+          "path": { "type": "string", "pattern": "^fixtures/[a-z-]+\\.synthetic\\.json$" },
+          "assetName": { "type": "string", "pattern": "^[a-z-]+\\.synthetic\\.json$" },
+          "kind": { "enum": ["valid", "invalid", "lookup"] },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "requiredBehaviors": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string" }
+    },
+    "semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["syntheticOnly", "unknownProvider", "accountVerification"],
+      "properties": {
+        "syntheticOnly": { "const": true },
+        "unknownProvider": { "type": "string", "minLength": 1 },
+        "accountVerification": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

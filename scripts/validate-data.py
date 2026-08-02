@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 import sqlite3
@@ -225,6 +226,22 @@ def validate_fixtures(provider_codes: set[str], provider_count: int) -> None:
             require(fixture["providerCode"] not in provider_codes, f"Unknown lookup code exists for {iban}")
 
 
+def validate_conformance_manifest(data_version: str) -> None:
+    manifest = load_json(ROOT / "conformance/manifest.json")
+    schema = load_json(ROOT / "conformance/schema.json")
+    validate_schema(manifest, schema, "conformance manifest")
+    require(manifest["dataVersion"] == data_version, "Conformance dataVersion differs from canonical source")
+    expected_kinds = {"valid", "invalid", "lookup"}
+    actual_kinds = {item["kind"] for item in manifest["files"]}
+    require(actual_kinds == expected_kinds, "Conformance manifest must cover valid, invalid, and lookup fixtures")
+    for item in manifest["files"]:
+        fixture_path = (ROOT / item["path"]).resolve()
+        require(fixture_path.is_relative_to(ROOT), f"Conformance path escapes repository: {item['path']}")
+        require(fixture_path.is_file(), f"Conformance fixture is missing: {item['path']}")
+        digest = hashlib.sha256(fixture_path.read_bytes()).hexdigest()
+        require(digest == item["sha256"], f"Conformance checksum differs for {item['path']}")
+
+
 def main() -> int:
     canonical = load_json(ROOT / "data/source/institutions.json")
     canonical_schema = load_json(ROOT / "data/schema/institutions-source.schema.json")
@@ -279,6 +296,7 @@ def main() -> int:
 
     validate_cross_format_outputs(providers)
     validate_fixtures(set(codes), len(codes))
+    validate_conformance_manifest(canonical["dataVersion"])
     print(f"Data validation passed: {len(codes)} institutions, JSON/CSV/SQL/SQLite parity confirmed")
     return 0
 

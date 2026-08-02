@@ -44,6 +44,7 @@ Every GitHub Release contains:
 - `tr-banks.sql`
 - `tr-banks.sqlite`
 - `tr-banks.schema.json`
+- `manifest.json` ve `schema.json` (cross-language conformance sözleşmesi)
 - `institutions-source.schema.json`
 - `source-manifest.json` and its schema
 - valid, invalid and lookup synthetic fixture files
