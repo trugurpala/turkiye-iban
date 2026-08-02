@@ -18,7 +18,7 @@
 
 ### Task 1: Verify current release state
 
-- [x] Confirm PHP GitHub release `v0.1.5` and Python GitHub release `v0.1.2` exist with expected assets.
+- [x] Confirm PHP GitHub release `v0.1.5` and Python GitHub release `v0.1.4` exist with expected assets.
 - [ ] Confirm Packagist `trugurpala/turkiye-iban` and PyPI `turkiye-iban` public index queries before making any claim.
 
 ### Task 2: Prepare PyPI trusted publishing
