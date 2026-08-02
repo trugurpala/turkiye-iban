@@ -1,45 +1,45 @@
-# turkiye-iban-python Tasarimi
+# turkiye-iban-python Tasarımı
 
-Bu belge, ayri `turkiye-iban-python` deposu ve PyPI paketi icin karar kaydidir.
-Python istemcisi bu repository icine eklenmeyecek; bu projenin surumlenmis release
-assetlerini, JSON Schema sozlesmesini ve sentetik fixture'larini tuketecektir.
+Bu belge, ayrı `turkiye-iban-python` deposu ve PyPI paketi için karar kaydıdır.
+Python istemcisi bu repository içine eklenmeyecek; bu projenin sürümlenmiş release
+assetlerini, JSON Schema sözleşmesini ve sentetik fixture'larını tüketecektir.
 
 ## Repository ve Paket
 
 | Alan | Karar |
 | --- | --- |
 | GitHub repository | `trugurpala/turkiye-iban-python` |
-| PyPI paket adi | `turkiye-iban` |
-| Python import adi | `turkiye_iban` |
-| Minimum Python surumu | `3.10` |
+| PyPI paket adı | `turkiye-iban` |
+| Python import adı | `turkiye_iban` |
+| Minimum Python sürümü | `3.10` |
 | Lisans | `MIT` |
-| Runtime ag istegi | Yok |
-| Veri kaynagi | Sabitlenmis `turkiye-iban` GitHub Release assetleri |
+| Runtime ağ isteği | Yok |
+| Veri kaynağı | Sabitlenmiş `turkiye-iban` GitHub Release assetleri |
 
-## Public API Esitligi
+## Public API Eşitliği
 
-Python istemcisi TypeScript paketindeki yedi temel davranisi korur. Fonksiyonlar
-PEP 8 uyumlu snake_case ile yayinlanir. Donus nesneleri `dataclass(frozen=True)`
-olarak tasarlanir; alan adlari JSON veri modeliyle uyumlu tutulur.
+Python istemcisi TypeScript paketindeki yedi temel davranışı korur. Fonksiyonlar
+PEP 8 uyumlu snake_case ile yayınlanır. Dönüş nesneleri `dataclass(frozen=True)`
+olarak tasarlanır; alan adları JSON veri modeliyle uyumlu tutulur.
 
-| Python fonksiyonu | TypeScript karsiligi | Donus |
+| Python fonksiyonu | TypeScript karşılığı | Dönüş |
 | --- | --- | --- |
-| `parse_iban(iban: str) -> ParsedTurkishIban` | `parseIban` | Ayrismis sonuc ve hata listesi |
-| `validate_turkish_iban(iban: str) -> bool` | `validateTurkishIban` | Bicim ve MOD 97-10 sonucu |
-| `get_bank_code_from_iban(iban: str) -> str | None` | `getBankCodeFromIban` | Bes haneli kod veya `None` |
-| `find_bank_by_code(code: str) -> TurkishIbanProvider | None` | `findBankByCode` | Kurulus kaydi veya `None` |
-| `identify_bank_from_iban(iban: str) -> IdentifiedTurkishIban` | `identifyBankFromIban` | IBAN ve kurulus sonucu |
-| `format_iban(iban: str) -> str` | `formatIban` | Dordlu gruplu gosterim |
-| `mask_iban(iban: str) -> str` | `maskIban` | Guvenli gosterim |
+| `parse_iban(iban: str) -> ParsedTurkishIban` | `parseIban` | Ayrışmış sonuç ve hata listesi |
+| `validate_turkish_iban(iban: str) -> bool` | `validateTurkishIban` | Biçim ve MOD 97-10 sonucu |
+| `get_bank_code_from_iban(iban: str) -> str | None` | `getBankCodeFromIban` | Beş haneli kod veya `None` |
+| `find_bank_by_code(code: str) -> TurkishIbanProvider | None` | `findBankByCode` | Kuruluş kaydı veya `None` |
+| `identify_bank_from_iban(iban: str) -> IdentifiedTurkishIban` | `identifyBankFromIban` | IBAN ve kuruluş sonucu |
+| `format_iban(iban: str) -> str` | `formatIban` | Dörtlü gruplu gösterim |
+| `mask_iban(iban: str) -> str` | `maskIban` | Güvenli gösterim |
 
-`provider_status` sonucu yalniz `"known"` veya `"unknown"` olabilir. `"known"`
-kod eslesmesidir; hesap varligi, hesap sahibi, lisans statusu veya transfer
-yapilabilirligi kaniti degildir.
-Bu alan TypeScript API'deki `providerStatus` sonucunun Python karsiligidir.
+`provider_status` sonucu yalnız `"known"` veya `"unknown"` olabilir. `"known"`
+kod eşleşmesidir; hesap varlığı, hesap sahibi, lisans statüsü veya transfer
+yapılabilirliği kanıtı değildir.
+Bu alan TypeScript API'deki `providerStatus` sonucunun Python karşılığıdır.
 
-## Veri Tuketimi
+## Veri Tüketimi
 
-Ilk surum, `turkiye-iban` release `v0.2.1` assetlerini sabitler:
+İlk sürüm, `turkiye-iban` release `v0.2.1` assetlerini sabitler:
 
 - `tr-banks.json`
 - `tr-banks.schema.json`
@@ -48,51 +48,51 @@ Ilk surum, `turkiye-iban` release `v0.2.1` assetlerini sabitler:
 - `lookup.synthetic.json`
 - `SHA256SUMS`
 
-Paket release hazirliginda assetleri indirir, `SHA256SUMS` ile dogrular ve wheel
-icine `turkiye_iban/data/` altinda gomulu olarak ekler. Runtime sirasinda ag
-istegi yapmaz. Yeni veri surumu icin PR, once sabitlenen release tag'ini ve
-checksum kayitlarini degistirir; pytest fixture kontrati gecmeden publish
-yapilmaz.
+Paket release hazırlığında assetleri indirir, `SHA256SUMS` ile doğrular ve wheel
+içine `turkiye_iban/data/` altında gömülü olarak ekler. Runtime sırasında ağ
+isteği yapmaz. Yeni veri sürümü için PR, önce sabitlenen release tag'ini ve
+checksum kayıtlarını değiştirir; pytest fixture kontratı geçmeden publish
+yapılmaz.
 
-## Test ve Kalite Kapilari
+## Test ve Kalite Kapıları
 
-- pytest ortak sentetik fixture'lari calistirir.
-- `valid.synthetic.json` icindeki tum kayitlar valid olmalidir.
-- `invalid.synthetic.json` icindeki tum kayitlar invalid olmalidir.
-- `lookup.synthetic.json` icindeki known ve unknown sonuclari TypeScript
-  semantigiyle ayni olmalidir.
+- pytest ortak sentetik fixture'ları çalıştırır.
+- `valid.synthetic.json` içindeki tüm kayıtlar valid olmalıdır.
+- `invalid.synthetic.json` içindeki tüm kayıtlar invalid olmalıdır.
+- `lookup.synthetic.json` içindeki known ve unknown sonuçları TypeScript
+  semantiğiyle aynı olmalıdır.
 - `python -m build`, `twine check`, `pip install` clean venv smoke testi ve type
-  check CI'da calisir.
-- Gercek IBAN veya kisisel finansal veri fixture, README, issue veya testte
-  kullanilmaz.
+  check CI'da çalışır.
+- Gerçek IBAN veya kişisel finansal veri fixture, README, issue veya testte
+  kullanılmaz.
 
-## Yayin
+## Yayın
 
 Uygulama repository'si [trugurpala/turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python)
-adresindedir. GitHub release `v0.1.5` ve wheel/sdist assetleri yayinlanmistir;
+adresindedir. GitHub release `v0.1.5` ve wheel/sdist assetleri yayınlanmıştır;
 [PyPI `turkiye-iban==0.1.5`](https://pypi.org/project/turkiye-iban/0.1.5/)
-yayinlanmis ve temiz virtualenv kurulumu sentetik IBAN smoke testiyle
-dogrulanmistir. Ayrintili adimlar
-[package index yayin durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
+yayınlanmış ve temiz virtualenv kurulumu sentetik IBAN smoke testiyle
+doğrulanmıştır. Ayrıntılı adımlar
+[package index yayın durumu](../PACKAGE_INDEX_PUBLICATION.md) belgesindedir.
 Tek tek public API testleri [Python Test Report](https://github.com/trugurpala/turkiye-iban-python/blob/main/TEST_REPORT.md)
 belgesinde, paralel PHP istemcisi ise [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php)
 adresinde bulunur.
 
-PyPI yayini GitHub Actions OIDC trusted publishing ile yapilir. Yayindan once:
+PyPI yayını GitHub Actions OIDC trusted publishing ile yapılır. Yayından önce:
 
-1. Release asset checksum dogrulamasi gecer.
-2. pytest, type check ve build kontrolleri gecer.
-3. Clean virtual environment icinde `pip install turkiye-iban` smoke testi
-   planlanir.
-4. Release notlari, tuketilen `turkiye-iban` release tag'ini ve checksum
-   kaynagini belirtir.
+1. Release asset checksum doğrulaması geçer.
+2. pytest, type check ve build kontrolleri geçer.
+3. Clean virtual environment içinde `pip install turkiye-iban` smoke testi
+   planlanır.
+4. Release notları, tüketilen `turkiye-iban` release tag'ini ve checksum
+   kaynağını belirtir.
 
-PyPI provenance bilgisi ve trusted publishing durumu README, release notlari ve
-workflow ciktisinda gorunur tutulur.
+PyPI provenance bilgisi ve trusted publishing durumu README, release notları ve
+workflow çıktısında görünür tutulur.
 
-## Kapsam Disi
+## Kapsam Dışı
 
-- Bu repository icine Python runtime paketi eklemek
-- Runtime ag istegiyle canli TCMB kaynagi okumak
-- Hesap varligini veya hesap sahibini dogrulamak
-- TCMB onayli paket oldugunu ima etmek
+- Bu repository içine Python runtime paketi eklemek
+- Runtime ağ isteğiyle canlı TCMB kaynağı okumak
+- Hesap varlığını veya hesap sahibini doğrulamak
+- TCMB onaylı paket olduğunu ima etmek

@@ -1,55 +1,55 @@
-# Riskler ve Sinirlar
+# Riskler ve Sınırlar
 
-Bu belge, `turkiye-iban` projesinin bilincli olarak tasidigi kalan riskleri ve
-bu risklerin nasil yonetilecegini kaydeder. Amac daha buyuk iddia kurmak degil;
-projenin sinirlarini acik tutmak, kullanicilarin dogru beklentiyle entegre
-olmasini saglamak ve gelecekteki PR'larda yanlis kamu iddialarini erken
-yakalamaktir.
+Bu belge, `turkiye-iban` projesinin bilinçli olarak taşıdığı kalan riskleri ve
+bu risklerin nasıl yönetileceğini kaydeder. Amaç daha büyük iddia kurmak değil;
+projenin sınırlarını açık tutmak, kullanıcıların doğru beklentiyle entegre
+olmasını sağlamak ve gelecekteki PR'larda yanlış kamu iddialarını erken
+yakalamaktır.
 
 > [!IMPORTANT]
-> Proje TCMB tarafindan onaylanmis veya desteklenmis resmi bir servis degildir.
-> Hesap varligini, hesap sahibini, bakiye bilgisini veya transfer
-> yapilabilirligini dogrulamaz.
+> Proje TCMB tarafından onaylanmış veya desteklenmiş resmî bir servis değildir.
+> Hesap varlığını, hesap sahibini, bakiye bilgisini veya transfer
+> yapılabilirliğini doğrulamaz.
 
-## Onayli Konumlandirma
+## Onaylı Konumlandırma
 
-Kullanilacak kisa ifade:
+Kullanılacak kısa ifade:
 
-> `turkiye-iban`, Turkiye IBAN formatini ve kontrol basamaklarini dogrulayan;
-> IBAN icindeki bes haneli kurulus kodunu TCMB kaynakli veriyle eslestiren acik
-> kaynak veri ve TypeScript/NPM paketidir. Hesap varligi, hesap sahibi veya
-> transfer yapilabilirligi dogrulamaz.
+> `turkiye-iban`, Türkiye IBAN formatını ve kontrol basamaklarını doğrulayan;
+> IBAN içindeki beş haneli kuruluş kodunu TCMB kaynaklı veriyle eşleştiren açık
+> kaynak veri ve TypeScript/NPM paketidir. Hesap varlığını, hesap sahibi veya
+> transfer yapılabilirliğini doğrulamaz.
 
-Kamuya acik metinlerde su ifadeleri kullanmayin:
+Kamuya açık metinlerde şu ifadeleri kullanmayın:
 
-- "TCMB onayli"
-- "hesabi dogrular"
+- "TCMB onaylı"
+- "hesabı doğrular"
 - "transfer garantisi verir"
-- "her dilde paket hazir"
+- "her dilde paket hazır"
 
-## Risk Kaydi
+## Risk Kaydı
 
 | Risk | Seviye | Mevcut onlem | Kalan risk | Bakim aksiyonu | Tekrar gozden gecirme |
 | --- | --- | --- | --- | --- | --- |
-| Veri guncelligi ve kaynak degisimi | Yuksek | Zamanlanmis kaynak kontrolu, SHA-256 manifesti, insan incelemesi zorunlulugu | TCMB PDF veya HTML yapisi degisirse parser raporu bakim isteyebilir | `npm run data:check-remote` sonucunu incele, gerekirse canonical kaynagi PR ile guncelle | Her kaynak kontrolu basarisizliginda ve her veri release'i oncesinde |
-| Resmi onay algisi | Yuksek | README, lansman rehberi ve bu belge resmi onay olmadigini soyler | Tanitim metinleri dis kanallarda fazla iddiali yazilabilir | Paylasimdan once bu belgedeki onayli konumlandirmayi kullan | Her public duyuru ve release notunda |
-| Hesap dogrulama beklentisi | Yuksek | README ve API dokumani hesap varligini dogrulamadigini vurgular | Kullanici `isValid: true` sonucunu hesap varligi sanabilir | Orneklerde `maskIban`, `providerStatus` ve sinir uyarisini birlikte goster | API, README veya ornek degistiginde |
-| Node 22 siniri | Orta | NPM paketi Node `>=22` ve Node 22/24 CI ile dogrulanir | Node 18/20 kullanan ekipler runtime paketi dogrudan kullanamayabilir | Eski Node destegi ancak test matrisiyle acilir; bugun JSON/CSV/SQL/SQLite alternatifi onerilir | Node surum destegi talebi geldiginde |
-| Packagist indeksinin henuz dogrulanmamis olmasi | Orta | PHP `v0.1.5` ve Python `v0.1.5` GitHub release'leri; Python PyPI OIDC yayini, istemci CI sonuclari ve yayinlama adimlari belgelenir | Packagist kaydi olmadan Composer kurulumu garanti edilemez; GitHub release'i tek basina indeks yayini kaniti degildir | Packagist kaydini maintainer hesabiyla tamamla, temiz Composer kurulumunu dogrula ve public belgeleri ancak bundan sonra guncelle | Her istemci release'inde ve indeks yayini sonrasinda |
-| Topluluk benimsenmesi | Orta | GitHub Discussions, issue formlari, lansman metinleri ve gorseller hazir | Yeni repo oldugu icin star, fork, download ve dis katki zamanla olusur | Gercek kullanim ornekleri ve framework dokumanlari ekle; toplu spam yapma | Aylik lansman metrikleri incelemesinde |
-| `providerStatus` ve `status` karisikligi | Orta | README ve API dokumani kod eslesmesi ile faaliyet statusunu ayirir | Hizli okuyan kullanici `known` sonucunu lisans/faaliyet kaniti sanabilir | Public metinlerde `providerStatus: "known"` yalniz kod eslesmesidir ifadesini koru | API, veri semasi veya provider modeli degistiginde |
-| Buyuk veya kotu niyetli girdi | Orta | Runtime 1.024 karakterden uzun girdiyi `INVALID_LENGTH` ile erken reddeder | Bir HTTP uygulamasi request-body veya rate-limit koymazsa daha erken katmanda kaynak tuketimi olabilir | Sunucu entegrasyonlarinda request boyutu, rate-limit ve maskeli log politikasini zorunlu tut | Yeni framework ornegi veya API giris noktasi eklendiginde |
-| Gizlilik taramasinin kapsami | Orta | CI bitisik, bosluklu, tireli ve satira bolunmus metin IBAN adaylarini tarar | Gorseller, binary ekler ve dis platform mesajlari otomatik taranmaz | PR/issue eklerini insan incelemesiyle kontrol et; gercek veri gorulurse `SECURITY.md` akisini uygula | Gizlilik olayi, yeni dosya turu veya katki akisi degisikliginde |
+| Veri güncelliği ve kaynak değişimi | Yüksek | Zamanlanmış kaynak kontrolü, SHA-256 manifesti, insan incelemesi zorunluluğu | TCMB PDF veya HTML yapısı değişirse parser raporu bakım isteyebilir | `npm run data:check-remote` sonucunu incele, gerekirse canonical kaynağı PR ile güncelle | Her kaynak kontrolü başarısızlığında ve her veri release'i öncesinde |
+| Resmî onay algısı | Yüksek | README, lansman rehberi ve bu belge resmî onay olmadığını söyler | Tanıtım metinleri dış kanallarda fazla iddialı yazılabilir | Paylaşımdan önce bu belgedeki onaylı konumlandırmayı kullan | Her public duyuru ve release notunda |
+| Hesap doğrulama beklentisi | Yüksek | README ve API dokümanı hesap varlığını doğrulamadığını vurgular | Kullanıcı `isValid: true` sonucunu hesap varlığı sanabilir | Örneklerde `maskIban`, `providerStatus` ve sınır uyarısını birlikte göster | API, README veya örnek değiştiğinde |
+| Node 22 sınırı | Orta | NPM paketi Node `>=22` ve Node 22/24 CI ile doğrulanır | Node 18/20 kullanan ekipler runtime paketi doğrudan kullanamayabilir | Eski Node desteği ancak test matrisiyle açılır; bugün JSON/CSV/SQL/SQLite alternatifi önerilir | Node sürüm desteği talebi geldiğinde |
+| Packagist indeksinin henüz doğrulanmamış olması | Orta | PHP `v0.1.5` ve Python `v0.1.5` GitHub release'leri; Python PyPI OIDC yayını, istemci CI sonuçları ve yayınlama adımları belgelenir | Packagist kaydı olmadan Composer kurulumu garanti edilemez; GitHub release'i tek başına indeks yayını kanıtı değildir | Packagist kaydını maintainer hesabıyla tamamla, temiz Composer kurulumunu doğrula ve public belgeleri ancak bundan sonra güncelle | Her istemci release'inde ve indeks yayını sonrasında |
+| Topluluk benimsenmesi | Orta | GitHub Discussions, issue formları, lansman metinleri ve görseller hazır | Yeni repo olduğu için star, fork, download ve dış katkı zamanla oluşur | Gerçek kullanım örnekleri ve framework dokümanları ekle; toplu spam yapma | Aylık lansman metrikleri incelemesinde |
+| `providerStatus` ve `status` karışıklığı | Orta | README ve API dokümanı kod eşleşmesi ile faaliyet statüsünü ayırır | Hızlı okuyan kullanıcı `known` sonucunu lisans/faaliyet kanıtı sanabilir | Public metinlerde `providerStatus: "known"` yalnız kod eşleşmesidir ifadesini koru | API, veri şeması veya provider modeli değiştiğinde |
+| Büyük veya kötü niyetli girdi | Orta | Runtime 1.024 karakterden uzun girdiyi `INVALID_LENGTH` ile erken reddeder | Bir HTTP uygulaması request-body veya rate-limit koymazsa daha erken katmanda kaynak tüketimi olabilir | Sunucu entegrasyonlarında request boyutu, rate-limit ve maskeli log politikasını zorunlu tut | Yeni framework örneği veya API giriş noktası eklendiğinde |
+| Gizlilik taramasının kapsamı | Orta | CI bitişik, boşluklu, tireli ve satıra bölünmüş metin IBAN adaylarını tarar | Görseller, binary ekler ve dış platform mesajları otomatik taranmaz | PR/issue eklerini insan incelemesiyle kontrol et; gerçek veri görülürse `SECURITY.md` akışını uygula | Gizlilik olayı, yeni dosya türü veya katkı akışı değişikliğinde |
 
-## PR Kontrol Kurali
+## PR Kontrol Kuralı
 
-Public iddialari, veri kaynagini, release notlarini, ornekleri veya onboarding
-dokumanlarini etkileyen her PR bu belgeyi kontrol etmelidir. Belgeyi
-degistirmek gerekmiyorsa PR aciklamasinda "no change required" olarak yazmak
+Public iddiaları, veri kaynağını, release notlarını, örnekleri veya onboarding
+dokümanlarını etkileyen her PR bu belgeyi kontrol etmelidir. Belgeyi
+değiştirmek gerekmiyorsa PR açıklamasında "no change required" olarak yazmak
 yeterlidir.
 
 ## Release Etkisi
 
-Bu belge tek basina release asset veya NPM publish gerektirmez. Ancak yeni veri
-release'i, yeni runtime paketi veya kamuya acik konumlandirma degisikligi
-yapildiginda release notlariyla birlikte tekrar kontrol edilmelidir.
+Bu belge tek başına release asset veya NPM publish gerektirmez. Ancak yeni veri
+release'i, yeni runtime paketi veya kamuya açık konumlandırma değişikliği
+yapıldığında release notlarıyla birlikte tekrar kontrol edilmelidir.

@@ -92,6 +92,18 @@ describe("Turkish IBAN API", () => {
     assert.equal(getBankCodeFromIban(oversized), null);
   });
 
+  it("rejects non-string JavaScript input without throwing", () => {
+    const input = null as unknown as string;
+
+    assert.equal(validateTurkishIban(input), false);
+    assert.equal(getBankCodeFromIban(input), null);
+    assert.equal(findBankByCode(input), null);
+    assert.equal(formatIban(input), "");
+    assert.equal(maskIban(input), "");
+    assert.equal(parseIban(input).isValid, false);
+    assert.equal(identifyBankFromIban(input).providerStatus, "unknown");
+  });
+
   it("loads the generated provider dataset", () => {
     assert.ok(turkishBanks.length >= 50);
     assert.equal(findBankByCode("46")?.code, "00046");
