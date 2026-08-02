@@ -38,7 +38,7 @@ Bu depo tek sorumluluklu Türkiye IBAN temelidir. Gelecekteki dil istemcileri bu
 projenin sürümlenmiş veri, şema ve sentetik fixture'larını ayrı repository'lerden
 tüketecektir.
 İlk istemci uygulamaları ayrı repository'lerde yayımlandı: [PHP client](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.5)
-ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.2).
+ve [Python client](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.4).
 PHP public API'sinin tek tek test sonuçları [PHP Test Report](https://github.com/trugurpala/turkiye-iban-php/blob/main/TEST_REPORT.md)
 belgesinde, Python public API'sinin test sonuçları ise [Python Test Report](https://github.com/trugurpala/turkiye-iban-python/blob/main/TEST_REPORT.md)
 belgesinde görülebilir.

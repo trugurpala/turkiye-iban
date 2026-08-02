@@ -13,9 +13,10 @@ numaraları Semantic Versioning yaklaşımını izler.
   sentetik kullanım örnekleri ve PR kontrol maddesi eklendi.
 - Ayrı `turkiye-iban-php` ve `turkiye-iban-python` depoları için Composer/PyPI
   istemci tasarım kararları belgelendi.
-- PHP `v0.1.5` ve Python `v0.1.2` ayrı GitHub client release'leri hazırlandı;
+- PHP `v0.1.5` ve Python `v0.1.4` ayrı GitHub client release'leri hazırlandı;
   Packagist/PyPI indeks yayını doğrulanmadığı için henüz yayımlanmış gibi sunulmaz.
-- Python client `v0.1.2` release'i paket metadata sürümü `0.1.1` ile eşitlendi.
+- Python client `v0.1.4` release'i package metadata, README örneği ve temiz
+  virtualenv smoke testiyle doğrulandı.
 - PHP client public API test raporu ana README üzerinden erişilebilir hale getirildi.
 - PHP ve Python istemci README'leri ortak kurulum, API, release, test ve topluluk bağlantılarıyla eşitlendi.
 - Packagist/PyPI yayın durumunu ve doğrulanmış yayın dilini açıklayan belge eklendi.

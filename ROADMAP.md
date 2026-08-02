@@ -35,7 +35,7 @@ must not be added as packages in this repository. Suggested names are:
 Each client should preserve the core validation semantics and run the shared
 synthetic fixture contract, while maintaining its own ecosystem release cycle.
 PHP and Python client implementations now exist in separate repositories and
-have GitHub releases (`turkiye-iban-php` v0.1.4 and `turkiye-iban-python` v0.1.2).
+have GitHub releases (`turkiye-iban-php` v0.1.5 and `turkiye-iban-python` v0.1.4).
 Packagist and PyPI indexing remain separate publication steps and are not
 claimed here until their public index entries are verified.
 
