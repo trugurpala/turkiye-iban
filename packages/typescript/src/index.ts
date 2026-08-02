@@ -65,18 +65,22 @@ export const turkishBanks: readonly TurkishIbanProvider[] = providers;
 const providersByCode = new Map(turkishBanks.map((provider) => [provider.code, provider]));
 const MAX_INPUT_LENGTH = 1_024;
 
-function isOversizedInput(input: string): boolean {
-  return input.length > MAX_INPUT_LENGTH;
+function isOversizedInput(input: unknown): boolean {
+  return typeof input === "string" && input.length > MAX_INPUT_LENGTH;
 }
 
-function normalizeIban(input: string): string {
-  if (isOversizedInput(input)) {
+function normalizeIban(input: unknown): string {
+  if (typeof input !== "string" || isOversizedInput(input)) {
     return "";
   }
   return input.replace(/\s/g, "").toUpperCase();
 }
 
-function normalizeProviderCode(code: string): string | null {
+function normalizeProviderCode(code: unknown): string | null {
+  if (typeof code !== "string") {
+    return null;
+  }
+
   const compact = code.replace(/\s/g, "");
   if (!/^\d{1,5}$/.test(compact)) {
     return null;
@@ -143,9 +147,11 @@ export function findBankByCode(code: string): TurkishIbanProvider | null {
 }
 
 export function parseIban(input: string): ParsedTurkishIban {
-  if (isOversizedInput(input)) {
+  const rawInput = typeof input === "string" ? input : "";
+
+  if (isOversizedInput(rawInput)) {
     return {
-      input,
+      input: rawInput,
       normalized: "",
       formatted: "",
       countryCode: "",
@@ -158,7 +164,7 @@ export function parseIban(input: string): ParsedTurkishIban {
     };
   }
 
-  const normalized = normalizeIban(input);
+  const normalized = normalizeIban(rawInput);
   const errors: IbanValidationError[] = [];
 
   if (normalized.length === 0) {
@@ -208,7 +214,7 @@ export function parseIban(input: string): ParsedTurkishIban {
   }
 
   return {
-    input,
+    input: rawInput,
     normalized,
     formatted: formatIban(normalized),
     countryCode,

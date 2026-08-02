@@ -5,6 +5,17 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+### Fixed
+
+- JavaScript tüketicilerinden gelen string olmayan IBAN veya kuruluş kodu
+  girdileri artık istisna fırlatmadan mevcut geçersiz/`unknown` akışına düşer.
+
+### Changed
+
+- Kamuya açık risk kaydı ile bağlı PHP/Python istemci karar belgeleri doğru
+  Türkçe yazım ve karakterlerle düzenlendi; iddia sınırları ve kalite
+  kontrolleri korundu.
+
 ## [0.2.2] - 2026-08-02
 
 ### Fixed

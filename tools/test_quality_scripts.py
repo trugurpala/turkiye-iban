@@ -274,10 +274,10 @@ class QualityScriptsTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         for required in [
-            "TCMB onayli",
-            "hesabi dogrular",
+            "TCMB onaylı",
+            "hesabı doğrular",
             "transfer garantisi verir",
-            "her dilde paket hazir",
+            "her dilde paket hazır",
             "providerStatus",
             "Node `>=22`",
         ]:
@@ -359,7 +359,7 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertIn("docs/clients/PYTHON_CLIENT.md", readme)
         self.assertIn("docs/clients/PHP_CLIENT.md", roadmap)
         self.assertIn("docs/clients/PYTHON_CLIENT.md", roadmap)
-        self.assertIn("Packagist indeksinin henuz dogrulanmamis olmasi", risk_register)
+        self.assertIn("Packagist indeksinin henüz doğrulanmamış olması", risk_register)
         self.assertIn("PHP `v0.1.5`", risk_register)
         self.assertIn("Python `v0.1.5`", risk_register)
 
@@ -380,16 +380,16 @@ class QualityScriptsTest(unittest.TestCase):
             self.assertIn(package_name, design)
             self.assertIn("v0.2.1", design)
             self.assertIn("SHA256SUMS", design)
-            self.assertIn("Runtime ag istegi | Yok", design)
+            self.assertIn("Runtime ağ isteği | Yok", design)
             self.assertIn("lookup.synthetic.json", design)
             self.assertIn("providerStatus", design)
-            self.assertIn("Bu repository icine", design)
+            self.assertIn("Bu repository içine", design)
             for api in expected_apis:
                 self.assertIn(api, design)
 
-        self.assertIn("PHP surumu | `8.2`", php_design)
-        self.assertIn("Python surumu | `3.10`", python_design)
-        self.assertIn("PyPI yayini GitHub Actions OIDC trusted publishing", python_design)
+        self.assertIn("PHP sürümü | `8.2`", php_design)
+        self.assertIn("Python sürümü | `3.10`", python_design)
+        self.assertIn("PyPI yayını GitHub Actions OIDC trusted publishing", python_design)
 
     def test_issue_forms_collect_actionable_and_privacy_safe_reports(self) -> None:
         template_dir = ROOT / ".github" / "ISSUE_TEMPLATE"
