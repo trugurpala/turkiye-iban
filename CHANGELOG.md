@@ -26,6 +26,8 @@ numaraları Semantic Versioning yaklaşımını izler.
   ve release asset bağlantısını taşıyan `conformance/manifest.json` eklendi.
 - Laravel, Symfony, FastAPI ve Django için framework adapter örnekleri;
   Next.js/NestJS akışıyla birlikte dokümante edildi.
+- NPM `tr-iban@0.2.1`, Packagist ve PyPI indeks doğrulama durumları ile
+  Python OIDC yayın ortamları public yayın kaydına işlendi.
 
 ## [0.2.1] - 2026-07-31
 
