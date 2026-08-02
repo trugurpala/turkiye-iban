@@ -8,7 +8,7 @@ indeks yayını aynı şey değildir.
 
 | Client | GitHub repository | Verified GitHub release | Package index | Current status |
 | --- | --- | --- | --- | --- |
-| PHP | [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php) | [v0.1.4](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.4) | Packagist `trugurpala/turkiye-iban` | Index entry not verified |
+| PHP | [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php) | [v0.1.5](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.5) | Packagist `trugurpala/turkiye-iban` | Index entry not verified |
 | Python | [turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python) | [v0.1.2](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.2) | PyPI `turkiye-iban` | Trusted Publisher not configured; index entry not verified |
 
 ## PHP / Packagist

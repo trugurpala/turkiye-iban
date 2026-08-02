@@ -297,7 +297,7 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertIn("docs/clients/PHP_CLIENT.md", roadmap)
         self.assertIn("docs/clients/PYTHON_CLIENT.md", roadmap)
         self.assertIn("Packagist ve PyPI indekslerinin henuz dogrulanmamis olmasi", risk_register)
-        self.assertIn("PHP `v0.1.4`", risk_register)
+        self.assertIn("PHP `v0.1.5`", risk_register)
         self.assertIn("Python `v0.1.2`", risk_register)
 
         expected_apis = [
