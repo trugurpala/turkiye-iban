@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/trugurpala/turkiye-iban/releases/latest/download/conformance.schema.json",
+  "$id": "https://github.com/trugurpala/turkiye-iban/releases/latest/download/schema.json",
   "title": "Türkiye IBAN cross-language conformance manifest",
   "type": "object",
   "additionalProperties": false,

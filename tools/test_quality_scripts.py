@@ -312,6 +312,10 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertEqual(manifest["contractVersion"], "1.0.0")
         self.assertEqual({item["kind"] for item in manifest["files"]}, {"valid", "invalid", "lookup"})
         self.assertEqual(schema["title"], "T\u00fcrkiye IBAN cross-language conformance manifest")
+        self.assertEqual(
+            schema["$id"],
+            "https://github.com/trugurpala/turkiye-iban/releases/latest/download/schema.json",
+        )
         self.assertIn("conformance/README.md", readme)
 
     def test_separate_language_client_designs_are_decision_records(self) -> None:
