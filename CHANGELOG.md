@@ -14,6 +14,7 @@ numaraları Semantic Versioning yaklaşımını izler.
 - PHP `v0.1.4` ve Python `v0.1.2` ayrı GitHub client release'leri hazırlandı;
   Packagist/PyPI indeks yayını doğrulanmadığı için henüz yayımlanmış gibi sunulmaz.
 - Python client `v0.1.2` release'i paket metadata sürümü `0.1.1` ile eşitlendi.
+- PHP client public API test raporu ana README üzerinden erişilebilir hale getirildi.
 - Packagist/PyPI yayın durumunu ve doğrulanmış yayın dilini açıklayan belge eklendi.
 - ROADMAP içinde tamamlanmış `v0.2.1` temeli ile taahhüt niteliği taşımayan,
   kanıta bağlı gelecek fikirlerinin ayrımı netleştirildi.
