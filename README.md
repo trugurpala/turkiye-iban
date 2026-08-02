@@ -6,7 +6,6 @@
 [![npm](https://img.shields.io/npm/v/tr-iban)](https://www.npmjs.com/package/tr-iban)
 [![GitHub Release](https://img.shields.io/github/v/release/trugurpala/turkiye-iban)](https://github.com/trugurpala/turkiye-iban/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Divan ile üretildi](https://img.shields.io/badge/Divan%20ile-%C3%BCretildi-087F8C)](https://github.com/trugurpala/divan)
 
 Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBAN) yazımını kontrol eder ve IBAN içindeki beş haneli kuruluş kodunu Türkiye Cumhuriyet Merkez Bankası (TCMB) verileriyle eşleştirir. Bir kod veri kümesinde bulunduğunda uygulamanız banka veya ödeme kuruluşu alanını otomatik doldurabilir.
 
@@ -299,12 +298,6 @@ temeliyle hazırlanacak yeni GitHub Release sürümleri JSON, CSV, SQL, SQLite,
 şemalar, sentetik fixture'lar, NPM tarball, SBOM ve SHA-256 checksum listesi
 içerir. Eski release dosyaları değişmeden korunur. CI sonucu repository rozetinden
 ve ilgili release workflow çalışmasından doğrulanabilir.
-
-## Divan ile üretildi
-
-Bu proje [Divan](https://github.com/trugurpala/divan) ile tasarlandı ve üretildi. Divan; araştırma, teknik şartname, planlama, uygulama, doğrulama ve yayın sürecine rehberlik eden açık kaynak beceri, plugin ve doğrulama araçlarını sağladı.
-
-Divan bu paketin runtime bağımlılığı değildir; `tr-iban` çalışırken Divan'a veya herhangi bir ağ servisine ihtiyaç duymaz. Divan'ın kaynak kodu ve kendi topluluk belgeleri [trugurpala/divan](https://github.com/trugurpala/divan) deposunda yayımlanır.
 
 Görsel sistemin tasarım ilkeleri [Sayısal Müşterek](docs/design/VISUAL_PHILOSOPHY.md) belgesinde açıklanır. Düzenlenebilir kaynaklar [Figma görsel sistemi](https://www.figma.com/design/1pFu8ImZ4oO7KfhZzMKdIR) içinde tutulur.
 
