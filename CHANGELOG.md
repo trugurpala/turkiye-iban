@@ -22,6 +22,10 @@ numaraları Semantic Versioning yaklaşımını izler.
 - Packagist/PyPI yayın durumunu ve doğrulanmış yayın dilini açıklayan belge eklendi.
 - ROADMAP içinde tamamlanmış `v0.2.1` temeli ile taahhüt niteliği taşımayan,
   kanıta bağlı gelecek fikirlerinin ayrımı netleştirildi.
+- Sürümü istemciler arası davranış sözleşmesini, sentetik fixture hash'lerini
+  ve release asset bağlantısını taşıyan `conformance/manifest.json` eklendi.
+- Laravel, Symfony, FastAPI ve Django için framework adapter örnekleri;
+  Next.js/NestJS akışıyla birlikte dokümante edildi.
 
 ## [0.2.1] - 2026-07-31
 

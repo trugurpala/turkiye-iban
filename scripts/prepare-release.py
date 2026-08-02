@@ -53,6 +53,8 @@ def main() -> int:
         ROOT / "fixtures" / "valid.synthetic.json",
         ROOT / "fixtures" / "invalid.synthetic.json",
         ROOT / "fixtures" / "lookup.synthetic.json",
+        ROOT / "conformance" / "manifest.json",
+        ROOT / "conformance" / "schema.json",
     ]
 
     copied: list[Path] = []

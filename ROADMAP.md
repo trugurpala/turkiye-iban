@@ -13,6 +13,8 @@ they are not unfinished release requirements or delivery commitments.
 - [x] Detect official source changes and require human review.
 - [x] Publish synthetic fixtures, checksums, SBOM and community policies.
 - [x] Publish GitHub build provenance attestations for release assets.
+- [x] Publish a machine-readable cross-language conformance manifest and
+  framework adapter examples without adding framework runtime dependencies.
 
 ## Optional Future Repository Work
 
