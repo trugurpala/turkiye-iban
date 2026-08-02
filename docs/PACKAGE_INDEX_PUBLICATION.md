@@ -8,22 +8,22 @@ indeks yayını aynı şey değildir.
 
 | Client | GitHub repository | Verified GitHub release | Package index | Current status |
 | --- | --- | --- | --- | --- |
-| NPM | [tr-iban](https://github.com/trugurpala/turkiye-iban/tree/main/packages/typescript) | [v0.2.2](https://github.com/trugurpala/turkiye-iban/releases/tag/v0.2.2) | [npmjs.com/package/tr-iban](https://www.npmjs.com/package/tr-iban) | Published; `latest` is `0.2.2` |
-| PHP | [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php) | [v0.1.5](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.5) | Packagist `trugurpala/turkiye-iban` | Index entry not verified |
-| Python | [turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python) | [v0.1.5](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.5) | [PyPI `turkiye-iban`](https://pypi.org/project/turkiye-iban/) | Published `0.1.5` via OIDC; clean install verified |
+| NPM | [tr-iban](https://github.com/trugurpala/turkiye-iban/tree/main/packages/typescript) | [v0.2.3](https://github.com/trugurpala/turkiye-iban/releases/tag/v0.2.3) | [npmjs.com/package/tr-iban](https://www.npmjs.com/package/tr-iban) | Published; `latest` is `0.2.3` |
+| PHP | [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php) | [v0.1.7](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.7) | Packagist `trugurpala/turkiye-iban` | Index entry not verified |
+| Python | [turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python) | [v0.1.6](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.6) | [PyPI `turkiye-iban`](https://pypi.org/project/turkiye-iban/) | Published `0.1.6` via OIDC; clean install verified |
 
 ## Verification record
 
 The public indexes were checked on 2026-08-02:
 
-- NPM returned `tr-iban@0.2.2` with the `latest` dist-tag.
+- NPM returned `tr-iban@0.2.3` with the `latest` dist-tag.
 - Packagist returned HTTP 404 for `trugurpala/turkiye-iban`.
-- PyPI returned `turkiye-iban` version `0.1.5`.
+- PyPI returned `turkiye-iban` version `0.1.6`.
 - An unauthenticated Packagist submission was rejected; no package was
   created. Packagist requires the repository owner account or API token.
 - GitHub environments `pypi` and `testpypi` exist in the Python client and
   require approval from `trugurpala` before the OIDC publish job can run.
-- The protected `pypi` workflow for `v0.1.5` passed pytest, 98.18% coverage,
+- The protected `pypi` workflow for `v0.1.6` passed pytest, 98.18% coverage,
   mypy, build and Twine checks. A clean virtualenv install and synthetic IBAN
   smoke test passed.
 
@@ -46,7 +46,7 @@ The Python repository contains a manual `publish-pypi.yml` workflow. It builds
 the package, runs pytest, coverage, mypy, wheel/sdist build and `twine check`,
 then uses OIDC Trusted Publishing in a protected `testpypi` or `pypi`
 environment. The `pypi` Trusted Publisher is configured and published
-`turkiye-iban==0.1.5`.
+`turkiye-iban==0.1.6`.
 
 No long-lived PyPI token is required or stored in the repository.
 

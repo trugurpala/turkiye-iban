@@ -5,6 +5,11 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+### Changed
+
+- Paket indeks yayın kaydı, doğrulanmış `tr-iban@0.2.3`, Python `0.1.6` ve
+  PHP `v0.1.7` GitHub Release durumlarıyla güncellendi.
+
 ## [0.2.3] - 2026-08-02
 
 ### Fixed
