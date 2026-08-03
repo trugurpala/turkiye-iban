@@ -1,52 +1,52 @@
-name: Data correction
-description: Propose an official-source-backed institution data correction.
-title: "[Data]: "
+name: Veri düzeltmesi
+description: Resmî kaynağa dayanan bir kuruluş verisi düzeltmesi önerin.
+title: "[Veri]: "
 labels: ["data"]
 body:
   - type: markdown
     attributes:
       value: |
-        Data corrections require an official or institutional source. Never include a real IBAN, customer record, account owner, screenshot, or production financial data.
+        Veri düzeltmesi resmî veya kurumsal bir kaynak gerektirir. Gerçek IBAN, müşteri kaydı, hesap sahibi, ekran görüntüsü veya üretim finansal verisi eklemeyin.
   - type: input
     id: provider_code
     attributes:
-      label: Incorrect institution code
-      description: Use the published raw code or five-digit Turkish IBAN provider code.
+      label: Düzeltilmesi gereken kuruluş kodu
+      description: Yayımlanmış ham kodu veya beş haneli Türkiye IBAN kuruluş kodunu yazın.
       placeholder: "0046"
     validations:
       required: true
   - type: textarea
     id: current_value
     attributes:
-      label: Current value
-      description: Copy only the incorrect non-personal reference value currently published by this project.
+      label: Mevcut değer
+      description: Projede yayımlanan hatalı, kişisel olmayan referans değerini yazın.
     validations:
       required: true
   - type: textarea
     id: expected_value
     attributes:
-      label: Expected value
-      description: State the corrected institution reference value.
+      label: Beklenen değer
+      description: Doğru olması gereken kuruluş referans değerini yazın.
     validations:
       required: true
   - type: input
     id: source_url
     attributes:
-      label: Source URL or document
+      label: Kaynak URL'si veya belge
       placeholder: "https://www.tcmb.gov.tr/..."
     validations:
       required: true
   - type: input
     id: accessed_at
     attributes:
-      label: Source access date
+      label: Kaynağa erişim tarihi
       placeholder: "YYYY-MM-DD"
     validations:
       required: true
   - type: checkboxes
     id: privacy
     attributes:
-      label: Privacy confirmation
+      label: Gizlilik onayı
       options:
-        - label: I confirm this report contains no real IBAN or personal financial data.
+        - label: Bu bildirimin gerçek IBAN veya kişisel finansal veri içermediğini onaylıyorum.
           required: true

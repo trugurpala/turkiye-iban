@@ -1,45 +1,45 @@
-# Security Policy
+# Güvenlik Politikası
 
-## Desteklenen Sürümler
+## Desteklenen sürümler
 
-Yalnız en güncel minor sürüm güvenlik güncellemesi alır. Eski sürümde bulunan
-bir açık mümkünse en güncel sürümde yeniden doğrulanmalıdır.
+Yalnızca en güncel `tr-iban` sürümü güvenlik güncellemesi alır. Kullandığınız
+sürümü `npm view tr-iban version` komutuyla veya
+[son GitHub sürümünden](https://github.com/trugurpala/turkiye-iban/releases/latest)
+kontrol edin. Eski sürümlere düzeltme geri taşınması garanti edilmez.
 
-Desteklenen sürümü `npm view tr-iban dist-tags.latest` komutuyla veya GitHub'daki
-son release sayfasından doğrulayın. Eski sürümler için güvenlik düzeltmesi
-geriye taşınmaz; düzeltme yeni bir sürüm olarak yayımlanır.
+## Güvenlik açığını özel olarak bildirin
 
-## Özel Bildirim
+Güvenlik açığı veya gerçek finansal veri sızıntısı için public issue,
+Discussion ya da pull request açmayın.
+[Özel GitHub Security Advisory](https://github.com/trugurpala/turkiye-iban/security/advisories/new)
+oluşturun.
 
-Güvenlik açığı veya gerçek finansal veri sızıntısı için public issue açmayın.
-[GitHub Private Vulnerability Reporting](https://github.com/trugurpala/turkiye-iban/security/advisories/new)
-kanalını kullanın.
-
-Raporda yalnız sentetik örneklerle şu bilgileri verin:
+Raporda yalnız sentetik örneklerle şunları belirtin:
 
 - Etkilenen sürüm veya commit.
-- Kısa etki açıklaması.
+- Beklenen ve gerçekleşen davranış.
 - Tekrarlama adımları.
-- IBAN doğrulaması, sağlayıcı eşlemesi veya veri ifşası üzerindeki etkisi.
+- IBAN doğrulaması, kuruluş eşlemesi veya veri ifşası üzerindeki olası etki.
 
-Maintainer ilk alındı bildirimini makul olarak 72 saat içinde vermeyi, durum
-güncellemelerini koordine etmeyi ve düzeltme yayımlanana kadar ayrıntıları özel
-tutmayı hedefler. Bu süre garanti veya hizmet seviyesi sözleşmesi değildir.
+Proje yöneticisi ilk alındı bildirimini makul olarak 72 saat içinde vermeyi,
+durum güncellemelerini özel kanalda paylaşmayı ve düzeltme yayımlanana kadar
+ayrıntıları gizli tutmayı hedefler. Bu süre bir hizmet seviyesi taahhüdü
+değildir.
 
-## Gizlilik Olayları
+## Gizlilik
 
-Issue, PR, commit, fixture veya release içinde gerçek IBAN, hesap sahibi,
-telefon, bordro ya da başka kişisel finansal veri görülürse içerik public
-görünümden kaldırılır; gerekirse Git geçmişi ve release artifact'ları yeniden
-oluşturulur. Böyle bir veriyi örnek olarak tekrar paylaşmayın.
+Issue, PR, commit, fixture, ekran görüntüsü veya release içinde gerçek IBAN,
+hesap sahibi, telefon, bordro ya da başka kişisel finansal veri paylaşmayın.
+Bir gizlilik olayı fark ederseniz veriyi yeniden paylaşmadan özel advisory
+üzerinden konumunu bildirin.
 
-CI, bitişik, boşluklu, tireli veya satıra bölünmüş Türkiye IBAN adaylarını
-tarar ve yalnız açıkça `synthetic: true` olarak işaretlenmiş fixture değerlerine
-izin verir. Hata çıktısı bilinmeyen adayları maskeler. Tarama metin dosyaları
-için bir savunma katmanıdır; görsel, ek veya dış platform içeriğini incelemez.
-Tarama bir veri kaynağı veya hukuki uyumluluk garantisi değildir; katkı yapan
-kişi gerçek veri kullanmamakla sorumludur.
+CI, metin dosyalarındaki Türkiye IBAN adaylarını tarar; bu kontrol görselleri
+ve dış platformlardaki içeriği incelemez. Test ve örneklerde yalnızca
+`TEST_DATA.md` içinde tanımlanan sentetik değerleri kullanın.
 
-Kütüphane 1.024 karakterden uzun API girdilerini `INVALID_LENGTH` olarak
-reddeder. Bu, uygulama katmanındaki request-body, rate-limit ve log maskeleme
-önlemlerinin yerine geçmez.
+## Güvenlik sınırı
+
+Kütüphane IBAN biçimini ve kontrol rakamlarını doğrular. Bir hesabın gerçekten
+var olduğunu, sahibini, bakiyesini veya transfer yapılabilirliğini doğrulamaz.
+Uygulamanızda istek boyutu, hız sınırı ve log maskeleme önlemlerini ayrıca
+uygulamalısınız.
