@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Usage questions and project ideas
+  - name: Kullanım soruları ve proje fikirleri
     url: https://github.com/trugurpala/turkiye-iban/discussions
-    about: Ask for help or discuss an idea before opening an actionable issue.
-  - name: Security or privacy report
+    about: Yardım isteyin veya uygulanabilir bir issue açmadan önce fikri konuşun.
+  - name: Güvenlik veya gizlilik bildirimi
     url: https://github.com/trugurpala/turkiye-iban/security/advisories/new
-    about: Do not open public issues for vulnerabilities or real financial data exposure.
+    about: Güvenlik açığı veya gerçek finansal veri ifşası için public issue açmayın.

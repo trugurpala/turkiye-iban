@@ -243,9 +243,11 @@ class QualityScriptsTest(unittest.TestCase):
 
     def test_repository_has_permanent_task_and_public_surface_checklists(self) -> None:
         agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-        pull_request = (ROOT / ".github" / "pull_request_template.md").read_text(encoding="utf-8")
+        pull_request = (
+            ROOT / ".github" / "PULL_REQUEST_TEMPLATE.md"
+        ).read_text(encoding="utf-8")
 
-        required_items = [
+        agent_items = [
             "README",
             "CHANGELOG",
             "schema",
@@ -254,8 +256,19 @@ class QualityScriptsTest(unittest.TestCase):
             "release",
             "personal data",
         ]
-        for item in required_items:
+        for item in agent_items:
             self.assertIn(item.lower(), agents.lower())
+
+        pull_request_items = [
+            "README",
+            "CHANGELOG",
+            "şema",
+            "güvenlik",
+            "geriye uyumluluk",
+            "release",
+            "kişisel veri",
+        ]
+        for item in pull_request_items:
             self.assertIn(item.lower(), pull_request.lower())
 
         self.assertIn("at least five", agents.lower())
@@ -270,7 +283,7 @@ class QualityScriptsTest(unittest.TestCase):
             encoding="utf-8"
         )
         pull_request = (
-            ROOT / ".github" / "pull_request_template.md"
+            ROOT / ".github" / "PULL_REQUEST_TEMPLATE.md"
         ).read_text(encoding="utf-8")
 
         for required in [
@@ -288,7 +301,7 @@ class QualityScriptsTest(unittest.TestCase):
         self.assertIn("docs/RISK_REGISTER.md", package_readme)
         self.assertIn("../RISK_REGISTER.md", launch_guide)
         self.assertIn(
-            "Risk register reviewed when public claims, source data, release, examples, or onboarding docs changed",
+            "Public iddia, kaynak verisi, release, örnek veya başlangıç belgesi değiştiyse risk kaydı gözden geçirildi",
             pull_request,
         )
 
@@ -393,8 +406,8 @@ class QualityScriptsTest(unittest.TestCase):
 
     def test_issue_forms_collect_actionable_and_privacy_safe_reports(self) -> None:
         template_dir = ROOT / ".github" / "ISSUE_TEMPLATE"
-        bug = yaml.safe_load((template_dir / "bug-report.yml").read_text(encoding="utf-8"))
-        feature = yaml.safe_load((template_dir / "feature-request.yml").read_text(encoding="utf-8"))
+        bug = yaml.safe_load((template_dir / "bug_report.yml").read_text(encoding="utf-8"))
+        feature = yaml.safe_load((template_dir / "feature_request.yml").read_text(encoding="utf-8"))
         config = yaml.safe_load((template_dir / "config.yml").read_text(encoding="utf-8"))
 
         bug_ids = {item.get("id") for item in bug["body"]}

@@ -12,7 +12,7 @@ Bu proje, Türkiye'de kullanılan Uluslararası Banka Hesap Numaralarının (IBA
 > **Önemli sınır**
 > Paket bir hesabın gerçekten var olduğunu, kime ait olduğunu veya para transferine açık olduğunu doğrulamaz. Yalnızca IBAN'ın kurallara uygun yazıldığını ve içindeki kuruluş kodunun doğrulanmış veri kümesinde bulunup bulunmadığını kontrol eder.
 
-[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Riskler ve sınırlar](docs/RISK_REGISTER.md) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Topluluk](#topluluğa-katılın) · [Katkı](#projeye-katkı)
+[Kurulum](#kurulum) · [İlk kullanım](#ilk-kullanım) · [Verinin kaynağı](#verinin-kaynağı) · [Riskler ve sınırlar](docs/RISK_REGISTER.md) · [Veri nasıl hazırlanıyor?](#veri-nasıl-hazırlanıyor) · [Topluluk](#topluluğa-katılın) · [Divan](#divan-ile-geliştirildi) · [Katkı](#projeye-katkı)
 
 ## Ne işe yarar?
 
@@ -248,6 +248,14 @@ Bir kullanım sorunuz veya geliştirme fikriniz varsa [GitHub Discussions](https
 İlk katkılar için belge örnekleri, veri doğrulaması ve framework kullanım
 örnekleri [açık issue'larda](https://github.com/trugurpala/turkiye-iban/issues)
 tutulur. Issue veya tartışmalara gerçek IBAN ya da kişisel finansal veri eklemeyin.
+
+## Divan ile geliştirildi
+
+Bu projenin planlama, kalıcı bağlam ve doğrulanabilir teslim süreci
+[Divan](https://github.com/trugurpala/divan) ile organize edildi. Divan;
+Codex ve Claude Code gibi kodlama araçlarının üzerinde çalışan bir geliştirme
+orkestrasyon katmanıdır. Bir yapay zekâ modeli veya ayrı bir bulut hizmeti
+değildir; kullanılan hosta plan, proje bağlamı ve tamamlanma kanıtları ekler.
 
 ## Projeye katkı
 

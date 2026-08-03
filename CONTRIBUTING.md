@@ -1,18 +1,33 @@
-# Contributing
+# Katkı Rehberi
 
-`turkiye-iban` accepts small, sourced and tested improvements within Turkish
-IBAN validation, provider lookup and reference data. Unrelated Türkiye datasets
-and additional language packages belong in separate repositories.
+`turkiye-iban`; Türkiye IBAN doğrulaması, kuruluş kodu eşlemesi ve bunları
+destekleyen dil bağımsız referans verisine odaklanır. Küçük, kaynaklı ve test
+edilmiş katkılar memnuniyetle karşılanır. Adres, vergi, telefon, plaka veya
+posta kodu gibi ilgisiz veri kümelerini bu depoya eklemeyin.
 
-## Privacy Rule
+## Katkı yolları
 
-Never use a real IBAN, account holder or customer name, telephone number,
-payroll record, statement, screenshot, support transcript or production
-financial data in issues, pull requests, commits, fixtures or examples. Use only
-the explicitly synthetic values described in `TEST_DATA.md`. Report security or
-privacy incidents privately through `SECURITY.md`.
+- Tekrarlanabilir hata için [bug formunu](https://github.com/trugurpala/turkiye-iban/issues/new/choose)
+  kullanın.
+- Yeni davranış veya belge önerisini önce feature formunda açıklayın.
+- Resmî kaynak değişikliği için `Data correction` formunu, kaynak URL'sini ve
+  erişim tarihini ekleyerek kullanın.
+- Kullanım sorularını [GitHub Discussions](https://github.com/trugurpala/turkiye-iban/discussions)
+  bölümünde sorun.
 
-## Setup
+Güvenlik açığı için issue açmayın; [SECURITY.md](SECURITY.md) içindeki özel
+bildirim yolunu kullanın.
+
+## Gizlilik
+
+Issue, pull request, commit, fixture, örnek veya ekran görüntüsünde gerçek
+IBAN, hesap sahibi, müşteri adı, telefon, bordro, dekont veya üretim finansal
+verisi kullanmayın. Yalnızca `TEST_DATA.md` içinde belirtilen sentetik değerleri
+kullanın.
+
+## Geliştirme ortamı
+
+Node.js 22+, npm ve Python 3 gereklidir:
 
 ```bash
 python -m pip install -r tools/requirements.txt
@@ -20,56 +35,48 @@ npm ci
 npm test
 ```
 
-Normal generation, tests and builds are offline.
+Normal üretim, test ve build adımları çevrimdışı ve deterministiktir. Odaklı
+bir dal açın, her committe tek bir konuyu ele alın ve pull request'i `main`
+dalına yöneltin.
 
-Create a focused branch, keep commits limited to one concern, and open a pull
-request against `main`. Explain the behavior or data impact, list at least five
-reviewed public surfaces, and include the commands you actually ran.
+## Kod değişiklikleri
 
-## Data Changes
+- Public API'yi, paket exportlarını ve geriye uyumluluk aliaslarını koruyun.
+- Davranış değişikliğini önce başarısız bir testle gösterin.
+- Runtime kodunu deterministik, bağımlılıksız ve ağsız tutun.
+- ESM ve CommonJS paket tüketicilerini birlikte kontrol edin.
+- Ham IBAN'ı loglamayın; teşhislerde `maskIban` kullanın.
+- Breaking change için major sürüm ve migration rehberi hazırlayın.
 
-Start with a remote review:
+## Veri değişiklikleri
+
+Önce uzak kaynak incelemesini çalıştırın:
 
 ```bash
 npm run data:check-remote
 ```
 
-This command never changes release data. Review its source hashes and
-added/removed/changed institution report against the official document. Apply
-an accepted change only to `data/source/institutions.json`, then run:
+Bu komut release verisini değiştirmez. Resmî kaynağı ve üretilen fark raporunu
+insan gözüyle inceleyin. Kabul edilen değişikliği yalnızca
+`data/source/institutions.json` dosyasına uygulayın:
 
 ```bash
 npm run generate:data
 npm test
 ```
 
-Do not edit JSON, CSV, SQL, SQLite, TypeScript generated data or fixtures by
-hand. A data PR must include the official source URL, access date, evidence
-scope, change reason, review report and resulting generated diff. An active
-license registry entry is not automatically provider-code evidence.
+Üretilen JSON, CSV, SQL, SQLite, TypeScript veri veya fixture dosyalarını elle
+düzenlemeyin.
 
-## Code Changes
-
-- Preserve the current public API, package exports and compatibility aliases.
-- Add a failing test before changing behavior.
-- Keep runtime code deterministic, dependency-free and network-free.
-- Check both ESM and CommonJS packed consumers.
-- Never log a raw IBAN; use `maskIban` in diagnostics.
-- Breaking changes require a major release and migration guide.
-
-## Documentation and Public Surfaces
-
-Every task follows `AGENTS.md`. Review at least five public surfaces and record
-each as `updated` or `no change required` in the pull request. README,
-CHANGELOG, relevant technical documentation, tests, generated data, schemas,
-security and release impact must never be silently skipped.
-
-## Pull Request Verification
+## Pull request kontrolü
 
 ```bash
 npm test
 npm pack --workspace packages/typescript --dry-run
 ```
 
-Complete the pull request checklist. Maintainers may reject changes whose
-evidence, privacy treatment, compatibility or release impact is unclear.
+PR açıklamasında yapılan değişikliği, çalıştırılan komutları ve güvenlik,
+geriye uyumluluk ve release etkisini yazın. `AGENTS.md` uyarınca README,
+CHANGELOG, ilgili teknik belgeler, testler, üretilen veriler ve release
+notlarını gözden geçirip en az beş public yüzeyi `updated` veya
+`no change required` olarak listeleyin.
