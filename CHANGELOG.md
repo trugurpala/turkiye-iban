@@ -5,6 +5,12 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+### Changed
+
+- Public package-index record now reflects the verified `tr-iban@0.2.4`
+  GitHub Release, NPM `latest` tag, checksum, attestation and clean-install
+  smoke test.
+
 ## [0.2.4] - 2026-08-03
 
 ### Changed

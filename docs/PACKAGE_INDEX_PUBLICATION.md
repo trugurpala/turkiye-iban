@@ -8,15 +8,17 @@ indeks yayını aynı şey değildir.
 
 | Client | GitHub repository | Verified GitHub release | Package index | Current status |
 | --- | --- | --- | --- | --- |
-| NPM | [tr-iban](https://github.com/trugurpala/turkiye-iban/tree/main/packages/typescript) | [v0.2.3](https://github.com/trugurpala/turkiye-iban/releases/tag/v0.2.3) | [npmjs.com/package/tr-iban](https://www.npmjs.com/package/tr-iban) | Published; `latest` is `0.2.3` |
+| NPM | [tr-iban](https://github.com/trugurpala/turkiye-iban/tree/main/packages/typescript) | [v0.2.4](https://github.com/trugurpala/turkiye-iban/releases/tag/v0.2.4) | [npmjs.com/package/tr-iban](https://www.npmjs.com/package/tr-iban) | Published; `latest` is `0.2.4`; clean install verified |
 | PHP | [turkiye-iban-php](https://github.com/trugurpala/turkiye-iban-php) | [v0.1.7](https://github.com/trugurpala/turkiye-iban-php/releases/tag/v0.1.7) | Packagist `trugurpala/turkiye-iban` | Index entry not verified |
 | Python | [turkiye-iban-python](https://github.com/trugurpala/turkiye-iban-python) | [v0.1.6](https://github.com/trugurpala/turkiye-iban-python/releases/tag/v0.1.6) | [PyPI `turkiye-iban`](https://pypi.org/project/turkiye-iban/) | Published `0.1.6` via OIDC; clean install verified |
 
 ## Verification record
 
-The public indexes were checked on 2026-08-02:
+The public indexes were checked on 2026-08-03:
 
-- NPM returned `tr-iban@0.2.3` with the `latest` dist-tag.
+- NPM returned `tr-iban@0.2.4` with the `latest` dist-tag; the GitHub release
+  tarball checksum, build attestation and a clean-install synthetic smoke test
+  passed.
 - Packagist returned HTTP 404 for `trugurpala/turkiye-iban`.
 - PyPI returned `turkiye-iban` version `0.1.6`.
 - An unauthenticated Packagist submission was rejected; no package was
