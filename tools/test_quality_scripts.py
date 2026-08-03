@@ -201,6 +201,16 @@ class QualityScriptsTest(unittest.TestCase):
             1,
         )
 
+    def test_privacy_guard_diagnostics_do_not_include_iban_fragments(self) -> None:
+        privacy = load_script_module("check-privacy")
+        unknown = "TR" + ("0" * 24)
+
+        message = privacy.format_violation(Path("sample.md"), 42)
+
+        self.assertEqual(message, "sample.md:42: unknown IBAN-like value")
+        self.assertNotIn(unknown[:4], message)
+        self.assertNotIn(unknown[-4:], message)
+
     def test_prepare_release_writes_artifacts_and_checksums(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             extra_artifact = Path(temp_dir) / "tr-iban-0.1.0-test.tgz"

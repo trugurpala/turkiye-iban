@@ -25,4 +25,5 @@ new test case must be generated synthetically and carry the explicit marker.
 
 `scripts/check-privacy.py` scans tracked text, normalizes compact or spaced
 Turkish IBAN candidates, and permits only values present in marked fixture
-files. Unknown candidates fail CI and are masked in diagnostic output.
+files. Unknown candidates fail CI; diagnostic output reports only the file path
+and character offset, never any part of the candidate value.

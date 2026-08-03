@@ -5,10 +5,22 @@ numaraları Semantic Versioning yaklaşımını izler.
 
 ## [Unreleased]
 
+## [0.2.4] - 2026-08-03
+
 ### Changed
 
 - Paket indeks yayın kaydı, doğrulanmış `tr-iban@0.2.3`, Python `0.1.6` ve
   PHP `v0.1.7` GitHub Release durumlarıyla güncellendi.
+- TCMB kaynak kataloğunun erişim tarihleri ve `monitor_only` içerik hash'leri
+  insan incelemesi sonrası yenilendi; 2026 katılımcı belgesindeki 70 kuruluş
+  kanonik kayıtlarla aynı kaldı.
+
+### Security
+
+- GitHub CodeQL varsayılan kurulumu JavaScript/TypeScript ve Python için
+  haftalık güvenlik analizi yapacak biçimde etkinleştirildi.
+- Privacy scan hata çıktısı artık bilinmeyen IBAN adayının maskeli parçalarını
+  dahi yazdırmıyor; yalnız dosya yolu ile karakter konumunu raporluyor.
 
 ## [0.2.3] - 2026-08-02
 
@@ -167,7 +179,8 @@ numaraları Semantic Versioning yaklaşımını izler.
   olmadan IBAN sağlayıcı kodu olarak yayımlanmaz.
 - Gerçek IBAN ve kişisel finansal veri katkı yüzeylerinde yasaktır.
 
-[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.3...HEAD
+[Unreleased]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.4...HEAD
+[0.2.4]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.3...v0.2.4
 [0.2.3]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/trugurpala/turkiye-iban/compare/v0.2.0...v0.2.1

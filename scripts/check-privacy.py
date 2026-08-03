@@ -75,6 +75,10 @@ def find_unknown_ibans(text: str, allowed_ibans: set[str]) -> list[tuple[int, st
     return unknown
 
 
+def format_violation(relative_path: Path, offset: int) -> str:
+    return f"{relative_path}:{offset}: unknown IBAN-like value"
+
+
 def main() -> int:
     allowed_ibans = load_fixture_ibans()
     violations: list[str] = []
@@ -89,9 +93,8 @@ def main() -> int:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        for offset, iban in find_unknown_ibans(text, allowed_ibans):
-            masked = iban[:4] + "*" * max(0, len(iban) - 8) + iban[-4:]
-            violations.append(f"{relative_path}:{offset}: unknown IBAN-like value {masked}")
+        for offset, _iban in find_unknown_ibans(text, allowed_ibans):
+            violations.append(format_violation(relative_path, offset))
 
     if violations:
         print("Privacy scan failed. Unknown IBAN-like values found:")
