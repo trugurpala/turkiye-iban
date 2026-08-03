@@ -37,6 +37,13 @@ CI, metin dosyalarındaki Türkiye IBAN adaylarını tarar; bu kontrol görselle
 ve dış platformlardaki içeriği incelemez. Test ve örneklerde yalnızca
 `TEST_DATA.md` içinde tanımlanan sentetik değerleri kullanın.
 
+## Otomatik güvenlik kontrolleri
+
+GitHub secret scanning ve push protection, bilinen sır biçimlerini commit
+öncesinde ve repository geçmişinde denetler. CodeQL, JavaScript/TypeScript ve
+Python kaynaklarını haftalık olarak analiz eder. Bu otomasyonlar özel güvenlik
+bildiriminin veya uygulama düzeyindeki güvenlik incelemesinin yerine geçmez.
+
 ## Güvenlik sınırı
 
 Kütüphane IBAN biçimini ve kontrol rakamlarını doğrular. Bir hesabın gerçekten

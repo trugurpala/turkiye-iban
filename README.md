@@ -113,7 +113,7 @@ npm install tr-iban
 Belirli bir sürümün GitHub Release paketini doğrudan kurmak için:
 
 ```bash
-npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.2.3/tr-iban-0.2.3.tgz
+npm install https://github.com/trugurpala/turkiye-iban/releases/download/v0.2.4/tr-iban-0.2.4.tgz
 ```
 
 Paketin çalışırken yüklediği başka bir NPM bağımlılığı yoktur.

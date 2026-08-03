@@ -8,7 +8,7 @@
     "reserveLength": 1,
     "accountLength": 16
   },
-  "dataVersion": "2026-07-31",
+  "dataVersion": "2026-08-03",
   "sourcePolicy": "Official-source-first with explicit evidence scope and human review.",
   "sources": [
     {
@@ -22,8 +22,8 @@
         "institution_type",
         "institution_status"
       ],
-      "retrievedAt": "2026-07-31",
-      "sha256": "af102df0406957f17d0c2a9c2d1bab90a4de718ec346e99d07b64bb85ea167a0",
+      "retrievedAt": "2026-08-03",
+      "sha256": "9220d435ec1f4d8da6294e13d88a1551a30a4fd28842bf5520a8f72842d7fa27",
       "extractionMethod": "HTML content hash monitoring; no record enrichment in this snapshot",
       "redistributionStatus": "No source content is redistributed; only source metadata and its SHA-256 hash are published."
     },
@@ -38,22 +38,22 @@
         "institution_type",
         "institution_status"
       ],
-      "retrievedAt": "2026-07-31",
-      "sha256": "cdba0f3ec40b984fb778344e88ab2f716f9deb5da23b31edc20dc7d9b69eed66",
+      "retrievedAt": "2026-08-03",
+      "sha256": "c2a1133f71e58e2e47e62dbf00b18b91e880a773d039f9882ee2814ab0c6477c",
       "extractionMethod": "HTML content hash monitoring; no record enrichment in this snapshot",
       "redistributionStatus": "No source content is redistributed; only source metadata and its SHA-256 hash are published."
     },
     {
       "id": "tcmb-payment-systems-participants-2025",
       "publisher": "Türkiye Cumhuriyet Merkez Bankası",
-      "title": "TCMB Ödeme Sistemleri Katılımcıları (2025)",
+      "title": "TCMB Ödeme Sistemleri Katılımcıları (2026)",
       "url": "https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES",
       "classification": "official",
       "usage": "primary_code_evidence",
       "evidenceScope": [
         "provider_code"
       ],
-      "retrievedAt": "2026-07-31",
+      "retrievedAt": "2026-08-03",
       "sha256": "55685b26c05f051983a310e475b24c1beeed9f22d712c1bfa66508f6b41204b2",
       "extractionMethod": "PDF text table extraction followed by maintainer review",
       "redistributionStatus": "Extracted factual fields are redistributed; the source PDF is not bundled."

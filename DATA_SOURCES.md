@@ -9,9 +9,9 @@ kaydedilir.
 
 | Kaynak | Sınıf | Kullanım | Erişim | Güven düzeyi |
 | --- | --- | --- | --- | --- |
-| [TCMB Ödeme Sistemleri Katılımcıları (2025)](https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES) | `official` | `primary_code_evidence` | 2026-07-31 | Kuruluş kodunun birincil kanıtı |
-| [TCMB Aktif Ödeme Kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari) | `official` | `monitor_only` | 2026-07-31 | Lisans/statü izleme; mevcut snapshotta kayıt üretmiyor |
-| [TCMB Aktif Elektronik Para Kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari) | `official` | `monitor_only` | 2026-07-31 | Lisans/statü izleme; mevcut snapshotta kayıt üretmiyor |
+| [TCMB Ödeme Sistemleri Katılımcıları (2026)](https://www.tcmb.gov.tr/wps/wcm/connect/9fa62a85-5b6d-46c5-9b01-eb461d43723d/TCMB%2B%C3%96deme%2BSistemleri%2BKat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%2B%282025%29.pdf?MOD=AJPERES) | `official` | `primary_code_evidence` | 2026-08-03 | Kuruluş kodunun birincil kanıtı |
+| [TCMB Aktif Ödeme Kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/odeme%2Bkuruluslari) | `official` | `monitor_only` | 2026-08-03 | Lisans/statü izleme; mevcut snapshotta kayıt üretmiyor |
+| [TCMB Aktif Elektronik Para Kuruluşları](https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb%2Btr/main%2Bmenu/temel%2Bfaaliyetler/odeme%2Bhizmetleri/elektronik%2Bpara%2Bkuruluslari) | `official` | `monitor_only` | 2026-08-03 | Lisans/statü izleme; mevcut snapshotta kayıt üretmiyor |
 | [TCMB IBAN Hakkında Tebliğ](https://www.tcmb.gov.tr/wps/wcm/connect/c8357e06-1ab6-4c49-8352-7b9c19fcb77e/Teblig%2B2021_5.pdf?MOD=AJPERES) | resmî düzenleme | IBAN biçimi | belge referansı | Veri kataloğundan ayrı biçim kanıtı |
 
 Aktif lisans sicilinde bulunmak, tek başına belirli bir IBAN kuruluş koduna
